@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-sag_hallo()
+gruezi2(nachname = "van Rossum", anrede = "Herr")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-2-92896a02d815>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0msag_hallo[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-9-d10b7ce26b8d>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mgruezi2[0m[0;34m([0m[0mnachname[0m [0;34m=[0m [0;34m"van Rossum"[0m[0;34m,[0m [0manrede[0m [0;34m=[0m [0;34m"Herr"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mTypeError[0m: sag_hallo() missing 1 required positional argument: 'vorname'
-TypeError: sag_hallo() missing 1 required positional argument: 'vorname'
+[0;31mNameError[0m: name 'gruezi2' is not defined
+NameError: name 'gruezi2' is not defined
 

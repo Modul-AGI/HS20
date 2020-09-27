@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="02_01_Einleitung.html" />
     <link rel="prev" title="Aufgabe 3: Dictionaries" href="01_05_Dictionary.html" />
 
@@ -157,12 +158,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -372,9 +374,9 @@
               <div>
                 
   <div class="section" id="aufgabe-4-tabellarische-daten">
-<h1>Aufgabe 4: Tabellarische Daten<a class="headerlink" href="#aufgabe-4-tabellarische-daten" title="Permalink to this headline">¶</a></h1>
+<span id="chap-dataframes"></span><h1>Aufgabe 4: Tabellarische Daten<a class="headerlink" href="#aufgabe-4-tabellarische-daten" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
-<h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Schauen wir uns nochmals die <em>Dictionary</em> <code class="docutils literal notranslate"><span class="pre">people</span></code> aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -442,14 +444,14 @@
 </div>
 </div>
 <div class="section" id="ubungen">
-<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="ubung-4-1-von-einer-dictionary-zu-einer-dataframe">
-<h3>Übung 4.1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-4-1-von-einer-dictionary-zu-einer-dataframe" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 4.1: von einer <em>Dictionary</em> zu einer <em>DataFrame</em><a class="headerlink" href="#ubung-4-1-von-einer-dictionary-zu-einer-dataframe" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Importiere <code class="docutils literal notranslate"><span class="pre">pandas</span></code> und nutze die Funktion <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> um <code class="docutils literal notranslate"><span class="pre">people</span></code> in eine DataFrame umzuwandeln (siehe dazu das beispiel oben). Weise den Output der Variable <code class="docutils literal notranslate"><span class="pre">people_df</span></code> zu und schaue es dir im <em>Variable Explorer</em> an.</p>
 </div>
 <div class="section" id="ubung-4-2-dataframe-in-csv-umwandeln">
-<h3>Übung 4.2: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-4-2-dataframe-in-csv-umwandeln" title="Permalink to this headline">¶</a></h3>
-<p>In der Praxis kommen Tabellarische Daten meist als “csv” Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv Datei erstellen. Führe das mit folgendem Code aus und suche anschliessend die erstellte csv-Datei.</p>
+<h3>Übung 4.2: <em>DataFrame</em> in csv umwandeln<a class="headerlink" href="#ubung-4-2-dataframe-in-csv-umwandeln" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In der Praxis kommen Tabellarische Daten meist als „csv“ Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv Datei erstellen. Führe das mit folgendem Code aus und suche anschliessend die erstellte csv-Datei.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">people_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;people.csv&quot;</span><span class="p">)</span>
@@ -459,8 +461,8 @@
 </div>
 </div>
 <div class="section" id="ubung-4-3-csv-als-dataframe-importieren">
-<h3>Übung 4.3: CSV als <em>DataFrame</em> importieren<a class="headerlink" href="#ubung-4-3-csv-als-dataframe-importieren" title="Permalink to this headline">¶</a></h3>
-<p>Genau so einfach ist es eine csv zu importieren. Lade <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier die Datei “zeckenstiche.csv”</a> (Rechtsklick –&gt; Ziel speichern unter) herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei “zeckenstiche.csv”. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren im “Variable Inspector” an.</p>
+<h3>Übung 4.3: CSV als <em>DataFrame</em> importieren<a class="headerlink" href="#ubung-4-3-csv-als-dataframe-importieren" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Genau so einfach ist es eine csv zu importieren. Lade <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier die Datei „zeckenstiche.csv“</a> (Rechtsklick –&gt; Ziel speichern unter) herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei „zeckenstiche.csv“. Schau dir <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> nach dem importieren im „Variable Inspector“ an.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
@@ -471,11 +473,11 @@
 <div class="tip admonition">
 <p class="admonition-title">Achtung!</p>
 <ul class="simple">
-<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst “zeckenstiche.csv” auf den Server hochladen. Dies kannst du mit dem Button “Upload Files” im Tab “File Browser” bewerkstelligen (s.u.).</p></li>
+<li><p>Wenn du auf dem JupyterHub Server arbeitest dann ist dein Arbeitsverzeichnis ebenfalls <em>auf dem Server</em>. Das heisst, du musst „zeckenstiche.csv“ auf den Server hochladen. Dies kannst du mit dem Button „Upload Files“ im Tab „File Browser“ bewerkstelligen (s.u.).</p></li>
 </ul>
 <img alt="_images/upload.jpg" id="label" src="_images/upload.jpg" />
 <ul class="simple">
-<li><p>Der Code (<code class="docutils literal notranslate"><span class="pre">pd.read_csv(&quot;zeckenstiche.csv&quot;)</span></code>) funktioniert nur, wenn “zeckenstiche.csv” im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (<strong>get</strong> <strong>c</strong>urrent <strong>w</strong>orking <strong>d</strong>irectory) herausfinden (s.u.).</p></li>
+<li><p>Der Code (<code class="docutils literal notranslate"><span class="pre">pd.read_csv(&quot;zeckenstiche.csv&quot;)</span></code>) funktioniert nur, wenn „zeckenstiche.csv“ im aktuellen Arbeitsverzeichnis (<em>Current Working Directory</em>) abgespeichert ist. Wenn du nicht sicher bist, wo dein aktuelles Arbeitsverzeichnis liegt, kannst du dies mit der Funktion <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> (<strong>get</strong> <strong>c</strong>urrent <strong>w</strong>orking <strong>d</strong>irectory) herausfinden (s.u.).</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
@@ -484,7 +486,7 @@
 </div>
 </div>
 <div class="section" id="ubung-4-4-koordinaten-raumlich-darstellen">
-<h3>Übung 4.4: Koordinaten räumlich darstellen<a class="headerlink" href="#ubung-4-4-koordinaten-raumlich-darstellen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 4.4: Koordinaten räumlich darstellen<a class="headerlink" href="#ubung-4-4-koordinaten-raumlich-darstellen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus. Überlege dir, was die zweite Zeile bewirkt und warum dies sinnvoll ist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,12 +505,12 @@
 </div>
 </div>
 <div class="section" id="ubung-4-5-einzelne-spalte-selektieren">
-<h3>Übung 4.5: Einzelne Spalte selektieren<a class="headerlink" href="#ubung-4-5-einzelne-spalte-selektieren" title="Permalink to this headline">¶</a></h3>
-<p>Um eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer <em>Dictionary</em>. Probiere es aus.</p>
+<h3>Übung 4.5: Einzelne Spalte selektieren<a class="headerlink" href="#ubung-4-5-einzelne-spalte-selektieren" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Um eine einzelne Spalte zu selektieren (z.B. die Spalte „ID“), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer <em>Dictionary</em>. Probiere es aus.</p>
 </div>
 <div class="section" id="ubung-4-6-neue-spalte-erstellen">
-<h3>Übung 4.6: Neue Spalte erstellen<a class="headerlink" href="#ubung-4-6-neue-spalte-erstellen" title="Permalink to this headline">¶</a></h3>
-<p>Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen <em>Dictionary</em> Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).</p>
+<h3>Übung 4.6: Neue Spalte erstellen<a class="headerlink" href="#ubung-4-6-neue-spalte-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen <em>Dictionary</em> Eintrags. Erstelle eine neue Spalte „Stichtyp“ mit dem Wert „Zecke“ auf jeder Zeile (s.u.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>

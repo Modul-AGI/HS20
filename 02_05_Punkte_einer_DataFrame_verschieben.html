@@ -2,11 +2,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 7: Function in DataFrames &#8212; Coding in GIS</title>
+    <title>Aufgabe 8: Funktionen in DataFrames &#8212; Coding in GIS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,10 +38,10 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Einleitung.html" />
-    <link rel="prev" title="Aufgabe 6: Function Advanced" href="02_04_Functions_II.html" />
+    <link rel="prev" title="Aufgabe 7: Zufallszahlen generieren" href="02_04b_Zufallspunkte.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -156,13 +157,14 @@
    Advanced
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -315,27 +317,38 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-7-1-alle-zeckenstiche-zufallig-verschieben">
-     Übung 7.1: Alle Zeckenstiche zufällig verschieben
+    <a class="reference internal nav-link" href="#ubung-8-1-spalten-selektieren">
+     Übung 8.1: Spalten selektieren
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-7-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
-     Übung 7.2: Neue GeoDataFrame mit simulierten Punkten erstellen
+    <a class="reference internal nav-link" href="#ubung-8-2-neue-spalten-erstellen">
+     Übung 8.2: Neue Spalten erstellen
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-7-4-mehrere-dataframes-visualisieren">
-     Übung 7.4: Mehrere
-     <em>
-      DataFrames
-     </em>
-     visualisieren
+    <a class="reference internal nav-link" href="#ubung-8-3-apply">
+     Übung 8.3:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       apply
+      </span>
+     </code>
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-7-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-     Übung 7.5: Genauigkeitsangaben der Punkte mitberücksichtigen.
+    <a class="reference internal nav-link" href="#ubung-8-4-zusatzliche-parameter">
+     Übung 8.4: Zusätzliche Parameter
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-5-simulation-visualisieren">
+     Übung 8.5: Simulation visualisieren
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+     Übung 8.6: Genauigkeitsangaben der Punkte mitberücksichtigen.
     </a>
    </li>
   </ul>
@@ -350,23 +363,23 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-7-function-in-dataframes">
-<h1>Aufgabe 7: <em>Function</em> in <em>DataFrames</em><a class="headerlink" href="#aufgabe-7-function-in-dataframes" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="aufgabe-8-funktionen-in-dataframes">
+<span id="chap-offset-dataframe"></span><h1>Aufgabe 8: Funktionen in <em>DataFrames</em><a class="headerlink" href="#aufgabe-8-funktionen-in-dataframes" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
-<h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
-<p>Nun wollen wir usere Function <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn einmal durch.</p>
-<p>Nutze hier die Datei “zeckenstiche.csv” von letzter Woche (du kannst auch sie <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier erneut runterladen</a>, Rechtsklick –&gt; Ziel speichern unter).</p>
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In dieser Aufgabe haben wir das Ziel, die in der letzten Aufgabe (<a class="reference internal" href="02_04b_Zufallspunkte.html#chap-random-numbers"><span class="std std-ref">Aufgabe 7: Zufallszahlen generieren</span></a>) erstellte Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn <strong>einmal</strong> durch. So erhalten wir einen Datensatz ähnlich wie in <a class="reference internal" href="02_04b_Zufallspunkte.html#arcgiszecken"><span class="std std-numref">Abb. 1</span></a> mit dem Unterschied, dass jede Zeckenstichmeldung nicht eine <em>Wolke</em> von simulierten Punkten enthält, sondern nur einen einzelnen Punkt.</p>
+<p>Nutze hier die Datei „zeckenstiche.csv“ von letzter Woche (du kannst auch sie <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche.csv">hier erneut runterladen</a>, Rechtsklick –&gt; Ziel speichern unter). Erstelle ein neues Notebook und nutze nachstehenden Code um die nötigen Module und Functions zu haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
     <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">new</span>
+
+    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
 
 <span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
-
 
 <span class="n">zeckenstiche</span>
 </pre></div>
@@ -474,23 +487,14 @@
 </div>
 </div>
 <div class="section" id="ubungen">
-<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ubung-7-1-alle-zeckenstiche-zufallig-verschieben">
-<h3>Übung 7.1: Alle Zeckenstiche zufällig verschieben<a class="headerlink" href="#ubung-7-1-alle-zeckenstiche-zufallig-verschieben" title="Permalink to this headline">¶</a></h3>
-<p>Nun können wir die <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf die gesamte Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> der <em>DataFrame</em> zeckenstiche anwenden. Nutze eckige Klammern um die entsprechende Spalte zu wählen.</p>
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-8-1-spalten-selektieren">
+<h3>Übung 8.1: Spalten selektieren<a class="headerlink" href="#ubung-8-1-spalten-selektieren" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Mache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir <a class="reference internal" href="01_06_Tabellarische_Daten.html#chap-dataframes"><span class="std std-ref">Aufgabe 4: Tabellarische Daten</span></a> nochmals an wenn du nicht mehr weisst wie das geht.</p>
 </div>
-<div class="section" id="ubung-7-2-neue-geodataframe-mit-simulierten-punkten-erstellen">
-<h3>Übung 7.2: Neue GeoDataFrame mit simulierten Punkten erstellen<a class="headerlink" href="#ubung-7-2-neue-geodataframe-mit-simulierten-punkten-erstellen" title="Permalink to this headline">¶</a></h3>
-<p>Um die neuen, verschobenen Koordianten abzuspeichern erstellen wir zuerst eine neue, leere DataFrame (z.B. <code class="docutils literal notranslate"><span class="pre">zeckenstiche_sim</span></code>) und fügen den Output als neue Spalten dieser <em>DataFrame</em> hinzu. Auch die “ID” könnt ihr als neue Spalte hinzufügen, so behalten wir den Bezug zum ursprünglichen Datensatz.</p>
-</div>
-<div class="section" id="ubung-7-4-mehrere-dataframes-visualisieren">
-<h3>Übung 7.4: Mehrere <em>DataFrames</em> visualisieren<a class="headerlink" href="#ubung-7-4-mehrere-dataframes-visualisieren" title="Permalink to this headline">¶</a></h3>
-<p>Um zwei <em>DataFrames</em> im gleichen Plot darzustellen, wird folgendermassen vorgegangen. Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
-<p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche.</p>
-</div>
-<div class="section" id="ubung-7-5-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-<h3>Übung 7.5: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-7-5-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Permalink to this headline">¶</a></h3>
-<p>Bisher haben wir alle Punkte um die gleiche Distanz verschoben. Wenn wir unsere <em>DataFrame</em> “zeckensiche” genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte “accuracy”.</p>
+<div class="section" id="ubung-8-2-neue-spalten-erstellen">
+<h3>Übung 8.2: Neue Spalten erstellen<a class="headerlink" href="#ubung-8-2-neue-spalten-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Mache dich nochmals damit vertraut, wie man neue Spalten erstellt. Schau dir <a class="reference internal" href="01_06_Tabellarische_Daten.html#chap-dataframes"><span class="std std-ref">Aufgabe 4: Tabellarische Daten</span></a> nochmals an wenn du nicht mehr weisst wie das geht. Erstelle ein paar neue Spalten nach dem Beispiel unten um die Hangriffe zu üben. Lösche die Spalten im Anschluss wieder mit <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">zeckenstiche['test1']</span></code> etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>
@@ -520,6 +524,9 @@
       <th>accuracy</th>
       <th>x</th>
       <th>y</th>
+      <th>test1</th>
+      <th>test2</th>
+      <th>test3</th>
     </tr>
   </thead>
   <tbody>
@@ -529,6 +536,9 @@
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
@@ -536,6 +546,9 @@
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>2</th>
@@ -543,6 +556,9 @@
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>3</th>
@@ -550,6 +566,9 @@
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>4</th>
@@ -557,6 +576,9 @@
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>5</th>
@@ -564,6 +586,9 @@
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>6</th>
@@ -571,6 +596,9 @@
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>7</th>
@@ -578,6 +606,9 @@
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>8</td>
     </tr>
     <tr>
       <th>8</th>
@@ -585,6 +616,9 @@
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>9</th>
@@ -592,19 +626,50 @@
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
+      <td>test1</td>
+      <td>10</td>
+      <td>10</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Diese Spalte sagt was darüber aus, wie sicher der/die Nutzer*in bei der Standortsangabe war. Wir können diese Angabe auch nutzen um den offset <em>pro Punkt</em> festzulegen.</p>
+</div>
+<div class="section" id="ubung-8-3-apply">
+<span id="ex-apply"></span><h3>Übung 8.3: <code class="docutils literal notranslate"><span class="pre">apply</span></code><a class="headerlink" href="#ubung-8-3-apply" title="Link zu dieser Überschrift">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregiren (<code class="docutils literal notranslate"><span class="pre">apply</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">mapapply</span></code>, <code class="docutils literal notranslate"><span class="pre">assign</span></code>). Es würde den Rahmen von diesem Kurs sprengen, die alle im Detail durch zu gehen, es lohnt sich aber sehr sich mit diesen zu befassen wenn man in sich näher mit Python befassen möchte.</p>
+<p>Im unseren Fall brauchen wir lediglich die Methode <code class="docutils literal notranslate"><span class="pre">apply</span></code> um die Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordiante()</span></code> auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+<span class="c1">#.............1.....2...........3........</span>
 
-<span class="n">zeckenstiche_sim</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">offset_coordinate</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">distance</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
-
-<span class="n">zeckenstiche_sim</span>
+<span class="c1"># 1. Spalte selektieren ([&quot;x&quot;])</span>
+<span class="c1"># 2. Methode &quot;apply&quot; aufrufen</span>
+<span class="c1"># 3. Function übergeben</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680959e+06
+1    2.681102e+06
+2    2.680983e+06
+3    2.681069e+06
+4    2.681171e+06
+5    2.681316e+06
+6    2.680958e+06
+7    2.681118e+06
+8    2.680995e+06
+9    2.681133e+06
+Name: x, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Verwende dieses Schema um auch <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> auf die <code class="docutils literal notranslate"><span class="pre">y</span></code> Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten <code class="docutils literal notranslate"><span class="pre">x_sim</span></code> sowie <code class="docutils literal notranslate"><span class="pre">y_sim</span></code>. Die <em>DataFrame</em> <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> sollte danach wie folgt aussehen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>
 </pre></div>
 </div>
 </div>
@@ -628,75 +693,296 @@
     <tr style="text-align: right;">
       <th></th>
       <th>ID</th>
+      <th>accuracy</th>
       <th>x</th>
       <th>y</th>
+      <th>x_sim</th>
+      <th>y_sim</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.680808e+06</td>
-      <td>1.250479e+06</td>
+      <td>439.128951</td>
+      <td>2681116</td>
+      <td>1250648</td>
+      <td>2.680961e+06</td>
+      <td>1.250690e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.680880e+06</td>
-      <td>1.250556e+06</td>
+      <td>301.748542</td>
+      <td>2681092</td>
+      <td>1250672</td>
+      <td>2.681053e+06</td>
+      <td>1.250566e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.680916e+06</td>
-      <td>1.250567e+06</td>
+      <td>301.748542</td>
+      <td>2681128</td>
+      <td>1250683</td>
+      <td>2.681094e+06</td>
+      <td>1.250505e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.680899e+06</td>
-      <td>1.250567e+06</td>
+      <td>301.748542</td>
+      <td>2681111</td>
+      <td>1250683</td>
+      <td>2.681124e+06</td>
+      <td>1.250718e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.680919e+06</td>
-      <td>1.250576e+06</td>
+      <td>301.748529</td>
+      <td>2681131</td>
+      <td>1250692</td>
+      <td>2.681342e+06</td>
+      <td>1.250484e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.680959e+06</td>
-      <td>1.250595e+06</td>
+      <td>301.748529</td>
+      <td>2681171</td>
+      <td>1250711</td>
+      <td>2.680967e+06</td>
+      <td>1.250954e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.680895e+06</td>
-      <td>1.250596e+06</td>
+      <td>301.748542</td>
+      <td>2681107</td>
+      <td>1250712</td>
+      <td>2.681187e+06</td>
+      <td>1.250920e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.680912e+06</td>
-      <td>1.250604e+06</td>
+      <td>301.748542</td>
+      <td>2681124</td>
+      <td>1250720</td>
+      <td>2.681240e+06</td>
+      <td>1.250877e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.680905e+06</td>
-      <td>1.250609e+06</td>
+      <td>301.748542</td>
+      <td>2681117</td>
+      <td>1250725</td>
+      <td>2.681100e+06</td>
+      <td>1.250682e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.680926e+06</td>
-      <td>1.250609e+06</td>
+      <td>301.748542</td>
+      <td>2681138</td>
+      <td>1250725</td>
+      <td>2.681063e+06</td>
+      <td>1.250700e+06</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="ubung-8-4-zusatzliche-parameter">
+<span id="ex-param"></span><h3>Übung 8.4: Zusätzliche Parameter<a class="headerlink" href="#ubung-8-4-zusatzliche-parameter" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In <a class="reference internal" href="#ex-apply"><span class="std std-ref">Übung 8.3: apply</span></a> haben wir unsere Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> aufgerufen, ohne den Paramter <code class="docutils literal notranslate"><span class="pre">distance</span></code> zu spezifizieren. Dies war möglich, weil wir für <code class="docutils literal notranslate"><span class="pre">distance</span></code> einen Defaultwert festgelegt hat (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">,</span><span class="n">distance</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681240e+06
+1    2.681339e+06
+2    2.680985e+06
+3    2.681139e+06
+4    2.681011e+06
+5    2.681330e+06
+6    2.680833e+06
+7    2.681026e+06
+8    2.681096e+06
+9    2.681256e+06
+Name: x, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nuzte diese Möglichkeit, um die den Offset (<code class="docutils literal notranslate"><span class="pre">distance</span></code>) auf lediglich etwa 10 Meter zu reduzieren.</p>
+</div>
+<div class="section" id="ubung-8-5-simulation-visualisieren">
+<h3>Übung 8.5: Simulation visualisieren<a class="headerlink" href="#ubung-8-5-simulation-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Um die Original <code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>-Werte sowie die Simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
+<p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basemap</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">zeckenstiche</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s2">&quot;x_sim&quot;</span><span class="p">,</span> <span class="s2">&quot;y_sim&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">basemap</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02_05_Punkte_einer_DataFrame_verschieben_21_0.png" src="_images/02_05_Punkte_einer_DataFrame_verschieben_21_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen">
+<h3>Übung 8.6: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In <a class="reference internal" href="#ex-param"><span class="std std-ref">Übung 8.4: Zusätzliche Parameter</span></a> haben wir alle Punkte um etwa die gleiche Distaz (+/- 10m) verschoben. Wenn wir unsere <em>DataFrame</em> „zeckensiche“ genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte <code class="docutils literal notranslate"><span class="pre">accuracy</span></code>. Diese Spalte ist eine Genauigkeitsangabe über den gemeldeten Zeckenstich. Sie sagt etwas darüber aus, wie sicher der/die Nutzer*in bei der Standortsangabe war (z.B. „<em>Diese Meldung ist etwa auf 300 Meter genau</em>“). Wir können diese Genauigkeitsangabe auch nutzen um den offset <em>pro Punkt</em> zu bestimmen.</p>
+<p>Nutze die Spalte <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> als Argument des Parameters <code class="docutils literal notranslate"><span class="pre">distance</span></code> in der Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> um genau dies zu erreichen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>accuracy</th>
+      <th>x</th>
+      <th>y</th>
+      <th>x_sim</th>
+      <th>y_sim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2550</td>
+      <td>439.128951</td>
+      <td>2681116</td>
+      <td>1250648</td>
+      <td>2.681120e+06</td>
+      <td>1.250639e+06</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10437</td>
+      <td>301.748542</td>
+      <td>2681092</td>
+      <td>1250672</td>
+      <td>2.681086e+06</td>
+      <td>1.250675e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9174</td>
+      <td>301.748542</td>
+      <td>2681128</td>
+      <td>1250683</td>
+      <td>2.681119e+06</td>
+      <td>1.250675e+06</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8773</td>
+      <td>301.748542</td>
+      <td>2681111</td>
+      <td>1250683</td>
+      <td>2.681108e+06</td>
+      <td>1.250678e+06</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2764</td>
+      <td>301.748529</td>
+      <td>2681131</td>
+      <td>1250692</td>
+      <td>2.681125e+06</td>
+      <td>1.250675e+06</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2513</td>
+      <td>301.748529</td>
+      <td>2681171</td>
+      <td>1250711</td>
+      <td>2.681171e+06</td>
+      <td>1.250707e+06</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>9185</td>
+      <td>301.748542</td>
+      <td>2681107</td>
+      <td>1250712</td>
+      <td>2.681088e+06</td>
+      <td>1.250710e+06</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28521</td>
+      <td>301.748542</td>
+      <td>2681124</td>
+      <td>1250720</td>
+      <td>2.681144e+06</td>
+      <td>1.250715e+06</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>26745</td>
+      <td>301.748542</td>
+      <td>2681117</td>
+      <td>1250725</td>
+      <td>2.681117e+06</td>
+      <td>1.250720e+06</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>27391</td>
+      <td>301.748542</td>
+      <td>2681138</td>
+      <td>1250725</td>
+      <td>2.681127e+06</td>
+      <td>1.250744e+06</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Visualisiere nun die Daten. Was ist hier passiert?</p>
 </div>
 </div>
 </div>
@@ -729,7 +1015,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_04_Functions_II.html" title="previous page">Aufgabe 6: <em>Function</em> Advanced</a>
+    <a class='left-prev' id="prev-link" href="02_04b_Zufallspunkte.html" title="previous page">Aufgabe 7: Zufallszahlen generieren</a>
     <a class='right-next' id="next-link" href="03_01_Einleitung.html" title="next page">Einleitung zu diesem Block</a>
 
     </div>

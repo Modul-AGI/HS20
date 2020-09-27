@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Basic shortcuts for Jupyter lab" href="04_01_Jupyter_Shortcuts.html" />
     <link rel="prev" title="Übung: GIS in Python" href="03_05_GIS_in_Python.html" />
 
@@ -157,12 +158,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -311,7 +313,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ubung-2-anteil-der-punkte-pro-gruppe">
-   Übung 2: Anteil der Punkte pro “Gruppe”
+   Übung 2: Anteil der Punkte pro „Gruppe“
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -339,17 +341,17 @@
               <div>
                 
   <div class="section" id="ubung-waldanteil-berechnen">
-<h1>Übung: Waldanteil berechnen<a class="headerlink" href="#ubung-waldanteil-berechnen" title="Permalink to this headline">¶</a></h1>
-<p>Nun sind wir so weit, dass wir 50 Simulation der Zeckenstiche mit zufällig verschobenen Punkten vorbereitet haben. Wir haben also die gleiche Ausgangslage, mit der ihr den Themenblock “Datenqualität und Unsicherheiten” gestartet habt. In der Todo-Liste sind wir nun bei Schritt 4:</p>
+<h1>Übung: Waldanteil berechnen<a class="headerlink" href="#ubung-waldanteil-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Nun sind wir so weit, dass wir 50 Simulation der Zeckenstiche mit zufällig verschobenen Punkten vorbereitet haben. Wir haben also die gleiche Ausgangslage, mit der ihr den Themenblock „Datenqualität und Unsicherheiten“ gestartet habt. In der Todo-Liste sind wir nun bei Schritt 4:</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
-<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
-<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”) ✓</p></li>
-<li><p><strong>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</strong>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“) ✓</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“) ✓</p></li>
+<li><p><strong>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln</strong>
 <strong>1. Für jeden Simulierten Punkt zu bestimmen ob er innerhalb oder ausserhalb des Waldes liegt</strong>
 <strong>2. Den Anteil der Punkte im Wald pro Simulation zu bestimmen</strong></p></li>
 </ul>
-<p>Lade dafür den Datensatz “wald.gpkg” von Moodle herunter und verschiebt es in eure <em>Working directory</em>. Importiere “wald.gpkg” mit <code class="docutils literal notranslate"><span class="pre">pd.read_file()</span></code> und speichere es als Variable <code class="docutils literal notranslate"><span class="pre">wald</span></code>.</p>
+<p>Lade dafür den Datensatz „wald.gpkg“ von Moodle herunter und verschiebt es in eure <em>Working directory</em>. Importiere „wald.gpkg“ mit <code class="docutils literal notranslate"><span class="pre">pd.read_file()</span></code> und speichere es als Variable <code class="docutils literal notranslate"><span class="pre">wald</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -443,7 +445,7 @@
 </div>
 </div>
 <div class="section" id="ubung-1-wald-oder-nicht-wald">
-<h2>Übung 1: Wald oder nicht Wald?<a class="headerlink" href="#ubung-1-wald-oder-nicht-wald" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 1: Wald oder nicht Wald?<a class="headerlink" href="#ubung-1-wald-oder-nicht-wald" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Als erstes stellt sich die Frage, welche Punkte sich innerhalb eines Wald-Polygons befinden. In GIS Terminologie handelt es sich hier um einen <em>Spatial Join</em>.</p>
 <p><em>Spatial Join</em> ist als Funktion im Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem namen <code class="docutils literal notranslate"><span class="pre">sjoin</span></code> vorhanden. Wie auf <a class="reference external" href="https://geopandas.org/reference/geopandas.sjoin.html">der Hilfeseite</a> beschrieben, müssen wir dieser <em>Function</em> zwei <em>GeoDataFrames</em> übergeben, die ge-joined werden sollen. Es können weitere, optionale Parameter angepasst werden, doch bei uns passen die Default werte.</p>
 <p>Führe <code class="docutils literal notranslate"><span class="pre">gpd.sjoin()</span></code> auf die beiden Datensätze <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> und <code class="docutils literal notranslate"><span class="pre">wald</span></code> aus. Beachte, das die Reihenfolge, mit welchen du die beiden GeoDataFrames der Funktion übergibst eine Rolle spielt. Versuche beide Varianten und wähle die korrekte aus. Stelle dir dazu die Frage: Was für ein Geometrietyp (Punkt / Linie / Polygon) soll der Output haben? Speichere den Output als <code class="docutils literal notranslate"><span class="pre">mote_carlo_sjoin</span></code>.
@@ -491,10 +493,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681647e+06</td>
-      <td>1.250326e+06</td>
+      <td>2.679887e+06</td>
+      <td>1.249213e+06</td>
       <td>0</td>
-      <td>POINT (2681646.632 1250325.757)</td>
+      <td>POINT (2679887.108 1249213.079)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -504,10 +506,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681177e+06</td>
-      <td>1.252069e+06</td>
+      <td>2.681430e+06</td>
+      <td>1.252977e+06</td>
       <td>0</td>
-      <td>POINT (2681177.395 1252068.829)</td>
+      <td>POINT (2681429.790 1252976.836)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -517,10 +519,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.682205e+06</td>
-      <td>1.249713e+06</td>
+      <td>2.680351e+06</td>
+      <td>1.249072e+06</td>
       <td>0</td>
-      <td>POINT (2682205.245 1249713.300)</td>
+      <td>POINT (2680350.726 1249072.307)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -530,10 +532,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.680417e+06</td>
-      <td>1.250430e+06</td>
+      <td>2.679800e+06</td>
+      <td>1.251651e+06</td>
       <td>0</td>
-      <td>POINT (2680417.494 1250430.497)</td>
+      <td>POINT (2679799.799 1251650.810)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -543,10 +545,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.682241e+06</td>
-      <td>1.251385e+06</td>
+      <td>2.679334e+06</td>
+      <td>1.250125e+06</td>
       <td>0</td>
-      <td>POINT (2682240.810 1251384.917)</td>
+      <td>POINT (2679334.215 1250124.949)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -559,7 +561,7 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div>
 </div>
 <div class="section" id="ubung-2-anteil-der-punkte-pro-gruppe">
-<h2>Übung 2: Anteil der Punkte pro “Gruppe”<a class="headerlink" href="#ubung-2-anteil-der-punkte-pro-gruppe" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 2: Anteil der Punkte pro „Gruppe“<a class="headerlink" href="#ubung-2-anteil-der-punkte-pro-gruppe" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Jetzt wirds etwas kniffelig. Um die Anzahl Punkte innerhalb / ausserhalb vom Wald zu zählen, brauchen wir die <code class="docutils literal notranslate"><span class="pre">groupby</span></code> und <code class="docutils literal notranslate"><span class="pre">size</span></code> aus der Pandas Bibliothek. Es würde den Rahmen von diesem Kurs sprengen, euch die Einzelschritte im Detail zu erläutern, deshalb gebe ich euch den fertigen Code den ihr auf euren Datensatz anwenden könnt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,24 +602,6 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th rowspan="2" valign="top">0</th>
       <th>ja</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>nein</th>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">1</th>
-      <th>ja</th>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>nein</th>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2</th>
-      <th>ja</th>
       <td>1</td>
     </tr>
     <tr>
@@ -625,33 +609,47 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>9</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">3</th>
+      <th rowspan="2" valign="top">1</th>
+      <th>ja</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>nein</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">2</th>
       <th>ja</th>
       <td>3</td>
     </tr>
     <tr>
       <th>nein</th>
       <td>7</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <th>nein</th>
+      <td>10</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">4</th>
       <th>ja</th>
-      <td>3</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>nein</th>
-      <td>7</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Wir sehen in der obigen Tabelle für jeden Run (Spalte “Run_Nr”) die Anzahl Werte im Wald (“ja”) und ausserhalb (“nein”). Beachte</p>
+<p>Wir sehen in der obigen Tabelle für jeden Run (Spalte „Run_Nr“) die Anzahl Werte im Wald („ja“) und ausserhalb („nein“). Beachte</p>
 <ul class="simple">
-<li><p>das die Summe aus “ja” + “nein” pro Run gleich gross ist, da wir ja immer gleich viele Zeckenstiche pro Run haben.</p></li>
+<li><p>das die Summe aus „ja“ + „nein“ pro Run gleich gross ist, da wir ja immer gleich viele Zeckenstiche pro Run haben.</p></li>
 <li><p>das auch alle Zeckenstiche in einer Gruppe landen können (also alle innerhalb oder alle ausserhalb des Waldes)</p></li>
 </ul>
-<p>Im Nächsten Schritt “pivotiere” ich die Tabelle so, dass “ja” und “nein” einzelne Spalten sind.</p>
+<p>Im Nächsten Schritt „pivotiere“ ich die Tabelle so, dass „ja“ und „nein“ einzelne Spalten sind.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anteile_pivot</span> <span class="o">=</span> <span class="n">anteile</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="s2">&quot;Run_Nr&quot;</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="s2">&quot;Wald_text&quot;</span><span class="p">,</span> <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;Anzahl&quot;</span><span class="p">,</span> <span class="n">fill_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
@@ -695,28 +693,28 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
   <tbody>
     <tr>
       <th>0</th>
-      <td>3</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>1</td>
       <td>9</td>
     </tr>
     <tr>
-      <th>3</th>
+      <th>1</th>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>2</th>
       <td>3</td>
       <td>7</td>
     </tr>
     <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>10</td>
+    </tr>
+    <tr>
       <th>4</th>
-      <td>3</td>
-      <td>7</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
@@ -724,8 +722,8 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div>
 </div>
 <div class="section" id="ubung-3-anteil-im-wald-pro-run-ermitteln">
-<h2>Übung 3: Anteil <em>im Wald</em> pro Run ermitteln<a class="headerlink" href="#ubung-3-anteil-im-wald-pro-run-ermitteln" title="Permalink to this headline">¶</a></h2>
-<p>Berechnet den Anteil im Wald indem du die die Spalte “ja” mit der Summe aus den Spalten “Ja” + “Nein” dividierst. Nutze dafür die Eckigen Klammern (<code class="docutils literal notranslate"><span class="pre">[</span></code>/<code class="docutils literal notranslate"><span class="pre">]</span></code>) sowie die Splatennamen. Speichere den Output als <code class="docutils literal notranslate"><span class="pre">anteil_ja</span></code>.</p>
+<h2>Übung 3: Anteil <em>im Wald</em> pro Run ermitteln<a class="headerlink" href="#ubung-3-anteil-im-wald-pro-run-ermitteln" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Berechnet den Anteil im Wald indem du die die Spalte „ja“ mit der Summe aus den Spalten „Ja“ + „Nein“ dividierst. Nutze dafür die Eckigen Klammern (<code class="docutils literal notranslate"><span class="pre">[</span></code>/<code class="docutils literal notranslate"><span class="pre">]</span></code>) sowie die Splatennamen. Speichere den Output als <code class="docutils literal notranslate"><span class="pre">anteil_ja</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anteil_ja</span> <span class="o">=</span> <span class="n">anteile_pivot</span><span class="p">[</span><span class="s2">&quot;ja&quot;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">anteile_pivot</span><span class="p">[</span><span class="s2">&quot;ja&quot;</span><span class="p">]</span><span class="o">+</span><span class="n">anteile_pivot</span><span class="p">[</span><span class="s2">&quot;nein&quot;</span><span class="p">])</span>
@@ -736,11 +734,11 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run_Nr
-0    0.3
-1    0.2
-2    0.1
-3    0.3
-4    0.3
+0    0.1
+1    0.4
+2    0.3
+3    0.0
+4    0.4
 dtype: float64
 </pre></div>
 </div>
@@ -748,7 +746,7 @@ dtype: float64
 </div>
 </div>
 <div class="section" id="ubung-3-mittelwerte-visualisieren">
-<h2>Übung 3: Mittelwerte Visualisieren<a class="headerlink" href="#ubung-3-mittelwerte-visualisieren" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 3: Mittelwerte Visualisieren<a class="headerlink" href="#ubung-3-mittelwerte-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Gratuliere! Wenn du an diesem Punkt angekommen bist hast du eine ganze Monte Carlo Simulation von A bis Z mit Python durchgeführt. Von hier an steht dir der Weg frei für noch komplexere Analysen. Zum Abschluss kannst du die Mittelwerte wir nun auf einfache Weise visualisieren. Versuche dabei die Methods <code class="docutils literal notranslate"><span class="pre">plot()</span></code> und <code class="docutils literal notranslate"><span class="pre">plot.box()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">plot.hist()</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">

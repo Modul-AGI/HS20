@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -155,12 +156,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -296,7 +298,7 @@
   <p>For others, and for future me, here some notes on how I created this (jupyter-) book</p>
 <ul class="simple">
 <li><p>90 % can be found in the jupyter-book documentation on <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a></p></li>
-<li><p>to build the book, I implemented the approach “<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>” which means that I dont need a local installation of jupyter books</p></li>
+<li><p>to build the book, I implemented the approach „<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>“ which means that I dont need a local installation of jupyter books</p></li>
 <li><p>I modified the github action yaml file in such a way that:</p>
 <ul>
 <li><p>latex dependencies are installed on the server instance</p></li>

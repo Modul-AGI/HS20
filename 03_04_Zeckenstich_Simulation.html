@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Übung: GIS in Python" href="03_05_GIS_in_Python.html" />
     <link rel="prev" title="Übung: For Loops (Teil II)" href="03_03_For_Loops.html" />
 
@@ -157,12 +158,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -336,13 +338,13 @@
               <div>
                 
   <div class="section" id="ubung-zeckenstich-simulation-mit-loop">
-<h1>Übung: Zeckenstich Simulation mit Loop<a class="headerlink" href="#ubung-zeckenstich-simulation-mit-loop" title="Permalink to this headline">¶</a></h1>
+<h1>Übung: Zeckenstich Simulation mit Loop<a class="headerlink" href="#ubung-zeckenstich-simulation-mit-loop" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Nun geht es weiter mit unserer Zeckenstich Monte-Carlo Simulation. Schritte 1 und 2 haben wir bereits erleidgt. Nun packen wir Schritt 3 an:</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
-<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
-<li><p><strong>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”)</strong></p></li>
-<li><p>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“) ✓</p></li>
+<li><p><strong>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“)</strong></p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln</p></li>
 </ul>
 <p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Tipp: Importiert mit <code class="docutils literal notranslate"><span class="pre">head(5)</span></code> nur die ersten 5 Zeile aus dem csv, das macht die die Entwicklung des Loops leichter.</p>
 <div class="cell tag_hide-cell docutils container">
@@ -361,10 +363,10 @@
 </div>
 <div class="figure align-default" id="id1">
 <img alt="_images/montepython.jpg" src="_images/montepython.jpg" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Abb. 3 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="section" id="ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
-<h2>Übung 1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Um euer Gedächnis etwas aufzufrischen: Letzte Woche hatten wir mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer eigenen <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und die neuen Daten als eine neue DataFrame abgespeichert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -406,62 +408,62 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681182e+06</td>
-      <td>1.250813e+06</td>
+      <td>2.681123e+06</td>
+      <td>1.250727e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.680975e+06</td>
-      <td>1.250634e+06</td>
+      <td>2.681150e+06</td>
+      <td>1.250645e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681160e+06</td>
-      <td>1.250548e+06</td>
+      <td>2.681070e+06</td>
+      <td>1.250879e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681208e+06</td>
-      <td>1.250940e+06</td>
+      <td>2.681194e+06</td>
+      <td>1.250675e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681023e+06</td>
-      <td>1.250693e+06</td>
+      <td>2.681212e+06</td>
+      <td>1.250811e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681397e+06</td>
-      <td>1.250841e+06</td>
+      <td>2.681159e+06</td>
+      <td>1.250677e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.681045e+06</td>
-      <td>1.250735e+06</td>
+      <td>2.680857e+06</td>
+      <td>1.250769e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681068e+06</td>
-      <td>1.250830e+06</td>
+      <td>2.681280e+06</td>
+      <td>1.250662e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681117e+06</td>
-      <td>1.250787e+06</td>
+      <td>2.681042e+06</td>
+      <td>1.250731e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681147e+06</td>
-      <td>1.250756e+06</td>
+      <td>2.681030e+06</td>
+      <td>1.250713e+06</td>
     </tr>
   </tbody>
 </table>
@@ -470,7 +472,7 @@
 <p>Kombiniere dies nun mit deinem Wissen über Loops, um die Punkte der <em>DataFrame</em> nicht einmal, sondern 5 mal zu verschieben. Dazu brauchst du vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
 </div>
 <div class="section" id="ubung-2-dataframes-aus-simulation-zusammenfuhren">
-<h2>Übung 2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Schau dir die Outputs an.</p>
 <ul class="simple">
 <li><p>Mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
@@ -544,7 +546,7 @@
 </div>
 </div>
 <div class="section" id="ubung-3-simulierte-daten-visualisieren">
-<h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>. Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot.scatter()</span></code>.</p>
 </div>
 </div>

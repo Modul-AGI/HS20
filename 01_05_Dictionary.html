@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Aufgabe 4: Tabellarische Daten" href="01_06_Tabellarische_Daten.html" />
     <link rel="prev" title="Aufgabe 2: Listen" href="01_04_Listen.html" />
 
@@ -157,12 +158,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -371,12 +373,12 @@
               <div>
                 
   <div class="section" id="aufgabe-3-dictionaries">
-<h1>Aufgabe 3: Dictionaries<a class="headerlink" href="#aufgabe-3-dictionaries" title="Permalink to this headline">¶</a></h1>
+<h1>Aufgabe 3: Dictionaries<a class="headerlink" href="#aufgabe-3-dictionaries" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
-<h2>Theorie<a class="headerlink" href="#theorie" title="Permalink to this headline">¶</a></h2>
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In den letzten Übungen haben wir einen Fokus auf Listen gelegt. Nun wollen wir ein besonderen Fokus auf den Datentyp <em>Dictionary</em> legen.</p>
-<p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann.
-Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
+<p>Ähnlich wie eine List, ist eine Dictionary ein Behälter wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein „Schlüsselwort“, mit dem man den Eintrag finden kann.
+Unter dem Eintrag „trump“ findet man im Langenscheidt Wörterbuch (1977) die Erklärung „erdichten, schwindeln, sich aus den Fingern saugen“.</p>
 <p><img alt="" src="_images/trump.jpg" /></p>
 <p>In Python würde man diese <em>Dictionary</em> folgendermassen erstellen:</p>
 <div class="cell docutils container">
@@ -386,7 +388,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet “trump” und der dazugehörige Wert (<em>Value</em>) “erdichten- schwindeln- aus den Fingern saugen”. Beachte die geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) bei der Erstellung einer Dictionary.</p>
+<p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet „trump“ und der dazugehörige Wert (<em>Value</em>) „erdichten- schwindeln- aus den Fingern saugen“. Beachte die geschweiften Klammern (<code class="docutils literal notranslate"><span class="pre">{</span></code> und <code class="docutils literal notranslate"><span class="pre">}</span></code>) bei der Erstellung einer Dictionary.</p>
 <p>Eine <em>Dictionary</em> besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -395,7 +397,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen was “trump” heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
+<p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen was „trump“ heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trump&quot;</span><span class="p">]</span>
@@ -416,7 +418,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 </div>
-<p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
+<p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidts Beispiel: Das Wort „trump“ ist zwar eindeutig, doch „trumpery“ hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die Eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">langenscheidt</span><span class="p">[</span><span class="s2">&quot;trumpery&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Plunder- Ramsch- Schund&quot;</span><span class="p">,</span> 
@@ -450,9 +452,9 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubungen">
-<h2>Übungen<a class="headerlink" href="#ubungen" title="Permalink to this headline">¶</a></h2>
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="ubung-3-1-dictionary-erstellen">
-<h3>Übung 3.1: Dictionary erstellen<a class="headerlink" href="#ubung-3-1-dictionary-erstellen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.1: Dictionary erstellen<a class="headerlink" href="#ubung-3-1-dictionary-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable <code class="docutils literal notranslate"><span class="pre">me</span></code> zu.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -465,7 +467,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-2-elemente-aus-dictionary-ansprechen">
-<h3>Übung 3.2: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-3-2-elemente-aus-dictionary-ansprechen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.2: Elemente aus Dictionary ansprechen<a class="headerlink" href="#ubung-3-2-elemente-aus-dictionary-ansprechen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Rufe verschiedene Elemente aus der Dictionary via dem <em>Key</em> ab.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -483,7 +485,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-3-dictionary-nutzen">
-<h3>Übung 3.3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-3-dictionary-nutzen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.3: <em>Dictionary</em> nutzen<a class="headerlink" href="#ubung-3-3-dictionary-nutzen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nutze <code class="docutils literal notranslate"><span class="pre">me</span></code> um nachstehenden Satz (mit <strong>deinen</strong> <em>Values</em>) zu erstellen:</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -504,8 +506,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-4-key-erganzen">
-<h3>Übung 3.4: Key ergänzen<a class="headerlink" href="#ubung-3-4-key-erganzen" title="Permalink to this headline">¶</a></h3>
-<p>Ergänze die Dictionary <code class="docutils literal notranslate"><span class="pre">me</span></code> durch einen Eintrag “groesse” mit (d)einer Grösse.</p>
+<h3>Übung 3.4: Key ergänzen<a class="headerlink" href="#ubung-3-4-key-erganzen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Ergänze die Dictionary <code class="docutils literal notranslate"><span class="pre">me</span></code> durch einen Eintrag „groesse“ mit (d)einer Grösse.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
@@ -517,8 +519,8 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-5-dictionary-mit-list">
-<h3>Übung 3.5: Dictionary mit List<a class="headerlink" href="#ubung-3-5-dictionary-mit-list" title="Permalink to this headline">¶</a></h3>
-<p>Erstelle eine neue Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> mit den <em>Keys</em> “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträgen pro <em>Key</em>.</p>
+<h3>Übung 3.5: Dictionary mit List<a class="headerlink" href="#ubung-3-5-dictionary-mit-list" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Erstelle eine neue Dictionary <code class="docutils literal notranslate"><span class="pre">people</span></code> mit den <em>Keys</em> „vornamen“, „nachnamen“ und „groesse“ und jeweils 3 Einträgen pro <em>Key</em>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
@@ -530,7 +532,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-6-eintrage-abrufen">
-<h3>Übung 3.6: Einträge abrufen<a class="headerlink" href="#ubung-3-6-eintrage-abrufen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.6: Einträge abrufen<a class="headerlink" href="#ubung-3-6-eintrage-abrufen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Rufe den <strong>ersten</strong> Vornamen deiner <em>Dict</em> auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -548,7 +550,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-7-eintrage-abrufen">
-<h3>Übung 3.7: Einträge abrufen<a class="headerlink" href="#ubung-3-7-eintrage-abrufen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.7: Einträge abrufen<a class="headerlink" href="#ubung-3-7-eintrage-abrufen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Rufe den <strong>dritten</strong> Nachname deiner <em>Dict</em> auf.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -566,7 +568,7 @@ Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die
 </div>
 </div>
 <div class="section" id="ubung-3-8-mittelwert-berechnen">
-<h3>Übung 3.8: Mittelwert berechnen<a class="headerlink" href="#ubung-3-8-mittelwert-berechnen" title="Permalink to this headline">¶</a></h3>
+<h3>Übung 3.8: Mittelwert berechnen<a class="headerlink" href="#ubung-3-8-mittelwert-berechnen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Berechne den Mittelwert aller grössen in deiner Dict</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">

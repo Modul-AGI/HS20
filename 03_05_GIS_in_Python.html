@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="de">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,6 +26,7 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
@@ -37,8 +38,8 @@
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="shortcut icon" href="_static/favicon.png"/>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
+    <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
     <link rel="prev" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
 
@@ -157,12 +158,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+   Aufgabe 7: Zufallszahlen generieren
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
-   Aufgabe 7:
-   <em>
-    Function
-   </em>
-   in
+   Aufgabe 8: Funktionen in
    <em>
     DataFrames
    </em>
@@ -342,15 +344,15 @@
               <div>
                 
   <div class="section" id="ubung-gis-in-python">
-<h1>Übung: GIS in Python<a class="headerlink" href="#ubung-gis-in-python" title="Permalink to this headline">¶</a></h1>
+<h1>Übung: GIS in Python<a class="headerlink" href="#ubung-gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Bis jetzt haben wir noch nicht mit eigentlich Geodaten gearbeitet. Die x / y Werte der Zeckenstiche repräsentatieren zwar Zeckenstiche in der Schweiz (sie sind also im Schweizer Koordinatensystem), dies ist aber nur uns bewusst (Python weiss davon nichts). Der Raumbezug fehlt noch, und den stellen wir an dieser Stelle her. Warum? Weil wir im nächsten Schritt unserer Todo Liste (s.u.) berechnen müssen, wie viele Zeckenstiche sich im Wald befinden. Das ist eine räumliche Abfrage, die sich ohne räumliche Objekte nicht bewerkstelligen lässt.</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
-<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 “Run”) ✓</p></li>
-<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 “Runs”) ✓</p></li>
-<li><p><strong>Schritt 4: Anteil der Punkte im Wald pro “Run” ermitteln</strong></p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“) ✓</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“) ✓</p></li>
+<li><p><strong>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln</strong></p></li>
 </ul>
-<p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen “Geometrie”-Spalte. Dementsprechend müssen wir <code class="docutils literal notranslate"><span class="pre">pandas</span></code> nur ein bisschen erweitern um mit Vektordaten arbeiten zu können, und diese “Geo”-Erweiterung lautet: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<p>Um mit Geodaten in Python arbeiten zu können, müssen wir ein neues Modul importieren. Im Grunde genommen sind Vektordaten nicht mehr als Tabellen mit einer zusätzlichen „Geometrie“-Spalte. Dementsprechend müssen wir <code class="docutils literal notranslate"><span class="pre">pandas</span></code> nur ein bisschen erweitern um mit Vektordaten arbeiten zu können, und diese „Geo“-Erweiterung lautet: <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vorbereitung der Arbeitsumgebung </span>
@@ -381,8 +383,8 @@
 </div>
 </div>
 <div class="section" id="ubung-1-dataframe-zu-geodataframe">
-<h2>Übung 1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Permalink to this headline">¶</a></h2>
-<p>Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation “<a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm">XY Table to Point</a>” durchführen. In Python heisst das: Wir wandeln eine <em>DataFrame</em> in eine <em>GeoDataFrame</em> um. Zuerst erstellen wir eine Geometrie-Spalte aus den xy-Koordinaten mit der Funktion <code class="docutils literal notranslate"><span class="pre">points_from_xy</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<h2>Übung 1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-1-dataframe-zu-geodataframe" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Wie erwähnt sind die Zeckenstichdaten bisher lediglich als tabellarische Daten vorhanden. In ArcGIS Terminologie müssen wir die Operation „<a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/xy-table-to-point.htm">XY Table to Point</a>“ durchführen. In Python heisst das: Wir wandeln eine <em>DataFrame</em> in eine <em>GeoDataFrame</em> um. Zuerst erstellen wir eine Geometrie-Spalte aus den xy-Koordinaten mit der Funktion <code class="docutils literal notranslate"><span class="pre">points_from_xy</span></code> aus dem Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -442,7 +444,7 @@
 </div>
 </div>
 <div class="section" id="ubung-2-koordinatensystem-festlegen">
-<h2>Übung 2: Koordinatensystem festlegen<a class="headerlink" href="#ubung-2-koordinatensystem-festlegen" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 2: Koordinatensystem festlegen<a class="headerlink" href="#ubung-2-koordinatensystem-festlegen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Wir wissen zwar, das unsere <em>GeoDataFrame</em> in Schweizer Landeskoordinaten (CH1903 LV95) zu verstehen ist, aber dies haben wir noch nirgends festgehalten. Das Koordinatensystem (Coordinate Reference System, CRS) können wir über das Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> der <em>GeoDataFrame</em> festhalten. Das Koordinatensystem CH1903 LV95 hat den EPSG Code 2056, demnach muss das CRS folgendermassen festgelegt werden:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -479,11 +481,11 @@ Datum: CH1903+
 </div>
 </div>
 <div class="section" id="ubung-3-zeckenstiche-als-shapefile-exportieren">
-<h2>Übung 3: Zeckenstiche als Shapefile exportieren<a class="headerlink" href="#ubung-3-zeckenstiche-als-shapefile-exportieren" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 3: Zeckenstiche als Shapefile exportieren<a class="headerlink" href="#ubung-3-zeckenstiche-als-shapefile-exportieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zum Schluss exportieren wir unser Datensatz in ein Shapefile, damit wir das nächste Mal direkt mit einer <em>GeoDataFrame</em> arbeiten können. Genau wie wir in einer vorherigen Übung eine pandas DataFrame mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere zeckenstiche mit dieser Methode in eine Shapefile.</p>
 </div>
 <div class="section" id="ubung-4-optional-export-als-geopackage">
-<h2>Übung 4 (Optional): Export als Geopackage<a class="headerlink" href="#ubung-4-optional-export-als-geopackage" title="Permalink to this headline">¶</a></h2>
+<h2>Übung 4 (Optional): Export als Geopackage<a class="headerlink" href="#ubung-4-optional-export-als-geopackage" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Shapefiles sind ein ganz schreckliches Format (siehe <a class="reference external" href="http://switchfromshapefile.org/">switchfromshapefile.org</a>). Viel praktischer sind an dieser Stelel zum Beispiel <em>Geopackages</em>. Ihr könnt <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> auch mit folgender Codezeile als <em>Geopackage</em> exportieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
