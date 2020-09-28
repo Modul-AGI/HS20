@@ -40,8 +40,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Aufgabe 1: Primitive Datentypen" href="01_02_Primitive_Datentypen.html" />
-    <link rel="prev" title="Willkommen bei Coding in GIS" href="index.html" />
+    <link rel="next" title="Übung: For Loops (Teil I)" href="03_02_For_Loops.html" />
+    <link rel="prev" title="Aufgabe 8: Funktionen in DataFrames" href="02_07_Funktionen_in_DataFrames.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -86,9 +86,9 @@
   Coding in GIS I
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_01_Coding_in_GIS_1.html">
    Einleitung zu diesem Block
   </a>
  </li>
@@ -125,22 +125,22 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01_Einleitung.html">
+  <a class="reference internal" href="02_01_Coding_in_GIS_2.html">
    Einleitung zu diesem Block
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+  <a class="reference internal" href="02_02_Conda_Cheetsheet.html">
    Conda cheet sheet
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Python_Module.html">
+  <a class="reference internal" href="02_03_Python_Module.html">
    Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions_I.html">
+  <a class="reference internal" href="02_04_Functions_I.html">
    Aufgabe 5:
    <em>
     Function
@@ -149,7 +149,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_04_Functions_II.html">
+  <a class="reference internal" href="02_05_Functions_II.html">
    Aufgabe 6:
    <em>
     Function
@@ -158,12 +158,12 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_04b_Zufallspunkte.html">
+  <a class="reference internal" href="02_06_Zufallspunkte.html">
    Aufgabe 7: Zufallszahlen generieren
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+  <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html">
    Aufgabe 8: Funktionen in
    <em>
     DataFrames
@@ -176,9 +176,9 @@
   Coding in GIS III
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="03_01_Einleitung.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Einleitung zu diesem Block
   </a>
  </li>
@@ -261,7 +261,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_01_Einleitung.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_01_Coding_in_GIS_3.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -286,7 +286,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/01_01_Einleitung.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_01_Coding_in_GIS_3.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -316,23 +316,23 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Link zu dieser Überschrift">¶</a></h1>
-<p>In diesem Block bekommt ihr euren ersten Kontakt mit Python und lernt dabei auch gerade JupyterLabs kennen, um mit Python zu interagieren. Um euch den Einstieg zu erleichtern müsst ihr noch nichts lokal auf euren Rechnern installieren, sondern könnt auf einem ZHAW-Server arbeiten. Ihr könnt euch mit folgendem Link und eurem ZHAW Kürzel (ohne „&#64;students.zhaw.ch“) und Passwort einloggen:</p>
-<p><a class="reference external" href="https://jupyterhub01.zhaw.ch">jupyterhub01.zhaw.ch</a></p>
-<p>Um die Übungen zu lösen, könnt ihr nach dem Einloggen wie folgt Vorgehen (siehe dazu auch die Vorlesungsfolien)</p>
-<ol class="simple">
-<li><p>Erstellt einen neuen Ordner (z.B. „CodinginGIS“)</p></li>
-<li><p>Erstellt darin ein neues Jupyter-Notebook-File (File &gt; New &gt; Notebook)</p></li>
-<li><p>Bennent das File um (z.B. in „CodinginGIS_1.ipynb“)</p></li>
-<li><p>Startet den Variable Inspector</p></li>
-</ol>
-<p>Nun könnt ihr mit den Übungen beginnen. Ich empfehle, jede Übung mit einer „Markdown“-Zelle zu starten, um eure Lösung zu gliedern.</p>
+<p>Heute wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus „Datenqualität und Unsicherheit“ in Python rekonstruieren.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage „Welcher Anteil der der Zeckenstiche befinden sich im Wald?“ unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
+In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage („Welcher Anteil…“) unter Berücksichtigung der Unsicherheit.</p>
+<p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
+<ul class="simple">
+<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben</p></li>
+<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“)</p></li>
+<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“)</p></li>
+<li><p>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln</p></li>
+</ul>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">
-<li><p>JupyterLabs aufstarten, kennenlernen und bei Bedarf personalisieren</p></li>
-<li><p>Python kennen lernen, erste Interaktionen</p></li>
-<li><p>Die wichtigsten Datentypen in Python kennen lernen (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>)</p></li>
-<li><p>Pandas DataFrames kennen lernen und einfache Manipulationen durchführen</p></li>
+<li><p>Ihr kennt For-Loops und könnt sie anwenden</p></li>
+<li><p>Ihr verwendet eure erste räumliche Operation «Spatial Join» und wisst, dass es hier eine ganze Palette an weiteren Operatoren gibt</p></li>
+<li><p>Ihr könnt eine (Geo-) DataFrame nach Gruppe Zusammenfassen</p></li>
+<li><p>Ihr lernt weitere Visualisierungstechniken kennen</p></li>
 </ul>
 </div>
 </div>
@@ -365,8 +365,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Willkommen bei <em>Coding in GIS</em></a>
-    <a class='right-next' id="next-link" href="01_02_Primitive_Datentypen.html" title="next page">Aufgabe 1: Primitive Datentypen</a>
+    <a class='left-prev' id="prev-link" href="02_07_Funktionen_in_DataFrames.html" title="previous page">Aufgabe 8: Funktionen in <em>DataFrames</em></a>
+    <a class='right-next' id="next-link" href="03_02_For_Loops.html" title="next page">Übung: For Loops (Teil I)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

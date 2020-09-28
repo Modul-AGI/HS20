@@ -40,8 +40,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Aufgabe 8: Funktionen in DataFrames" href="02_05_Punkte_einer_DataFrame_verschieben.html" />
-    <link rel="prev" title="Aufgabe 6: Function Advanced" href="02_04_Functions_II.html" />
+    <link rel="next" title="Aufgabe 8: Funktionen in DataFrames" href="02_07_Funktionen_in_DataFrames.html" />
+    <link rel="prev" title="Aufgabe 6: Function Advanced" href="02_05_Functions_II.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -88,7 +88,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="01_01_Einleitung.html">
+  <a class="reference internal" href="01_01_Coding_in_GIS_1.html">
    Einleitung zu diesem Block
   </a>
  </li>
@@ -125,22 +125,22 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01_Einleitung.html">
+  <a class="reference internal" href="02_01_Coding_in_GIS_2.html">
    Einleitung zu diesem Block
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_01a_Virtual_Environments.html">
+  <a class="reference internal" href="02_02_Conda_Cheetsheet.html">
    Conda cheet sheet
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Python_Module.html">
+  <a class="reference internal" href="02_03_Python_Module.html">
    Python Modules
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_03_Functions_I.html">
+  <a class="reference internal" href="02_04_Functions_I.html">
    Aufgabe 5:
    <em>
     Function
@@ -149,7 +149,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_04_Functions_II.html">
+  <a class="reference internal" href="02_05_Functions_II.html">
    Aufgabe 6:
    <em>
     Function
@@ -163,7 +163,7 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html">
+  <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html">
    Aufgabe 8: Funktionen in
    <em>
     DataFrames
@@ -178,7 +178,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="03_01_Einleitung.html">
+  <a class="reference internal" href="03_01_Coding_in_GIS_3.html">
    Einleitung zu diesem Block
   </a>
  </li>
@@ -261,7 +261,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_04b_Zufallspunkte.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_06_Zufallspunkte.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -286,7 +286,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_04b_Zufallspunkte.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_06_Zufallspunkte.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -391,7 +391,7 @@
 <p>Wenn wir auf diese Weise mit <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> immer wieder neue Zufallszahlen generieren und deren Häufigkeitsverteilung anschauen, sehen wir das diese „Uniform“ verteilt sind. Das heisst es ist gleich wahrscheinlich eine 10 zu bekommen eine eine 0 oder eine 5.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/02_04b_Zufallspunkte_7_0.png" src="_images/02_04b_Zufallspunkte_7_0.png" />
+<img alt="_images/02_06_Zufallspunkte_7_0.png" src="_images/02_06_Zufallspunkte_7_0.png" />
 </div>
 </div>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">randrange(0,10)</span></code> generiert nur ganzzahlige Zufallszahlen. Wenn wir aber eine Zufallszahl mit Nachkommastellen haben möchten, müssen wir die Funktion <code class="docutils literal notranslate"><span class="pre">uniform()</span></code> verwenden.</p>
@@ -411,7 +411,7 @@
 <p>Wenn wir die obige Funktion 1000x laufen lassen und uns das Histogramm der generierten Zahlen anschauen, dann zeichnet sich folgendes Bild ab.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/02_04b_Zufallspunkte_11_0.png" src="_images/02_04b_Zufallspunkte_11_0.png" />
+<img alt="_images/02_06_Zufallspunkte_11_0.png" src="_images/02_06_Zufallspunkte_11_0.png" />
 </div>
 </div>
 </div>
@@ -475,7 +475,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 <div class="section" id="ubung-7-5-arbeitsschritte-in-eine-function-verwandeln">
 <h3>Übung 7.5: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-7-5-arbeitsschritte-in-eine-function-verwandeln" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Nun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (<code class="docutils literal notranslate"><span class="pre">0</span></code>/<code class="docutils literal notranslate"><span class="pre">0</span></code>) durchgespielt. In der nächsten Aufgabe (<a class="reference internal" href="02_05_Punkte_einer_DataFrame_verschieben.html#chap-offset-dataframe"><span class="std std-ref">Aufgabe 8: Funktionen in DataFrames</span></a>) werden wir <em>alle</em> unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen Simulierten Zeckenstichdatensatz ähnlich wie <a class="reference internal" href="#arcgiszecken"><span class="std std-numref">Abb. 1</span></a> zu erhalten.</p>
+<p>Nun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (<code class="docutils literal notranslate"><span class="pre">0</span></code>/<code class="docutils literal notranslate"><span class="pre">0</span></code>) durchgespielt. In der nächsten Aufgabe (<a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#chap-offset-dataframe"><span class="std std-ref">Aufgabe 8: Funktionen in DataFrames</span></a>) werden wir <em>alle</em> unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen Simulierten Zeckenstichdatensatz ähnlich wie <a class="reference internal" href="#arcgiszecken"><span class="std std-numref">Abb. 1</span></a> zu erhalten.</p>
 <p>Dafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können. Erstelle eine Funktion namens <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> welche als Input eine <code class="docutils literal notranslate"><span class="pre">x</span></code> oder <code class="docutils literal notranslate"><span class="pre">y</span></code>-Achsenwert annimmt und eine leicht verschobene Wert zurück gibt. Integriere die Distanz der Verschiebung als optionalen Parameter mit einem Standartwert von 100.</p>
 </div>
 <div class="section" id="ubung-7-6-output-visualisieren">
@@ -499,7 +499,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-339.3112339631146, 313.4578571880634, -329.62891111590625, 351.0638838736822)
 </pre></div>
 </div>
-<img alt="_images/02_04b_Zufallspunkte_27_1.png" src="_images/02_04b_Zufallspunkte_27_1.png" />
+<img alt="_images/02_06_Zufallspunkte_27_1.png" src="_images/02_06_Zufallspunkte_27_1.png" />
 </div>
 </div>
 </div>
@@ -534,8 +534,8 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_04_Functions_II.html" title="previous page">Aufgabe 6: <em>Function</em> Advanced</a>
-    <a class='right-next' id="next-link" href="02_05_Punkte_einer_DataFrame_verschieben.html" title="next page">Aufgabe 8: Funktionen in <em>DataFrames</em></a>
+    <a class='left-prev' id="prev-link" href="02_05_Functions_II.html" title="previous page">Aufgabe 6: <em>Function</em> Advanced</a>
+    <a class='right-next' id="next-link" href="02_07_Funktionen_in_DataFrames.html" title="next page">Aufgabe 8: Funktionen in <em>DataFrames</em></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
