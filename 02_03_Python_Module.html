@@ -393,7 +393,7 @@
 <h1>Python Modules<a class="headerlink" href="#python-modules" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="vergleich-r-vs-python">
 <h2>Vergleich R vs. Python<a class="headerlink" href="#vergleich-r-vs-python" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Umgang mit Modulen ist in Python in vielerlei Hinsicht ähnlich wie in R. An dieser stelle möchten wir die Unterschiede in einem Direktvergleich beleuchten. Dafür verwenden wir ein fiktives Modul <code class="docutils literal notranslate"><span class="pre">maler</span></code> für Python wie auch für R.</p>
+<p>Der Umgang mit Modulen ist in Python in vielerlei Hinsicht ähnlich wie in R. An dieser stelle möchten wir die Unterschiede in einem Direktvergleich beleuchten. Dafür verwenden wir <strong>ein fiktives Modul</strong> namens <code class="docutils literal notranslate"><span class="pre">maler</span></code>, in Anlehnung an die Analogie des Haus bauens mit Spezialisten (siehe Vorlesungsfolien).  Nehmen wir an, dieses Modul existiert als Python Modul wie auch als R Library.</p>
 <div class="section" id="erweiterung-installieren">
 <h3>Erweiterung installieren<a class="headerlink" href="#erweiterung-installieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>In R ist die Installation einer <em>Library</em> selbst ein R-Befehl und wird innerhalb von R ausgeführt. Wenn wir keine Quelle angeben, woher die Library heruntergeladen werden soll, wird eine Default-Quelle verwendet, die im System hinterlegt ist (z.B. „https://cloud.r-project.org“).</p>
@@ -486,25 +486,25 @@
 <p>In Python gibt es in Bezug auf die Verwendung von Modulen ein paar Eigenheiten, die wir aus der R Welt nicht kennen. Es ist wichtig diese Eigenheiten zu kennen, denn man trifft sie immer wieder an.</p>
 <div class="section" id="modul-mit-alias-importieren">
 <h3>Modul mit Alias importieren<a class="headerlink" href="#modul-mit-alias-importieren" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Da es umständlich sein kann, jedesmal <code class="docutils literal notranslate"><span class="pre">maler.wand_bemalen()</span></code> voll auszuschreiben, können wir dem Modul beim Import auch einen „Alias“ vergeben. Für gewisse populäre Module haben sich solche Aliasse eingebürgert und es ist einfacher, wenn man diese auch verwendet. Dies kann folgendermassen aussehen:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">maler</span> <span class="k">as</span> <span class="nn">m</span>
-<span class="n">m</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>
+<p>Da es umständlich sein kann, jedesmal <code class="docutils literal notranslate"><span class="pre">maler.wand_bemalen()</span></code> voll auszuschreiben, können wir dem Modul beim Import auch einen „Alias“ vergeben. Für gewisse populäre Module haben sich solche Aliasse eingebürgert. Beispielsweise wird <code class="docutils literal notranslate"><span class="pre">pandas</span></code> meist mit dem Alias <code class="docutils literal notranslate"><span class="pre">pd</span></code> importiert. Es es ist sinnvoll, sich an diese Konventionen zu halten. Übertragen auf unser <code class="docutils literal notranslate"><span class="pre">maler</span></code> beispiel sieht der Import mit einem Alias folgendermassen aus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">maler</span> <span class="k">as</span> <span class="nn">m</span>    <span class="c1"># importiert &quot;maler&quot; mit dem Alias &quot;m&quot;</span>
+<span class="n">m</span><span class="o">.</span><span class="n">wand_bemalen</span><span class="p">()</span>     <span class="c1"># nun wird &quot;m.&quot; vorangestellt statt &quot;maler.&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="einzelne-function-importieren">
 <h3>Einzelne <em>Function</em> importieren<a class="headerlink" href="#einzelne-function-importieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Es gibt noch die Variante, explizit eine spezifische <em>Function</em> aus einem Modul zu laden. Wenn man dies macht, kann man die Funktion ohne vorangestelltes Modul nutzen (genau wie in R). Dies sieht folgendermassen aus:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="n">wand_bemalen</span>
-<span class="n">wand_bemalen</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="n">wand_bemalen</span> <span class="c1"># importiert nur die Funktion &quot;wand_bemalen&quot;</span>
+<span class="n">wand_bemalen</span><span class="p">()</span>                 <span class="c1"># das voranstellen von &quot;maler.&quot; ist nun nicht nötig</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="alle-functions-importieren">
 <h3>Alle <em>Functions</em> importieren<a class="headerlink" href="#alle-functions-importieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Zusätzlich ist es möglich, <strong>alle</strong> <em>Functions</em> aus einem Modul so zu importieren, dass der Modulname nicht mehr erwähnt werden muss. Diese Notation wird nicht empfohlen, aber es ist wichtig sie zu kennen.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">wand_bemalen</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">maler</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1"># importier alle Funktionen (*) von &quot;maler&quot;</span>
+<span class="n">wand_bemalen</span><span class="p">()</span>      <span class="c1"># das voranstellen von &quot;maler.&quot; ist nun nicht nötig</span>
 </pre></div>
 </div>
 </div>

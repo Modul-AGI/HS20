@@ -378,16 +378,20 @@
 </td>
 </tr>
 <tr class="row-odd"><td><p><strong>6. Jupyter lab starten</strong> (startet die IDE „Jupyter Lab“)</p></td>
-<td><p>jedes mal, wenn am Projekt gearbeitet werden möchte</p></td>
-<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id7">5</a><a class="footnote-reference brackets" href="#blockiert" id="id8">6</a>:</p>
+<td><p>jedes mal, wenn am Projekt gearbeitet wird</p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id7">5</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter lab
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><strong>7. weitere Module <a class="footnote-reference brackets" href="#weiteremodule" id="id9">7</a> installieren</strong> (fügt der virtuellen Umgebung beispielsweise <code class="docutils literal notranslate"><span class="pre">pandas</span></code> hinzu)</p></td>
-<td><p>jedes mal nötig, wenn ein Modul in einer Environment fehlt<a class="footnote-reference brackets" href="#modulfehlt" id="id10">8</a></p></td>
-<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id11">5</a><a class="footnote-reference brackets" href="#jupyterlabbeenden" id="id12">9</a>:</p>
+<tr class="row-even"><td><p><strong>7. Jupyter lab (JL) beenden</strong> (beendet „JupyterLab“ in der Console)</p></td>
+<td><p>wenn ihr die Konsole wieder braucht</p></td>
+<td><p>Während JL läuft, ist die Konsole blockiert. Um JL zu beenden und die Konsole freizugeben: Tastenkombination <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">C</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>8. weitere Module <a class="footnote-reference brackets" href="#weiteremodule" id="id8">6</a> installieren</strong> (fügt der <em>environment</em> zB <code class="docutils literal notranslate"><span class="pre">pandas</span></code> hinzu)</p></td>
+<td><p>jedes mal nötig, wenn ein Modul in einer Environment fehlt<a class="footnote-reference brackets" href="#modulfehlt" id="id9">7</a></p></td>
+<td><p>in der Konsole <a class="footnote-reference brackets" href="#activate" id="id10">5</a><a class="footnote-reference brackets" href="#jupyterlabbeenden" id="id11">8</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge pandas
 </pre></div>
 </div>
@@ -409,19 +413,16 @@
 <dt class="label" id="linux"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
 <dd><p>Unter Linux: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">codingingis</span></code></p>
 </dd>
-<dt class="label" id="activate"><span class="brackets">5</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>,<a href="#id11">3</a>)</span></dt>
-<dd><p>Falls die richtige environment noch nicht aktiviert ist, muss dies zuerst noch erfolgen (z.B <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">codingingis</span></code>). Zudem müssen allfällige Rückfragen mit ja (<code class="docutils literal notranslate"><span class="pre">y</span></code>) bestätigt werden.</p>
+<dt class="label" id="activate"><span class="brackets">5</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id7">2</a>,<a href="#id10">3</a>)</span></dt>
+<dd><p>Falls die richtige environment noch nicht aktiviert ist, muss dies zuerst noch erfolgen (z.B <code class="docutils literal notranslate"><span class="pre">activate</span> <span class="pre">codingingis</span></code>).</p>
 </dd>
-<dt class="label" id="blockiert"><span class="brackets"><a class="fn-backref" href="#id8">6</a></span></dt>
-<dd><p>Während dem Jupyter Lab läuft, ist die Konsole blockiert</p>
-</dd>
-<dt class="label" id="weiteremodule"><span class="brackets"><a class="fn-backref" href="#id9">7</a></span></dt>
+<dt class="label" id="weiteremodule"><span class="brackets"><a class="fn-backref" href="#id8">6</a></span></dt>
 <dd><p>In Coding in GIS I - III brauchen wir die Module <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> und <code class="docutils literal notranslate"><span class="pre">descartes</span></code></p>
 </dd>
-<dt class="label" id="modulfehlt"><span class="brackets"><a class="fn-backref" href="#id10">8</a></span></dt>
+<dt class="label" id="modulfehlt"><span class="brackets"><a class="fn-backref" href="#id9">7</a></span></dt>
 <dd><p>Dies macht sich bemerkbar duch die Fehlermeldung <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'pandas'</span></code></p>
 </dd>
-<dt class="label" id="jupyterlabbeenden"><span class="brackets"><a class="fn-backref" href="#id12">9</a></span></dt>
+<dt class="label" id="jupyterlabbeenden"><span class="brackets"><a class="fn-backref" href="#id11">8</a></span></dt>
 <dd><p>Falls Jupyter Labs läuft und dadurch die Konsole blockiert ist, gibt es folgende Möglichkeiten:</p>
 <ol class="simple">
 <li><p>Jupyter Labs beenden (CTRL + C) &gt; Modul installieren &gt; Jupyter Lab nochmal starten</p></li>

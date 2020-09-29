@@ -399,7 +399,7 @@
 <p>Um eine ganzzahlige Zufallszahl zwischen 0 und 10 zu generieren, können wir die Funktion <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> nutzen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -409,17 +409,59 @@
 </div>
 </div>
 </div>
-<p>Wenn wir auf diese Weise mit <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> immer wieder neue Zufallszahlen generieren und deren Häufigkeitsverteilung anschauen, sehen wir das diese „Uniform“ verteilt sind. Das heisst es ist gleich wahrscheinlich eine 10 zu bekommen eine eine 0 oder eine 5.</p>
-<div class="cell tag_remove-input docutils container">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<img alt="_images/02_06_Zufallspunkte_7_0.png" src="_images/02_06_Zufallspunkte_7_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn wir auf diese Weise mit <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> immer wieder neue Zufallszahlen generieren und deren Häufigkeitsverteilung anschauen, sehen wir das diese „Uniform“ verteilt sind. Das heisst es ist gleich wahrscheinlich eine 10 zu bekommen eine eine 0 oder eine 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> 
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)]</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/02_06_Zufallspunkte_9_0.png" src="_images/02_06_Zufallspunkte_9_0.png" />
 </div>
 </div>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">randrange(0,10)</span></code> generiert nur ganzzahlige Zufallszahlen. Wenn wir aber eine Zufallszahl mit Nachkommastellen haben möchten, müssen wir die Funktion <code class="docutils literal notranslate"><span class="pre">uniform()</span></code> verwenden.</p>
 <p>Um Zufallszahlen aus einer „Normalverteilung“ zu bekommen müssen wir die Funktion <code class="docutils literal notranslate"><span class="pre">normalvariate</span></code> nutzen. Hier müssen wir, wie Eingangs erwähnt, den Mittelwert und die Standartabweichung dieser Verteilung angeben. Tatsächlich können wir bei dieser Variante keine Minimum- und Maximumwerte festlegen. Theoretisch könnte der Generator jeden erdenklichen Zahlenwert rausspucken, am wahrscheinlichsten ist jedoch eine Zahl nahe am angegebenen Mittelwert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mu = Mittelwert, sigma = Standartabweichung</span>
+<span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -429,10 +471,36 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mu = Mittelwert, sigma = Standartabweichung</span>
+<span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.632207532391158
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mu = Mittelwert, sigma = Standartabweichung</span>
+<span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="n">mu</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3760146418651114
+</pre></div>
+</div>
+</div>
+</div>
 <p>Wenn wir die obige Funktion 1000x laufen lassen und uns das Histogramm der generierten Zahlen anschauen, dann zeichnet sich folgendes Bild ab.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/02_06_Zufallspunkte_11_0.png" src="_images/02_06_Zufallspunkte_11_0.png" />
+<img alt="_images/02_06_Zufallspunkte_15_0.png" src="_images/02_06_Zufallspunkte_15_0.png" />
 </div>
 </div>
 </div>
@@ -476,7 +544,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-42.55874957362408
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76.82396864055355
 </pre></div>
 </div>
 </div>
@@ -488,7 +556,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.434117402603048
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.64576452118894
 </pre></div>
 </div>
 </div>
@@ -520,7 +588,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-339.3112339631146, 313.4578571880634, -329.62891111590625, 351.0638838736822)
 </pre></div>
 </div>
-<img alt="_images/02_06_Zufallspunkte_27_1.png" src="_images/02_06_Zufallspunkte_27_1.png" />
+<img alt="_images/02_06_Zufallspunkte_31_1.png" src="_images/02_06_Zufallspunkte_31_1.png" />
 </div>
 </div>
 </div>

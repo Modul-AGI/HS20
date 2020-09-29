@@ -30,7 +30,7 @@ offset_coordinate(x, 100)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-14-af75937ae628>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-18-af75937ae628>[0m in [0;36m<module>[0;34m[0m
 [1;32m      7[0m [0;34m[0m[0m
 [1;32m      8[0m [0;34m[0m[0m
 [0;32m----> 9[0;31m [0moffset_coordinate[0m[0;34m([0m[0mx[0m[0;34m,[0m [0;36m100[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
