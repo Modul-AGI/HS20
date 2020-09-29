@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html lang="de">
@@ -7,9 +6,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Übung: Waldanteil berechnen &#8212; Coding in GIS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -25,9 +44,9 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -43,8 +62,8 @@
     <link rel="next" title="Basic shortcuts for Jupyter lab" href="04_01_Jupyter_Shortcuts.html" />
     <link rel="prev" title="Übung: GIS in Python" href="03_05_GIS_in_Python.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -70,7 +89,7 @@
 
 <form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -245,15 +264,15 @@
         
         <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
             data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+            title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     
@@ -262,10 +281,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/03_06_Waldanteil_Berechnen.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
     
@@ -275,7 +294,7 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" title="Vollbildmodus"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -287,7 +306,7 @@
         
         
         <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_06_Waldanteil_Berechnen.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
@@ -301,8 +320,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i> Inhalt
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -333,6 +353,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -493,10 +514,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.679371e+06</td>
-      <td>1.251094e+06</td>
+      <td>2.682216e+06</td>
+      <td>1.251244e+06</td>
       <td>0</td>
-      <td>POINT (2679371.179 1251093.811)</td>
+      <td>POINT (2682215.515 1251244.090)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -506,23 +527,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681225e+06</td>
-      <td>1.250762e+06</td>
+      <td>2.680757e+06</td>
+      <td>1.248138e+06</td>
       <td>0</td>
-      <td>POINT (2681224.780 1250762.006)</td>
-      <td>0</td>
-      <td>0</td>
-      <td>947316.853401</td>
-      <td>2.380876e+08</td>
-      <td>nein</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9174</td>
-      <td>2.679813e+06</td>
-      <td>1.250954e+06</td>
-      <td>0</td>
-      <td>POINT (2679813.338 1250954.168)</td>
+      <td>POINT (2680756.930 1248137.805)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -532,10 +540,10 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.679256e+06</td>
-      <td>1.250177e+06</td>
+      <td>2.680686e+06</td>
+      <td>1.251136e+06</td>
       <td>0</td>
-      <td>POINT (2679256.340 1250177.432)</td>
+      <td>POINT (2680685.984 1251136.124)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -545,10 +553,23 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.680813e+06</td>
-      <td>1.249989e+06</td>
+      <td>2.680323e+06</td>
+      <td>1.250704e+06</td>
       <td>0</td>
-      <td>POINT (2680812.869 1249989.477)</td>
+      <td>POINT (2680322.756 1250704.336)</td>
+      <td>0</td>
+      <td>0</td>
+      <td>947316.853401</td>
+      <td>2.380876e+08</td>
+      <td>nein</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2513</td>
+      <td>2.681517e+06</td>
+      <td>1.250977e+06</td>
+      <td>0</td>
+      <td>POINT (2681517.084 1250977.359)</td>
       <td>0</td>
       <td>0</td>
       <td>947316.853401</td>
@@ -602,23 +623,14 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
     <tr>
       <th rowspan="2" valign="top">0</th>
       <th>ja</th>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>nein</th>
-      <td>7</td>
+      <td>9</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">1</th>
-      <th>ja</th>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>nein</th>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th rowspan="2" valign="top">2</th>
       <th>ja</th>
       <td>1</td>
     </tr>
@@ -627,22 +639,23 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
       <td>9</td>
     </tr>
     <tr>
-      <th rowspan="2" valign="top">3</th>
-      <th>ja</th>
-      <td>2</td>
+      <th>2</th>
+      <th>nein</th>
+      <td>10</td>
     </tr>
     <tr>
+      <th>3</th>
       <th>nein</th>
-      <td>8</td>
+      <td>10</td>
     </tr>
     <tr>
       <th rowspan="2" valign="top">4</th>
       <th>ja</th>
-      <td>2</td>
+      <td>4</td>
     </tr>
     <tr>
       <th>nein</th>
-      <td>8</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
@@ -697,28 +710,28 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
   <tbody>
     <tr>
       <th>0</th>
-      <td>3</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3</td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>1</td>
       <td>9</td>
     </tr>
     <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>10</td>
+    </tr>
+    <tr>
       <th>3</th>
-      <td>2</td>
-      <td>8</td>
+      <td>0</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2</td>
-      <td>8</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
   </tbody>
 </table>
@@ -738,11 +751,11 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run_Nr
-0    0.3
-1    0.3
-2    0.1
-3    0.2
-4    0.2
+0    0.1
+1    0.1
+2    0.0
+3    0.0
+4    0.4
 dtype: float64
 </pre></div>
 </div>
@@ -842,7 +855,10 @@ dtype: float64
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     
   </body>
 </html>

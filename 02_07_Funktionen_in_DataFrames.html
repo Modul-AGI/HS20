@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 <html lang="de">
@@ -7,9 +6,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe 8: Funktionen in DataFrames &#8212; Coding in GIS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -25,9 +44,9 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/translations.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -43,8 +62,8 @@
     <link rel="next" title="Einleitung zu diesem Block" href="03_01_Coding_in_GIS_3.html" />
     <link rel="prev" title="Aufgabe 7: Zufallszahlen generieren" href="02_06_Zufallspunkte.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -70,7 +89,7 @@
 
 <form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
@@ -245,15 +264,15 @@
         
         <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
             data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+            title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
             <i class="fas fa-bars"></i>
             <i class="fas fa-arrow-left"></i>
             <i class="fas fa-arrow-up"></i>
         </button>
         
         <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
             class="fas fa-download"></i></button>
 
     
@@ -262,10 +281,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/02_07_Funktionen_in_DataFrames.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
     
@@ -275,7 +294,7 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" title="Vollbildmodus"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -287,7 +306,7 @@
         
         
         <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_07_Funktionen_in_DataFrames.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
                     alt="Interact on JupyterHub">JupyterHub</button></a>
@@ -301,8 +320,9 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i> Inhalt
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -356,6 +376,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -651,16 +672,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681049e+06
-1    2.681036e+06
-2    2.681073e+06
-3    2.680968e+06
-4    2.681011e+06
-5    2.681245e+06
-6    2.681234e+06
-7    2.680966e+06
-8    2.680934e+06
-9    2.680982e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681277e+06
+1    2.681204e+06
+2    2.681368e+06
+3    2.681176e+06
+4    2.681221e+06
+5    2.681306e+06
+6    2.680953e+06
+7    2.681140e+06
+8    2.681090e+06
+9    2.681098e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -707,8 +728,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681170e+06</td>
-      <td>1.250790e+06</td>
+      <td>2.681085e+06</td>
+      <td>1.250646e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -716,8 +737,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681035e+06</td>
-      <td>1.250772e+06</td>
+      <td>2.681047e+06</td>
+      <td>1.250714e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -725,8 +746,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681091e+06</td>
-      <td>1.250828e+06</td>
+      <td>2.680982e+06</td>
+      <td>1.250415e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -734,8 +755,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681130e+06</td>
-      <td>1.250801e+06</td>
+      <td>2.681138e+06</td>
+      <td>1.250698e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -743,8 +764,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681192e+06</td>
-      <td>1.250612e+06</td>
+      <td>2.681033e+06</td>
+      <td>1.250807e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -752,8 +773,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681307e+06</td>
-      <td>1.250666e+06</td>
+      <td>2.681213e+06</td>
+      <td>1.250645e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -761,8 +782,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681168e+06</td>
-      <td>1.250538e+06</td>
+      <td>2.681216e+06</td>
+      <td>1.250526e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -770,8 +791,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681197e+06</td>
-      <td>1.250716e+06</td>
+      <td>2.681083e+06</td>
+      <td>1.250671e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -779,8 +800,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681091e+06</td>
-      <td>1.250720e+06</td>
+      <td>2.681110e+06</td>
+      <td>1.250813e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -788,8 +809,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681133e+06</td>
-      <td>1.250678e+06</td>
+      <td>2.681142e+06</td>
+      <td>1.250601e+06</td>
     </tr>
   </tbody>
 </table>
@@ -806,16 +827,16 @@ Name: x, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680999e+06
-1    2.680707e+06
-2    2.681371e+06
-3    2.681441e+06
-4    2.681565e+06
-5    2.681114e+06
-6    2.681210e+06
-7    2.680973e+06
-8    2.680992e+06
-9    2.681403e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680995e+06
+1    2.681023e+06
+2    2.681177e+06
+3    2.681114e+06
+4    2.680930e+06
+5    2.681195e+06
+6    2.680910e+06
+7    2.681342e+06
+8    2.681504e+06
+9    2.681199e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -894,8 +915,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681114e+06</td>
-      <td>1.250635e+06</td>
+      <td>2.681121e+06</td>
+      <td>1.250629e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -903,8 +924,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681092e+06</td>
-      <td>1.250688e+06</td>
+      <td>2.681091e+06</td>
+      <td>1.250661e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -912,8 +933,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681135e+06</td>
-      <td>1.250685e+06</td>
+      <td>2.681099e+06</td>
+      <td>1.250676e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -921,8 +942,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681109e+06</td>
-      <td>1.250678e+06</td>
+      <td>2.681110e+06</td>
+      <td>1.250691e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -930,8 +951,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681122e+06</td>
-      <td>1.250691e+06</td>
+      <td>2.681128e+06</td>
+      <td>1.250693e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -939,8 +960,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681179e+06</td>
-      <td>1.250692e+06</td>
+      <td>2.681193e+06</td>
+      <td>1.250702e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -948,8 +969,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681101e+06</td>
-      <td>1.250697e+06</td>
+      <td>2.681111e+06</td>
+      <td>1.250703e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -957,8 +978,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681124e+06</td>
-      <td>1.250719e+06</td>
+      <td>2.681140e+06</td>
+      <td>1.250723e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -966,8 +987,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681119e+06</td>
-      <td>1.250715e+06</td>
+      <td>2.681117e+06</td>
+      <td>1.250712e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -975,8 +996,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681133e+06</td>
-      <td>1.250723e+06</td>
+      <td>2.681138e+06</td>
+      <td>1.250724e+06</td>
     </tr>
   </tbody>
 </table>
@@ -1035,7 +1056,10 @@ Name: x, dtype: float64
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     
   </body>
 </html>
