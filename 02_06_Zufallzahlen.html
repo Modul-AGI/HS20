@@ -149,8 +149,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="02_02_Conda_Cheetsheet.html">
-   Conda cheet sheet
+  <a class="reference internal" href="02_02_Conda_Cheatsheet.html">
+   Conda cheat sheet
   </a>
  </li>
  <li class="toctree-l1">
@@ -280,7 +280,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_06_Zufallspunkte.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_06_Zufallzahlen.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -305,7 +305,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_06_Zufallspunkte.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/02_06_Zufallzahlen.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -433,10 +433,10 @@
 </div>
 </div>
 </div>
-<p>Wenn wir auf diese Weise mit <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> immer wieder neue Zufallszahlen generieren und deren Häufigkeitsverteilung anschauen, sehen wir das diese „Uniform“ verteilt sind. Das heisst es ist gleich wahrscheinlich eine 10 zu bekommen eine eine 0 oder eine 5.</p>
+<p>Wenn wir auf diese Weise mit <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> immer wieder neue Zufallszahlen generieren fällt irgendwann auf, dass die Verteilung der Zahlen ziemlich gleichmässig ist. Es ist also gleich wahrscheinlich eine 10 zu bekommen eine eine 0 oder eine 5. Die Zahlen kommen also aus einer „uniformen“ Verteilung. Dies lässt sich auch sehr schön visualisieren. Ich generiere in den folgenden Codezeilen 1’000 zufallszahlen zwischen 0 und 10 mit der Funktion <code class="docutils literal notranslate"><span class="pre">randrange</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
 </div>
@@ -453,7 +453,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/02_06_Zufallspunkte_9_0.png" src="_images/02_06_Zufallspunkte_9_0.png" />
+<img alt="_images/02_06_Zufallzahlen_9_0.png" src="_images/02_06_Zufallzahlen_9_0.png" />
 </div>
 </div>
 <p>Die Funktion <code class="docutils literal notranslate"><span class="pre">randrange(0,10)</span></code> generiert nur ganzzahlige Zufallszahlen. Wenn wir aber eine Zufallszahl mit Nachkommastellen haben möchten, müssen wir die Funktion <code class="docutils literal notranslate"><span class="pre">uniform()</span></code> verwenden.</p>
@@ -500,7 +500,7 @@
 <p>Wenn wir die obige Funktion 1000x laufen lassen und uns das Histogramm der generierten Zahlen anschauen, dann zeichnet sich folgendes Bild ab.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/02_06_Zufallspunkte_15_0.png" src="_images/02_06_Zufallspunkte_15_0.png" />
+<img alt="_images/02_06_Zufallzahlen_15_0.png" src="_images/02_06_Zufallzahlen_15_0.png" />
 </div>
 </div>
 </div>
@@ -514,7 +514,7 @@
 <p>Das Ziel dieser Übung ist es also, dass wir eine Funktion entwickeln, die uns einen zufälligen Punkt in der Nähe eines Ursprungspunktes vorschlägt. Unser Vorgehen: Wir addieren jedem Koordinatenwert (<code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>) des Ursprungspunktes einen Zufallswert, zum Beispiel zwischen -100 bis +100.</p>
 <div class="section" id="ubung-7-1-zufallszahlen-aus-uniformverteilung">
 <h3>Übung 7.1: Zufallszahlen aus Uniformverteilung<a class="headerlink" href="#ubung-7-1-zufallszahlen-aus-uniformverteilung" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Bevor wir mit Koordinaten arbeiten wollt ihr euch zuerst mit dem Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> vertraut machen. Importiere das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> und generiere eine Zufallszahl zwischen -100 und +100 aus einer uniformen Verteilung.</p>
+<p>Bevor wir mit Koordinaten arbeiten wollt ihr euch zuerst mit dem Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> vertraut machen. Importiere das Modul <code class="docutils literal notranslate"><span class="pre">random</span></code> und generiere eine Zufallszahl zwischen -100 und +100 aus einer uniformen Verteilung sowie aus einer Normalverteilung mit Mittelwert 100 und Standartabweichung 20.</p>
 </div>
 <div class="section" id="ubung-7-2-dummykoordinaten-erstellen">
 <h3>Übung 7.2: Dummykoordinaten erstellen<a class="headerlink" href="#ubung-7-2-dummykoordinaten-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
@@ -526,7 +526,7 @@
 Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <code class="docutils literal notranslate"><span class="pre">y_offset</span></code> zu.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
-<p>Überlege dir, welcher <em>Mittelwert</em> Sinn macht um Werte zwischen -100 und +100 zu bekommen.</p>
+<p>Überlege dir, welcher <em>Mittelwert</em> Sinn macht um Werte zwischen -100 und +100 zu bekommen. Welche Zahl liegt zwischen -100 und +100?</p>
 <p>Überlege dir als nächstes, welche Standartabweichung sinnvoll wäre. Zur Erinnerung: Etwa 68% der Werte liegen inerhalb von +/- 1 Standartabweichung (SD), 95% innerhalb von +/- 2 SD, 99% innerhalb von 3 SD (siehe unten):</p>
 <div class="figure align-default" id="id2">
 <img alt="_images/normalverteilung.jpg" src="_images/normalverteilung.jpg" />
@@ -536,7 +536,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 <div class="section" id="ubung-7-4-zufallswerte-addieren">
 <h3>Übung 7.4: Zufallswerte addieren<a class="headerlink" href="#ubung-7-4-zufallswerte-addieren" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Addiere nun die Zufallszahlen <code class="docutils literal notranslate"><span class="pre">x_offset</span></code> und <code class="docutils literal notranslate"><span class="pre">y_offset</span></code> <strong>jeweils</strong> zu den Dummykoordinaten <code class="docutils literal notranslate"><span class="pre">x_start</span></code> und <code class="docutils literal notranslate"><span class="pre">y_start</span></code> und weise diese neuen Koordinaten <code class="docutils literal notranslate"><span class="pre">x_neu</span></code> und <code class="docutils literal notranslate"><span class="pre">y_neu</span></code> zu. Die neuen Werte stellen die leicht verschobenen Ursprungskoordinaten dar. In meinem Fall sind diese um 42.5 bzw. 4.4 Meter nach Westen bzw. Süden verschoben worden.</p>
+<p>Addiere nun die Zufallszahlen <code class="docutils literal notranslate"><span class="pre">x_offset</span></code> und <code class="docutils literal notranslate"><span class="pre">y_offset</span></code> <strong>jeweils</strong> zu den Dummykoordinaten <code class="docutils literal notranslate"><span class="pre">x_start</span></code> und <code class="docutils literal notranslate"><span class="pre">y_start</span></code> und weise diese neuen Koordinaten <code class="docutils literal notranslate"><span class="pre">x_neu</span></code> und <code class="docutils literal notranslate"><span class="pre">y_neu</span></code> zu. Die neuen Werte stellen die leicht verschobenen Ursprungskoordinaten dar. In meinem Fall sind diese um 10.2 Meter nach Osten (positiver Wert) bzw. 4.4 Meter nach Süden (negativer Wert) verschoben worden.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_neu</span>
@@ -544,7 +544,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76.82396864055355
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.246170309600945
 </pre></div>
 </div>
 </div>
@@ -556,9 +556,31 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42.64576452118894
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.443904000288846
 </pre></div>
 </div>
+</div>
+</div>
+<p>Visuell betrachtet sieht das folgendermassen aus:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_start</span><span class="p">,</span><span class="n">y_start</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span> <span class="c1"># ursprung</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_neu</span><span class="p">,</span><span class="n">y_neu</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>    <span class="c1"># neu</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-100.0, 100.0)
+</pre></div>
+</div>
+<img alt="_images/02_06_Zufallzahlen_30_1.png" src="_images/02_06_Zufallzahlen_30_1.png" />
 </div>
 </div>
 </div>
@@ -588,7 +610,7 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-339.3112339631146, 313.4578571880634, -329.62891111590625, 351.0638838736822)
 </pre></div>
 </div>
-<img alt="_images/02_06_Zufallspunkte_31_1.png" src="_images/02_06_Zufallspunkte_31_1.png" />
+<img alt="_images/02_06_Zufallzahlen_34_1.png" src="_images/02_06_Zufallzahlen_34_1.png" />
 </div>
 </div>
 </div>
