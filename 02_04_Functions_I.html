@@ -467,6 +467,16 @@
 <div class="section" id="ubung-5-1-erste-function-erstellen">
 <h3>Übung 5.1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-5-1-erste-function-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="k">def</span> <span class="nf">gruezi</span><span class="p">(</span><span class="n">nachname</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Guten Tag, &quot;</span> <span class="o">+</span> <span class="n">nachname</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
@@ -484,6 +494,16 @@
 <span id="gruezi2"></span><h3>Übung 5.2: <em>Function</em> erweitern<a class="headerlink" href="#ubung-5-2-function-erweitern" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle eine neue Funktion <code class="docutils literal notranslate"><span class="pre">gruezi2</span></code> welche im Vergleich zu <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> einen weiteren Parameter namens <code class="docutils literal notranslate"><span class="pre">anrede</span></code> annimmt.</p>
 <p>Das Resultat soll in etwa folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="k">def</span> <span class="nf">gruezi2</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Guten Tag, &quot;</span> <span class="o">+</span> <span class="n">anrede</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi2</span><span class="p">(</span><span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">,</span> <span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span><span class="p">)</span>
@@ -500,6 +520,16 @@
 <div class="section" id="ubung-5-3-zahlen-summieren">
 <h3>Übung 5.3: Zahlen summieren<a class="headerlink" href="#ubung-5-3-zahlen-summieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">add</span></code> die zwei Zahlen summiert. Das Resultat sollte folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">zahl1</span><span class="p">,</span> <span class="n">zahl2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">zahl1</span> <span class="o">+</span> <span class="n">zahl2</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">zahl1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">zahl2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
@@ -520,6 +550,16 @@
 <p class="admonition-title">Tipp</p>
 <p>Nutze <code class="docutils literal notranslate"><span class="pre">*</span></code> um zwei Zahlen zu multiplizieren.</p>
 </div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">zahl</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">zahl</span><span class="o">*</span><span class="n">zahl</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
@@ -536,6 +576,16 @@
 <div class="section" id="ubung-5-5-meter-in-fuss-konvertieren">
 <h3>Übung 5.5: Meter in Fuss konvertieren<a class="headerlink" href="#ubung-5-5-meter-in-fuss-konvertieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">meter_zu_fuss</span></code>, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Errinnerung: 30.48 cm ergeben 1 Fuss. Das Resultat sollte folgendermassen aussehen:</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
+
+<span class="k">def</span> <span class="nf">meter_zu_fuss</span><span class="p">(</span><span class="n">meter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">meter</span><span class="o">/</span><span class="mf">0.3048</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meter_zu_fuss</span><span class="p">(</span><span class="n">meter</span> <span class="o">=</span> <span class="mf">1.80</span><span class="p">)</span>
