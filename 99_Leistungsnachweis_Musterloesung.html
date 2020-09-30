@@ -278,7 +278,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Untitled.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/99_Leistungsnachweis_Musterloesung.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -303,7 +303,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/Untitled.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/99_Leistungsnachweis_Musterloesung.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -337,20 +337,64 @@
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arcpy</span>
-<span class="n">fr</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="k">def</span> <span class="nf">offset_coordinate</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">old</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">distance</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">new</span><span class="p">)</span>
+
+<span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche_full.csv&quot;</span><span class="p">)</span>
+<span class="n">wald</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;wald.gpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ja_anteile_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">radius</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">10000</span><span class="p">]:</span>
+    <span class="n">ja_anteile</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">):</span>
+        <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+        <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
+        <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">x_sim</span><span class="p">,</span> <span class="n">zeckenstiche</span><span class="o">.</span><span class="n">y_sim</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="mi">2056</span><span class="p">)</span>
+        <span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
+        <span class="n">zeckenstiche_join</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">,</span><span class="n">wald</span><span class="p">)</span>
+        <span class="n">freq</span> <span class="o">=</span> <span class="n">zeckenstiche_join</span><span class="p">[</span><span class="s2">&quot;Wald_text&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">ja_anteil</span> <span class="o">=</span> <span class="n">freq</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">like</span> <span class="o">=</span> <span class="s2">&quot;ja&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ja_anteile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ja_anteil</span><span class="p">)</span>
+    <span class="n">ja_anteile_dict</span><span class="p">[</span><span class="n">radius</span><span class="p">]</span> <span class="o">=</span> <span class="n">ja_anteile</span>   
+    
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ja_anteile_dict</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Radius: 10 m&quot;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ja_anteile_dict</span><span class="p">[</span><span class="mi">500</span><span class="p">],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Radius: 500 m&quot;</span><span class="p">])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ja_anteile_dict</span><span class="p">[</span><span class="mi">10000</span><span class="p">],</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Radius: 10&#39;000 m&quot;</span><span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Anteil der Zeckenstiche im Wald bei verschieden Radien</span><span class="se">\n</span><span class="s2">(jeweils 50 Simulation)&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;Waldanteil_nach_Radius&quot;</span><span class="p">,</span><span class="n">bbox_inches</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">,</span> <span class="n">pad_inches</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-1-5467a3dc9fe3&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">arcpy</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;arcpy&#39;
-</pre></div>
-</div>
+<img alt="_images/99_Leistungsnachweis_Musterloesung_3_0.png" src="_images/99_Leistungsnachweis_Musterloesung_3_0.png" />
 </div>
 </div>
 

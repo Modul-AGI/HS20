@@ -384,8 +384,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-6-7-lambda-function">
-     Übung 6.7 Lambda Function
+    <a class="reference internal nav-link" href="#ubung-6-6-lambda-function">
+     Übung 6.6 Lambda Function
     </a>
    </li>
   </ul>
@@ -417,16 +417,22 @@
 </div>
 </div>
 <p>Um diese Funktion zu nutzen müssen dem Parameter <code class="docutils literal notranslate"><span class="pre">vorname</span></code> ein Argument übergeben, sonst erhalten wir eine Fehlermeldung.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">()</span>
-
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">92896</span><span class="n">a02d815</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">sag_hallo</span><span class="p">()</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">sag_hallo</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;vorname&#39;</span>
-        
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sag_hallo</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">92896</span><span class="n">a02d815</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sag_hallo</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: sag_hallo() missing 1 required positional argument: &#39;vorname&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>Wenn wir möchten, dass gewisse Parameter auch ohne Argument auskommen, dann könnnen wir einen Standartwert festlegen. So wird der Parameter optional. Bespielsweise könnte <code class="docutils literal notranslate"><span class="pre">sag_hallo()</span></code> einfach <em>Hallo Du!</em> zurück geben, wenn kein Vorname angegeben wird. Um dies zu erreichen, definieren wird den Standartwert bereits innerhalb der Klammer, und zwar folgendermassen:</p>
 <div class="cell docutils container">
@@ -499,25 +505,32 @@
 <h3>Globale und Lokale Variabeln<a class="headerlink" href="#globale-und-lokale-variabeln" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Innerhalb einer <em>Function</em> können nur die Variabeln verwendet werden, die der <em>Function</em> als Argumente übergeben (oder innerhalb der Funktion erstellt) werden. Diese nennt man „lokale“ Variabeln, sie sind lokal in der <em>Function</em> vorhanden. Im Gegensatz dazu stehen „globale“ Variabeln, diese sind Teil der aktuellen Session.</p>
 <p>Versuchen wir das mit einem Beispiel zu verdeutlichen. Angenommen wir definieren gobal die Variabeln <code class="docutils literal notranslate"><span class="pre">nachname</span></code> und <code class="docutils literal notranslate"><span class="pre">anrede</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wir definieren globale Variabeln</span>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wir definieren globale Variabeln</span>
 <span class="n">vorname</span> <span class="o">=</span> <span class="s2">&quot;Guido&quot;</span>
 
-<span class="c1"># Nun erstellen wir eine Function, welche diese Variabeln nutzen soll:</span>
+<span class="c1"># Nun erstellen wir eine Function, welche diese Variabel (&quot;vorname&quot;) nutzen soll:</span>
 <span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">(</span><span class="n">vorname</span><span class="p">):</span>
     <span class="k">return</span> <span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="n">vorname</span>
 
 <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</span>
 <span class="n">sag_hallo</span><span class="p">()</span>
-
-<span class="o">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">17</span><span class="o">-</span><span class="mi">3</span><span class="n">b9d2e26d124</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-      <span class="mi">1</span> <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</span>
-<span class="o">----&gt;</span> <span class="mi">2</span> <span class="n">sag_hallo</span><span class="p">()</span>
-
-<span class="ne">TypeError</span><span class="p">:</span> <span class="n">sag_hallo</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;vorname&#39;</span>
-        
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">cf00497e2e54</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> 
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">sag_hallo</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: sag_hallo() missing 1 required positional argument: &#39;vorname&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="lambda-function">
@@ -570,7 +583,7 @@
 </div>
 <div class="section" id="ubung-6-2-optionale-parameter">
 <h3>Übung 6.2: Optionale Parameter<a class="headerlink" href="#ubung-6-2-optionale-parameter" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Die eben erstellte Funktion <code class="docutils literal notranslate"><span class="pre">times</span></code> benötigt 2 Argumente (die miteinander multipliziert werden). Wandle den einen Parameter einen optionalen Parameter um (mit dem Defaultwert <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+<p>Die eben erstellte Funktion <code class="docutils literal notranslate"><span class="pre">times</span></code> benötigt 2 Argumente (die miteinander multipliziert werden). Wandle den einen in Parameter einen optionalen Parameter um (mit dem Defaultwert <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
 <p><strong>Zusatzaufgabe</strong>: Was passiert, wenn du den ersten Parameter in einen optionalen Paramter umwandelst?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -651,18 +664,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-6-7-lambda-function">
-<h3>Übung 6.7 Lambda Function<a class="headerlink" href="#ubung-6-7-lambda-function" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-6-6-lambda-function">
+<h3>Übung 6.6 Lambda Function<a class="headerlink" href="#ubung-6-6-lambda-function" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Schreibe die letzte Funktion <code class="docutils literal notranslate"><span class="pre">celsius_zu_farenheit</span></code> in der <em>lambda</em> Notation.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
-
-<span class="n">celsius_in_farenheit2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">celsius</span><span class="p">:</span> <span class="n">celsius</span><span class="o">*</span><span class="mf">1.8</span><span class="o">+</span><span class="mi">32</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
