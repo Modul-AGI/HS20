@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic shortcuts for Jupyter lab &#8212; Coding in GIS</title>
+    <title>Aufgabe 11: For Loops Advanced &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,7 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="prev" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
+    <link rel="next" title="Aufgabe 12: GIS in Python" href="03_04_GIS_in_Python.html" />
+    <link rel="prev" title="Aufgabe 10: For Loop Basics" href="03_03_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -194,7 +195,7 @@
   Coding in GIS III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="03_01_Coding_in_GIS_3.html">
    Einleitung zu diesem Block
@@ -218,8 +219,8 @@
    Basics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_04_For_Loops.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Aufgabe 11:
    <em>
     For Loops
@@ -248,9 +249,9 @@
   Anhang
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -296,7 +297,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/04_01_Jupyter_Shortcuts.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_04_For_Loops.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -321,7 +322,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/04_01_Jupyter_Shortcuts.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_04_For_Loops.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -337,6 +338,52 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Inhalt
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theorie">
+   Theorie
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verschachtelte-for-loops">
+     Verschachtelte
+     <em>
+      For Loops
+     </em>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#verkurzte-schreibweise">
+     Verkürzte Schreibweise
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-11-1-nested-loop-bellen-und-fauchen">
+     Übung 11.1: Nested Loop: Bellen und Fauchen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-11-2-nested-loop-multiplikation">
+     Übung 11.2: Nested Loop: Multiplikation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -344,23 +391,95 @@
         
               <div>
                 
-  <div class="section" id="basic-shortcuts-for-jupyter-lab">
-<h1>Basic shortcuts for Jupyter lab<a class="headerlink" href="#basic-shortcuts-for-jupyter-lab" title="Link zu dieser Überschrift">¶</a></h1>
-<ul class="simple">
-<li><p><strong>Alt + Enter</strong>: Run current cell</p></li>
-<li><p><strong>ESC</strong>: takes users into command mode view while ENTER takes users into cell mode view.</p></li>
-<li><p><strong>A</strong>: inserts a cell above the currently selected cell. Before using this, make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>B</strong>: inserts a cell below the currently selected cell. Before using this make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>D + D</strong>: Pressing D two times in a quick succession in command mode deletes the currently selected cell.</p></li>
-<li><p><strong>M</strong>: to change current cell to a markdown cell,</p></li>
-<li><p><strong>Y</strong>: to change it to a code cell and  R to change it to a raw cell.</p></li>
-<li><p><strong>CTRL + B</strong>: Jupyter lab has two columns design. One column is for launcher or code blocks and another column is for file view etc. To increase workspace while writing code, we can close it.  CTRL + B is the shortcut for toggling the file view column in the Jupyter lab.</p></li>
-<li><p><strong>SHIFT + MIt</strong>: merges multiple selected cells into one cell.</p></li>
-<li><p><strong>CTRL + SHIFT +</strong> –: It splits the current cell into two cells from where your cursor is.</p></li>
-<li><p><strong>SHIFT+J or SHIFT + DOWN</strong>: It selects the next cell in a downward direction.  It will help in making multiple selections of cells.</p></li>
-<li><p><strong>SHIFT + K or SHIFT + UP</strong>: It selects the next cell in an upwards direction. It will help in making multiple selections of cells.</p></li>
-<li><p><strong>CTRL + /</strong>: It helps you in either commenting or uncommenting any line in the Jupyter lab. For this to work, you don’t even need to select the whole line. It will comment or uncomment line where your cursor is. If you want to do it for more that one line then you will need to first select all the line and then use this shortcut.</p></li>
-</ul>
+  <div class="section" id="aufgabe-11-for-loops-advanced">
+<span id="forloops-3"></span><h1>Aufgabe 11: <em>For Loops</em> Advanced<a class="headerlink" href="#aufgabe-11-for-loops-advanced" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="theorie">
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
+<p>In diesem Kapitel kommen noch zwei Aspekte von <em>For Loops</em>, die als „<em>Advanced</em>“ eingestuft werden können aber in der Praxis sehr nützlich sind. Dabei geht es um einerseits um verschachtelte <em>For Loops</em> und zum andere um eine verkürzte Schreibweise von <em>For Loops</em>.</p>
+<div class="section" id="verschachtelte-for-loops">
+<h3>Verschachtelte <em>For Loops</em><a class="headerlink" href="#verschachtelte-for-loops" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Wir können verschiedene <em>For Loops</em> auch ineinander verschachteln (englisch: <em>nested loops</em>). Das ist vor allem dann nützlich, wenn alle Kombinationen aus zwei Datensätzen miteinander verrechnet werden müssen. Angenommen du willst die drei Mitglieder deiner Band (bestehend aus <em>Il Buono</em>, <em>Il Brutto</em>, <em>Il Cattivo</em>) deinen Eltern vorstellen und auch umgekehrt deine Eltern deiner Band vorstellen. Für so was eignen sich zwei verschachtelte vor Loops hervorragend:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eltern</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Papa&quot;</span><span class="p">,</span> <span class="s2">&quot;Mama&quot;</span><span class="p">]</span>
+<span class="n">band</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Il Buono&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Brutto&quot;</span><span class="p">,</span> <span class="s2">&quot;Il Cattivo&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">bandmitglied</span> <span class="ow">in</span> <span class="n">band</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">elternteil</span> <span class="ow">in</span> <span class="n">eltern</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">elternteil</span><span class="p">,</span> <span class="s2">&quot;das ist&quot;</span><span class="p">,</span><span class="n">bandmitglied</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">bandmitglied</span><span class="p">,</span> <span class="s2">&quot;das ist&quot;</span><span class="p">,</span><span class="n">elternteil</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Papa das ist Il Buono
+Il Buono das ist Papa
+---
+Mama das ist Il Buono
+Il Buono das ist Mama
+---
+Papa das ist Il Brutto
+Il Brutto das ist Papa
+---
+Mama das ist Il Brutto
+Il Brutto das ist Mama
+---
+Papa das ist Il Cattivo
+Il Cattivo das ist Papa
+---
+Mama das ist Il Cattivo
+Il Cattivo das ist Mama
+---
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="verkurzte-schreibweise">
+<h3>Verkürzte Schreibweise<a class="headerlink" href="#verkurzte-schreibweise" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Es ist äusserst häufig der Fall, dass wir den Output aus einem Loop in einer Liste abspeichern wollen. Wie das geht haben wir ja bereits in <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a> gelernt:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rollen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]</span>
+
+<span class="n">refrain</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="n">rollen</span><span class="p">:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> 
+    <span class="n">refrain</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#offset-vis"><span class="std std-ref">Übung 7.6: Output visualisieren</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refrain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> <span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="n">rollen</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Diese verkürzte Schreibweise heisst in Python <em>list comprehension</em> und sie ist äusserst praktisch, wenn man sie beherrscht. Das Beherrschen ist aber nicht zentral, es reicht schon wenn ihr eine solche Schreibweise wieder erkennt und richtig interpretieren könnt (im Sinne von „<em>Aha, hier wird also in einem Loop eine Liste erstellt</em>“). In der folgenden Darstellung seht ihr farblich, welche Elemente sich in der verkürzten Schreibweise wo wiederfinden und welche Elemente gar nicht wiederverwendet werden.</p>
+<p><img alt="list" src="_images/list_comprehension.jpg" /></p>
+</div>
+</div>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-11-1-nested-loop-bellen-und-fauchen">
+<h3>Übung 11.1: Nested Loop: Bellen und Fauchen<a class="headerlink" href="#ubung-11-1-nested-loop-bellen-und-fauchen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Erstelle zwei Listen bestehend aus 3 Hundenamen (<code class="docutils literal notranslate"><span class="pre">hunde</span></code>) und 3 Katzenamen (<code class="docutils literal notranslate"><span class="pre">katzen</span></code>). Erstelle einen verschachtelter <em>For Loop</em>, wo jeder Hund jede Katze anbellt und jede Katze jeden Hund anfaucht.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Bruno</span> <span class="n">bellt</span> <span class="n">Greta</span> <span class="n">an</span>
+<span class="n">Greta</span> <span class="n">faucht</span> <span class="n">Bruno</span> <span class="n">an</span>
+<span class="n">Berta</span> <span class="n">bellt</span> <span class="n">Greta</span> <span class="n">an</span>
+<span class="o">....</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubung-11-2-nested-loop-multiplikation">
+<h3>Übung 11.2: Nested Loop: Multiplikation<a class="headerlink" href="#ubung-11-2-nested-loop-multiplikation" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Erstelle einen verschachtelten Loop, wo alle Kombinationen von 0 bis 9 miteinander addiert werden.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -391,7 +510,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_06_Waldanteil_Berechnen.html" title="previous page">Übung: Waldanteil berechnen</a>
+    <a class='left-prev' id="prev-link" href="03_03_For_Loops.html" title="previous page">Aufgabe 10: <em>For Loop</em> Basics</a>
+    <a class='right-next' id="next-link" href="03_04_GIS_in_Python.html" title="next page">Aufgabe 12: GIS in Python</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

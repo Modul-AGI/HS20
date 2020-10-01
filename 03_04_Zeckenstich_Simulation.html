@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Übung: GIS in Python" href="03_05_GIS_in_Python.html" />
-    <link rel="prev" title="Übung: For Loops (Teil II)" href="03_03_For_Loops.html" />
+    <link rel="next" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
+    <link rel="prev" title="Aufgabe 12: GIS in Python" href="03_04_GIS_in_Python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -203,22 +203,39 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   Übung: For Loops (Teil I)
+   Aufgabe 9:
+   <em>
+    For Loop
+   </em>
+   Einführung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_For_Loops.html">
-   Übung: For Loops (Teil II)
+   Aufgabe 10:
+   <em>
+    For Loop
+   </em>
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_For_Loops.html">
+   Aufgabe 11:
+   <em>
+    For Loops
+   </em>
+   Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_GIS_in_Python.html">
+   Aufgabe 12: GIS in Python
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Übung: Zeckenstich Simulation mit Loop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -361,12 +378,6 @@
   <div class="section" id="ubung-zeckenstich-simulation-mit-loop">
 <h1>Übung: Zeckenstich Simulation mit Loop<a class="headerlink" href="#ubung-zeckenstich-simulation-mit-loop" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Nun geht es weiter mit unserer Zeckenstich Monte-Carlo Simulation. Schritte 1 und 2 haben wir bereits erleidgt. Nun packen wir Schritt 3 an:</p>
-<ul class="simple">
-<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
-<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“) ✓</p></li>
-<li><p><strong>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“)</strong></p></li>
-<li><p>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln</p></li>
-</ul>
 <p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Tipp: Importiert mit <code class="docutils literal notranslate"><span class="pre">head(5)</span></code> nur die ersten 5 Zeile aus dem csv, das macht die die Entwicklung des Loops leichter.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -381,10 +392,6 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="figure align-default" id="id1">
-<img alt="_images/montepython.jpg" src="_images/montepython.jpg" />
-<p class="caption"><span class="caption-number">Abb. 3 </span><span class="caption-text">Quelle <a class="reference external" href="https://twitter.com/GregoryRHancock/status/1179734188716707846?s=20">twitter.com</a></span><a class="headerlink" href="#id1" title="Link zu diesem Bild">¶</a></p>
 </div>
 <div class="section" id="ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
 <h2>Übung 1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Link zu dieser Überschrift">¶</a></h2>
@@ -429,62 +436,62 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681435e+06</td>
-      <td>1.250809e+06</td>
+      <td>2.681024e+06</td>
+      <td>1.250802e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681046e+06</td>
-      <td>1.250710e+06</td>
+      <td>2.681088e+06</td>
+      <td>1.250570e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681124e+06</td>
-      <td>1.250554e+06</td>
+      <td>2.680918e+06</td>
+      <td>1.250553e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681157e+06</td>
-      <td>1.250736e+06</td>
+      <td>2.681016e+06</td>
+      <td>1.250691e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681148e+06</td>
-      <td>1.250671e+06</td>
+      <td>2.681325e+06</td>
+      <td>1.250909e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681091e+06</td>
-      <td>1.250825e+06</td>
+      <td>2.681201e+06</td>
+      <td>1.250614e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.680974e+06</td>
-      <td>1.250757e+06</td>
+      <td>2.681067e+06</td>
+      <td>1.250593e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.680989e+06</td>
-      <td>1.250576e+06</td>
+      <td>2.681004e+06</td>
+      <td>1.250595e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681096e+06</td>
-      <td>1.250870e+06</td>
+      <td>2.681220e+06</td>
+      <td>1.250810e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681056e+06</td>
-      <td>1.250933e+06</td>
+      <td>2.681225e+06</td>
+      <td>1.250562e+06</td>
     </tr>
   </tbody>
 </table>
@@ -600,8 +607,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_03_For_Loops.html" title="previous page">Übung: For Loops (Teil II)</a>
-    <a class='right-next' id="next-link" href="03_05_GIS_in_Python.html" title="next page">Übung: GIS in Python</a>
+    <a class='left-prev' id="prev-link" href="03_04_GIS_in_Python.html" title="previous page">Aufgabe 12: GIS in Python</a>
+    <a class='right-next' id="next-link" href="03_06_Waldanteil_Berechnen.html" title="next page">Übung: Waldanteil berechnen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -203,22 +203,39 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   Übung: For Loops (Teil I)
+   Aufgabe 9:
+   <em>
+    For Loop
+   </em>
+   Einführung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_For_Loops.html">
-   Übung: For Loops (Teil II)
+   Aufgabe 10:
+   <em>
+    For Loop
+   </em>
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_For_Loops.html">
+   Aufgabe 11:
+   <em>
+    For Loops
+   </em>
+   Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_GIS_in_Python.html">
+   Aufgabe 12: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
    Übung: Zeckenstich Simulation mit Loop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -585,12 +602,12 @@ Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese <
 </div>
 </div>
 <div class="section" id="ubung-7-5-arbeitsschritte-in-eine-function-verwandeln">
-<h3>Übung 7.5: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-7-5-arbeitsschritte-in-eine-function-verwandeln" title="Link zu dieser Überschrift">¶</a></h3>
+<span id="ex-offset-function"></span><h3>Übung 7.5: Arbeitsschritte in eine <em>Function</em> verwandeln<a class="headerlink" href="#ubung-7-5-arbeitsschritte-in-eine-function-verwandeln" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (<code class="docutils literal notranslate"><span class="pre">0</span></code>/<code class="docutils literal notranslate"><span class="pre">0</span></code>) durchgespielt. In der nächsten Aufgabe (<a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#chap-offset-dataframe"><span class="std std-ref">Aufgabe 8: Funktionen in DataFrames</span></a>) werden wir <em>alle</em> unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen Simulierten Zeckenstichdatensatz ähnlich wie <a class="reference internal" href="#arcgiszecken"><span class="std std-numref">Abb. 1</span></a> zu erhalten.</p>
 <p>Dafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können. <strong>Erstelle jetzt eine Funktion namens <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> welche als Input eine <code class="docutils literal notranslate"><span class="pre">x</span></code> oder <code class="docutils literal notranslate"><span class="pre">y</span></code>-Achsenwert annimmt und eine leicht verschobene Wert zurück gibt.</strong> Integriere die Standartabweichung der Verteilung als optionalen Parameter mit einem Standartwert von 100.</p>
 </div>
 <div class="section" id="ubung-7-6-output-visualisieren">
-<h3>Übung 7.6: Output visualisieren<a class="headerlink" href="#ubung-7-6-output-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<span id="offset-vis"></span><h3>Übung 7.6: Output visualisieren<a class="headerlink" href="#ubung-7-6-output-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nun ist es wichtig, dass wir unser Resultat visuell überprüfen. Im Beispiel unten wende ich die in der letzten Übung erstellte Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> 1’000x auf die Dummykoordinate an. Nutze <em>deine</em> Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> um eine Visualisierung gemäss unten stehendem beispiel zu machen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

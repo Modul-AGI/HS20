@@ -203,22 +203,39 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   Übung: For Loops (Teil I)
+   Aufgabe 9:
+   <em>
+    For Loop
+   </em>
+   Einführung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_For_Loops.html">
-   Übung: For Loops (Teil II)
+   Aufgabe 10:
+   <em>
+    For Loop
+   </em>
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_For_Loops.html">
+   Aufgabe 11:
+   <em>
+    For Loops
+   </em>
+   Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_GIS_in_Python.html">
+   Aufgabe 12: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
    Übung: Zeckenstich Simulation mit Loop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -342,6 +359,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funktionen-auf-mehreren-zeilen">
+     Funktionen auf mehreren Zeilen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#globale-und-lokale-variabeln">
      Globale und Lokale Variabeln
     </a>
@@ -402,7 +424,7 @@
               <div>
                 
   <div class="section" id="aufgabe-6-function-advanced">
-<h1>Aufgabe 6: <em>Function</em> Advanced<a class="headerlink" href="#aufgabe-6-function-advanced" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="function-advanced"></span><h1>Aufgabe 6: <em>Function</em> Advanced<a class="headerlink" href="#aufgabe-6-function-advanced" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="standart-werte">
@@ -501,6 +523,22 @@
 </div>
 </div>
 </div>
+<div class="section" id="funktionen-auf-mehreren-zeilen">
+<h3>Funktionen auf mehreren Zeilen<a class="headerlink" href="#funktionen-auf-mehreren-zeilen" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Bisher waren unsere Funktionen sehr kurz und einfach und wir benötigten dafür immer nur zwei Zeilen: Die erste Zeile begann die <em>Function</em>-Definition (<code class="docutils literal notranslate"><span class="pre">def..</span></code>) und die zweite Zeile retournierte bereits die Lösung <code class="docutils literal notranslate"><span class="pre">return(...)</span></code>. Zwischen diesen beiden Komponenten haben wir aber viel Platz, den wir uns zu Nutze machen können. Wir können hier Kommentare hinzufügen wie auch unsere Funktion in Einzelschritte aufteilen um den Code lesbarer zu machen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gruezi2</span><span class="p">(</span><span class="n">nachname</span><span class="p">,</span> <span class="n">anrede</span><span class="p">):</span>
+    <span class="c1"># Wozu ist diese Funktion da?</span>
+    <span class="c1"># Diese Funktion soll Menschen freundlich grüssen</span>
+    
+    <span class="n">gruss</span> <span class="o">=</span> <span class="s2">&quot;Guten Tag, &quot;</span> <span class="o">+</span> <span class="n">anrede</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">nachname</span>
+    <span class="k">return</span> <span class="n">gruss</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="globale-und-lokale-variabeln">
 <h3>Globale und Lokale Variabeln<a class="headerlink" href="#globale-und-lokale-variabeln" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Innerhalb einer <em>Function</em> können nur die Variabeln verwendet werden, die der <em>Function</em> als Argumente übergeben (oder innerhalb der Funktion erstellt) werden. Diese nennt man „lokale“ Variabeln, sie sind lokal in der <em>Function</em> vorhanden. Im Gegensatz dazu stehen „globale“ Variabeln, diese sind Teil der aktuellen Session.</p>
@@ -514,7 +552,8 @@
 <span class="k">def</span> <span class="nf">sag_hallo</span><span class="p">(</span><span class="n">vorname</span><span class="p">):</span>
     <span class="k">return</span> <span class="s2">&quot;Hallo &quot;</span> <span class="o">+</span> <span class="n">vorname</span>
 
-<span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</span>
+<span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht die Fehlermeldung,</span>
+<span class="c1"># dass &quot;vorname&quot; fehlt (obwohl wir vorname ja schon definiert haben)</span>
 <span class="n">sag_hallo</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -522,10 +561,10 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="n">cf00497e2e54</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> 
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht eine Fehlermeldung.</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">sag_hallo</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">bd26d99d0230</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht die Fehlermeldung,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># dass &quot;vorname&quot; fehlt (obwohl wir vorname ja schon definiert haben)</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">sag_hallo</span><span class="p">()</span>
 
 <span class="ne">TypeError</span>: sag_hallo() missing 1 required positional argument: &#39;vorname&#39;
 </pre></div>

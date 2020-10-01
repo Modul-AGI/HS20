@@ -203,22 +203,39 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   Übung: For Loops (Teil I)
+   Aufgabe 9:
+   <em>
+    For Loop
+   </em>
+   Einführung
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_03_For_Loops.html">
-   Übung: For Loops (Teil II)
+   Aufgabe 10:
+   <em>
+    For Loop
+   </em>
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_For_Loops.html">
+   Aufgabe 11:
+   <em>
+    For Loops
+   </em>
+   Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_GIS_in_Python.html">
+   Aufgabe 12: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
    Übung: Zeckenstich Simulation mit Loop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -383,7 +400,7 @@
               <div>
                 
   <div class="section" id="aufgabe-5-function-basics">
-<h1>Aufgabe 5: <em>Function</em> Basics<a class="headerlink" href="#aufgabe-5-function-basics" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="function-basics"></span><h1>Aufgabe 5: <em>Function</em> Basics<a class="headerlink" href="#aufgabe-5-function-basics" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Ein Grundprinzip von Programmieren ist „DRY“ (<em>Don’t repeat yourself</em>). Wenn unser Script sehr viele gleiche oder sehr ähnliche Codezeilen enthält ist das ein Zeichen dafür, dass man besser eine <em>Function</em> schreiben sollte. Das hat viele Vorteile: Unter anderem wird der Code wird lesbarer, einfacher zu warten und kürzer.</p>
@@ -466,7 +483,7 @@
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="ubung-5-1-erste-function-erstellen">
 <h3>Übung 5.1: Erste <em>Function</em> erstellen<a class="headerlink" href="#ubung-5-1-erste-function-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst. Das Resultat soll in etwa folgendermassen aussehen:</p>
+<p>Erstelle eine Function, die <code class="docutils literal notranslate"><span class="pre">gruezi</span></code> heisst, einen Nachnamen als Input annimmt und per Sie grüsst.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
@@ -479,7 +496,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi</span><span class="p">(</span><span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat soll in etwa folgendermassen aussehen:</span>
+<span class="n">gruezi</span><span class="p">(</span><span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -519,7 +537,7 @@
 </div>
 <div class="section" id="ubung-5-3-zahlen-summieren">
 <h3>Übung 5.3: Zahlen summieren<a class="headerlink" href="#ubung-5-3-zahlen-summieren" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">add</span></code> die zwei Zahlen summiert. Das Resultat sollte folgendermassen aussehen:</p>
+<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">add</span></code> die zwei Zahlen summiert.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
@@ -532,7 +550,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span><span class="p">(</span><span class="n">zahl1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">zahl2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat sollte folgendermassen aussehen:</span>
+<span class="n">add</span><span class="p">(</span><span class="n">zahl1</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">zahl2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -545,10 +564,10 @@
 </div>
 <div class="section" id="ubung-5-4-quadratzahl">
 <h3>Übung 5.4: Quadratzahl<a class="headerlink" href="#ubung-5-4-quadratzahl" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">square</span></code>, welche den Input quadriert (mit sich selbst multipliziert). Das Resultat sollte folgendermassen aussehen:</p>
+<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">square</span></code>, welche den Input quadriert.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
-<p>Nutze <code class="docutils literal notranslate"><span class="pre">*</span></code> um zwei Zahlen zu multiplizieren.</p>
+<p>„Quadireren“ heisst ja „mit sich selbst multiplizieren“. In Python können zwei Zahlen mit <code class="docutils literal notranslate"><span class="pre">*</span></code> multipliziert werden.</p>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -562,7 +581,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat sollte folgendermassen aussehen:</span>
+<span class="n">square</span><span class="p">(</span><span class="n">zahl</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -575,7 +595,7 @@
 </div>
 <div class="section" id="ubung-5-5-meter-in-fuss-konvertieren">
 <h3>Übung 5.5: Meter in Fuss konvertieren<a class="headerlink" href="#ubung-5-5-meter-in-fuss-konvertieren" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">meter_zu_fuss</span></code>, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Errinnerung: 30.48 cm ergeben 1 Fuss. Das Resultat sollte folgendermassen aussehen:</p>
+<p>Erstelle eine Funktion <code class="docutils literal notranslate"><span class="pre">meter_zu_fuss</span></code>, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Errinnerung: 30.48 cm ergeben 1 Fuss.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Musterlösung</span>
@@ -588,7 +608,9 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meter_zu_fuss</span><span class="p">(</span><span class="n">meter</span> <span class="o">=</span> <span class="mf">1.80</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat sollte folgendermassen aussehen:</span>
+
+<span class="n">meter_zu_fuss</span><span class="p">(</span><span class="n">meter</span> <span class="o">=</span> <span class="mf">1.80</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

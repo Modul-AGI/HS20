@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: For Loops (Teil II) &#8212; Coding in GIS</title>
+    <title>Aufgabe 10: For Loop Basics &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
-    <link rel="prev" title="Übung: For Loops (Teil I)" href="03_02_For_Loops.html" />
+    <link rel="next" title="Aufgabe 11: For Loops Advanced" href="03_04_For_Loops.html" />
+    <link rel="prev" title="Aufgabe 9: For Loop Einführung" href="03_02_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -203,22 +203,39 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_02_For_Loops.html">
-   Übung: For Loops (Teil I)
+   Aufgabe 9:
+   <em>
+    For Loop
+   </em>
+   Einführung
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung: For Loops (Teil II)
+   Aufgabe 10:
+   <em>
+    For Loop
+   </em>
+   Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_For_Loops.html">
+   Aufgabe 11:
+   <em>
+    For Loops
+   </em>
+   Advanced
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_04_GIS_in_Python.html">
+   Aufgabe 12: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
    Übung: Zeckenstich Simulation mit Loop
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Übung: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -327,9 +344,26 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-output-aus-for-loop-speichern">
-   Übung: Output aus For-Loop speichern
+  <a class="reference internal nav-link" href="#theorie">
+   Theorie
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-10-1-grusse-speichern">
+     Übung 10.1: Grüsse speichern
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-10-2-ganze-strophe-speichern">
+     Übung 10.2: Ganze Strophe speichern
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -342,13 +376,15 @@
         
               <div>
                 
-  <div class="section" id="ubung-for-loops-teil-ii">
-<h1>Übung: For Loops (Teil II)<a class="headerlink" href="#ubung-for-loops-teil-ii" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For-Loop meist, dass nach Durchführung etwas davon zurückbleibt. <code class="docutils literal notranslate"><span class="pre">return()</span></code> gibt es wie bereits erwähnt bei <em>For-Loops</em> nicht. Nehmen wir folgendes Beispiel:</p>
+  <div class="section" id="aufgabe-10-for-loop-basics">
+<span id="forloops-2"></span><h1>Aufgabe 10: <em>For Loop</em> Basics<a class="headerlink" href="#aufgabe-10-for-loop-basics" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="theorie">
+<h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer For-Loop meist, dass nach Durchführung etwas davon zurückbleibt. Aber <code class="docutils literal notranslate"><span class="pre">return()</span></code> gibt es wie bereits erwähnt bei <em>For-Loops</em> nicht. Nehmen wir folgendes Beispiel<a class="footnote-reference brackets" href="#mehrzeilig" id="id1">1</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
-    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> 
     <span class="nb">print</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -364,7 +400,7 @@ I&#39;m a saint
 </div>
 </div>
 </div>
-<p>Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel <code class="docutils literal notranslate"><span class="pre">liedzeile</span></code> anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die variabel <code class="docutils literal notranslate"><span class="pre">schlagwort</span></code>.</p>
+<p>Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel <code class="docutils literal notranslate"><span class="pre">liedzeile</span></code> aber jetzt anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die Variabel <code class="docutils literal notranslate"><span class="pre">rolle</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">liedzeile</span>
@@ -379,7 +415,7 @@ I&#39;m a saint
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">schlagwort</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rolle</span>
 </pre></div>
 </div>
 </div>
@@ -389,17 +425,17 @@ I&#39;m a saint
 </div>
 </div>
 </div>
-<p>Das verrät uns etwas über die Funktionsweise des <em>For-Loops</em>: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
-Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Beispiel eine leere Liste (<code class="docutils literal notranslate"><span class="pre">strophe</span> <span class="pre">=</span> <span class="pre">[]</span></code>). Nun können wir innerhalb des <em>Loops</em> <code class="docutils literal notranslate"><span class="pre">append()</span></code> nutzen, um den Output von einem Durchgang dieser Liste hinzu zu fügen.</p>
+<p>Das verrät uns etwas über die Funktionsweise des <em>For-Loops</em>: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.</p>
+<p>Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Beispiel eine leere Liste (<code class="docutils literal notranslate"><span class="pre">strophe</span> <span class="pre">=</span> <span class="pre">[]</span></code>). Nun können wir innerhalb des <em>Loops</em> <code class="docutils literal notranslate"><span class="pre">append()</span></code> nutzen, um den Output von einem Durchgang dieser Liste hinzuzufügen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">strophe</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refrain</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">for</span> <span class="n">schlagwort</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
-    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">schlagwort</span> 
-    <span class="n">strophe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;bitch&quot;</span><span class="p">,</span><span class="s2">&quot;lover&quot;</span><span class="p">,</span><span class="s2">&quot;child&quot;</span><span class="p">,</span><span class="s2">&quot;mother&quot;</span><span class="p">,</span><span class="s2">&quot;sinner&quot;</span><span class="p">,</span><span class="s2">&quot;saint&quot;</span><span class="p">]:</span>
+    <span class="n">liedzeile</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> 
+    <span class="n">refrain</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">liedzeile</span><span class="p">)</span>
     
-<span class="n">strophe</span>
+<span class="n">refrain</span>
 </pre></div>
 </div>
 </div>
@@ -414,9 +450,59 @@ Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Be
 </div>
 </div>
 </div>
-<div class="section" id="ubung-output-aus-for-loop-speichern">
-<h2>Übung: Output aus For-Loop speichern<a class="headerlink" href="#ubung-output-aus-for-loop-speichern" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Erstelle einen <em>For-Loop</em>, wo in jeder Iteration einen Output in einer Liste gespeichert wird.</p>
+</div>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-10-1-grusse-speichern">
+<h3>Übung 10.1: Grüsse speichern<a class="headerlink" href="#ubung-10-1-grusse-speichern" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Nehmen wir nochmals das Beispiel aus <a class="reference internal" href="03_02_For_Loops.html#for-gruss"><span class="std std-ref">Übung 9.2: Erste For-Loop erstellen</span></a>. Erstelle nochmal ein Loop, wo drei Personen aus einer Liste gegrüsst werden. Diesmal sollen aber die drei Grüsse in einer Liste (z.B. <code class="docutils literal notranslate"><span class="pre">mylist</span></code>) gespeichert werden.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat sieht dann so aus:</span>
+<span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ciao Il Buono&#39;, &#39;Ciao Il Brutto&#39;, &#39;Ciao Il Cattivo&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ubung-10-2-ganze-strophe-speichern">
+<h3>Übung 10.2: Ganze Strophe speichern<a class="headerlink" href="#ubung-10-2-ganze-strophe-speichern" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Der im Beispiel verwendete Refrain aus <a class="reference external" href="https://www.metrolyrics.com/bitch-lyrics-meredith-brooks.html">dem Lied „Bitch“ von Meredith Brooks</a> besteht bis auf zwei Zeilen aus Wiederholungen. Versuche mit zwei verschiedenen <em>For Loops</em> den ganzen Refrain in einer Liste zu speichern. Die beiden Teile die vom Muster Abweichen („<em>I do not feel ashamed</em>“ und „<em>You know you wouldn’t want it any other way</em>“) kannst du auch ausserhalb der Loops in die Listen einfügen (<code class="docutils literal notranslate"><span class="pre">append</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Resultat sieht dann so aus:</span>
+<span class="n">refrain</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;I&#39;m a bitch&quot;,
+ &quot;I&#39;m a lover&quot;,
+ &quot;I&#39;m a child&quot;,
+ &quot;I&#39;m a mother&quot;,
+ &quot;I&#39;m a sinner&quot;,
+ &quot;I&#39;m a saint&quot;,
+ &#39;I do not feel ashamed&#39;,
+ &quot;I&#39;m your hell&quot;,
+ &quot;I&#39;m your dream&quot;,
+ &quot;I&#39;m nothing in between&quot;,
+ &quot;You know you wouldn&#39;t want it any other way&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="mehrzeilig"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Übrigens: Auch bei Loops haben wir nach der Erstellung (nach <code class="docutils literal notranslate"><span class="pre">for</span></code>) viel Platz um unseren Loop zu konstruieren, bisher war das einfach nicht nötig.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 
@@ -448,8 +534,8 @@ Dafür erstellen wir unmittelbar for dem For-Loop einen leeren Behälter, zum Be
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">Übung: For Loops (Teil I)</a>
-    <a class='right-next' id="next-link" href="03_04_Zeckenstich_Simulation.html" title="next page">Übung: Zeckenstich Simulation mit Loop</a>
+    <a class='left-prev' id="prev-link" href="03_02_For_Loops.html" title="previous page">Aufgabe 9: <em>For Loop</em> Einführung</a>
+    <a class='right-next' id="next-link" href="03_04_For_Loops.html" title="next page">Aufgabe 11: <em>For Loops</em> Advanced</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
