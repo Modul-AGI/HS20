@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: Waldanteil berechnen &#8212; Coding in GIS</title>
+    <title>Aufgabe 14: Waldanteil berechnen &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -60,7 +60,7 @@
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Basic shortcuts for Jupyter lab" href="04_01_Jupyter_Shortcuts.html" />
-    <link rel="prev" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
+    <link rel="prev" title="Aufgabe 13: GIS in Python" href="03_05_GIS_in_Python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -229,18 +229,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_GIS_in_Python.html">
-   Aufgabe 12: GIS in Python
+  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
+   Aufgabe 12: Zeckenstich Simulation mit Loop
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Übung: Zeckenstich Simulation mit Loop
+  <a class="reference internal" href="03_05_GIS_in_Python.html">
+   Aufgabe 13: GIS in Python
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung: Waldanteil berechnen
+   Aufgabe 14: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -344,28 +344,35 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-wald-oder-nicht-wald">
-   Übung 1: Wald oder nicht Wald?
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-anteil-der-punkte-pro-gruppe">
-   Übung 2: Anteil der Punkte pro „Gruppe“
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-anteil-im-wald-pro-run-ermitteln">
-   Übung 3: Anteil
-   <em>
-    im Wald
-   </em>
-   pro Run ermitteln
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-mittelwerte-visualisieren">
-   Übung 3: Mittelwerte Visualisieren
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-14-1-wald-oder-nicht-wald">
+     Übung 14.1: Wald oder nicht Wald?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-14-2-anteil-der-punkte-pro-gruppe">
+     Übung 14.2: Anteil der Punkte pro „Gruppe“
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-14-3-anteil-im-wald-pro-run-ermitteln">
+     Übung 14.3: Anteil
+     <em>
+      im Wald
+     </em>
+     pro Run ermitteln
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-14-3-mittelwerte-visualisieren">
+     Übung 14.3: Mittelwerte Visualisieren
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -378,8 +385,8 @@
         
               <div>
                 
-  <div class="section" id="ubung-waldanteil-berechnen">
-<h1>Übung: Waldanteil berechnen<a class="headerlink" href="#ubung-waldanteil-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="aufgabe-14-waldanteil-berechnen">
+<span id="chap-waldanteil"></span><h1>Aufgabe 14: Waldanteil berechnen<a class="headerlink" href="#aufgabe-14-waldanteil-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Nun sind wir so weit, dass wir 50 Simulation der Zeckenstiche mit zufällig verschobenen Punkten vorbereitet haben. Wir haben also die gleiche Ausgangslage, mit der ihr den Themenblock „Datenqualität und Unsicherheiten“ gestartet habt. In der Todo-Liste sind wir nun bei Schritt 4:</p>
 <ul class="simple">
 <li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben ✓</p></li>
@@ -488,8 +495,10 @@
 <img alt="_images/03_06_Waldanteil_Berechnen_4_1.png" src="_images/03_06_Waldanteil_Berechnen_4_1.png" />
 </div>
 </div>
-<div class="section" id="ubung-1-wald-oder-nicht-wald">
-<h2>Übung 1: Wald oder nicht Wald?<a class="headerlink" href="#ubung-1-wald-oder-nicht-wald" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-14-1-wald-oder-nicht-wald">
+<h3>Übung 14.1: Wald oder nicht Wald?<a class="headerlink" href="#ubung-14-1-wald-oder-nicht-wald" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Als erstes stellt sich die Frage, welche Punkte sich innerhalb eines Wald-Polygons befinden. In GIS Terminologie handelt es sich hier um einen <em>Spatial Join</em>.</p>
 <p><em>Spatial Join</em> ist als Funktion im Modul <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> mit dem namen <code class="docutils literal notranslate"><span class="pre">sjoin</span></code> vorhanden. Wie auf <a class="reference external" href="https://geopandas.org/reference/geopandas.sjoin.html">der Hilfeseite</a> beschrieben, müssen wir dieser <em>Function</em> zwei <em>GeoDataFrames</em> übergeben, die ge-joined werden sollen. Es können weitere, optionale Parameter angepasst werden, doch bei uns passen die Default werte.</p>
 <p>Führe <code class="docutils literal notranslate"><span class="pre">gpd.sjoin()</span></code> auf die beiden Datensätze <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> und <code class="docutils literal notranslate"><span class="pre">wald</span></code> aus. Beachte, das die Reihenfolge, mit welchen du die beiden GeoDataFrames der Funktion übergibst eine Rolle spielt. Versuche beide Varianten und wähle die korrekte aus. Stelle dir dazu die Frage: Was für ein Geometrietyp (Punkt / Linie / Polygon) soll der Output haben? Speichere den Output als <code class="docutils literal notranslate"><span class="pre">mote_carlo_sjoin</span></code>.
@@ -604,8 +613,8 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div></div></div>
 </div>
 </div>
-<div class="section" id="ubung-2-anteil-der-punkte-pro-gruppe">
-<h2>Übung 2: Anteil der Punkte pro „Gruppe“<a class="headerlink" href="#ubung-2-anteil-der-punkte-pro-gruppe" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-14-2-anteil-der-punkte-pro-gruppe">
+<h3>Übung 14.2: Anteil der Punkte pro „Gruppe“<a class="headerlink" href="#ubung-14-2-anteil-der-punkte-pro-gruppe" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Jetzt wirds etwas kniffelig. Um die Anzahl Punkte innerhalb / ausserhalb vom Wald zu zählen, brauchen wir die <code class="docutils literal notranslate"><span class="pre">groupby</span></code> und <code class="docutils literal notranslate"><span class="pre">size</span></code> aus der Pandas Bibliothek. Es würde den Rahmen von diesem Kurs sprengen, euch die Einzelschritte im Detail zu erläutern, deshalb gebe ich euch den fertigen Code den ihr auf euren Datensatz anwenden könnt.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,8 +774,8 @@ Hinweis: Allenfalls müssen das Koordinatensystem der beiden GeoDataFrames nochm
 </div></div></div>
 </div>
 </div>
-<div class="section" id="ubung-3-anteil-im-wald-pro-run-ermitteln">
-<h2>Übung 3: Anteil <em>im Wald</em> pro Run ermitteln<a class="headerlink" href="#ubung-3-anteil-im-wald-pro-run-ermitteln" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-14-3-anteil-im-wald-pro-run-ermitteln">
+<h3>Übung 14.3: Anteil <em>im Wald</em> pro Run ermitteln<a class="headerlink" href="#ubung-14-3-anteil-im-wald-pro-run-ermitteln" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Berechnet den Anteil im Wald indem du die die Spalte „ja“ mit der Summe aus den Spalten „Ja“ + „Nein“ dividierst. Nutze dafür die Eckigen Klammern (<code class="docutils literal notranslate"><span class="pre">[</span></code>/<code class="docutils literal notranslate"><span class="pre">]</span></code>) sowie die Splatennamen. Speichere den Output als <code class="docutils literal notranslate"><span class="pre">anteil_ja</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -789,8 +798,8 @@ dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="ubung-3-mittelwerte-visualisieren">
-<h2>Übung 3: Mittelwerte Visualisieren<a class="headerlink" href="#ubung-3-mittelwerte-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-14-3-mittelwerte-visualisieren">
+<h3>Übung 14.3: Mittelwerte Visualisieren<a class="headerlink" href="#ubung-14-3-mittelwerte-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Gratuliere! Wenn du an diesem Punkt angekommen bist hast du eine ganze Monte Carlo Simulation von A bis Z mit Python durchgeführt. Von hier an steht dir der Weg frei für noch komplexere Analysen. Zum Abschluss kannst du die Mittelwerte wir nun auf einfache Weise visualisieren. Versuche dabei die Methods <code class="docutils literal notranslate"><span class="pre">plot()</span></code> und <code class="docutils literal notranslate"><span class="pre">plot.box()</span></code> sowie <code class="docutils literal notranslate"><span class="pre">plot.hist()</span></code>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -833,6 +842,7 @@ dtype: float64
 </div>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -862,7 +872,7 @@ dtype: float64
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_04_Zeckenstich_Simulation.html" title="previous page">Übung: Zeckenstich Simulation mit Loop</a>
+    <a class='left-prev' id="prev-link" href="03_05_GIS_in_Python.html" title="previous page">Aufgabe 13: GIS in Python</a>
     <a class='right-next' id="next-link" href="04_01_Jupyter_Shortcuts.html" title="next page">Basic shortcuts for Jupyter lab</a>
 
     </div>

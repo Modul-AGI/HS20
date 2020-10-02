@@ -229,18 +229,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_GIS_in_Python.html">
-   Aufgabe 12: GIS in Python
+  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
+   Aufgabe 12: Zeckenstich Simulation mit Loop
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Übung: Zeckenstich Simulation mit Loop
+  <a class="reference internal" href="03_05_GIS_in_Python.html">
+   Aufgabe 13: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Übung: Waldanteil berechnen
+   Aufgabe 14: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -348,15 +348,41 @@
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Heute wollen wir uns weiter mit den Zeckenstichdaten befassen. Wir werden im Wesentlichen ein Teil der Übung aus „Datenqualität und Unsicherheit“ in Python rekonstruieren.</p>
-<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage „Welcher Anteil der der Zeckenstiche befinden sich im Wald?“ unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.
-In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage („Welcher Anteil…“) unter Berücksichtigung der Unsicherheit.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um die Frage „Welcher Anteil der der Zeckenstiche befinden sich im Wald?“ unter Berücksichtigung dieser Unsicherheit beantworten zu können, führen wir eine (Monte Carlo) Simulation durch.</p>
+<p>In dieser Simulation verändern wir die Position der Zeckenstichmeldungen zufällig und berechnen den Anteil der Zeckenstiche im Wald. Das zufällige Verschieben und berechnen wiederholen wir beliebig lange und bekommen für jede Wiederholung einen leicht unterschiedlichen Prozentwert. Die Verteilung dieser Prozentwerte ist die Antwort auf die ursprüngliche Frage („Welcher Anteil…“) unter Berücksichtigung der Unsicherheit.</p>
 <p>Um eine solche, etwas komplexere Aufgabe lösen zu können müssen wir sie in einfachere Einzelschritte aufteilen. Diese bearbeiten wir in dieser und der kommenden Woche:</p>
-<ul class="simple">
-<li><p>Schritt 1: Einen Einzelpunkt zufällig verschieben (✓ haben wir gelöst in <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5: Arbeitsschritte in eine Function verwandeln</span></a>)</p></li>
-<li><p>Schritt 2: Alle Punkte einer DataFrame zufällig verschieben (1 „Run“, ✓ haben wir gelöst in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3: apply</span></a>)</p></li>
-<li><p>Schritt 3: Alle Punkte einer DataFrame mehrfach zufällig verschieben (z.B. 50 „Runs“, werden wir heute IN PLATZHALTER lösen)</p></li>
-<li><p>Schritt 4: Anteil der Punkte im Wald pro „Run“ ermitteln (werden wir heute in PLATZHALTER lösen)</p></li>
-</ul>
+<table class="table" id="monte-carlo-workflow">
+<caption><span class="caption-number">Tab. 1 </span><span class="caption-text">Monte Carlo Arbeitsschritte</span><a class="headerlink" href="#monte-carlo-workflow" title="Link zu dieser Tabelle">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Schritt</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Voraussetzung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Schritt 1</strong>: Einen Einzelpunkt zufällig verschieben</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5: Arbeitsschritte in eine Function verwandeln</span></a></p></td>
+<td><p><a class="reference internal" href="02_04_Functions_I.html#function-basics"><span class="std std-ref">Aufgabe 5: Function Basics</span></a> und <a class="reference internal" href="02_05_Functions_II.html#function-advanced"><span class="std std-ref">Aufgabe 6: Function Advanced</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Schritt 2</strong>: Alle Punkte einer DataFrame zufällig verschieben</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3: apply</span></a></p></td>
+<td><p><a class="reference internal" href="02_06_Zufallzahlen.html#chap-random-numbers"><span class="std std-ref">Aufgabe 7: Zufallszahlen generieren</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Schritt 3</strong>: Wiederholung von Schritt 2 (zum Beispiel 100-mal)</p></td>
+<td><p>werden wir heute in <a class="reference internal" href="03_04_Zeckenstich_Simulation.html#chap-simulation"><span class="std std-ref">Aufgabe 12: Zeckenstich Simulation mit Loop</span></a> lösen.</p></td>
+<td><p><a class="reference internal" href="03_02_For_Loops.html#forloops-1"><span class="std std-ref">Aufgabe 9: For Loop Einführung</span></a> und <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Schritt 4</strong>: Anteil der Punkte im Wald pro „Run“ ermitteln</p></td>
+<td><p>werden wir heute in <a class="reference internal" href="03_06_Waldanteil_Berechnen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 14: Waldanteil berechnen</span></a> lösen.</p></td>
+<td><p><a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">Aufgabe 13: GIS in Python</span></a></p></td>
+</tr>
+</tbody>
+</table>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">

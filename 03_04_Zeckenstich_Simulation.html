@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Übung: Zeckenstich Simulation mit Loop &#8212; Coding in GIS</title>
+    <title>Aufgabe 12: Zeckenstich Simulation mit Loop &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Übung: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
-    <link rel="prev" title="Aufgabe 12: GIS in Python" href="03_04_GIS_in_Python.html" />
+    <link rel="next" title="Aufgabe 13: GIS in Python" href="03_05_GIS_in_Python.html" />
+    <link rel="prev" title="Aufgabe 11: For Loops Advanced" href="03_04_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -228,19 +228,19 @@
    Advanced
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_04_GIS_in_Python.html">
-   Aufgabe 12: GIS in Python
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Übung: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_05_GIS_in_Python.html">
+   Aufgabe 13: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Übung: Waldanteil berechnen
+   Aufgabe 14: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -344,25 +344,32 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
-   Übung 1: Mit For-Loop
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     zeckenstiche
-    </span>
-   </code>
-   mehrfach verschieben
+  <a class="reference internal nav-link" href="#ubungen">
+   Übungen
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren">
-   Übung 2: DataFrames aus Simulation zusammenführen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-simulierte-daten-visualisieren">
-   Übung 3: Simulierte Daten visualisieren
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-12-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
+     Übung 12.1: Mit For-Loop
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       zeckenstiche
+      </span>
+     </code>
+     mehrfach verschieben
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-12-2-dataframes-aus-simulation-zusammenfuhren">
+     Übung 12.2: DataFrames aus Simulation zusammenführen
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubung-12-3-simulierte-daten-visualisieren">
+     Übung 12.3: Simulierte Daten visualisieren
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -375,10 +382,10 @@
         
               <div>
                 
-  <div class="section" id="ubung-zeckenstich-simulation-mit-loop">
-<h1>Übung: Zeckenstich Simulation mit Loop<a class="headerlink" href="#ubung-zeckenstich-simulation-mit-loop" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Nun geht es weiter mit unserer Zeckenstich Monte-Carlo Simulation. Schritte 1 und 2 haben wir bereits erleidgt. Nun packen wir Schritt 3 an:</p>
-<p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Tipp: Importiert mit <code class="docutils literal notranslate"><span class="pre">head(5)</span></code> nur die ersten 5 Zeile aus dem csv, das macht die die Entwicklung des Loops leichter.</p>
+  <div class="section" id="aufgabe-12-zeckenstich-simulation-mit-loop">
+<span id="chap-simulation"></span><h1>Aufgabe 12: Zeckenstich Simulation mit Loop<a class="headerlink" href="#aufgabe-12-zeckenstich-simulation-mit-loop" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Nun geht es weiter mit unserer Zeckenstich Monte-Carlo Simulation. Schau dir <a class="reference internal" href="03_01_Coding_in_GIS_3.html#monte-carlo-workflow"><span class="std std-numref">Tab. 1</span></a> nochmal an um den ganzen Arbeitsprozess zu überblicken. In dieseR Übung packen wir Schritt 3 an. Es geht jetzt darum, das zufällige verschieben der Zeckenstichpunkte nicht nur einmal zu verschieben wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3: apply</span></a>. Sondern wollen wir dieses „Verschieben“ eine beliebige Anzahl mal mit Hilfe eines Loops wiederholen.</p>
+<p>Ladet dafür die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), holt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -393,8 +400,10 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
-<h2>Übung 1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubungen">
+<h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-12-1-mit-for-loop-zeckenstiche-mehrfach-verschieben">
+<h3>Übung 12.1: Mit For-Loop <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> mehrfach verschieben<a class="headerlink" href="#ubung-12-1-mit-for-loop-zeckenstiche-mehrfach-verschieben" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um euer Gedächnis etwas aufzufrischen: Letzte Woche hatten wir mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer eigenen <em>Function</em> <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und die neuen Daten als eine neue DataFrame abgespeichert.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -436,62 +445,62 @@
     <tr>
       <th>0</th>
       <td>2550</td>
-      <td>2.681095e+06</td>
-      <td>1.250709e+06</td>
+      <td>2.681064e+06</td>
+      <td>1.250558e+06</td>
     </tr>
     <tr>
       <th>1</th>
       <td>10437</td>
-      <td>2.681090e+06</td>
-      <td>1.250710e+06</td>
+      <td>2.681063e+06</td>
+      <td>1.250718e+06</td>
     </tr>
     <tr>
       <th>2</th>
       <td>9174</td>
-      <td>2.681140e+06</td>
-      <td>1.250544e+06</td>
+      <td>2.681117e+06</td>
+      <td>1.250754e+06</td>
     </tr>
     <tr>
       <th>3</th>
       <td>8773</td>
-      <td>2.681019e+06</td>
-      <td>1.250675e+06</td>
+      <td>2.681026e+06</td>
+      <td>1.250704e+06</td>
     </tr>
     <tr>
       <th>4</th>
       <td>2764</td>
-      <td>2.681160e+06</td>
-      <td>1.250921e+06</td>
+      <td>2.680897e+06</td>
+      <td>1.250727e+06</td>
     </tr>
     <tr>
       <th>5</th>
       <td>2513</td>
-      <td>2.681187e+06</td>
-      <td>1.250772e+06</td>
+      <td>2.681271e+06</td>
+      <td>1.250538e+06</td>
     </tr>
     <tr>
       <th>6</th>
       <td>9185</td>
-      <td>2.680996e+06</td>
-      <td>1.250715e+06</td>
+      <td>2.681233e+06</td>
+      <td>1.250853e+06</td>
     </tr>
     <tr>
       <th>7</th>
       <td>28521</td>
-      <td>2.681196e+06</td>
-      <td>1.250716e+06</td>
+      <td>2.681344e+06</td>
+      <td>1.250803e+06</td>
     </tr>
     <tr>
       <th>8</th>
       <td>26745</td>
-      <td>2.681015e+06</td>
-      <td>1.250865e+06</td>
+      <td>2.681252e+06</td>
+      <td>1.250703e+06</td>
     </tr>
     <tr>
       <th>9</th>
       <td>27391</td>
-      <td>2.681308e+06</td>
-      <td>1.250607e+06</td>
+      <td>2.681256e+06</td>
+      <td>1.250705e+06</td>
     </tr>
   </tbody>
 </table>
@@ -499,8 +508,8 @@
 </div>
 <p>Kombiniere dies nun mit deinem Wissen über Loops, um die Punkte der <em>DataFrame</em> nicht einmal, sondern 5 mal zu verschieben. Dazu brauchst du vor dem Loop eine leere Liste (z.B. <code class="docutils literal notranslate"><span class="pre">monte_carlo</span> <span class="pre">=</span> <span class="pre">[]</span></code>) damit du den Output aus jedem Loop mit <code class="docutils literal notranslate"><span class="pre">append()</span></code>  abspeichern kannst. Erstelle auch eine neue Spalte <code class="docutils literal notranslate"><span class="pre">Run_Nr</span></code> mit der Nummer der Durchführung (die du vom Platzhalter erhältst).</p>
 </div>
-<div class="section" id="ubung-2-dataframes-aus-simulation-zusammenfuhren">
-<h2>Übung 2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-2-dataframes-aus-simulation-zusammenfuhren" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-12-2-dataframes-aus-simulation-zusammenfuhren">
+<h3>Übung 12.2: DataFrames aus Simulation zusammenführen<a class="headerlink" href="#ubung-12-2-dataframes-aus-simulation-zusammenfuhren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Schau dir die Outputs an.</p>
 <ul class="simple">
 <li><p>Mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>:</p>
@@ -573,9 +582,10 @@
 </div>
 </div>
 </div>
-<div class="section" id="ubung-3-simulierte-daten-visualisieren">
-<h2>Übung 3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-3-simulierte-daten-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-12-3-simulierte-daten-visualisieren">
+<h3>Übung 12.3: Simulierte Daten visualisieren<a class="headerlink" href="#ubung-12-3-simulierte-daten-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Exploriere nun <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>. Was ist es für ein Datentyp? Was hat es für Spalten? Visualisiere den Datensatz räumlich mit <code class="docutils literal notranslate"><span class="pre">monte_carlo_df.plot.scatter()</span></code>.</p>
+</div>
 </div>
 </div>
 
@@ -607,8 +617,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_04_GIS_in_Python.html" title="previous page">Aufgabe 12: GIS in Python</a>
-    <a class='right-next' id="next-link" href="03_06_Waldanteil_Berechnen.html" title="next page">Übung: Waldanteil berechnen</a>
+    <a class='left-prev' id="prev-link" href="03_04_For_Loops.html" title="previous page">Aufgabe 11: <em>For Loops</em> Advanced</a>
+    <a class='right-next' id="next-link" href="03_05_GIS_in_Python.html" title="next page">Aufgabe 13: GIS in Python</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

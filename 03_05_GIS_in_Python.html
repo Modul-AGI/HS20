@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 12: GIS in Python &#8212; Coding in GIS</title>
+    <title>Aufgabe 13: GIS in Python &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Übung: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
-    <link rel="prev" title="Aufgabe 11: For Loops Advanced" href="03_04_For_Loops.html" />
+    <link rel="next" title="Aufgabe 14: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
+    <link rel="prev" title="Aufgabe 12: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -228,19 +228,19 @@
    Advanced
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Aufgabe 12: GIS in Python
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Übung: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation mit Loop
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Aufgabe 13: GIS in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Übung: Waldanteil berechnen
+   Aufgabe 14: Waldanteil berechnen
   </a>
  </li>
 </ul>
@@ -297,7 +297,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/03_04_GIS_in_Python.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_05_GIS_in_Python.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -322,7 +322,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_04_GIS_in_Python.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_05_GIS_in_Python.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -379,8 +379,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-1-dataframe-zu-geodataframe">
-     Übung 12.1:
+    <a class="reference internal nav-link" href="#ubung-13-1-dataframe-zu-geodataframe">
+     Übung 13.1:
      <em>
       DataFrame
      </em>
@@ -391,33 +391,33 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-2-punkte-buffern">
-     Übung 12.2: Punkte Buffern
+    <a class="reference internal nav-link" href="#ubung-13-2-punkte-buffern">
+     Übung 13.2: Punkte Buffern
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-3-umrisse-visualisieren">
-     Übung 12.3: Umrisse visualisieren
+    <a class="reference internal nav-link" href="#ubung-13-3-umrisse-visualisieren">
+     Übung 13.3: Umrisse visualisieren
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-4-layers-uberlagern">
-     Übung 12.4: Layers überlagern
+    <a class="reference internal nav-link" href="#ubung-13-4-layers-uberlagern">
+     Übung 13.4: Layers überlagern
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-5-envelope">
-     Übung 12.5 Envelope
+    <a class="reference internal nav-link" href="#ubung-13-5-envelope">
+     Übung 13.5 Envelope
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-6-overlay-operation">
-     Übung 12.6: Overlay Operation
+    <a class="reference internal nav-link" href="#ubung-13-6-overlay-operation">
+     Übung 13.6: Overlay Operation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-12-7-geopandas-als-shapefile-geopackage-abspeichern">
-     Übung 12.7: Geopandas als Shapefile / Geopackage abspeichern
+    <a class="reference internal nav-link" href="#ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern">
+     Übung 13.7: Geopandas als Shapefile / Geopackage abspeichern
     </a>
    </li>
   </ul>
@@ -433,8 +433,8 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-12-gis-in-python">
-<h1>Aufgabe 12: GIS in Python<a class="headerlink" href="#aufgabe-12-gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="aufgabe-13-gis-in-python">
+<span id="chap-pythongis"></span><h1>Aufgabe 13: GIS in Python<a class="headerlink" href="#aufgabe-13-gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="tabellen-ohne-raumbezug">
@@ -736,7 +736,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_04_GIS_in_Python_9_1.png" src="_images/03_04_GIS_in_Python_9_1.png" />
+<img alt="_images/03_05_GIS_in_Python_9_1.png" src="_images/03_05_GIS_in_Python_9_1.png" />
 </div>
 </div>
 <p>Im Prinzip stehen uns jetzt auch alle anderen Vektor Operationen zur Verfügung, die wir schon aus ArcGIS kennen. Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id1">1</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen und darüber ein <em>Convex Hull</em> <a class="footnote-reference brackets" href="#convex-hull" id="id2">2</a> oder ein <em>Envelope</em> <a class="footnote-reference brackets" href="#envelope" id="id3">3</a> rechnen.</p>
@@ -777,7 +777,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_04_GIS_in_Python_11_1.png" src="_images/03_04_GIS_in_Python_11_1.png" />
+<img alt="_images/03_05_GIS_in_Python_11_1.png" src="_images/03_05_GIS_in_Python_11_1.png" />
 </div>
 </div>
 <div class="attention admonition">
@@ -829,35 +829,35 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03_04_GIS_in_Python_13_0.png" src="_images/03_04_GIS_in_Python_13_0.png" />
+<img alt="_images/03_05_GIS_in_Python_13_0.png" src="_images/03_05_GIS_in_Python_13_0.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="ubung-12-1-dataframe-zu-geodataframe">
-<h3>Übung 12.1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-12-1-dataframe-zu-geodataframe" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-1-dataframe-zu-geodataframe">
+<h3>Übung 13.1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-13-1-dataframe-zu-geodataframe" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Importiere <em>Geopandas</em> und wandle <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> in eine <em>GeoDataFrame</em> um (<code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code>). Vergiss nicht, das Koordinatensystem festzulegen!</p>
 </div>
-<div class="section" id="ubung-12-2-punkte-buffern">
-<h3>Übung 12.2: Punkte Buffern<a class="headerlink" href="#ubung-12-2-punkte-buffern" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-2-punkte-buffern">
+<h3>Übung 13.2: Punkte Buffern<a class="headerlink" href="#ubung-13-2-punkte-buffern" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Buffere die Zeckenstiche um eine Distanz von 12 Meter und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code>. Visualisiere die gebufferten Punkte in einem Plot.</p>
 </div>
-<div class="section" id="ubung-12-3-umrisse-visualisieren">
-<h3>Übung 12.3: Umrisse visualisieren<a class="headerlink" href="#ubung-12-3-umrisse-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-3-umrisse-visualisieren">
+<h3>Übung 13.3: Umrisse visualisieren<a class="headerlink" href="#ubung-13-3-umrisse-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Extrahiere die Umrisse von <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code> und speichere diese in <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer_outline</span></code>. Visualisiere anschliessend diese Umrisse.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_04_GIS_in_Python_21_1.png" src="_images/03_04_GIS_in_Python_21_1.png" />
+<img alt="_images/03_05_GIS_in_Python_21_1.png" src="_images/03_05_GIS_in_Python_21_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="ubung-12-4-layers-uberlagern">
-<h3>Übung 12.4: Layers überlagern<a class="headerlink" href="#ubung-12-4-layers-uberlagern" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-4-layers-uberlagern">
+<h3>Übung 13.4: Layers überlagern<a class="headerlink" href="#ubung-13-4-layers-uberlagern" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nutze nachstehenden Code um zwei Datensätze im gleichen Plot darzustellen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,20 +873,20 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_04_GIS_in_Python_23_1.png" src="_images/03_04_GIS_in_Python_23_1.png" />
+<img alt="_images/03_05_GIS_in_Python_23_1.png" src="_images/03_05_GIS_in_Python_23_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="ubung-12-5-envelope">
-<h3>Übung 12.5 Envelope<a class="headerlink" href="#ubung-12-5-envelope" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-5-envelope">
+<h3>Übung 13.5 Envelope<a class="headerlink" href="#ubung-13-5-envelope" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Berechne das „Envelope“ von <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> anhand der obigen Beispielen. Speichere den Output als <code class="docutils literal notranslate"><span class="pre">zeckenstiche_envelope</span></code>.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
 <p>Denk daran, dass du zuerst noch einen Union machen musst (siehe <a class="reference internal" href="#chap-raeumliche-operationen"><span class="std std-ref">Räumliche Operationen</span></a>)</p>
 </div>
 </div>
-<div class="section" id="ubung-12-6-overlay-operation">
-<h3>Übung 12.6: Overlay Operation<a class="headerlink" href="#ubung-12-6-overlay-operation" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-6-overlay-operation">
+<h3>Übung 13.6: Overlay Operation<a class="headerlink" href="#ubung-13-6-overlay-operation" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Führe verschiedene Overlay Operationen zwischen <code class="docutils literal notranslate"><span class="pre">zeckenstiche_envelope</span></code> und <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code> durch. Schaue dir dazu die entsprechende <a class="reference external" href="https://geopandas.org/set_operations.html#set-operations-with-overlay">Geopandas Hilfeseite</a> an. Beispielsweise würden sich <em>Union</em> und <em>Symetrical Difference</em> gut anbieten.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
@@ -913,12 +913,12 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Symetrical Difference&#39;)
 </pre></div>
 </div>
-<img alt="_images/03_04_GIS_in_Python_28_1.png" src="_images/03_04_GIS_in_Python_28_1.png" />
+<img alt="_images/03_05_GIS_in_Python_28_1.png" src="_images/03_05_GIS_in_Python_28_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="ubung-12-7-geopandas-als-shapefile-geopackage-abspeichern">
-<h3>Übung 12.7: Geopandas als Shapefile / Geopackage abspeichern<a class="headerlink" href="#ubung-12-7-geopandas-als-shapefile-geopackage-abspeichern" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern">
+<h3>Übung 13.7: Geopandas als Shapefile / Geopackage abspeichern<a class="headerlink" href="#ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Jetzt wo wir unsere Zeckenstiche als Geodaten aufbereitet haben können wir diese auch in gängige Geodaten abspeichern. Genau wie wir in <a class="reference internal" href="01_06_Tabellarische_Daten.html#ex-to-csv"><span class="std std-ref">Übung 4.2: DataFrame in csv umwandeln</span></a> eine <em>DataFrame</em> mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> mit dieser Methode in eine Shapefile.</p>
 <p><strong>Zusatzaufgabe</strong>: Shapefiles sind eigentlich ein ganz schreckliches Format (siehe <a class="reference external" href="http://switchfromshapefile.org/">switchfromshapefile.org</a>). Viel praktischer sind an dieser Stelle <em>Geopackages</em> (nicht zu verwechseln mit ArcGIS Pro Packages). Ihr könnt <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> auch als <em>Geopackage</em> exportieren, dafür müsst ihr dem Output die Erweiterung „gpkg“ geben und zusätzlich <code class="docutils literal notranslate"><span class="pre">driver</span> <span class="pre">=</span> <span class="pre">GPKG</span></code> festlegen.</p>
 <hr class="docutils" />
@@ -968,8 +968,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_04_For_Loops.html" title="previous page">Aufgabe 11: <em>For Loops</em> Advanced</a>
-    <a class='right-next' id="next-link" href="03_04_Zeckenstich_Simulation.html" title="next page">Übung: Zeckenstich Simulation mit Loop</a>
+    <a class='left-prev' id="prev-link" href="03_04_Zeckenstich_Simulation.html" title="previous page">Aufgabe 12: Zeckenstich Simulation mit Loop</a>
+    <a class='right-next' id="next-link" href="03_06_Waldanteil_Berechnen.html" title="next page">Aufgabe 14: Waldanteil berechnen</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
