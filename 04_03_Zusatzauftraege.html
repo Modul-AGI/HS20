@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Willkommen bei Coding in GIS &#8212; Coding in GIS</title>
+    <title>Abgabe Leistungsnachweis &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,7 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Einleitung zu diesem Block" href="01_01_Coding_in_GIS_1.html" />
+    <link rel="next" title="Basic shortcuts for Jupyter lab" href="05_01_Jupyter_Shortcuts.html" />
+    <link rel="prev" title="Aufgabe 15: Vereinigen aller Einzelteile" href="04_02_Vereinigen.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -76,7 +77,7 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
   
@@ -94,7 +95,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Willkommen bei Coding in GIS
   </a>
  </li>
@@ -248,7 +249,7 @@
   Leistungsnachweis
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="04_01_Leistungsnachweis.html">
    Einleitung
@@ -259,8 +260,8 @@
    Aufgabe 15: Vereinigen aller Einzelteile
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_03_Zusatzauftraege.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Abgabe Leistungsnachweis
   </a>
  </li>
@@ -318,7 +319,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/04_03_Zusatzauftraege.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -343,7 +344,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/index.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/04_03_Zusatzauftraege.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -359,6 +360,32 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Inhalt
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zusatzauftrage">
+   Zusatzaufträge
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#auftrag-1">
+     Auftrag 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#auftrag-2">
+     Auftrag 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -366,41 +393,56 @@
         
               <div>
                 
-  <div class="section" id="willkommen-bei-coding-in-gis">
-<h1>Willkommen bei <em>Coding in GIS</em><a class="headerlink" href="#willkommen-bei-coding-in-gis" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Dieser kurze Kurs ist Bestandteil des übergreifenden Moduls „<a class="reference external" href="https://studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik">Angewandte Geoinformatik</a>“ der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW). Er soll einen Einstieg in die Programmierwelt von Python bieten und spezifisch zeigen wie man räumliche Fragestellungen mit frei verfügbarer Software lösen kann.</p>
-<p>Die Voraussetzung für dieser Kurs ist eine Offenheit, neue Tools und Ansätze kennen zu lernen, die Bereitschaft für lösungorientiertes Arbeiten sowie etwas Hartnäckigkeit.</p>
-<div class="tip admonition">
-<p class="admonition-title">Dieses Buch auch als pdf version verfügbar</p>
-<p>Wir empfehlen, dass ihr im Unterricht die Online Version dieser Übungsunterlagen nutzt. Diese spiegeln immer den neusten Stand, sind responsive (passen sich an Endgeräte wie Tablets usw. an) und können die Musterlösungen interaktiv darstellen (sobald diese freigeschaltet sind).</p>
-<p>Als Doku für euch ist aber auch eine PDF Version der Unterlagen verfügbar. Speichert euch die erst am ende vom Kurs ab, damit ihr die neuste Version inkl. allen Musterlösungen habt.</p>
+  <div class="section" id="abgabe-leistungsnachweis">
+<h1>Abgabe Leistungsnachweis<a class="headerlink" href="#abgabe-leistungsnachweis" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Folgendes müsst ihr für den Leistungsnachweis für Coding in GIS abgeben:</p>
 <ul class="simple">
-<li><p>online (<strong>empfohlen</strong>): <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a></p></li>
-<li><p>pdf (nur für Doku / Notizen): <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf</a></p></li>
+<li><p>Inhalt: Ein Report der Analyse der Zeckenstichdaten gemäss <a class="reference internal" href="04_01_Leistungsnachweis.html#fig-sim-workflow"><span class="std std-ref">Der generelle Workflow userer Monte Carlo Simulation</span></a></p>
+<ul>
+<li><p>Der Inhalt ist Gegeben durch <a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a> inkl. der <a class="reference internal" href="#chap-abgabe-zusatz"><span class="std std-ref">Zusatzaufträge</span></a></p></li>
+<li><p>Integriert erklärender Text mit Markdown Zellen. Hier müsst ihr keine Romane schreiben</p></li>
+</ul>
+</li>
+<li><p>Form:</p>
+<ul>
+<li><p>Ein Jupyter-Notebook-File (*.ipynb)</p></li>
+<li><p>Ein html-Export des Files:</p>
+<ul>
+<li><p><strong>Wichtig:</strong> Zuerst alle Zellen ausführen (<em>Run &gt; Run all cells</em>)</p></li>
+<li><p>Export via <em>File &gt; Export Notebook as &gt; Export Notebook to html</em></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="zusatzauftrage">
+<span id="chap-abgabe-zusatz"></span><h2>Zusatzaufträge<a class="headerlink" href="#zusatzauftrage" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="auftrag-1">
+<h3>Auftrag 1<a class="headerlink" href="#auftrag-1" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Um den ganzen <em>Workflow</em> zu entwickeln haben wir es bisher einfach gehalten. Wir arbeiteten mit nur 10 Zeckenstichen und 5 Iterationen („<em>Runs</em>“).</p>
+<ul class="simple">
+<li><p>Führe die ganze Analyse mit dem ganzen Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche_full.csv</span></code> (1’076 Meldungen) durch den du <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche_full.csv">hier herunterladen</a> kannst (Rechtsklick &gt; Speichern Unter)</p></li>
+<li><p>Lasse die Simulation 50-mal statt nur 5-mal laufen</p></li>
 </ul>
 </div>
-<p>Noch ein paar Hinweise zur Handhabung dieses Dokumentes:</p>
-<ul>
-<li><p>Die Musterlösungen zu allen Aufgaben stehen bereit. Wir werden diese bald einblenden</p></li>
-<li><p>Wenn sich im Fliesstext (Python- oder R-) Code befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
-<li><p>Englische Begriffe, deren Übersetzung eher verwirrend als nützlich wären, werden <em>in dieser Weise</em> hervorgehoben</p></li>
-<li><p>Da viele von euch bereits Erfahrung in R haben, stelle ich immer wieder den Bezug zu dieser Programmiersprache her.</p></li>
-<li><p>Alleinstehende Codezeilen werden folgendermassen dargestellt:</p></li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coding in GIS!&quot;</span><span class="p">)</span>
+<div class="section" id="auftrag-2">
+<h3>Auftrag 2<a class="headerlink" href="#auftrag-2" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Wir simulieren die Zeckenstiche, indem wir die Original-Meldungen mit der Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> um einen Zufallswert verschieben (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5</span></a>). Dieser Zufallswert stammt aus einer Verteilung mit Mittelwert <code class="docutils literal notranslate"><span class="pre">0</span></code> und Standartabweichung <code class="docutils literal notranslate"><span class="pre">100</span></code>. Variere in deiner Analyse die Standartabweichung und nutze nebst <code class="docutils literal notranslate"><span class="pre">100</span></code> zwei andere Werte, Beispielsweise <code class="docutils literal notranslate"><span class="pre">10</span></code> und <code class="docutils literal notranslate"><span class="pre">1'000</span></code>. Schau dir <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-param"><span class="std std-ref">Übung 8.4</span></a> nochmals an wenn du nicht mehr weisst, wie das geht.</p>
+<div class="dropdown admonition tip">
+<p class="admonition-title">Tipp</p>
+<p><strong>Für Profis</strong></p>
+<p>Es ist natürlich nicht nötig, den <em>For Loop</em> 3x zu kopieren. Man kann auch einen verschachtelten <em>For Loop</em> konstuieren, wo der äussere <em>Loop</em> über die Radien iteriert und der innere <em>Loop</em> der bisherige <em>Loop</em> darstellt. Wichtig dabei ist, dass die Liste <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> vor dem äusseren Loop kontruiert wird und im DataFrame jeweils gespeichert wird, was für ein Radius verwendet wurde. Diese Spalte kann danach in <code class="docutils literal notranslate"><span class="pre">groupby</span></code> (siehe unten) mitverwendet werden.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">monte_carlo_join2</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Radius&quot;</span><span class="p">,</span><span class="s2">&quot;Run&quot;</span><span class="p">,</span><span class="s2">&quot;Wald_text&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">fill_value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">ja_anteil</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">ja</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">ja</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">nein</span><span class="p">))</span>
+                                                                             
+<span class="n">results</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;ja_anteil&quot;</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;Radius&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p>Der gesamte Quellcode um dieses Buch zu erstellen ist in dem folgenden github-repo verfügbar: <a class="reference external" href="https://github.com/ratnanil/codingingis">ratnanil/codingingis</a>.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -432,7 +474,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="01_01_Coding_in_GIS_1.html" title="next page">Einleitung zu diesem Block</a>
+    <a class='left-prev' id="prev-link" href="04_02_Vereinigen.html" title="previous page">Aufgabe 15: Vereinigen aller Einzelteile</a>
+    <a class='right-next' id="next-link" href="05_01_Jupyter_Shortcuts.html" title="next page">Basic shortcuts for Jupyter lab</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

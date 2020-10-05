@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Willkommen bei Coding in GIS &#8212; Coding in GIS</title>
+    <title>Basic shortcuts for Jupyter lab &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Einleitung zu diesem Block" href="01_01_Coding_in_GIS_1.html" />
+    <link rel="prev" title="Abgabe Leistungsnachweis" href="04_03_Zusatzauftraege.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -76,7 +76,7 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
   
@@ -94,7 +94,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Willkommen bei Coding in GIS
   </a>
  </li>
@@ -270,9 +270,9 @@
   Anhang
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -318,7 +318,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/05_01_Jupyter_Shortcuts.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -343,7 +343,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/index.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/05_01_Jupyter_Shortcuts.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -366,42 +366,23 @@
         
               <div>
                 
-  <div class="section" id="willkommen-bei-coding-in-gis">
-<h1>Willkommen bei <em>Coding in GIS</em><a class="headerlink" href="#willkommen-bei-coding-in-gis" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Dieser kurze Kurs ist Bestandteil des übergreifenden Moduls „<a class="reference external" href="https://studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik">Angewandte Geoinformatik</a>“ der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW). Er soll einen Einstieg in die Programmierwelt von Python bieten und spezifisch zeigen wie man räumliche Fragestellungen mit frei verfügbarer Software lösen kann.</p>
-<p>Die Voraussetzung für dieser Kurs ist eine Offenheit, neue Tools und Ansätze kennen zu lernen, die Bereitschaft für lösungorientiertes Arbeiten sowie etwas Hartnäckigkeit.</p>
-<div class="tip admonition">
-<p class="admonition-title">Dieses Buch auch als pdf version verfügbar</p>
-<p>Wir empfehlen, dass ihr im Unterricht die Online Version dieser Übungsunterlagen nutzt. Diese spiegeln immer den neusten Stand, sind responsive (passen sich an Endgeräte wie Tablets usw. an) und können die Musterlösungen interaktiv darstellen (sobald diese freigeschaltet sind).</p>
-<p>Als Doku für euch ist aber auch eine PDF Version der Unterlagen verfügbar. Speichert euch die erst am ende vom Kurs ab, damit ihr die neuste Version inkl. allen Musterlösungen habt.</p>
+  <div class="section" id="basic-shortcuts-for-jupyter-lab">
+<h1>Basic shortcuts for Jupyter lab<a class="headerlink" href="#basic-shortcuts-for-jupyter-lab" title="Link zu dieser Überschrift">¶</a></h1>
 <ul class="simple">
-<li><p>online (<strong>empfohlen</strong>): <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a></p></li>
-<li><p>pdf (nur für Doku / Notizen): <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf</a></p></li>
+<li><p><strong>Alt + Enter</strong>: Run current cell</p></li>
+<li><p><strong>ESC</strong>: takes users into command mode view while ENTER takes users into cell mode view.</p></li>
+<li><p><strong>A</strong>: inserts a cell above the currently selected cell. Before using this, make sure that you are in command mode (by pressing ESC).</p></li>
+<li><p><strong>B</strong>: inserts a cell below the currently selected cell. Before using this make sure that you are in command mode (by pressing ESC).</p></li>
+<li><p><strong>D + D</strong>: Pressing D two times in a quick succession in command mode deletes the currently selected cell.</p></li>
+<li><p><strong>M</strong>: to change current cell to a markdown cell,</p></li>
+<li><p><strong>Y</strong>: to change it to a code cell and  R to change it to a raw cell.</p></li>
+<li><p><strong>CTRL + B</strong>: Jupyter lab has two columns design. One column is for launcher or code blocks and another column is for file view etc. To increase workspace while writing code, we can close it.  CTRL + B is the shortcut for toggling the file view column in the Jupyter lab.</p></li>
+<li><p><strong>SHIFT + MIt</strong>: merges multiple selected cells into one cell.</p></li>
+<li><p><strong>CTRL + SHIFT +</strong> –: It splits the current cell into two cells from where your cursor is.</p></li>
+<li><p><strong>SHIFT+J or SHIFT + DOWN</strong>: It selects the next cell in a downward direction.  It will help in making multiple selections of cells.</p></li>
+<li><p><strong>SHIFT + K or SHIFT + UP</strong>: It selects the next cell in an upwards direction. It will help in making multiple selections of cells.</p></li>
+<li><p><strong>CTRL + /</strong>: It helps you in either commenting or uncommenting any line in the Jupyter lab. For this to work, you don’t even need to select the whole line. It will comment or uncomment line where your cursor is. If you want to do it for more that one line then you will need to first select all the line and then use this shortcut.</p></li>
 </ul>
-</div>
-<p>Noch ein paar Hinweise zur Handhabung dieses Dokumentes:</p>
-<ul>
-<li><p>Die Musterlösungen zu allen Aufgaben stehen bereit. Wir werden diese bald einblenden</p></li>
-<li><p>Wenn sich im Fliesstext (Python- oder R-) Code befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
-<li><p>Englische Begriffe, deren Übersetzung eher verwirrend als nützlich wären, werden <em>in dieser Weise</em> hervorgehoben</p></li>
-<li><p>Da viele von euch bereits Erfahrung in R haben, stelle ich immer wieder den Bezug zu dieser Programmiersprache her.</p></li>
-<li><p>Alleinstehende Codezeilen werden folgendermassen dargestellt:</p></li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coding in GIS!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>Der gesamte Quellcode um dieses Buch zu erstellen ist in dem folgenden github-repo verfügbar: <a class="reference external" href="https://github.com/ratnanil/codingingis">ratnanil/codingingis</a>.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -432,7 +413,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="01_01_Coding_in_GIS_1.html" title="next page">Einleitung zu diesem Block</a>
+    <a class='left-prev' id="prev-link" href="04_03_Zusatzauftraege.html" title="previous page">Abgabe Leistungsnachweis</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

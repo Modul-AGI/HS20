@@ -230,7 +230,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Aufgabe 12: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation
   </a>
  </li>
  <li class="toctree-l1">
@@ -239,8 +239,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Aufgabe 14: Waldanteil berechnen
+  <a class="reference internal" href="03_06_Spatial_Joins.html">
+   Aufgabe 14: Spatial Joins
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Leistungsnachweis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Leistungsnachweis.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_Vereinigen.html">
+   Aufgabe 15: Vereinigen aller Einzelteile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_Zusatzauftraege.html">
+   Abgabe Leistungsnachweis
   </a>
  </li>
 </ul>
@@ -251,7 +273,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -354,38 +376,33 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-1-spalten-selektieren">
-     Übung 8.1: Spalten selektieren
+    <a class="reference internal nav-link" href="#ubung-8-1">
+     Übung 8.1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-2-neue-spalten-erstellen">
-     Übung 8.2: Neue Spalten erstellen
+    <a class="reference internal nav-link" href="#ubung-8-2">
+     Übung 8.2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-3-apply">
-     Übung 8.3:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       apply
-      </span>
-     </code>
+    <a class="reference internal nav-link" href="#ubung-8-3">
+     Übung 8.3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-4-zusatzliche-parameter">
-     Übung 8.4: Zusätzliche Parameter
+    <a class="reference internal nav-link" href="#ubung-8-4">
+     Übung 8.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-5-simulation-visualisieren">
-     Übung 8.5: Simulation visualisieren
+    <a class="reference internal nav-link" href="#ubung-8-5">
+     Übung 8.5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-     Übung 8.6: Genauigkeitsangaben der Punkte mitberücksichtigen.
+    <a class="reference internal nav-link" href="#ubung-8-6">
+     Übung 8.6
     </a>
    </li>
   </ul>
@@ -526,8 +543,8 @@
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="ubung-8-1-spalten-selektieren">
-<h3>Übung 8.1: Spalten selektieren<a class="headerlink" href="#ubung-8-1-spalten-selektieren" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-8-1">
+<h3>Übung 8.1<a class="headerlink" href="#ubung-8-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Mache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir <a class="reference internal" href="01_06_Tabellarische_Daten.html#chap-dataframes"><span class="std std-ref">Aufgabe 4: Tabellarische Daten</span></a> nochmals an wenn du nicht mehr weisst wie das geht.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -555,8 +572,8 @@ Name: y, dtype: int64
 </div>
 </div>
 </div>
-<div class="section" id="ubung-8-2-neue-spalten-erstellen">
-<h3>Übung 8.2: Neue Spalten erstellen<a class="headerlink" href="#ubung-8-2-neue-spalten-erstellen" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-8-2">
+<h3>Übung 8.2<a class="headerlink" href="#ubung-8-2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Mache dich nochmals damit vertraut, wie man neue Spalten erstellt. Schau dir <a class="reference internal" href="01_06_Tabellarische_Daten.html#chap-dataframes"><span class="std std-ref">Aufgabe 4: Tabellarische Daten</span></a> nochmals an wenn du nicht mehr weisst wie das geht. Erstelle ein paar neue Spalten nach dem Beispiel unten um die Hangriffe zu üben. Lösche die Spalten im Anschluss wieder mit <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">zeckenstiche['test1']</span></code> etc.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -722,8 +739,8 @@ Name: y, dtype: int64
 </div>
 </div>
 </div>
-<div class="section" id="ubung-8-3-apply">
-<span id="ex-apply"></span><h3>Übung 8.3: <code class="docutils literal notranslate"><span class="pre">apply</span></code><a class="headerlink" href="#ubung-8-3-apply" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-8-3">
+<span id="ex-apply"></span><h3>Übung 8.3<a class="headerlink" href="#ubung-8-3" title="Link zu dieser Überschrift">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregiren (<code class="docutils literal notranslate"><span class="pre">apply</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">mapapply</span></code>, <code class="docutils literal notranslate"><span class="pre">assign</span></code>). Es würde den Rahmen von diesem Kurs sprengen, die alle im Detail durch zu gehen, es lohnt sich aber sehr sich mit diesen zu befassen wenn man in sich näher mit Python befassen möchte.</p>
 <p>Im unseren Fall brauchen wir lediglich die Methode <code class="docutils literal notranslate"><span class="pre">apply</span></code> um die Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:</p>
 <div class="cell docutils container">
@@ -738,16 +755,16 @@ Name: y, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680988e+06
-1    2.680988e+06
-2    2.681076e+06
-3    2.681105e+06
-4    2.681109e+06
-5    2.681086e+06
-6    2.681013e+06
-7    2.681286e+06
-8    2.680932e+06
-9    2.681131e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681083e+06
+1    2.681003e+06
+2    2.681029e+06
+3    2.681081e+06
+4    2.680961e+06
+5    2.681265e+06
+6    2.681172e+06
+7    2.681042e+06
+8    2.681215e+06
+9    2.681242e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -804,8 +821,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.680975e+06</td>
-      <td>1.250765e+06</td>
+      <td>2.681117e+06</td>
+      <td>1.250574e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -813,8 +830,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681176e+06</td>
-      <td>1.250843e+06</td>
+      <td>2.681134e+06</td>
+      <td>1.250594e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -822,8 +839,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681097e+06</td>
-      <td>1.250852e+06</td>
+      <td>2.681187e+06</td>
+      <td>1.250720e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -831,8 +848,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681170e+06</td>
-      <td>1.250727e+06</td>
+      <td>2.680981e+06</td>
+      <td>1.250706e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -840,8 +857,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681165e+06</td>
-      <td>1.250825e+06</td>
+      <td>2.681215e+06</td>
+      <td>1.250447e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -849,8 +866,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681213e+06</td>
-      <td>1.250720e+06</td>
+      <td>2.681219e+06</td>
+      <td>1.250753e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -858,8 +875,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.680940e+06</td>
-      <td>1.250638e+06</td>
+      <td>2.681054e+06</td>
+      <td>1.250713e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -867,8 +884,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681078e+06</td>
-      <td>1.250716e+06</td>
+      <td>2.680971e+06</td>
+      <td>1.250857e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -876,8 +893,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681190e+06</td>
-      <td>1.250827e+06</td>
+      <td>2.680961e+06</td>
+      <td>1.250584e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -885,17 +902,17 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681107e+06</td>
-      <td>1.250794e+06</td>
+      <td>2.681136e+06</td>
+      <td>1.250857e+06</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
 </div>
-<div class="section" id="ubung-8-4-zusatzliche-parameter">
-<span id="ex-param"></span><h3>Übung 8.4: Zusätzliche Parameter<a class="headerlink" href="#ubung-8-4-zusatzliche-parameter" title="Link zu dieser Überschrift">¶</a></h3>
-<p>In <a class="reference internal" href="#ex-apply"><span class="std std-ref">Übung 8.3: apply</span></a> haben wir unsere Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> aufgerufen, ohne den Parameter <code class="docutils literal notranslate"><span class="pre">distance</span></code> zu spezifizieren. Dies war möglich, weil wir für <code class="docutils literal notranslate"><span class="pre">distance</span></code> einen Defaultwert festgelegt hat (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:</p>
+<div class="section" id="ubung-8-4">
+<span id="ex-param"></span><h3>Übung 8.4<a class="headerlink" href="#ubung-8-4" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In <a class="reference internal" href="#ex-apply"><span class="std std-ref">Übung 8.3</span></a> haben wir unsere Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> aufgerufen, ohne den Parameter <code class="docutils literal notranslate"><span class="pre">distance</span></code> zu spezifizieren. Dies war möglich, weil wir für <code class="docutils literal notranslate"><span class="pre">distance</span></code> einen Defaultwert festgelegt hat (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">,</span><span class="n">distance</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span>
@@ -903,16 +920,16 @@ Name: x, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680704e+06
-1    2.681412e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681188e+06
+1    2.680950e+06
 2    2.681172e+06
-3    2.681082e+06
-4    2.681280e+06
-5    2.681363e+06
-6    2.681109e+06
-7    2.681265e+06
-8    2.681226e+06
-9    2.681276e+06
+3    2.681134e+06
+4    2.681120e+06
+5    2.681122e+06
+6    2.681187e+06
+7    2.680915e+06
+8    2.681272e+06
+9    2.680991e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -930,8 +947,8 @@ Name: x, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="ubung-8-5-simulation-visualisieren">
-<h3>Übung 8.5: Simulation visualisieren<a class="headerlink" href="#ubung-8-5-simulation-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-8-5">
+<h3>Übung 8.5<a class="headerlink" href="#ubung-8-5" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Um die Original <code class="docutils literal notranslate"><span class="pre">x</span></code>/<code class="docutils literal notranslate"><span class="pre">y</span></code>-Werte sowie die Simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei der Output einer Variabel  (z.B. <code class="docutils literal notranslate"><span class="pre">basemap</span></code>)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> visualisiert, wobei auf den ersten Plot via dem Argument <code class="docutils literal notranslate"><span class="pre">ax</span></code> verwiesen wird.</p>
 <p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.</p>
 <div class="cell docutils container">
@@ -957,9 +974,9 @@ Name: x, dtype: float64
 </div>
 </div>
 </div>
-<div class="section" id="ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen">
-<h3>Übung 8.6: Genauigkeitsangaben der Punkte mitberücksichtigen.<a class="headerlink" href="#ubung-8-6-genauigkeitsangaben-der-punkte-mitberucksichtigen" title="Link zu dieser Überschrift">¶</a></h3>
-<p>In <a class="reference internal" href="#ex-param"><span class="std std-ref">Übung 8.4: Zusätzliche Parameter</span></a> haben wir alle Punkte um etwa die gleiche Distaz (+/- 10m) verschoben. Wenn wir unsere <em>DataFrame</em> „zeckensiche“ genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte <code class="docutils literal notranslate"><span class="pre">accuracy</span></code>. Diese Spalte ist eine Genauigkeitsangabe über den gemeldeten Zeckenstich. Sie sagt etwas darüber aus, wie sicher der/die Nutzer*in bei der Standortsangabe war (z.B. „<em>Diese Meldung ist etwa auf 300 Meter genau</em>“). Wir können diese Genauigkeitsangabe auch nutzen um den offset <em>pro Punkt</em> zu bestimmen.</p>
+<div class="section" id="ubung-8-6">
+<h3>Übung 8.6<a class="headerlink" href="#ubung-8-6" title="Link zu dieser Überschrift">¶</a></h3>
+<p>In <a class="reference internal" href="#ex-param"><span class="std std-ref">Übung 8.4</span></a> haben wir alle Punkte um etwa die gleiche Distaz (+/- 10m) verschoben. Wenn wir unsere <em>DataFrame</em> „zeckensiche“ genau anschauen, steht uns eine Genauigkeitsangabe pro Punkt zur Verfügung: Die Spalte <code class="docutils literal notranslate"><span class="pre">accuracy</span></code>. Diese Spalte ist eine Genauigkeitsangabe über den gemeldeten Zeckenstich. Sie sagt etwas darüber aus, wie sicher der/die Nutzer*in bei der Standortsangabe war (z.B. „<em>Diese Meldung ist etwa auf 300 Meter genau</em>“). Wir können diese Genauigkeitsangabe auch nutzen um den offset <em>pro Punkt</em> zu bestimmen.</p>
 <p>Nutze die Spalte <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> als Argument des Parameters <code class="docutils literal notranslate"><span class="pre">distance</span></code> in der Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> um genau dies zu erreichen. Visualisiere nun die Daten. Was ist hier passiert?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1001,8 +1018,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681118e+06</td>
-      <td>1.250630e+06</td>
+      <td>2.681111e+06</td>
+      <td>1.250665e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1010,8 +1027,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681095e+06</td>
-      <td>1.250672e+06</td>
+      <td>2.681101e+06</td>
+      <td>1.250661e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1019,8 +1036,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681128e+06</td>
-      <td>1.250697e+06</td>
+      <td>2.681136e+06</td>
+      <td>1.250660e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1028,8 +1045,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681091e+06</td>
-      <td>1.250688e+06</td>
+      <td>2.681102e+06</td>
+      <td>1.250677e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1037,8 +1054,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681137e+06</td>
-      <td>1.250691e+06</td>
+      <td>2.681149e+06</td>
+      <td>1.250694e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1046,8 +1063,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681186e+06</td>
-      <td>1.250693e+06</td>
+      <td>2.681170e+06</td>
+      <td>1.250726e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1055,8 +1072,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681107e+06</td>
-      <td>1.250699e+06</td>
+      <td>2.681102e+06</td>
+      <td>1.250715e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1064,8 +1081,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681120e+06</td>
-      <td>1.250719e+06</td>
+      <td>2.681126e+06</td>
+      <td>1.250727e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1073,8 +1090,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681104e+06</td>
-      <td>1.250727e+06</td>
+      <td>2.681115e+06</td>
+      <td>1.250736e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1082,8 +1099,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681128e+06</td>
-      <td>1.250722e+06</td>
+      <td>2.681138e+06</td>
+      <td>1.250712e+06</td>
     </tr>
   </tbody>
 </table>
@@ -1134,8 +1151,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.680833e+06</td>
-      <td>1.250535e+06</td>
+      <td>2.681423e+06</td>
+      <td>1.250413e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1143,8 +1160,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681639e+06</td>
-      <td>1.250024e+06</td>
+      <td>2.681859e+06</td>
+      <td>1.250376e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1152,8 +1169,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681209e+06</td>
-      <td>1.250802e+06</td>
+      <td>2.680826e+06</td>
+      <td>1.251268e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1161,8 +1178,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681241e+06</td>
-      <td>1.251059e+06</td>
+      <td>2.680721e+06</td>
+      <td>1.251250e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1170,8 +1187,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.680803e+06</td>
-      <td>1.251346e+06</td>
+      <td>2.681222e+06</td>
+      <td>1.250063e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1179,8 +1196,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.680525e+06</td>
-      <td>1.251307e+06</td>
+      <td>2.680925e+06</td>
+      <td>1.250269e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1188,8 +1205,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681225e+06</td>
-      <td>1.251202e+06</td>
+      <td>2.681698e+06</td>
+      <td>1.250340e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1197,8 +1214,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.680607e+06</td>
-      <td>1.250726e+06</td>
+      <td>2.680745e+06</td>
+      <td>1.249504e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1206,8 +1223,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681824e+06</td>
-      <td>1.250517e+06</td>
+      <td>2.680811e+06</td>
+      <td>1.251524e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1215,8 +1232,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681540e+06</td>
-      <td>1.250857e+06</td>
+      <td>2.681458e+06</td>
+      <td>1.250806e+06</td>
     </tr>
   </tbody>
 </table>
@@ -1231,6 +1248,10 @@ Name: x, dtype: float64
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;scaled&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Was ist hier passier? </span>
+<span class="c1"># Offensichtlich sind die Zeckenstiche nur wenige Meter voneinander entfernt.</span>
+<span class="c1"># Der offset von mehreren hunder meter ist viel weiter, als diese Distanz.</span>
 </pre></div>
 </div>
 </div>

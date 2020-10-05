@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Aufgabe 12: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
+    <link rel="next" title="Aufgabe 12: Zeckenstich Simulation" href="03_04_Zeckenstich_Simulation.html" />
     <link rel="prev" title="Aufgabe 10: For Loop Basics" href="03_03_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -230,7 +230,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Aufgabe 12: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation
   </a>
  </li>
  <li class="toctree-l1">
@@ -239,8 +239,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Aufgabe 14: Waldanteil berechnen
+  <a class="reference internal" href="03_06_Spatial_Joins.html">
+   Aufgabe 14: Spatial Joins
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Leistungsnachweis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Leistungsnachweis.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_Vereinigen.html">
+   Aufgabe 15: Vereinigen aller Einzelteile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_Zusatzauftraege.html">
+   Abgabe Leistungsnachweis
   </a>
  </li>
 </ul>
@@ -251,7 +273,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -369,13 +391,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-11-1-nested-loop-bellen-und-fauchen">
-     Übung 11.1: Nested Loop: Bellen und Fauchen
+    <a class="reference internal nav-link" href="#ubung-11-1">
+     Übung 11.1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-11-2-nested-loop-multiplikation">
-     Übung 11.2: Nested Loop: Multiplikation
+    <a class="reference internal nav-link" href="#ubung-11-2">
+     Übung 11.2
     </a>
    </li>
   </ul>
@@ -451,7 +473,7 @@ Il Cattivo das ist Mama
 </div>
 </div>
 </div>
-<p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#offset-vis"><span class="std std-ref">Übung 7.6: Output visualisieren</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
+<p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#offset-vis"><span class="std std-ref">Übung 7.6</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refrain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> <span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="n">rollen</span><span class="p">]</span>
@@ -465,8 +487,8 @@ Il Cattivo das ist Mama
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="ubung-11-1-nested-loop-bellen-und-fauchen">
-<h3>Übung 11.1: Nested Loop: Bellen und Fauchen<a class="headerlink" href="#ubung-11-1-nested-loop-bellen-und-fauchen" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-11-1">
+<h3>Übung 11.1<a class="headerlink" href="#ubung-11-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle zwei Listen bestehend aus 3 Hundenamen (<code class="docutils literal notranslate"><span class="pre">hunde</span></code>) und 3 Katzenamen (<code class="docutils literal notranslate"><span class="pre">katzen</span></code>). Erstelle einen verschachtelter <em>For Loop</em>, wo jeder Hund jede Katze anbellt und jede Katze jeden Hund anfaucht.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Bruno</span> <span class="n">bellt</span> <span class="n">Greta</span> <span class="n">an</span>
 <span class="n">Greta</span> <span class="n">faucht</span> <span class="n">Bruno</span> <span class="n">an</span>
@@ -475,8 +497,8 @@ Il Cattivo das ist Mama
 </pre></div>
 </div>
 </div>
-<div class="section" id="ubung-11-2-nested-loop-multiplikation">
-<h3>Übung 11.2: Nested Loop: Multiplikation<a class="headerlink" href="#ubung-11-2-nested-loop-multiplikation" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-11-2">
+<h3>Übung 11.2<a class="headerlink" href="#ubung-11-2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Erstelle einen verschachtelten Loop, wo alle Kombinationen von 0 bis 9 miteinander addiert werden.</p>
 </div>
 </div>
@@ -511,7 +533,7 @@ Il Cattivo das ist Mama
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_03_For_Loops.html" title="previous page">Aufgabe 10: <em>For Loop</em> Basics</a>
-    <a class='right-next' id="next-link" href="03_04_Zeckenstich_Simulation.html" title="next page">Aufgabe 12: Zeckenstich Simulation mit Loop</a>
+    <a class='right-next' id="next-link" href="03_04_Zeckenstich_Simulation.html" title="next page">Aufgabe 12: Zeckenstich Simulation</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

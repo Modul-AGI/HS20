@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Aufgabe 14: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
-    <link rel="prev" title="Aufgabe 12: Zeckenstich Simulation mit Loop" href="03_04_Zeckenstich_Simulation.html" />
+    <link rel="next" title="Aufgabe 14: Spatial Joins" href="03_06_Spatial_Joins.html" />
+    <link rel="prev" title="Aufgabe 12: Zeckenstich Simulation" href="03_04_Zeckenstich_Simulation.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -230,7 +230,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Aufgabe 12: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -239,8 +239,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Aufgabe 14: Waldanteil berechnen
+  <a class="reference internal" href="03_06_Spatial_Joins.html">
+   Aufgabe 14: Spatial Joins
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Leistungsnachweis
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_01_Leistungsnachweis.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_Vereinigen.html">
+   Aufgabe 15: Vereinigen aller Einzelteile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_Zusatzauftraege.html">
+   Abgabe Leistungsnachweis
   </a>
  </li>
 </ul>
@@ -251,7 +273,7 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="04_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -349,21 +371,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabellen-ohne-raumbezug">
-     Tabellen
-     <em>
-      ohne
-     </em>
-     Raumbezug
+    <a class="reference internal nav-link" href="#geodataframes">
+     GeoDataFrames
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tabellen-mit-raumbezug">
-     Tabellen
-     <em>
-      mit
-     </em>
-     Raumbezug
+    <a class="reference internal nav-link" href="#koordinatensystem">
+     Koordinatensystem
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -379,45 +393,33 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-1-dataframe-zu-geodataframe">
-     Übung 13.1:
-     <em>
-      DataFrame
-     </em>
-     zu
-     <em>
-      GeoDataFrame
-     </em>
+    <a class="reference internal nav-link" href="#ubung-13-1">
+     Übung 13.1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-2-punkte-buffern">
-     Übung 13.2: Punkte Buffern
+    <a class="reference internal nav-link" href="#ubung-13-2">
+     Übung 13.2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-3-umrisse-visualisieren">
-     Übung 13.3: Umrisse visualisieren
+    <a class="reference internal nav-link" href="#ubung-13-3">
+     Übung 13.3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-4-layers-uberlagern">
-     Übung 13.4: Layers überlagern
+    <a class="reference internal nav-link" href="#ubung-13-4">
+     Übung 13.4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-5-envelope">
-     Übung 13.5 Envelope
+    <a class="reference internal nav-link" href="#ubung-13-5">
+     Übung 13.5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-6-overlay-operation">
-     Übung 13.6: Overlay Operation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern">
-     Übung 13.7: Geopandas als Shapefile / Geopackage abspeichern
+    <a class="reference internal nav-link" href="#ubung-13-6">
+     Übung 13.6
     </a>
    </li>
   </ul>
@@ -437,12 +439,14 @@
 <span id="chap-pythongis"></span><h1>Aufgabe 13: GIS in Python<a class="headerlink" href="#aufgabe-13-gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="tabellen-ohne-raumbezug">
-<h3>Tabellen <em>ohne</em> Raumbezug<a class="headerlink" href="#tabellen-ohne-raumbezug" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Unsere Zeckenstiche haben wir bisher immer auf nachstehende Weise importiert. Jeder Zeckenstich hat offensichtlich eine genaue Koordiate, aber ein <em>richtiger</em> Geodatensatz kann man diese DataFrame noch nicht nennen. <em>Wir</em> wissen ja, dass mit den Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten in der Schweiz gemeint sind, Python hingegen weiss das (noch) nicht. Der Raumbezug fehlt noch, und das wird irgendwann problematisch: Denn wir wollen jetzt pro Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Das ist eine explizit räumliche Abfrage, was nur mit explizit räumlichen Geodaten beantwortet werden kann.</p>
+<p>Manche mag das jetzt überraschen, andere haben es vielleicht schon gemerkt: Mit <strong>GIS</strong> hatte unseres bisheriges Wirken in Python eigentlich wenig zu tun. Unsere Zeckenstiche haben zwar x/y-Koordinaten, aber diese haben wir bisher gleich behandlet wie alle anderen Spalten.</p>
+<p>Anders gesagt: <em>Wir</em> wissen ja, dass mit den Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten in der Schweiz gemeint sind, Python hingegen wusste das bisher (noch) nicht. Der konkrete Raumbezug fehlt also noch, und das wird irgendwann problematisch: Denn bald wollen wir pro simulierten Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Das ist eine explizit räumliche Abfrage, welche nur mit explizit räumlichen Geodaten beantwortet werden kann.</p>
+<p>Was wir später mit den simulierten Zeckenstiche machen wollen, spielen wir an dieser Stelle mit den Zeckenstichreports (<code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>) durch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unsere Zeckenstiche hatten wir auf folgende Weise importiert:</span>
+    
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">zeckenstiche</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.csv&quot;</span><span class="p">)</span>
 <span class="n">zeckenstiche</span>
 </pre></div>
@@ -548,32 +552,28 @@
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="tabellen-mit-raumbezug">
-<h3>Tabellen <em>mit</em> Raumbezug<a class="headerlink" href="#tabellen-mit-raumbezug" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Glücklicherweise können wir unsere <em>Zeckenstich-Dataframe</em> mit nur einem Zusatzmodul und wenigen Zeilen code in eine räumliche <em>DataFrame</em> konvertieren. Aktuell handelt es sich um das Modul <em><strong>geo</strong>pandas</em>, was aus unserer <em>DataFrame</em> eine <em><strong>Geo</strong>DataFrame</em> macht. Mit diesem Modul erhält die <em>DataFrame</em> im Wesentlichen</p>
+<div class="section" id="geodataframes">
+<h3>GeoDataFrames<a class="headerlink" href="#geodataframes" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Glücklicherweise können wir unsere Zeckenstich-<em>Dataframe</em> mit nur einem Zusatzmodul und wenigen Zeilen code in eine <strong>räumliche</strong> <em>DataFrame</em> konvertieren. Mit dem Modul <em><strong>geo</strong>pandas</em> erstellen wir aus unserer <em>pandas DataFrame</em> eine <em><strong>geo</strong>pandas <strong>Geo</strong>DataFrame</em>. Mit dieser Erweiterung erhält die <em>DataFrame</em> im Wesentlichen:</p>
 <ul class="simple">
 <li><p>eine Zusatzspalte <code class="docutils literal notranslate"><span class="pre">geometry</span></code> mit der Geometrie als räumliches Objekt</p></li>
-<li><p>ein Attribut „crs“ welches das Koordinatensystem der Geometriespalte enthält.</p></li>
+<li><p>ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> welches das Koordinatensystem der Geometriespalte enthält.</p></li>
 </ul>
-<p>Beides müssen wir bei der Erstellung der <em>GeoDataFrame</em> aber festlegen. Die <code class="docutils literal notranslate"><span class="pre">geometry</span></code> Spalte ist relativ offensichtlich, es handelt sich dabei um die <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Spalten, welche die Kordianten enthalten. Was aber ist das „Koordinatensystem“ unserer Daten? Das ist Information, welche euch vom Datenersteller geliefert werden muss. Man man das Koordinatensytem aber auch anhand der Koordinaten erahnen. Es handelt sich dabei um Werte im Bereich von 2’600’000 (x) und 1’200’000 (y), und da wir wissen das die Daten aus der Schweiz stammen ist es naheliegend, dass es sich um das neue Schweizer Koordinatensystem <a class="reference external" href="https://epsg.io/2056">CH1903+ / LV95</a> handelt mit dem EPSG Code 2056. Diesen Code können wir der Funktion <code class="docutils literal notranslate"><span class="pre">gpd.GeoDataFrame</span></code> als Argument (<code class="docutils literal notranslate"><span class="pre">crs</span> <span class="pre">=</span> </code>, <strong>C</strong>oordinate <strong>R</strong>eference <strong>S</strong>ystem) übergeben, um das Koordinatensystem festzulegen.</p>
+<p>Beides müssen wir bei der Erstellung der <em>GeoDataFrame</em> aber festlegen.</p>
+<p>Bei <code class="docutils literal notranslate"><span class="pre">geometry</span></code> handelt es sich Punkt-Geometrien die sich duch die <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten zusammensetzen. Für das Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> möchte ich kurz etwas ausholen:</p>
+</div>
+<div class="section" id="koordinatensystem">
+<h3>Koordinatensystem<a class="headerlink" href="#koordinatensystem" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Das Koordinatensystem gibt unseren x/y-Zahlenwerten einen konkreten Raumbezug auf dem Planeten. Sie macht aus ihnen Koordianten <em>in der Schweiz</em>. Wie lautet aber das „Koordinatensystem“ unserer Daten?</p>
+<p>Das ist Information, welche euch vom Datenersteller geliefert werden muss. Man man das Koordinatensytem aber auch anhand der Koordinaten erahnen. Es handelt sich dabei um Werte im Bereich von 2.6 Mio auf der einen und 1.2 Mio auf der anderen Achse. Da wir wissen das die Daten aus der Schweiz stammen kann man mit etwas Erfahrung sagen, dass es sich um Daten im neuen Schweizer Koordinatensystem <a class="reference external" href="https://epsg.io/2056">CH1903+ / LV95</a> handeln muss. Der EPSG Code dieses Koordinatensystems lautet 2056 und diesen Code können wir in der Funktion <code class="docutils literal notranslate"><span class="pre">gpd.GeoDataFrame</span></code> nutzuen, um das Korrekte Koordinatensystem (engl. <strong>C</strong>oordinate <strong>R</strong>eference <strong>S</strong>ystem) zu zuweisen (s.u.)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 
-<span class="n">zeckenstiche_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">))</span>
+<span class="n">zeckenstiche_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">,</span> <span class="c1"># die Basis-DataFrame / die &quot;Attributtabelle&quot;</span>
+                                    <span class="c1"># die Geometrie Spalte:</span>
+                                    <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span>
+                                    <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> <span class="c1"># EPSG Code des Koorinatensystem</span>
 <span class="n">zeckenstiche_gpd</span>
 </pre></div>
 </div>
@@ -703,6 +703,19 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vergleich mit &quot;zeckenstiche&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Attribut `crs` wurde aufgrund vom EPSG Code richtig erkannt:</span>
 <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
@@ -717,8 +730,8 @@
 </div>
 <div class="section" id="raumliche-operationen">
 <span id="chap-raeumliche-operationen"></span><h3>Räumliche Operationen<a class="headerlink" href="#raumliche-operationen" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Was hat das nun bewirkt, was bringt uns diese <em>Geo</em> Erweiterung? Ein kleiner, aber offensichlicher Vorteil ist das veränderte Verhalten von der <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> Methode. Da <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> ein räumliches Objekt ist, macht <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> automatisch einen räumliche Darstellung der Daten und sorgt auch dafür, dass die beiden Achsen gleich skaliert sind. So ist<code class="docutils literal notranslate"><span class="pre">fig.axis(&quot;equal&quot;)</span></code> nicht mehr nötig wie es im Scatterplot in der <a class="reference internal" href="01_06_Tabellarische_Daten.html#ex-scatterplot"><span class="std std-ref">Übung 4.4: Koordinaten räumlich darstellen</span></a> der Fall war.</p>
-<p>Die Vorteile geht aber noch weiter. Mit <em>GeoPandas</em> sind nun andere räumliche Operationen möglich, die wir aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Mit <code class="docutils literal notranslate"><span class="pre">.buffer()</span></code> können wir zum Beispiel einen Buffer um unsere Punkte machen.</p>
+<p>Was hat das nun bewirkt, was bringt uns diese <em>Geo</em> Erweiterung? Ein kleiner, aber offensichlicher Vorteil ist das veränderte Verhalten von der <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> Methode. Da <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> ein räumliches Objekt ist, macht <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> automatisch einen räumliche Darstellung der Daten, <code class="docutils literal notranslate"><span class="pre">.plot.scatter(...)</span></code> ist also nicht mehr nötig, wie es <a class="reference internal" href="01_06_Tabellarische_Daten.html#ex-scatterplot"><span class="std std-ref">vorher</span></a> der Fall war <a class="footnote-reference brackets" href="#ax-equal" id="id1">1</a>.</p>
+<p>Die Vorteile geht aber noch viel weiter. Mit <em>GeoPandas</em> sind nun auch räumliche Operationen möglich, die wir bereits aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Mit <code class="docutils literal notranslate"><span class="pre">.buffer()</span></code> können wir zum Beispiel einen Buffer um unsere Punkte machen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>   <span class="c1"># dieser Teil wird nur benötigt, weil die beiden</span>
@@ -736,10 +749,10 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_9_1.png" src="_images/03_05_GIS_in_Python_9_1.png" />
+<img alt="_images/03_05_GIS_in_Python_10_1.png" src="_images/03_05_GIS_in_Python_10_1.png" />
 </div>
 </div>
-<p>Im Prinzip stehen uns jetzt auch alle anderen Vektor Operationen zur Verfügung, die wir schon aus ArcGIS kennen. Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id1">1</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen und darüber ein <em>Convex Hull</em> <a class="footnote-reference brackets" href="#convex-hull" id="id2">2</a> oder ein <em>Envelope</em> <a class="footnote-reference brackets" href="#envelope" id="id3">3</a> rechnen.</p>
+<p>Im Prinzip stehen uns jetzt auch alle anderen Vektor Operationen zur Verfügung, die wir schon aus ArcGIS kennen. Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id2">2</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen und darüber ein <em>Convex Hull</em> <a class="footnote-reference brackets" href="#convex-hull" id="id3">3</a> oder ein <em>Envelope</em> <a class="footnote-reference brackets" href="#envelope" id="id4">4</a> rechnen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Macht ein Union der Zeckenstiche (ein Multipoint-Objekt)</span>
@@ -777,14 +790,14 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_11_1.png" src="_images/03_05_GIS_in_Python_11_1.png" />
+<img alt="_images/03_05_GIS_in_Python_12_1.png" src="_images/03_05_GIS_in_Python_12_1.png" />
 </div>
 </div>
 <div class="attention admonition">
-<p class="admonition-title">Achtung</p>
-<p>In Geopandas gibt es drei Fundamentale Datentypen:</p>
+<p class="admonition-title">Wichtig!</p>
+<p>Geopandas kennt drei Fundamentale Datentypen:</p>
 <ul class="simple">
-<li><p><strong>Geometrien</strong>: Einzelne Objekte <a class="footnote-reference brackets" href="#shapely" id="id4">4</a> der folgenden Typen</p>
+<li><p><strong>Geometrien</strong>: Einzelne Objekte <a class="footnote-reference brackets" href="#shapely" id="id5">5</a> der folgenden Typen</p>
 <ul>
 <li><p>Points / Multi-Points</p></li>
 <li><p>Lines / Multi-Lines</p></li>
@@ -794,15 +807,22 @@
 <li><p><strong>GeoSeries</strong>: Eine Serie von Geometrien, gleichbedeutend wie eine Spalte in einer Tabelle</p></li>
 <li><p><strong>GeoDataFrame</strong>: Eine Tabelle, welche über eine Geometrie-Spalte (GeoSeries) verfügt</p></li>
 </ul>
+<div class="figure align-default" id="geopandas-types">
+<img alt="_images/Geopandas_types.jpg" src="_images/Geopandas_types.jpg" />
+<p class="caption"><span class="caption-number">Abb. 3 </span><span class="caption-text">Die drei Datentypen in Geopandas.</span><a class="headerlink" href="#geopandas-types" title="Link zu diesem Bild">¶</a></p>
+</div>
 <p>Die verschiedenen Operationen in Geopandas erwarten teilweise unterschiedlichen Input, deshalb müssen wir teilweise zwischen <em>Geometrien</em>, <em>Geoseries</em> und <em>GeoDataFrames</em> hin- und her konvertieren. Geopandas ist noch in Arbeit und ich hoffe, dass das Package in der Zukunft noch etwas einfacher in der Handhabung wird.</p>
-<p>Aktuell brauchen zum Beispiel <code class="docutils literal notranslate"><span class="pre">unary_union</span></code>, <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> und <code class="docutils literal notranslate"><span class="pre">envelope</span></code> alle <em>GeoSeries</em> als Input. Der Output den drei Operationen eine <em>Geometrie</em>. Die Operation <code class="docutils literal notranslate"><span class="pre">buffer</span></code> nimmt sowohl ganze <em>GeoDataFrames</em> wie auch <em>GeoSeries</em> als Input an. Die Overlay Operationen mit <code class="docutils literal notranslate"><span class="pre">overlay</span></code> funktionieren aktuell nur mit „GeoDataFrames“. <em>Geopandas</em> ist aber gut dokumentiert, und es lohnt sich bei Unklarheiten immer das Handbuch zu konsultieren: <a class="reference external" href="https://geopandas.org">geopandas.org</a></p>
+<p>Aktuell brauchen zum Beispiel <code class="docutils literal notranslate"><span class="pre">unary_union</span></code>, <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> und <code class="docutils literal notranslate"><span class="pre">envelope</span></code> alle <em>GeoSeries</em> als Input. Der Output den drei Operationen ist jedoch eine <em>Geometrie</em>. Die Operation <code class="docutils literal notranslate"><span class="pre">buffer</span></code> nimmt sowohl ganze <em>GeoDataFrames</em> wie auch <em>GeoSeries</em> als Input an. Die Overlay Operationen mit <code class="docutils literal notranslate"><span class="pre">overlay</span></code> funktionieren aktuell nur mit „GeoDataFrames“.</p>
+<p><em>Geopandas</em> ist aber gut dokumentiert, und es lohnt sich bei Unklarheiten immer das Handbuch zu konsultieren: <a class="reference external" href="https://geopandas.org">geopandas.org</a>. Zudem hilft es, die Datentypen regelmässig mit <code class="docutils literal notranslate"><span class="pre">type</span></code> zu kontrollieren.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nachstehender Code ist nur nötig, weil die Overlay</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#################################################</span>
+<span class="c1"># Diese Code ist nur nötig, weil die Overlay</span>
 <span class="c1"># Operationen GeoDataFrames als Input benötigen.</span>
 <span class="n">buffered_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">buffered</span><span class="p">,</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>               
 <span class="n">my_convex_hull_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">my_convex_hull</span><span class="p">,</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> 
+<span class="c1">#################################################</span>
 
 <span class="c1"># Bereitet die drei Subplots vor:</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
@@ -829,35 +849,35 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03_05_GIS_in_Python_13_0.png" src="_images/03_05_GIS_in_Python_13_0.png" />
+<img alt="_images/03_05_GIS_in_Python_14_0.png" src="_images/03_05_GIS_in_Python_14_0.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="ubung-13-1-dataframe-zu-geodataframe">
-<h3>Übung 13.1: <em>DataFrame</em> zu <em>GeoDataFrame</em><a class="headerlink" href="#ubung-13-1-dataframe-zu-geodataframe" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-1">
+<h3>Übung 13.1<a class="headerlink" href="#ubung-13-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Importiere <em>Geopandas</em> und wandle <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> in eine <em>GeoDataFrame</em> um (<code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code>). Vergiss nicht, das Koordinatensystem festzulegen!</p>
 </div>
-<div class="section" id="ubung-13-2-punkte-buffern">
-<h3>Übung 13.2: Punkte Buffern<a class="headerlink" href="#ubung-13-2-punkte-buffern" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-2">
+<h3>Übung 13.2<a class="headerlink" href="#ubung-13-2" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Buffere die Zeckenstiche um eine Distanz von 12 Meter und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code>. Visualisiere die gebufferten Punkte in einem Plot.</p>
 </div>
-<div class="section" id="ubung-13-3-umrisse-visualisieren">
-<h3>Übung 13.3: Umrisse visualisieren<a class="headerlink" href="#ubung-13-3-umrisse-visualisieren" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-3">
+<h3>Übung 13.3<a class="headerlink" href="#ubung-13-3" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Extrahiere die Umrisse von <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code> und speichere diese in <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer_outline</span></code>. Visualisiere anschliessend diese Umrisse.</p>
 <div class="cell tag_remove_input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_21_1.png" src="_images/03_05_GIS_in_Python_21_1.png" />
+<img alt="_images/03_05_GIS_in_Python_22_1.png" src="_images/03_05_GIS_in_Python_22_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="ubung-13-4-layers-uberlagern">
-<h3>Übung 13.4: Layers überlagern<a class="headerlink" href="#ubung-13-4-layers-uberlagern" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-4">
+<h3>Übung 13.4<a class="headerlink" href="#ubung-13-4" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Nutze nachstehenden Code um zwei Datensätze im gleichen Plot darzustellen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,20 +893,20 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_23_1.png" src="_images/03_05_GIS_in_Python_23_1.png" />
+<img alt="_images/03_05_GIS_in_Python_24_1.png" src="_images/03_05_GIS_in_Python_24_1.png" />
 </div>
 </div>
 </div>
-<div class="section" id="ubung-13-5-envelope">
-<h3>Übung 13.5 Envelope<a class="headerlink" href="#ubung-13-5-envelope" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-5">
+<h3>Übung 13.5<a class="headerlink" href="#ubung-13-5" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Berechne das „Envelope“ von <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> anhand der obigen Beispielen. Speichere den Output als <code class="docutils literal notranslate"><span class="pre">zeckenstiche_envelope</span></code>.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
 <p>Denk daran, dass du zuerst noch einen Union machen musst (siehe <a class="reference internal" href="#chap-raeumliche-operationen"><span class="std std-ref">Räumliche Operationen</span></a>)</p>
 </div>
 </div>
-<div class="section" id="ubung-13-6-overlay-operation">
-<h3>Übung 13.6: Overlay Operation<a class="headerlink" href="#ubung-13-6-overlay-operation" title="Link zu dieser Überschrift">¶</a></h3>
+<div class="section" id="ubung-13-6">
+<h3>Übung 13.6<a class="headerlink" href="#ubung-13-6" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Führe verschiedene Overlay Operationen zwischen <code class="docutils literal notranslate"><span class="pre">zeckenstiche_envelope</span></code> und <code class="docutils literal notranslate"><span class="pre">zeckenstiche_buffer</span></code> durch. Schaue dir dazu die entsprechende <a class="reference external" href="https://geopandas.org/set_operations.html#set-operations-with-overlay">Geopandas Hilfeseite</a> an. Beispielsweise würden sich <em>Union</em> und <em>Symetrical Difference</em> gut anbieten.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
@@ -913,26 +933,24 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Symetrical Difference&#39;)
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_28_1.png" src="_images/03_05_GIS_in_Python_28_1.png" />
+<img alt="_images/03_05_GIS_in_Python_29_1.png" src="_images/03_05_GIS_in_Python_29_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern">
-<h3>Übung 13.7: Geopandas als Shapefile / Geopackage abspeichern<a class="headerlink" href="#ubung-13-7-geopandas-als-shapefile-geopackage-abspeichern" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Jetzt wo wir unsere Zeckenstiche als Geodaten aufbereitet haben können wir diese auch in gängige Geodaten abspeichern. Genau wie wir in <a class="reference internal" href="01_06_Tabellarische_Daten.html#ex-to-csv"><span class="std std-ref">Übung 4.2: DataFrame in csv umwandeln</span></a> eine <em>DataFrame</em> mit <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code> in eine csv exportiert haben, gibt es für GeoDataFrames die Methode <code class="docutils literal notranslate"><span class="pre">.to_file</span></code>. Exportiere <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> mit dieser Methode in eine Shapefile.</p>
-<p><strong>Zusatzaufgabe</strong>: Shapefiles sind eigentlich ein ganz schreckliches Format (siehe <a class="reference external" href="http://switchfromshapefile.org/">switchfromshapefile.org</a>). Viel praktischer sind an dieser Stelle <em>Geopackages</em> (nicht zu verwechseln mit ArcGIS Pro Packages). Ihr könnt <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> auch als <em>Geopackage</em> exportieren, dafür müsst ihr dem Output die Erweiterung „gpkg“ geben und zusätzlich <code class="docutils literal notranslate"><span class="pre">driver</span> <span class="pre">=</span> <span class="pre">GPKG</span></code> festlegen.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="union"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="ax-equal"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Zudem sorgt <code class="docutils literal notranslate"><span class="pre">.plot</span></code> auch dafür, dass die beiden Achsen gleich skaliert sind. So ist<code class="docutils literal notranslate"><span class="pre">fig.axis(&quot;equal&quot;)</span></code> nicht mehr nötig wie es im Scatterplot in der <a class="reference internal" href="01_06_Tabellarische_Daten.html#ex-scatterplot"><span class="std std-ref">Übung 4.4</span></a> der Fall war.</p>
+</dd>
+<dt class="label" id="union"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Dieser Befehl lautet in ArcGIS <a class="reference external" href="https://desktop.arcgis.com/de/arcmap/10.3/tools/analysis-toolbox/union.htm">Union</a></p>
 </dd>
-<dt class="label" id="convex-hull"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="convex-hull"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>Convex Hull (Konvexe Hülle) ist eine „Rahmen“ um alle Punkte, wo die Innenwinkel immer kleiner sind als 180°). Dieser Befehl lautet in ArcGIS <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometry</a> (Option <em>Convex Hull</em>)</p>
 </dd>
-<dt class="label" id="envelope"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dt class="label" id="envelope"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>Envelope ist ebenfalls ein „Rahmen“ um alle Punkte, was aber quadratisch und am Koordinatensystem orientiert ist. Auch diese Operation lautet in ArcGIS unter dem Tool <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometry</a> (Option <em>Envelope</em>)</p>
 </dd>
-<dt class="label" id="shapely"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dt class="label" id="shapely"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
 <dd><p>Die Geometrien in Geopandas sind eigentlich Objekte vom Modul <a class="reference external" href="https://pypi.org/project/Shapely/"><em>Shapely</em></a>. Shapely wiederum ist ein Python Modul, welches mit <em>Geopandas</em> mit-installiert und mit-importiert wird.</p>
 </dd>
 </dl>
@@ -968,8 +986,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_04_Zeckenstich_Simulation.html" title="previous page">Aufgabe 12: Zeckenstich Simulation mit Loop</a>
-    <a class='right-next' id="next-link" href="03_06_Waldanteil_Berechnen.html" title="next page">Aufgabe 14: Waldanteil berechnen</a>
+    <a class='left-prev' id="prev-link" href="03_04_Zeckenstich_Simulation.html" title="previous page">Aufgabe 12: Zeckenstich Simulation</a>
+    <a class='right-next' id="next-link" href="03_06_Spatial_Joins.html" title="next page">Aufgabe 14: Spatial Joins</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

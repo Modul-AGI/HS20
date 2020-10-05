@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic shortcuts for Jupyter lab &#8212; Coding in GIS</title>
+    <title>Einleitung &#8212; Coding in GIS</title>
     
   <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
 
@@ -59,7 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="prev" title="Aufgabe 14: Waldanteil berechnen" href="03_06_Waldanteil_Berechnen.html" />
+    <link rel="next" title="Aufgabe 15: Vereinigen aller Einzelteile" href="04_02_Vereinigen.html" />
+    <link rel="prev" title="Aufgabe 14: Spatial Joins" href="03_06_Spatial_Joins.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -229,7 +230,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_04_Zeckenstich_Simulation.html">
-   Aufgabe 12: Zeckenstich Simulation mit Loop
+   Aufgabe 12: Zeckenstich Simulation
   </a>
  </li>
  <li class="toctree-l1">
@@ -238,8 +239,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="03_06_Waldanteil_Berechnen.html">
-   Aufgabe 14: Waldanteil berechnen
+  <a class="reference internal" href="03_06_Spatial_Joins.html">
+   Aufgabe 14: Spatial Joins
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Leistungsnachweis
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_02_Vereinigen.html">
+   Aufgabe 15: Vereinigen aller Einzelteile
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_03_Zusatzauftraege.html">
+   Abgabe Leistungsnachweis
   </a>
  </li>
 </ul>
@@ -248,9 +271,9 @@
   Anhang
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -296,7 +319,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/04_01_Jupyter_Shortcuts.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/04_01_Leistungsnachweis.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -321,7 +344,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/04_01_Jupyter_Shortcuts.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/04_01_Leistungsnachweis.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -344,23 +367,51 @@
         
               <div>
                 
-  <div class="section" id="basic-shortcuts-for-jupyter-lab">
-<h1>Basic shortcuts for Jupyter lab<a class="headerlink" href="#basic-shortcuts-for-jupyter-lab" title="Link zu dieser Überschrift">¶</a></h1>
-<ul class="simple">
-<li><p><strong>Alt + Enter</strong>: Run current cell</p></li>
-<li><p><strong>ESC</strong>: takes users into command mode view while ENTER takes users into cell mode view.</p></li>
-<li><p><strong>A</strong>: inserts a cell above the currently selected cell. Before using this, make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>B</strong>: inserts a cell below the currently selected cell. Before using this make sure that you are in command mode (by pressing ESC).</p></li>
-<li><p><strong>D + D</strong>: Pressing D two times in a quick succession in command mode deletes the currently selected cell.</p></li>
-<li><p><strong>M</strong>: to change current cell to a markdown cell,</p></li>
-<li><p><strong>Y</strong>: to change it to a code cell and  R to change it to a raw cell.</p></li>
-<li><p><strong>CTRL + B</strong>: Jupyter lab has two columns design. One column is for launcher or code blocks and another column is for file view etc. To increase workspace while writing code, we can close it.  CTRL + B is the shortcut for toggling the file view column in the Jupyter lab.</p></li>
-<li><p><strong>SHIFT + MIt</strong>: merges multiple selected cells into one cell.</p></li>
-<li><p><strong>CTRL + SHIFT +</strong> –: It splits the current cell into two cells from where your cursor is.</p></li>
-<li><p><strong>SHIFT+J or SHIFT + DOWN</strong>: It selects the next cell in a downward direction.  It will help in making multiple selections of cells.</p></li>
-<li><p><strong>SHIFT + K or SHIFT + UP</strong>: It selects the next cell in an upwards direction. It will help in making multiple selections of cells.</p></li>
-<li><p><strong>CTRL + /</strong>: It helps you in either commenting or uncommenting any line in the Jupyter lab. For this to work, you don’t even need to select the whole line. It will comment or uncomment line where your cursor is. If you want to do it for more that one line then you will need to first select all the line and then use this shortcut.</p></li>
-</ul>
+  <div class="section" id="einleitung">
+<h1>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Im Leistungsnachweis von <em>Coding in GIS</em> werden wir die Übung 2 - 3 aus „Datenqualität und Unsicherheit“ in Python umsetzen, aber mit selbst simulierten Daten.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um diese Unsicherheit bei  der Frage „<em>Welcher Anteil der der Zeckenstiche befinden sich im Wald?</em>“ zu berücksichtigen, führen wir eine <em>Monte Carlo Simulation</em> durch. In diesem Ansatz simulieren wir Zeckenstichmeldungen durch zufälliges Verschieben ihrer Koordinaten. Für jede Iteration der Verschiebung („<em>Run</em>“) berechnen wir den Anteil der Meldungen <em>im Wald</em>. Die Verteilung dieser Werte beantwortet die Frage („<em>Welcher Anteil der der Zeckenstiche befinden sich im Wald?</em>“) unter Berücksichtigung der Unsicherheit.</p>
+<div class="figure align-default" id="fig-sim-workflow">
+<img alt="_images/sim-workflow.jpg" src="_images/sim-workflow.jpg" />
+<p class="caption"><span class="caption-number">Abb. 5 </span><span class="caption-text">Der generelle Workflow userer Monte Carlo Simulation</span><a class="headerlink" href="#fig-sim-workflow" title="Link zu diesem Bild">¶</a></p>
+</div>
+<p>Um diese Komplexe Aufgabe lösen zu können müssen wir sie in Teilaufgaben zerlegen. Wir haben in den drei Blöcken (<em>Coding in GIS I - III</em>) darauf hingearbeitet, alle Voraussetzungen zur Lösung dieser Teilaufgaben zu erfüllen. Siehe dazu die nachstehende Tabelle:</p>
+<table class="table" id="monte-carlo-workflow">
+<caption><span class="caption-number">Tab. 1 </span><span class="caption-text">Teilaufgaben für das Lösen der Monte Carlo Simulation</span><a class="headerlink" href="#monte-carlo-workflow" title="Link zu dieser Tabelle">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Teilaufgabe</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Voraussetzung</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Einen Einzelpunkt zufällig verschieben</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5</span></a></p></td>
+<td><p><a class="reference internal" href="02_04_Functions_I.html#function-basics"><span class="std std-ref">Aufgabe 5: Function Basics</span></a> und <a class="reference internal" href="02_05_Functions_II.html#function-advanced"><span class="std std-ref">Aufgabe 6: Function Advanced</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Alle Punkte einer DataFrame zufällig verschieben</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a></p></td>
+<td><p><a class="reference internal" href="02_06_Zufallzahlen.html#chap-random-numbers"><span class="std std-ref">Aufgabe 7: Zufallszahlen generieren</span></a> und <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#chap-offset-dataframe"><span class="std std-ref">Aufgabe 8: Funktionen in DataFrames</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Wiederholung von Schritt 2 (zum Beispiel 50-mal)</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="03_04_Zeckenstich_Simulation.html#chap-simulation"><span class="std std-ref">Aufgabe 12: Zeckenstich Simulation</span></a></p></td>
+<td><p><a class="reference internal" href="03_02_For_Loops.html#forloops-1"><span class="std std-ref">Aufgabe 9: For Loop Einführung</span></a> und <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Für jeden simulierten Punkt ermitteln, ob er sich im Wald / ausserhalb des Waldes befindet</p></td>
+<td><p>✓ haben wir gelöst in <a class="reference internal" href="03_06_Spatial_Joins.html#ex-spatialjoin"><span class="std std-ref">Übung 14.2</span></a></p></td>
+<td><p><a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">Aufgabe 13: GIS in Python</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Anteil der Punkte im Wald pro Run ermitteln</p></td>
+<td><p>werden wir in <a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a> lösen</p></td>
+<td><p>Coding in GIS I - III</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 
     <script type="text/x-thebe-config">
@@ -391,7 +442,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_06_Waldanteil_Berechnen.html" title="previous page">Aufgabe 14: Waldanteil berechnen</a>
+    <a class='left-prev' id="prev-link" href="03_06_Spatial_Joins.html" title="previous page">Aufgabe 14: Spatial Joins</a>
+    <a class='right-next' id="next-link" href="04_02_Vereinigen.html" title="next page">Aufgabe 15: Vereinigen aller Einzelteile</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
