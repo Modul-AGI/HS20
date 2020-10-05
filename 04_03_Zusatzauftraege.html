@@ -397,16 +397,13 @@
 <h1>Abgabe Leistungsnachweis<a class="headerlink" href="#abgabe-leistungsnachweis" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Folgendes müsst ihr für den Leistungsnachweis für Coding in GIS abgeben:</p>
 <ul class="simple">
-<li><p>Inhalt: Ein Report der Analyse der Zeckenstichdaten gemäss <a class="reference internal" href="04_01_Leistungsnachweis.html#fig-sim-workflow"><span class="std std-ref">Der generelle Workflow userer Monte Carlo Simulation</span></a></p>
-<ul>
-<li><p>Der Inhalt ist Gegeben durch <a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a> inkl. der <a class="reference internal" href="#chap-abgabe-zusatz"><span class="std std-ref">Zusatzaufträge</span></a></p></li>
-<li><p>Integriert erklärender Text mit Markdown Zellen. Hier müsst ihr keine Romane schreiben</p></li>
-</ul>
-</li>
-<li><p>Form:</p>
+<li><p><strong>Ziel</strong>: Beantwortung der Frage „<em>Welcher Anteil der Zeckenstiche befinden sich im Wald</em>“ unter besonderer Berücksichtigung der Datenungenauigkeit.</p></li>
+<li><p><strong>Inhalt</strong>: Vorgehen gemäss <a class="reference internal" href="04_01_Leistungsnachweis.html#fig-sim-workflow"><span class="std std-numref">Abb. 5</span></a>, der Inhalt ist gegeben durch <a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a> sowie der <a class="reference internal" href="#chap-abgabe-zusatz"><span class="std std-ref">Zusatzaufträge</span></a></p></li>
+<li><p><strong>Struktur</strong>: Führt die Datenanlyse durch, indem ihr den Python Code mit Markdown Text unterstützt. Erzählt in groben Zügen, was für Analyseschritte gemacht werden und wie die Resultate zu interpetieren sind.</p></li>
+<li><p><strong>Abgabe</strong>:</p>
 <ul>
 <li><p>Ein Jupyter-Notebook-File (*.ipynb)</p></li>
-<li><p>Ein html-Export des Files:</p>
+<li><p>Ein html-Export des Jupyter-Notebook Files:</p>
 <ul>
 <li><p><strong>Wichtig:</strong> Zuerst alle Zellen ausführen (<em>Run &gt; Run all cells</em>)</p></li>
 <li><p>Export via <em>File &gt; Export Notebook as &gt; Export Notebook to html</em></p></li>
@@ -419,10 +416,10 @@
 <span id="chap-abgabe-zusatz"></span><h2>Zusatzaufträge<a class="headerlink" href="#zusatzauftrage" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="auftrag-1">
 <h3>Auftrag 1<a class="headerlink" href="#auftrag-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Um den ganzen <em>Workflow</em> zu entwickeln haben wir es bisher einfach gehalten. Wir arbeiteten mit nur 10 Zeckenstichen und 5 Iterationen („<em>Runs</em>“).</p>
+<p>Um den ganzen <em>Workflow</em> zu entwickeln haben wir es bisher bewusst einfach gehalten. Wir verwendeten nur 10 Zeckenstichen und führten 5 Iterationen („<em>Runs</em>“) durch.</p>
 <ul class="simple">
 <li><p>Führe die ganze Analyse mit dem ganzen Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche_full.csv</span></code> (1’076 Meldungen) durch den du <a class="reference external" href="https://raw.githubusercontent.com/ratnanil/codingingis/master/zeckenstiche_full.csv">hier herunterladen</a> kannst (Rechtsklick &gt; Speichern Unter)</p></li>
-<li><p>Lasse die Simulation 50-mal statt nur 5-mal laufen</p></li>
+<li><p>Erhöhe die Anzahl Iterationen von 5 auf 50</p></li>
 </ul>
 </div>
 <div class="section" id="auftrag-2">
@@ -430,8 +427,7 @@
 <p>Wir simulieren die Zeckenstiche, indem wir die Original-Meldungen mit der Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> um einen Zufallswert verschieben (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5</span></a>). Dieser Zufallswert stammt aus einer Verteilung mit Mittelwert <code class="docutils literal notranslate"><span class="pre">0</span></code> und Standartabweichung <code class="docutils literal notranslate"><span class="pre">100</span></code>. Variere in deiner Analyse die Standartabweichung und nutze nebst <code class="docutils literal notranslate"><span class="pre">100</span></code> zwei andere Werte, Beispielsweise <code class="docutils literal notranslate"><span class="pre">10</span></code> und <code class="docutils literal notranslate"><span class="pre">1'000</span></code>. Schau dir <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-param"><span class="std std-ref">Übung 8.4</span></a> nochmals an wenn du nicht mehr weisst, wie das geht.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
-<p><strong>Für Profis</strong></p>
-<p>Es ist natürlich nicht nötig, den <em>For Loop</em> 3x zu kopieren. Man kann auch einen verschachtelten <em>For Loop</em> konstuieren, wo der äussere <em>Loop</em> über die Radien iteriert und der innere <em>Loop</em> der bisherige <em>Loop</em> darstellt. Wichtig dabei ist, dass die Liste <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> vor dem äusseren Loop kontruiert wird und im DataFrame jeweils gespeichert wird, was für ein Radius verwendet wurde. Diese Spalte kann danach in <code class="docutils literal notranslate"><span class="pre">groupby</span></code> (siehe unten) mitverwendet werden.</p>
+<p><strong>Für Profis</strong>: Statt das ihr den <em>For Loop</em> 3x kopiert könnt ihr auch einen verschachtelten <em>For Loop</em> konstuieren, wo der äussere <em>Loop</em> über die Radien iteriert, der innere besteht aus dem bisherigen <em>For Loop</em>. Wichtig dabei ist, dass die Liste <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> vor dem äusseren Loop kontruiert wird und im DataFrame jeweils gespeichert wird, was für ein Radius verwendet wurde. Diese Spalte kann danach in <code class="docutils literal notranslate"><span class="pre">groupby</span></code> wie auch bei <code class="docutils literal notranslate"><span class="pre">.boxplot()</span></code> verwendet werden (siehe unten)Q.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
