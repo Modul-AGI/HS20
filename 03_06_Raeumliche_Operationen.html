@@ -457,8 +457,16 @@
 <p>Was hat das nun bewirkt, was bringt uns diese <em>Geo</em> Erweiterung? Mit <em>GeoDataFrames</em> sind nun alle räumliche Operationen möglich, die wir bereits aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Ich möchte dies an ein paar Beispielen Demonstrieren.</p>
 <div class="attention admonition">
 <p class="admonition-title">Wichtig</p>
-<p>Die verschiedenen räumlichen Operationen in Geopandas erwarten unterschiedlichen Input, deshalb müssen wir manchmal zwischen <em>Geometrien</em>, <em>Geoseries</em> und <em>GeoDataFrames</em> hin- und her konvertieren (siehe <span class="xref std std-ref">chap-pythongis-datenstruktur</span>). Geopandas ist noch in Arbeit und ich hoffe, dass das Package in der Zukunft noch etwas einfacher in der Handhabung wird.</p>
-<p>Welche Operation welcher Datentyp braucht seht ihr in <a class="reference external" href="https://geopandas.org/">der Dokumentation</a>. Was für ein Datentyp eure Variabel ist seht ihr mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p>
+<ul class="simple">
+<li><p>Die verschiedenen räumlichen Operationen in Geopandas erwarten unterschiedlichen Input, deshalb müssen wir manchmal zwischen <em>Geometrien</em>, <em>Geoseries</em> und <em>GeoDataFrames</em> hin- und her konvertieren (siehe <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a>).</p></li>
+<li><p>Welche Operation welcher Datentyp braucht seht ihr in <a class="reference external" href="https://geopandas.org/">der Dokumentation</a>. Was für ein Datentyp eure Variabel ist seht ihr mit <code class="docutils literal notranslate"><span class="pre">type()</span></code>.</p></li>
+<li><p>Um <code class="docutils literal notranslate"><span class="pre">x</span></code> zu konvertieren (<code class="docutils literal notranslate"><span class="pre">crs</span></code> ggf. anpassen):</p>
+<ul>
+<li><p>von <em>Geometry</em> zu <em>Geoseries</em>: <code class="docutils literal notranslate"><span class="pre">gpd.GeoSeries(x,</span> <span class="pre">crs</span> <span class="pre">=</span> <span class="pre">2056)</span></code></p></li>
+<li><p>von <em>GeoSeries</em> zu <em>GeoDataFrame</em>: <code class="docutils literal notranslate"><span class="pre">gpd.GeoDataFrame(geometry</span> <span class="pre">=</span> <span class="pre">x,</span> <span class="pre">crs</span> <span class="pre">=</span> <span class="pre">2056)</span></code></p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="section" id="buffer">
 <h3>Buffer<a class="headerlink" href="#buffer" title="Link zu dieser Überschrift">¶</a></h3>
@@ -489,10 +497,12 @@
 </div>
 <div class="section" id="union-und-bounding-geometry">
 <h3>Union und Bounding Geometry<a class="headerlink" href="#union-und-bounding-geometry" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id1">1</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen (siehe <span class="xref std std-ref">chap-datenstruktur</span>). Jetzt wo die Punkten in einem Objekt sind, können wir in ESRI Terminologie eine <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometry</a> darüber rechnen. Mit <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> können wir eine Konvexe Hülle um alle Punkte rechnen, also ein „Rahmen“ um alle Punkte, wo die Innenwinkel immer kleiner sind als 180°. Ähnlich funktioniert <code class="docutils literal notranslate"><span class="pre">envelope</span></code>, wobei hier die Hülle quadratisch und am Koordinatensystem orientiert sein muss.</p>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id1">1</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen (siehe <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a>). Jetzt wo die Punkten in einem Objekt sind, können wir in ESRI Terminologie eine <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometry</a> darüber rechnen. Mit <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> können wir eine Konvexe Hülle um alle Punkte rechnen, also ein „Rahmen“ um alle Punkte, wo die Innenwinkel immer kleiner sind als 180°. Ähnlich funktioniert <code class="docutils literal notranslate"><span class="pre">envelope</span></code>, wobei hier die Hülle quadratisch und am Koordinatensystem orientiert sein muss.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Macht ein Union der Zeckenstiche (ein Multipoint-Objekt)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1"># Macht ein Union der Zeckenstiche (ein Multipoint-Objekt)</span>
 <span class="c1"># (dies ist nötig, weil convex_hull / envelope Multipoint Objekte benötigen)</span>
 <span class="n">zeckenstiche_union</span> <span class="o">=</span> <span class="n">zeckenstiche_gpd</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unary_union</span>
 
@@ -580,7 +590,7 @@
 </div>
 <div class="section" id="ubungen">
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Nun ist es Zeit, dass ihr selbst mit <em>GeoDataFrames</em> Hand anlegt. Achtet dabei immer auf die Datentypen eurer Daten (mit <code class="docutils literal notranslate"><span class="pre">type</span></code>) und konsultiert dazu <span class="xref std std-ref">chap-pythongis-datenstruktur</span>. Zudem ist Geopandas gut dokumentiert, es lohnt ich diese immer wieder zu konsultieren: <a class="reference external" href="https://geopandas.org">geopandas.org</a></p>
+<p>Nun ist es Zeit, dass ihr selbst mit <em>GeoDataFrames</em> Hand anlegt. Achtet dabei immer auf die Datentypen eurer Daten (mit <code class="docutils literal notranslate"><span class="pre">type</span></code>) und konsultiert dazu <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a>. Zudem ist Geopandas gut dokumentiert, es lohnt ich diese immer wieder zu konsultieren: <a class="reference external" href="https://geopandas.org">geopandas.org</a></p>
 <div class="section" id="ubung-13-1">
 <h3>Übung 13.1<a class="headerlink" href="#ubung-13-1" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Importiere <em>Geopandas</em> und wandle <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> in eine <em>GeoDataFrame</em> um (<code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code>). Vergiss nicht, das Koordinatensystem festzulegen!</p>
@@ -673,7 +683,7 @@
 </div>
 <div class="section" id="ubung-13-7">
 <h3>Übung 13.7<a class="headerlink" href="#ubung-13-7" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Exportiere <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> als „Geopackage“ mit dem Namen „zeckenstiche.gpkg“. Lese nochmal <span class="xref std std-ref">chappythongisformate</span> wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, „zeckenstiche.gpgk“ wieder einzulesen.</p>
+<p>Exportiere <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> als „Geopackage“ mit dem Namen „zeckenstiche.gpkg“. Lese nochmal <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-formate"><span class="std std-ref">Geodatenformate</span></a> wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, „zeckenstiche.gpgk“ wieder einzulesen.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="union"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
