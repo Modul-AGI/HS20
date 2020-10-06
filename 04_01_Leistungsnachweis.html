@@ -60,7 +60,7 @@
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="Aufgabe 15: Vereinigen aller Einzelteile" href="04_02_Vereinigen.html" />
-    <link rel="prev" title="Aufgabe 14: Spatial Joins" href="03_06_Spatial_Joins.html" />
+    <link rel="prev" title="Aufgabe 14: Spatial Join" href="03_06_Spatial_Joins.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -235,12 +235,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Aufgabe 13: GIS in Python
+   GIS in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Raeumliche_Operationen.html">
+   Aufgabe 13: Räumliche Operationen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Spatial_Joins.html">
-   Aufgabe 14: Spatial Joins
+   Aufgabe 14: Spatial Join
   </a>
  </li>
 </ul>
@@ -273,7 +278,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_GIS_Demo.html">
+   Demo: Geodaten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_02_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -370,7 +380,7 @@
   <div class="section" id="einleitung">
 <h1>Einleitung<a class="headerlink" href="#einleitung" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Im Leistungsnachweis von <em>Coding in GIS</em> werden wir die Übungen 2 und 3 aus „<em>Datenqualität und Unsicherheit</em>“ nochmals durchführen. Dieses mal werdet ihr die Daten aber selbst simulieren, und das ganze natürlich in Python umsetzen.</p>
-<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet sind. Um diese Unsicherheit bei  der Frage „<em>Welcher Anteil der der Zeckenstiche befinden sich im Wald?</em>“ zu berücksichtigen, führen wir eine <em>Monte Carlo Simulation</em> durch. In diesem Ansatz simulieren wir Zeckenstichmeldungen durch zufälliges Verschieben ihrer Koordinaten. Für jede Iteration der Verschiebung („<em>Run</em>“) berechnen wir den Anteil der Meldungen <em>im Wald</em>. Die Verteilung dieser Werte beantwortet die Frage („<em>Welcher Anteil der der Zeckenstiche befinden sich im Wald?</em>“) unter Berücksichtigung der Unsicherheit.</p>
+<p>In der Übung geht es um folgendes: Wir wissen das die Lagegenauigkeit der Zeckenstichmeldungen mit einer gewissen Unsicherheit behaftet ist. Um diese Unsicherheit bei  der Frage „<em>Welcher Anteil der der Zeckenstiche befindet sich im Wald?</em>“ zu berücksichtigen, führen wir eine <em>Monte Carlo Simulation</em> durch. In diesem Ansatz simulieren wir Zeckenstichmeldungen durch zufälliges Verschieben ihrer Koordinaten. Für jede Iteration der Verschiebung („<em>Run</em>“) berechnen wir den Anteil der Meldungen <em>im Wald</em>. Die Verteilung dieser Werte beantwortet die Frage („<em>Welcher Anteil der der Zeckenstiche befinden sich im Wald?</em>“) unter Berücksichtigung der Unsicherheit.</p>
 <div class="figure align-default" id="fig-sim-workflow">
 <img alt="_images/sim-workflow.jpg" src="_images/sim-workflow.jpg" />
 <p class="caption"><span class="caption-number">Abb. 5 </span><span class="caption-text">Der generelle Workflow userer Monte Carlo Simulation</span><a class="headerlink" href="#fig-sim-workflow" title="Link zu diesem Bild">¶</a></p>
@@ -391,20 +401,20 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Einen Einzelpunkt zufällig verschieben</p></td>
-<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5</span></a></p></td>
+<td><p>✓ haben wir in <a class="reference internal" href="02_06_Zufallzahlen.html#ex-offset-function"><span class="std std-ref">Übung 7.5</span></a> gelöst</p></td>
 <td><p><a class="reference internal" href="02_04_Functions_I.html#function-basics"><span class="std std-ref">Aufgabe 5: Function Basics</span></a> und <a class="reference internal" href="02_05_Functions_II.html#function-advanced"><span class="std std-ref">Aufgabe 6: Function Advanced</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Alle Punkte einer DataFrame zufällig verschieben</p></td>
-<td><p>✓ haben wir gelöst in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a></p></td>
+<td><p>✓ haben wir in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> gelöst</p></td>
 <td><p><a class="reference internal" href="02_06_Zufallzahlen.html#chap-random-numbers"><span class="std std-ref">Aufgabe 7: Zufallszahlen generieren</span></a> und <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#chap-offset-dataframe"><span class="std std-ref">Aufgabe 8: Funktionen in DataFrames</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>Wiederholung von Schritt 2 (zum Beispiel 50-mal)</p></td>
-<td><p>✓ haben wir gelöst in <a class="reference internal" href="03_04_Zeckenstich_Simulation.html#chap-simulation"><span class="std std-ref">Aufgabe 12: Zeckenstich Simulation</span></a></p></td>
+<td><p>✓ haben wir in <a class="reference internal" href="03_04_Zeckenstich_Simulation.html#chap-simulation"><span class="std std-ref">Aufgabe 12: Zeckenstich Simulation</span></a> gelöst</p></td>
 <td><p><a class="reference internal" href="03_02_For_Loops.html#forloops-1"><span class="std std-ref">Aufgabe 9: For Loop Einführung</span></a> und <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Für jeden simulierten Punkt ermitteln, ob er sich im Wald / ausserhalb des Waldes befindet</p></td>
-<td><p>✓ haben wir gelöst in <a class="reference internal" href="03_06_Spatial_Joins.html#ex-spatialjoin"><span class="std std-ref">Übung 14.2</span></a></p></td>
-<td><p><a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">Aufgabe 13: GIS in Python</span></a></p></td>
+<td><p>✓ haben wir in <a class="reference internal" href="03_06_Spatial_Joins.html#ex-spatialjoin"><span class="std std-ref">Übung 14.2</span></a> gelöst</p></td>
+<td><p><a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">GIS in Python</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>Anteil der Punkte im Wald pro Run ermitteln</p></td>
 <td><p>werden wir in <a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a> lösen</p></td>
@@ -442,7 +452,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_06_Spatial_Joins.html" title="previous page">Aufgabe 14: Spatial Joins</a>
+    <a class='left-prev' id="prev-link" href="03_06_Spatial_Joins.html" title="previous page">Aufgabe 14: Spatial Join</a>
     <a class='right-next' id="next-link" href="04_02_Vereinigen.html" title="next page">Aufgabe 15: Vereinigen aller Einzelteile</a>
 
     </div>

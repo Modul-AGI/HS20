@@ -235,12 +235,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Aufgabe 13: GIS in Python
+   GIS in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Raeumliche_Operationen.html">
+   Aufgabe 13: Räumliche Operationen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Spatial_Joins.html">
-   Aufgabe 14: Spatial Joins
+   Aufgabe 14: Spatial Join
   </a>
  </li>
 </ul>
@@ -273,7 +278,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_GIS_Demo.html">
+   Demo: Geodaten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_02_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -501,11 +511,11 @@
 </ol>
 <div class="section" id="ubung-15-1">
 <span id="ex-14-1"></span><h3>Übung 15.1<a class="headerlink" href="#ubung-15-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Konvertiere <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> in eine <em>GeoDataFrame</em> und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_gpd</span></code>. Setze dabei auch das Korrekte Koordinatensystem. Schaue dir nochmal <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">Aufgabe 13: GIS in Python</span></a> an wenn du dir unsicher bist, wie das geht.</p>
+<p>Konvertiere <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code> in eine <em>GeoDataFrame</em> und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_gpd</span></code>. Setze dabei auch das Korrekte Koordinatensystem. Schaue dir nochmal <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">GIS in Python</span></a> an wenn du dir unsicher bist, wie das geht.</p>
 </div>
 <div class="section" id="ubung-15-2">
 <span id="ex-14-3"></span><h3>Übung 15.2<a class="headerlink" href="#ubung-15-2" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Ermittle für jeden simulierten Punkt, ob er im Wald ist oder nicht und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_join</span></code>. Schaue dir nochmal <a class="reference internal" href="03_06_Spatial_Joins.html#chap-spatialjoin"><span class="std std-ref">Aufgabe 14: Spatial Joins</span></a> an wenn du dir unsicher bist, wie das geht. Schau dir anschliessend <code class="docutils literal notranslate"><span class="pre">monte_carlo_join</span></code> an. Sortiere die <em>GeoDataFrame</em> nach „Run“ (<code class="docutils literal notranslate"><span class="pre">monte_carlo_join.sort_values(&quot;Run&quot;)</span></code>) um anschliessend nach „ID“ und versuche so, die Daten zu verstehen.</p>
+<p>Ermittle für jeden simulierten Punkt, ob er im Wald ist oder nicht und speichere den Output als <code class="docutils literal notranslate"><span class="pre">monte_carlo_join</span></code>. Schaue dir nochmal <a class="reference internal" href="03_06_Spatial_Joins.html#chap-spatialjoin"><span class="std std-ref">Aufgabe 14: Spatial Join</span></a> an wenn du dir unsicher bist, wie das geht. Schau dir anschliessend <code class="docutils literal notranslate"><span class="pre">monte_carlo_join</span></code> an. Sortiere die <em>GeoDataFrame</em> nach „Run“ (<code class="docutils literal notranslate"><span class="pre">monte_carlo_join.sort_values(&quot;Run&quot;)</span></code>) um anschliessend nach „ID“ und versuche so, die Daten zu verstehen.</p>
 </div>
 <div class="section" id="ubung-15-3">
 <span id="ex-groupby"></span><h3>Übung 15.3<a class="headerlink" href="#ubung-15-3" title="Link zu dieser Überschrift">¶</a></h3>
@@ -537,14 +547,14 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run  Wald_text
-0    ja            6
-     nein          4
-1    ja            3
-     nein          7
+0    ja            5
+     nein          5
+1    ja            4
+     nein          6
 2    ja            3
      nein          7
-3    ja            5
-     nein          5
+3    ja            3
+     nein          7
 4    ja           10
 dtype: int64
 </pre></div>
@@ -592,13 +602,13 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>6.0</td>
-      <td>4.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.0</td>
-      <td>7.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
     </tr>
     <tr>
       <th>2</th>
@@ -607,8 +617,8 @@ dtype: int64
     </tr>
     <tr>
       <th>3</th>
-      <td>5.0</td>
-      <td>5.0</td>
+      <td>3.0</td>
+      <td>7.0</td>
     </tr>
     <tr>
       <th>4</th>
@@ -662,13 +672,13 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
-      <td>4</td>
+      <td>5</td>
+      <td>5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
-      <td>7</td>
+      <td>4</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>2</th>
@@ -677,8 +687,8 @@ dtype: int64
     </tr>
     <tr>
       <th>3</th>
-      <td>5</td>
-      <td>5</td>
+      <td>3</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>4</th>
@@ -738,15 +748,15 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>6</td>
-      <td>4</td>
-      <td>0.6</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0.5</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
-      <td>7</td>
-      <td>0.3</td>
+      <td>4</td>
+      <td>6</td>
+      <td>0.4</td>
     </tr>
     <tr>
       <th>2</th>
@@ -756,9 +766,9 @@ dtype: int64
     </tr>
     <tr>
       <th>3</th>
-      <td>5</td>
-      <td>5</td>
-      <td>0.5</td>
+      <td>3</td>
+      <td>7</td>
+      <td>0.3</td>
     </tr>
     <tr>
       <th>4</th>

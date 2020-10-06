@@ -235,12 +235,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_05_GIS_in_Python.html">
-   Aufgabe 13: GIS in Python
+   GIS in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Raeumliche_Operationen.html">
+   Aufgabe 13: Räumliche Operationen
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="03_06_Spatial_Joins.html">
-   Aufgabe 14: Spatial Joins
+   Aufgabe 14: Spatial Join
   </a>
  </li>
 </ul>
@@ -273,7 +278,12 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="05_01_Jupyter_Shortcuts.html">
+  <a class="reference internal" href="05_01_GIS_Demo.html">
+   Demo: Geodaten visualisieren
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_02_Jupyter_Shortcuts.html">
    Basic shortcuts for Jupyter lab
   </a>
  </li>
@@ -369,13 +379,16 @@
                 
   <div class="section" id="einleitung-zu-diesem-block">
 <h1>Einleitung zu diesem Block<a class="headerlink" href="#einleitung-zu-diesem-block" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Heute widmen wir uns zwei grossen Themen bevor wir uns an die Umsetzung der Monte Carlo Simulation (<a class="reference internal" href="04_02_Vereinigen.html#chap-waldanteil"><span class="std std-ref">Aufgabe 15: Vereinigen aller Einzelteile</span></a>) wenden.</p>
+<p>Im ersten Thema geht es um <em>for Loops</em>, mit denen wir eine Aufgabe mehrfach („Iterativ“) durchzuführen können. Ein <em>for Loop</em> ist ein sehr wichtiges und hilfreiches Werkzeug das man unbedingt kennen sollte. Wir werden <em>for loops</em> brauchen um Zeckenstiche zu simulieren, indem wir die bestehenden Meldungen x-fach zufällig verschieben. Das Thema behandeln wir in <a class="reference internal" href="03_02_For_Loops.html#forloops-1"><span class="std std-ref">Aufgabe 9: For Loop Einführung</span></a>, <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a> und <a class="reference internal" href="03_04_For_Loops.html#forloops-3"><span class="std std-ref">Aufgabe 11: For Loops Advanced</span></a>.</p>
+<p>Beim zweiten Thema geht es um GIS. Wir haben bisher mit Daten gearbeitet die eine Rauminformation beinhalten, die Zeckenstiche haben schliesslich Koordinaten. Diese Rauminformation haben wir aber nicht als solche behandelt. Die x/y Koordinaten haben wir als Zahlen eingelesen und uns nicht gross darum geschert, dass es sich dabei um spezifische Punkte in der Schweiz handelt. Heute werden wir dies ändern müssen da uns eine räumliche Abfrage bevorsteht: Wir wollen nämlich wissen, welche Zeckenstiche sich im Wald befinden. Dadurch lernen wir eine neue Erweiterung kennen und sehen, was für räumliche Operationen in Python möglich sind. Das Thema behandeln wir in <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis"><span class="std std-ref">GIS in Python</span></a>, und <a class="reference internal" href="03_06_Spatial_Joins.html#chap-spatialjoin"><span class="std std-ref">Aufgabe 14: Spatial Join</span></a>.</p>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">
-<li><p>Ihr kennt For-Loops und könnt sie anwenden</p></li>
-<li><p>Ihr verwendet eure erste räumliche Operation «Spatial Join» und wisst, dass es hier eine ganze Palette an weiteren Operatoren gibt</p></li>
-<li><p>Ihr könnt eine (Geo-) DataFrame nach Gruppe Zusammenfassen</p></li>
-<li><p>Ihr lernt weitere Visualisierungstechniken kennen</p></li>
+<li><p>Ihr kennt <em>for-Loops</em> und könnt sie anwenden</p></li>
+<li><p>Ihr seht, was mit räumlichen Operationen in Python möglich ist und kennt ein Tool, welches dazu notwendig ist</p></li>
+<li><p>Ihr könnt räumliche Operationen (<em>spatial join</em>, <em>overlay</em>) in Python umsetzen</p></li>
+<li><p>Ihr könnt summary Statistiken (mit <code class="docutils literal notranslate"><span class="pre">groupby</span></code>/<code class="docutils literal notranslate"><span class="pre">count</span></code>) aus DataFrames extrahieren</p></li>
 </ul>
 </div>
 </div>
