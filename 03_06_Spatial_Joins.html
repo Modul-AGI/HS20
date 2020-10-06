@@ -205,7 +205,7 @@
   <a class="reference internal" href="03_02_For_Loops.html">
    Aufgabe 9:
    <em>
-    For Loop
+    for loop
    </em>
    Einführung
   </a>
@@ -214,7 +214,7 @@
   <a class="reference internal" href="03_03_For_Loops.html">
    Aufgabe 10:
    <em>
-    For Loop
+    for loop
    </em>
    Basics
   </a>
@@ -223,7 +223,7 @@
   <a class="reference internal" href="03_04_For_Loops.html">
    Aufgabe 11:
    <em>
-    For Loops
+    for loops
    </em>
    Advanced
   </a>
@@ -262,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_Vereinigen.html">
-   Aufgabe 15: Vereinigen aller Einzelteile
+   Aufgabe 15: Grand Finale
   </a>
  </li>
  <li class="toctree-l1">
@@ -423,17 +423,17 @@
 <span id="chap-spatialjoin"></span><h1>Aufgabe 14: Spatial Join<a class="headerlink" href="#aufgabe-14-spatial-join" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>In dieser Aufgabe wollen wir für jeden Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht.</p>
-<p>Jetzt wäre es noch interessant, den Wald-Layer mit den Zeckenstichen zu überlagern. Wie ihr schon in vorherigen Plots von mir bemerkt hat, nutze ich immer das Submodul <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> (importiert mit alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>) aus <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> wenn ich zwei Layer überlagern oder zwei Plots nebeneinander visualisieren möchte. Wir werden dies nicht weiter in diesem Kurs vertiefen, kopiert einfach den Code in euer Notebook.</p>
+<p>In dieser Aufgabe wollen wir für jeden Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Den Wald Layer kennt ihr bereits aus dem Block „Datenqualität und Unsicherheit“ und wir haben ihn in <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-formate"><span class="std std-ref">Geodatenformate</span></a> kurz angeschaut. Nutzen wir hier nochmal die Gelegenheit, um den Wald und die Zeckenstiche als Geodaten einzulesen und in einer grossem Plot zu visualisieren.</p>
+<p>Wie ihr schon in vorherigen Plots von mir bemerkt hat, nutze ich manchmal <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> aus <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (importiert mit alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>) wenn ich etwas mehr flexibiltät haben möchte in meinen plots. Wir werden diese Visualisierungtechnik nicht weiter in diesem Kurs, kopiert einfach den entsprechenden Code in euer Notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="n">zeckenstiche_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.gpkg&quot;</span><span class="p">)</span>
+<span class="n">wald</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;wald.gpkg&quot;</span><span class="p">)</span>
 
 <span class="c1"># Subplots mit 1 Zeile und 1 Spalte</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-
 <span class="n">wald</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lightgray&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">)</span>
 <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">)</span>
 </pre></div>
@@ -452,23 +452,6 @@
 <div class="figure align-default" id="spatialjoin">
 <img alt="_images/spatialjoin.jpg" src="_images/spatialjoin.jpg" />
 <p class="caption"><span class="caption-number">Abb. 4 </span><span class="caption-text">„Spatial Join“ zwischen <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> und <code class="docutils literal notranslate"><span class="pre">wald</span></code>. In diesem Spatial Join wurde die Geometrie von <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> übernommen, das heisst das Resultat des Joins ist ein Punkt-Layer.</span><a class="headerlink" href="#spatialjoin" title="Link zu diesem Bild">¶</a></p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
-
-<span class="n">wald</span><span class="o">.</span><span class="n">boundary</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="_images/03_06_Spatial_Joins_3_1.png" src="_images/03_06_Spatial_Joins_3_1.png" />
-</div>
 </div>
 <p>In Python wird ein <em>Spatial Join</em> zwischen <code class="docutils literal notranslate"><span class="pre">zeckenstiche</span></code> und <code class="docutils literal notranslate"><span class="pre">wald</span></code> wie folgt durchgeführt (wichtig ist dabei auch die Reihenfolge der Argumente: <code class="docutils literal notranslate"><span class="pre">left_df</span></code> bestimmt den Geometrietyp des Outputs):</p>
 <div class="cell docutils container">

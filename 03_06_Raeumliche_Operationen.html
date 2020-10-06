@@ -205,7 +205,7 @@
   <a class="reference internal" href="03_02_For_Loops.html">
    Aufgabe 9:
    <em>
-    For Loop
+    for loop
    </em>
    Einführung
   </a>
@@ -214,7 +214,7 @@
   <a class="reference internal" href="03_03_For_Loops.html">
    Aufgabe 10:
    <em>
-    For Loop
+    for loop
    </em>
    Basics
   </a>
@@ -223,7 +223,7 @@
   <a class="reference internal" href="03_04_For_Loops.html">
    Aufgabe 11:
    <em>
-    For Loops
+    for loops
    </em>
    Advanced
   </a>
@@ -262,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_Vereinigen.html">
-   Aufgabe 15: Vereinigen aller Einzelteile
+   Aufgabe 15: Grand Finale
   </a>
  </li>
  <li class="toctree-l1">
@@ -386,8 +386,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#union-und-bounding-geometry">
-     Union und Bounding Geometry
+    <a class="reference internal nav-link" href="#union">
+     Union
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimum-bounding-geometry">
+     Minimum Bounding Geometry
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -454,7 +459,7 @@
 <span id="chap-raeumliche-operationen"></span><h1>Aufgabe 13: Räumliche Operationen<a class="headerlink" href="#aufgabe-13-raumliche-operationen" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Was hat das nun bewirkt, was bringt uns diese <em>Geo</em> Erweiterung? Mit <em>GeoDataFrames</em> sind nun alle räumliche Operationen möglich, die wir bereits aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Ich möchte dies an ein paar Beispielen Demonstrieren.</p>
+<p>Was bringt uns diese <em>Geo</em> Erweiterung? Mit <em>GeoDataFrames</em> sind nun alle räumliche Operationen möglich, die wir bereits aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Ich möchte dies an ein paar Beispielen Demonstrieren.</p>
 <div class="attention admonition">
 <p class="admonition-title">Wichtig</p>
 <ul class="simple">
@@ -495,40 +500,71 @@
 </div>
 </div>
 </div>
-<div class="section" id="union-und-bounding-geometry">
-<h3>Union und Bounding Geometry<a class="headerlink" href="#union-und-bounding-geometry" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> <a class="footnote-reference brackets" href="#union" id="id1">1</a> können wir aus unseren Einzelpunkten ein <em>Multipolygon</em> erstellen (siehe <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a>). Jetzt wo die Punkten in einem Objekt sind, können wir in ESRI Terminologie eine <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometry</a> darüber rechnen. Mit <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> können wir eine Konvexe Hülle um alle Punkte rechnen, also ein „Rahmen“ um alle Punkte, wo die Innenwinkel immer kleiner sind als 180°. Ähnlich funktioniert <code class="docutils literal notranslate"><span class="pre">envelope</span></code>, wobei hier die Hülle quadratisch und am Koordinatensystem orientiert sein muss.</p>
+<div class="section" id="union">
+<h3>Union<a class="headerlink" href="#union" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">unary_union</span></code> können wir aus unserer <em>Point</em>-Geometrie ein <em>MultiPoint</em> erstellen (siehe <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a>). Dieser Befehl lautet in ArcGIS <a class="reference external" href="https://desktop.arcgis.com/de/arcmap/10.3/tools/analysis-toolbox/union.htm">Union</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_union</span> <span class="o">=</span> <span class="n">zeckenstiche_gpd</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unary_union</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">zeckenstiche_union</span><span class="p">)</span> <span class="c1"># Es handelt sich nun um den Typ &quot;geometry&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>shapely.geometry.multipoint.MultiPoint
+</pre></div>
+</div>
+</div>
+</div>
+<p>Wenn wir uns <code class="docutils literal notranslate"><span class="pre">zeckenstiche_union</span></code> nun mit <code class="docutils literal notranslate"><span class="pre">print</span></code> anschauen sehen wir, dass sämtliche Koordinaten in einem Objekt zusammengepackt sind:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">zeckenstiche_union</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MULTIPOINT (2681092 1250672, 2681107 1250712, 2681111 1250683, 2681116 1250648, 2681117 1250725, 2681124 1250720, 2681128 1250683, 2681131 1250692, 2681138 1250725, 2681171 1250711)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="minimum-bounding-geometry">
+<span id="chap-raeumliche-operationen-mbg"></span><h3>Minimum Bounding Geometry<a class="headerlink" href="#minimum-bounding-geometry" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Über ein <em>MultiPoint</em> lassen sich jetzt wunderbar sogenannte (in ESRI Terminologie) <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometries</a> rechnen. Mit den gleichnamigen Funktionen können wir nun eine <code class="docutils literal notranslate"><span class="pre">convex_hull</span></code> <a class="footnote-reference brackets" href="#convex-hull" id="id1">1</a> sowie eine <code class="docutils literal notranslate"><span class="pre">envelope</span></code> <a class="footnote-reference brackets" href="#envelope" id="id2">2</a> über alle Punkte rechnen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_convex_hull</span> <span class="o">=</span> <span class="n">zeckenstiche_union</span><span class="o">.</span><span class="n">convex_hull</span>
+<span class="n">my_envelope</span> <span class="o">=</span> <span class="n">zeckenstiche_union</span><span class="o">.</span><span class="n">envelope</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun konvertiere ich beide Polygon-Geometrien in <em>GeoSeries</em>, damit sie einfacher zu visualisieren sind:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_convex_hull</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">my_convex_hull</span><span class="p">)</span>
+<span class="n">my_envelope</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">my_envelope</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Um die beiden Objekte nebeneinander zu visualisieren importiere ich zuerst <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> aus <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (mit dem alias <code class="docutils literal notranslate"><span class="pre">plt</span></code>) und erstelle <code class="docutils literal notranslate"><span class="pre">subplots</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="c1"># Macht ein Union der Zeckenstiche (ein Multipoint-Objekt)</span>
-<span class="c1"># (dies ist nötig, weil convex_hull / envelope Multipoint Objekte benötigen)</span>
-<span class="n">zeckenstiche_union</span> <span class="o">=</span> <span class="n">zeckenstiche_gpd</span><span class="p">[</span><span class="s2">&quot;geometry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unary_union</span>
-
-<span class="c1"># Berechnet den Convex Hull und speichert den Ouput als Polygon</span>
-<span class="n">my_convex_hull</span> <span class="o">=</span> <span class="n">zeckenstiche_union</span><span class="o">.</span><span class="n">convex_hull</span>
-
-<span class="c1"># Konvertiert das Polygon in eine GeoSeries</span>
-<span class="c1"># (GeoSeries sind praktischer als Polygone)</span>
-<span class="n">my_convex_hull</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">my_convex_hull</span><span class="p">)</span>
-
-<span class="c1"># Berechnet das Envelope und speichert den Output als Polygon</span>
-<span class="n">my_envelope</span> <span class="o">=</span> <span class="n">zeckenstiche_union</span><span class="o">.</span><span class="n">envelope</span>
-
-<span class="c1"># Konvertiert das Polygon in eine GeoSeries</span>
-<span class="c1"># (GeoSeries sind praktischer als Polygone)</span>
-<span class="n">my_envelope</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">(</span><span class="n">my_envelope</span><span class="p">)</span>
-
-<span class="c1"># Bereitet wieder die beiden Subplots vor (1 Zeile, 2 Spalten)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 
 <span class="c1"># Erstellt den linken Plot</span>
 <span class="n">my_convex_hull</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Convex Hull&quot;</span><span class="p">)</span>
 <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 
 <span class="c1"># Erstellt den rechten Plot</span>
 <span class="n">my_envelope</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Envelope&quot;</span><span class="p">)</span>
 <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -537,22 +573,22 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_06_Raeumliche_Operationen_7_1.png" src="_images/03_06_Raeumliche_Operationen_7_1.png" />
+<img alt="_images/03_06_Raeumliche_Operationen_15_1.png" src="_images/03_06_Raeumliche_Operationen_15_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="overlay">
 <h3>Overlay<a class="headerlink" href="#overlay" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Das ESRI Toolset <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/analysis/an-overview-of-the-overlay-toolset.htm">„Overlay“</a> ist in der Funktion <code class="docutils literal notranslate"><span class="pre">overlay</span></code> verpackt.</p>
+<p>Viele der Funktionen aus dem ESRI Toolset <a class="reference external" href="https://pro.arcgis.com/de/pro-app/tool-reference/analysis/an-overview-of-the-overlay-toolset.htm">„Overlay“</a> sind in der <em>Geopandas</em> Funktion <code class="docutils literal notranslate"><span class="pre">overlay</span></code> verpackt. Um sie zu demonstrieren nutze ich die Geometrien, die wir in weiter oben erstellt haben (<code class="docutils literal notranslate"><span class="pre">buffered</span></code> und <code class="docutils literal notranslate"><span class="pre">my_convex_hull</span></code>). Zuerst muss ich sie aber noch von <em>GeoSeries</em> in <em>GeoDataFrames</em> konverieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Konvertierung GeoSeries in GeoDataFrames</span>
-<span class="n">buffered_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">buffered</span><span class="p">,</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>               
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">buffered_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">buffered</span><span class="p">,</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span>               
 <span class="n">my_convex_hull_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">my_convex_hull</span><span class="p">,</span> <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 </div>
+<p>Nun kann ich zum beispielsweise die Overlay-Funktion <code class="docutils literal notranslate"><span class="pre">difference</span></code> ausführen:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_difference</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">overlay</span><span class="p">(</span><span class="n">my_convex_hull_gdf</span><span class="p">,</span><span class="n">buffered_gdf</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;difference&#39;</span><span class="p">)</span>
@@ -563,27 +599,27 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bereitet die drei Subplots vor ################</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
 <span class="c1">#################################################</span>
 
 <span class="c1"># Plot links ####################################</span>
 <span class="n">my_convex_hull_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">)</span>               <span class="c1">#</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Das Minimum Convex Polygon&quot;</span><span class="p">)</span>     <span class="c1"># </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;1. Das Minimum Convex Polygon&quot;</span><span class="p">)</span>  <span class="c1"># </span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>                              <span class="c1">#</span>
 <span class="c1"># Plot mitte ####################################</span>
 <span class="n">buffered_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax2</span><span class="p">)</span>                     <span class="c1">#</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Die gebufferten Punkte&quot;</span><span class="p">)</span>         <span class="c1"># </span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;2. Die gebufferten Punkte&quot;</span><span class="p">)</span>      <span class="c1"># </span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>                              <span class="c1">#</span>
 <span class="c1"># Plot rechts ###################################</span>
 <span class="n">my_difference</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax3</span><span class="p">)</span>                    <span class="c1">#</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Die Differenz der ersten beiden&quot;</span><span class="p">)</span><span class="c1"># </span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;&#39;difference&#39; aus 1. &amp; 2.&quot;</span><span class="p">)</span>       <span class="c1"># </span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>                              <span class="c1">#</span>
 <span class="c1">#################################################</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03_06_Raeumliche_Operationen_11_0.png" src="_images/03_06_Raeumliche_Operationen_11_0.png" />
+<img alt="_images/03_06_Raeumliche_Operationen_20_0.png" src="_images/03_06_Raeumliche_Operationen_20_0.png" />
 </div>
 </div>
 </div>
@@ -607,7 +643,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_06_Raeumliche_Operationen_19_1.png" src="_images/03_06_Raeumliche_Operationen_19_1.png" />
+<img alt="_images/03_06_Raeumliche_Operationen_28_1.png" src="_images/03_06_Raeumliche_Operationen_28_1.png" />
 </div>
 </div>
 </div>
@@ -628,7 +664,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="_images/03_06_Raeumliche_Operationen_21_1.png" src="_images/03_06_Raeumliche_Operationen_21_1.png" />
+<img alt="_images/03_06_Raeumliche_Operationen_30_1.png" src="_images/03_06_Raeumliche_Operationen_30_1.png" />
 </div>
 </div>
 </div>
@@ -677,7 +713,7 @@
 <span class="ne">NameError</span>: name &#39;my_union&#39; is not defined
 </pre></div>
 </div>
-<img alt="_images/03_06_Raeumliche_Operationen_26_1.png" src="_images/03_06_Raeumliche_Operationen_26_1.png" />
+<img alt="_images/03_06_Raeumliche_Operationen_35_1.png" src="_images/03_06_Raeumliche_Operationen_35_1.png" />
 </div>
 </div>
 </div>
@@ -686,8 +722,11 @@
 <p>Exportiere <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> als „Geopackage“ mit dem Namen „zeckenstiche.gpkg“. Lese nochmal <a class="reference internal" href="03_05_GIS_in_Python.html#chap-pythongis-formate"><span class="std std-ref">Geodatenformate</span></a> wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, „zeckenstiche.gpgk“ wieder einzulesen.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="union"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Dieser Befehl lautet in ArcGIS <a class="reference external" href="https://desktop.arcgis.com/de/arcmap/10.3/tools/analysis-toolbox/union.htm">Union</a></p>
+<dt class="label" id="convex-hull"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Convex Hull stellt ein „Rahmen“ um alle Punkte dar, wo alle Innenwinkel kleiner sind als 180° (<em>konvex</em>)</p>
+</dd>
+<dt class="label" id="envelope"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Envelope stellt ebenfalls ein „Rahmen um alle Punkte dar, die aber quadratisch geformt und am Koordinatensystem ausgerichtet ist.</p>
 </dd>
 </dl>
 </div>

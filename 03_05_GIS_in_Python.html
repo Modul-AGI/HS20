@@ -205,7 +205,7 @@
   <a class="reference internal" href="03_02_For_Loops.html">
    Aufgabe 9:
    <em>
-    For Loop
+    for loop
    </em>
    Einführung
   </a>
@@ -214,7 +214,7 @@
   <a class="reference internal" href="03_03_For_Loops.html">
    Aufgabe 10:
    <em>
-    For Loop
+    for loop
    </em>
    Basics
   </a>
@@ -223,7 +223,7 @@
   <a class="reference internal" href="03_04_For_Loops.html">
    Aufgabe 11:
    <em>
-    For Loops
+    for loops
    </em>
    Advanced
   </a>
@@ -262,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_Vereinigen.html">
-   Aufgabe 15: Vereinigen aller Einzelteile
+   Aufgabe 15: Grand Finale
   </a>
  </li>
  <li class="toctree-l1">
@@ -376,12 +376,17 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#von-dataframes-zu-geodataframes">
-   von Dataframes zu
+  <a class="reference internal nav-link" href="#dataframes-geodataframes">
    <em>
-    Geo
+    DataFrames
    </em>
-   DataFrames
+   &gt;
+   <em>
+    <strong>
+     Geo
+    </strong>
+    DataFrames
+   </em>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -413,8 +418,8 @@
   <div class="section" id="gis-in-python">
 <span id="chap-pythongis"></span><h1>GIS in Python<a class="headerlink" href="#gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Manche mag das jetzt überraschen, andere haben es vielleicht schon gemerkt: Mit <strong>GIS</strong> hatte unseres bisheriges Wirken in Python eigentlich wenig zu tun. Unsere Zeckenstiche haben zwar x/y-Koordinaten, aber diese haben wir bisher gleich behandlet wie alle anderen Spalten.</p>
-<p>Anders gesagt: <em>Wir</em> wissen ja, dass mit den Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten in der Schweiz gemeint sind, Python hingegen wusste das bisher (noch) nicht. Der konkrete Raumbezug fehlt also noch, und das wird irgendwann problematisch: Denn bald wollen wir pro simulierten Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Das ist eine explizit räumliche Abfrage, welche nur mit explizit räumlichen Geodaten beantwortet werden kann.</p>
-<p>Was wir später mit den simulierten Zeckenstiche machen wollen, spielen wir an dieser Stelle mit den Zeckenstichreports (<code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>) durch.</p>
+<p>Anders gesagt: <em>Wir</em> wissen ja, dass mit den Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten in der Schweiz gemeint sind, Python hingegen wusste das bisher (noch) nicht. Der konkrete Raumbezug fehlt also noch, und das wird irgendwann problematisch: Denn bald wollen wir für jeden simulierten Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Das ist eine explizit räumliche Abfrage, welche nur mit explizit räumlichen Geodaten beantwortet werden kann.</p>
+<p>Was wir später mit den simulierten Zeckenstiche machen wollen, spielen wir an dieser Stelle mit den original Zeckenstichmeldungen (<code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>) durch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Unsere Zeckenstiche hatten wir auf folgende Weise importiert:</span>
@@ -528,10 +533,14 @@
 </table>
 </div></div></div>
 </div>
-<div class="section" id="von-dataframes-zu-geodataframes">
-<h2>von Dataframes zu <em>Geo</em>DataFrames<a class="headerlink" href="#von-dataframes-zu-geodataframes" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Glücklicherweise können wir unsere Zeckenstich-<em>Dataframe</em> mit nur einem Zusatzmodul und wenigen Zeilen code in eine <strong>räumliche</strong> <em>DataFrame</em> konvertieren. Mit dem Modul <em><strong>geo</strong>pandas</em> erstellen wir aus unserer <em>pandas DataFrame</em> eine <em><strong>geo</strong>pandas <strong>Geo</strong>DataFrame</em>. Mit dieser Erweiterung erhält die <em>DataFrame</em> im Wesentlichen (a) eine Zusatzspalte <code class="docutils literal notranslate"><span class="pre">geometry</span></code> mit der Geometrie als räumliches Objekt und (b) ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> welches das Koordinatensystem der Geometriespalte enthält.</p>
-<p>Beide dieser Bestandteile müssen wir bei der Erstellung der <em>GeoDataFrame</em> festlegen. Nachstehend seht ihr, wie ihr dies bei den Zeckenstichen machen könnt, was diese Bestandteile genau bedeuten seht ihr in den <a class="reference internal" href="#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a> und <a class="reference internal" href="#chap-pythongis-crs"><span class="std std-ref">Koordinatensystem</span></a>.</p>
+<div class="section" id="dataframes-geodataframes">
+<h2><em>DataFrames</em> &gt; <em><strong>Geo</strong>DataFrames</em><a class="headerlink" href="#dataframes-geodataframes" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Glücklicherweise können wir unsere Zeckenstich-<em>Dataframe</em> mit nur einem Zusatzmodul und wenigen Zeilen code in eine <strong>räumliche</strong> <em>DataFrame</em> konvertieren. Mit dem Modul <em><strong>geo</strong>pandas</em> erstellen wir aus unserer <em>pandas DataFrame</em> eine <em><strong>geo</strong>pandas <strong>Geo</strong>DataFrame</em>. Mit dieser Erweiterung erhält die <em>DataFrame</em></p>
+<ol class="simple">
+<li><p><strong>geometry</strong>: eine Zusatzspalte <code class="docutils literal notranslate"><span class="pre">geometry</span></code> mit der Geometrie als räumliches Objekt und</p></li>
+<li><p><strong>crs</strong>: ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> welches das Koordinatensystem der Geometriespalte enthält.</p></li>
+</ol>
+<p>Beide dieser Bestandteile müssen wir bei der Erstellung der <em>GeoDataFrame</em> festlegen. Nachstehend seht ihr, wie ihr dies bei den Zeckenstichen machen könnt, was diese Bestandteile genau bedeuten seht ihr in <a class="reference internal" href="#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a> (<strong>geometry</strong>) und <a class="reference internal" href="#chap-pythongis-crs"><span class="std std-ref">Koordinatensystem</span></a> (<strong>crs</strong>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -539,7 +548,7 @@
 <span class="n">zeckenstiche_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">,</span> <span class="c1"># die Basis-DataFrame / die &quot;Attributtabelle&quot;</span>
                                     <span class="c1"># die Geometrie Spalte:</span>
                                     <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span>
-                                    <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> <span class="c1"># EPSG Code des Koorinatensystem</span>
+                                    <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> <span class="c1"># EPSG Code des Koordinatensystem</span>
 <span class="n">zeckenstiche_gpd</span>
 </pre></div>
 </div>
@@ -668,8 +677,8 @@
 <li><p>Polygon / Multipolygon <a class="footnote-reference brackets" href="#multi" id="id4">2</a></p></li>
 </ul>
 </li>
-<li><p><strong>GeoSeries</strong>: Eine Serie von Geometrien, gleichbedeutend wie eine <strong>Spalte</strong> in einer Tabelle</p></li>
-<li><p><strong>GeoDataFrame</strong>: Eine Tabelle, welche über eine Geometrie-Spalte (GeoSeries) verfügt</p></li>
+<li><p><strong>GeoSeries</strong>: Eine vielzahl an <em>Geometries</em>, typischerweise eine Spalte einer <em>GeoDataFrame</em> namens (<em>geometry</em>)</p></li>
+<li><p><strong>GeoDataFrame</strong>: Eine Tabelle, welche über eine Geometrie-Spalte (<em>GeoSeries</em>) verfügt</p></li>
 </ul>
 <div class="figure align-default" id="geopandas-types">
 <img alt="_images/Geopandas_types.jpg" src="_images/Geopandas_types.jpg" />
@@ -696,12 +705,12 @@
 </div>
 <div class="section" id="geodatenformate">
 <span id="chap-pythongis-formate"></span><h2>Geodatenformate<a class="headerlink" href="#geodatenformate" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Das Einlesen von CSV und die Konvertierung von <em>DataFrame</em> zu <em>GeoDataFrame</em> hat bei den Zeckenstichen zwar gut funktioniert, es ist aber auch etwas umständlich jedes Mal die <code class="docutils literal notranslate"><span class="pre">geometry</span></code> Spalte und das <code class="docutils literal notranslate"><span class="pre">crs</span></code> zu setzen. CSVs eignen sich nicht besonders gut für das speichern von Geodaten, deshalb gibt es auch spezifische Geodaten-Datenformate. Bei diesen Datenformaten werden <code class="docutils literal notranslate"><span class="pre">geometry</span></code> und <code class="docutils literal notranslate"><span class="pre">crs</span></code> automatisch abgespeichert.</p>
+<p>Das Einlesen von CSV und die Konvertierung von <em>DataFrame</em> zu <em>GeoDataFrame</em> hat bei den Zeckenstichen zwar gut funktioniert, es ist aber auch etwas umständlich jedes Mal die <code class="docutils literal notranslate"><span class="pre">geometry</span></code> Spalte und das <code class="docutils literal notranslate"><span class="pre">crs</span></code> zu setzen. CSVs eignen sich nicht besonders gut für das speichern von Geodaten, insbesonders wenn die Daten komplexer sind, wie (<em>Multi-</em>) <em>Linestring</em>/<em>Polygon</em>. Deshalb gibt es auch spezifische Datenformate, in den Geodaten gespeichert werden können. Bei diesen Datenformaten werden <code class="docutils literal notranslate"><span class="pre">geometry</span></code> und <code class="docutils literal notranslate"><span class="pre">crs</span></code> automatisch abgespeichert.</p>
 <p>Ihr seid im Studium mit solchen Datenformate bereits in Kontakt gekommen, sicher kennt ihr ESRI’s <em>File Geodatabases</em>/<em>Feature Classes</em>  sowie <em>Shapefiles</em>. Dies sind häufig genutzte Formate, aber leider nicht offen, und gerade Shapefiles haben viele Tücken (siehe <a class="reference external" href="http://switchfromshapefile.org/">switchfromshapefile.org</a>). Es gibt dafür ganz tolle Alternativen, beispielsweise <em>Geopackages</em> (nicht zu verwechseln mit ArcGIS Pro Packages!). Mit nachstehendem Befehl können wir <code class="docutils literal notranslate"><span class="pre">zeckenstiche_gpd</span></code> als Geopackage abspeichern.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;zeckenstiche.gpkg&quot;</span><span class="p">,</span> <span class="n">driver</span> <span class="o">=</span> <span class="s2">&quot;GPKG&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Das File „zeckenstiche.gpkg“ befindet sich nun in meiner <em>Working Directory</em> und ich kann sie mit <code class="docutils literal notranslate"><span class="pre">gpd.read_file(&quot;zeckenstiche.gpkg&quot;)</span></code> wieder einlesen. Im Unterschied zu vorher musst ich nun <code class="docutils literal notranslate"><span class="pre">geometry</span></code> und <code class="docutils literal notranslate"><span class="pre">crs</span></code> nicht mehr zuweisen, diese sind im Geopackage abgespeichert worden. Das Geopackage kann ich nun auch mit ArcGIS öffnen, wenn ich die Punkte interaktiv explorieren möchte.</p>
+<p>Das File „zeckenstiche.gpkg“ befindet sich nun in meiner <em>Working Directory</em> und ich kann sie mit <code class="docutils literal notranslate"><span class="pre">gpd.read_file(&quot;zeckenstiche.gpkg&quot;)</span></code> wieder einlesen. Im Unterschied zu vorher musst ich nun <code class="docutils literal notranslate"><span class="pre">geometry</span></code> und <code class="docutils literal notranslate"><span class="pre">crs</span></code> nicht mehr zuweisen, diese sind beim Schreiben des Geopackage abgespeichert worden. Das Geopackage kann ich nun auch mit ArcGIS / QGIS öffnen, wenn ich die Punkte interaktiv explorieren möchte.</p>
 <p>Im Block „Datenqualität und Unsicherheit“ habt ihr mit dem Wald Datensatz gearbeitet. Ich habe diesen als <em>Geopackage</em> exportiert und kann ihn wie im nachstehend Codeblock ersichtlich einlesen und visualisieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -754,20 +763,27 @@
 </table>
 </div></div></div>
 </div>
-<p>Es handelt sich also um einen Datensatz mit nur zwei Zeilen, aber mehreren Polygonen pro Zeile (das macht es zu einem <em><strong>Multi</strong>polygon</em><a class="footnote-reference brackets" href="#multi" id="id5">2</a>). Mit <code class="docutils literal notranslate"><span class="pre">plot</span></code> können wir diesen Datensatz einfach visualisieren.</p>
+<p>Es handelt sich also um einen Datensatz mit nur zwei Zeilen, aber mehreren Polygonen pro Zeile (das macht es zu einem <em><strong>Multi</strong>polygon</em><a class="footnote-reference brackets" href="#multi" id="id5">2</a>). Mit <code class="docutils literal notranslate"><span class="pre">plot</span></code> können wir diesen Datensatz einfach visualisieren und mit den Zeckenstichdaten überlagern.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wald</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lightgrey&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">wald</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lightgrey&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">])</span>
+<span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">base</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-4-c38d5330a189&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">base</span> <span class="o">=</span> <span class="n">wald</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lightgrey&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">base</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;wald&#39; is not defined
 </pre></div>
 </div>
-<img alt="_images/03_05_GIS_in_Python_10_1.png" src="_images/03_05_GIS_in_Python_10_1.png" />
 </div>
 </div>
+<p>Nun wird auch klar, dass es sich bei unseren 10 Zeckenstichen um sehr dicht beieinanderliegenden Punkte handelt.</p>
 <hr class="docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="shapely"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>

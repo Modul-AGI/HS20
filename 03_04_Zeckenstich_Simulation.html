@@ -60,7 +60,7 @@
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
     <link rel="next" title="GIS in Python" href="03_05_GIS_in_Python.html" />
-    <link rel="prev" title="Aufgabe 11: For Loops Advanced" href="03_04_For_Loops.html" />
+    <link rel="prev" title="Aufgabe 11: for loops Advanced" href="03_04_For_Loops.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -205,7 +205,7 @@
   <a class="reference internal" href="03_02_For_Loops.html">
    Aufgabe 9:
    <em>
-    For Loop
+    for loop
    </em>
    Einführung
   </a>
@@ -214,7 +214,7 @@
   <a class="reference internal" href="03_03_For_Loops.html">
    Aufgabe 10:
    <em>
-    For Loop
+    for loop
    </em>
    Basics
   </a>
@@ -223,7 +223,7 @@
   <a class="reference internal" href="03_04_For_Loops.html">
    Aufgabe 11:
    <em>
-    For Loops
+    for loops
    </em>
    Advanced
   </a>
@@ -262,7 +262,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_02_Vereinigen.html">
-   Aufgabe 15: Vereinigen aller Einzelteile
+   Aufgabe 15: Grand Finale
   </a>
  </li>
  <li class="toctree-l1">
@@ -437,7 +437,7 @@
 <span id="chap-simulation"></span><h1>Aufgabe 12: Zeckenstich Simulation<a class="headerlink" href="#aufgabe-12-zeckenstich-simulation" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Jetzt wo ihr <em>For Loops</em> im Griff habt, nutzen wir dieses Instrument um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Es geht jetzt darum, das zufällige verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines Loops zu wiederholen.</p>
+<p>Jetzt wo ihr <em>for loops</em> im Griff habt, nutzen wir dieses Instrument um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Es geht jetzt darum, das zufällige Verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines <em>loops</em> zu wiederholen.</p>
 <p>Um euer Gedächnis etwas aufzufrischen: Letzte Woche hatten wir in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und diese Simulierten Daten in unserer <em>DataFrame</em> abgespeichert. Schau dir diese Übung und die Musterlösung nochmals an wenn du sie nicht mehr ganz im Kopf hast.</p>
 <p>Starte mit einem neuen Jupyter Notebook und lade darin die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), erstellt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code> (s.u.).</p>
 <div class="cell docutils container">
@@ -466,7 +466,7 @@
 <p>Nun wollen wir dafür sorgen, das die simulierten Daten aus der letzten Übung auch irgendwo abgespeichert werden. Sorge dafür, dass der Output in einer Liste mit dem Namen <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> gespeichert wird.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
-<p>Nutze hier die Anweisungen aus <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: For Loop Basics</span></a> respektive <a class="reference internal" href="03_03_For_Loops.html#ex-loopoutput"><span class="std std-ref">Übung 10.2</span></a>.</p>
+<p>Nutze hier die Anweisungen aus <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: for loop Basics</span></a> respektive <a class="reference internal" href="03_03_For_Loops.html#ex-loopoutput"><span class="std std-ref">Übung 10.2</span></a>.</p>
 </div>
 </div>
 <div class="section" id="ubung-12-3">
@@ -488,14 +488,16 @@
 <div class="section" id="ubung-12-4">
 <h3>Übung 12.4<a class="headerlink" href="#ubung-12-4" title="Link zu dieser Überschrift">¶</a></h3>
 <p>Scharfen Beobachtern mag aufgefallen sein, dass die simulierten Koordinaten zwischen allen DataFrames identisch ist. Dieses Verhalten hat auch mich sehr verwirrt, siehe dazu <a class="reference external" href="https://stackoverflow.com/q/63800734/4139249">meine Frage auf Stackoverflow</a>. Es geht über den Umfang dieses Kurses hinaus die Gründe für dieses Verhalten zu erläutern.</p>
-<p>Wichtig ist an dieser Stelle vor allem, dass wir das Problem der identischen Zufallsvariablen lösen, dafür braucht ihr nachstehender Code.</p>
+<p>Wichtig ist an dieser Stelle vor allem, dass wir das Problem der identischen Zufallsvariablen lösen, dafür braucht ihr <code class="docutils literal notranslate"><span class="pre">copy</span></code>. Im nachstehenden Code demonstriere ich <code class="docutils literal notranslate"><span class="pre">.copy</span></code> an meiner Implementation des <em>for loops</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
     <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y_sim&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">offset_coordinate</span><span class="p">)</span>
-    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> <span class="c1"># hier liegt die Lösung des Problems (.copy)</span>
+    <span class="n">monte_carlo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span> 
+    <span class="c1">#                               \____/ hier liegt die Lösung des</span>
+    <span class="c1">#                                      beschriebenen Problems</span>
 </pre></div>
 </div>
 </div>
@@ -507,7 +509,7 @@
 </div>
 <div class="section" id="ubung-12-6">
 <h3>Übung 12.6<a class="headerlink" href="#ubung-12-6" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Wir können die simulierten Daten auch mit einem <em>For Loop</em> in einem Plot darstellen. Nutze den folgenden Code um deine Daten zu visualieren.</p>
+<p>Wir können die simulierten Daten auch mit einem <em>for loop</em> in einem Plot darstellen. Nutze den folgenden Code um deine Daten zu visualieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -520,7 +522,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb29690cc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fc6b6c76f10&gt;
 </pre></div>
 </div>
 <img alt="_images/03_04_Zeckenstich_Simulation_14_1.png" src="_images/03_04_Zeckenstich_Simulation_14_1.png" />
@@ -529,7 +531,7 @@
 </div>
 <div class="section" id="ubung-12-7">
 <h3>Übung 12.7<a class="headerlink" href="#ubung-12-7" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Aktuell ist monte_carlo noch eine Liste bestehend aus 5 <em>DataFrames</em> mit jeweils den gleichen Spalten und jeweils 10 Zeilen. Um aus dieser Liste von <em>DataFrames</em> eine einzelne <em>DataFrame</em> mit 50 Zeilen zu machen können wir die Funktion <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> <a class="footnote-reference brackets" href="#merge" id="id1">1</a> nutzen. Wende diese Funktion auf <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> an und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
+<p>Wie erläutert ist <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> eine Liste bestehend aus 5 <em>DataFrames</em> mit jeweils den gleichen Spaltennamen. Um aus diesen 5 <em>DataFrames</em> mit je 10 Zeilen eine einzelne <em>DataFrame</em> mit 50 Zeilen zu machen können wir die Funktion <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> <a class="footnote-reference brackets" href="#merge" id="id1">1</a> nutzen. Wende diese Funktion auf <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> an und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
@@ -573,8 +575,8 @@
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681267e+06</td>
-      <td>1.250481e+06</td>
+      <td>2.681194e+06</td>
+      <td>1.250529e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -583,8 +585,8 @@
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681021e+06</td>
-      <td>1.250698e+06</td>
+      <td>2.681061e+06</td>
+      <td>1.250575e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -593,8 +595,8 @@
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681244e+06</td>
-      <td>1.250667e+06</td>
+      <td>2.680987e+06</td>
+      <td>1.250841e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -603,8 +605,8 @@
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681171e+06</td>
-      <td>1.250821e+06</td>
+      <td>2.681147e+06</td>
+      <td>1.250628e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -613,8 +615,8 @@
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681192e+06</td>
-      <td>1.250594e+06</td>
+      <td>2.681169e+06</td>
+      <td>1.250762e+06</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -659,7 +661,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03_04_For_Loops.html" title="previous page">Aufgabe 11: <em>For Loops</em> Advanced</a>
+    <a class='left-prev' id="prev-link" href="03_04_For_Loops.html" title="previous page">Aufgabe 11: <em>for loops</em> Advanced</a>
     <a class='right-next' id="next-link" href="03_05_GIS_in_Python.html" title="next page">GIS in Python</a>
 
     </div>
