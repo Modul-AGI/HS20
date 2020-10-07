@@ -396,8 +396,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#koordinatensystem">
-   Koordinatensystem
+  <a class="reference internal nav-link" href="#koordinatenbezugssystem">
+   Koordinatenbezugssystem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -418,7 +418,7 @@
                 
   <div class="section" id="gis-in-python">
 <span id="chap-pythongis"></span><h1>GIS in Python<a class="headerlink" href="#gis-in-python" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Manche mag das jetzt überraschen, andere haben es vielleicht schon gemerkt: Mit <strong>GIS</strong> hatte unser bisheriges Wirken in Python eigentlich wenig zu tun. Unsere Zeckenstiche haben zwar x/y-Koordinaten, aber diese haben wir bisher gleich behandlet wie alle anderen Spalten.</p>
+<p>Manche mag das jetzt überraschen, andere haben es vielleicht schon gemerkt: Mit <strong>GIS</strong> hatte unseres bisheriges Wirken in Python eigentlich wenig zu tun. Unsere Zeckenstiche haben zwar x/y-Koordinaten, aber diese haben wir bisher gleich behandlet wie alle anderen Spalten.</p>
 <p>Anders gesagt: <em>Wir</em> wissen ja, dass mit den Spalten <code class="docutils literal notranslate"><span class="pre">x</span></code> und <code class="docutils literal notranslate"><span class="pre">y</span></code> Koordinaten in der Schweiz gemeint sind, Python hingegen wusste das bisher (noch) nicht. Der konkrete Raumbezug fehlt also noch, und das wird irgendwann problematisch: Denn bald wollen wir für jeden simulierten Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Das ist eine explizit räumliche Abfrage, welche nur mit explizit räumlichen Geodaten beantwortet werden kann.</p>
 <p>Was wir später mit den simulierten Zeckenstiche machen wollen, spielen wir an dieser Stelle mit den original Zeckenstichmeldungen (<code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>) durch.</p>
 <div class="cell docutils container">
@@ -432,9 +432,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The history saving thread hit an unexpected error (DatabaseError(&#39;database disk image is malformed&#39;)).History will not be written to the database.
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -539,9 +536,9 @@
 <p>Glücklicherweise können wir unsere Zeckenstich-<em>Dataframe</em> mit nur einem Zusatzmodul und wenigen Zeilen code in eine <strong>räumliche</strong> <em>DataFrame</em> konvertieren. Mit dem Modul <em><strong>geo</strong>pandas</em> erstellen wir aus unserer <em>pandas DataFrame</em> eine <em><strong>geo</strong>pandas <strong>Geo</strong>DataFrame</em>. Mit dieser Erweiterung erhält die <em>DataFrame</em></p>
 <ol class="simple">
 <li><p><strong>geometry</strong>: eine Zusatzspalte <code class="docutils literal notranslate"><span class="pre">geometry</span></code> mit der Geometrie als räumliches Objekt und</p></li>
-<li><p><strong>crs</strong>: ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> welches das Koordinatensystem der Geometriespalte enthält.</p></li>
+<li><p><strong>crs</strong>: ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code> welches das Koordinatenbezugssystem der Geometriespalte enthält.</p></li>
 </ol>
-<p>Beide dieser Bestandteile müssen wir bei der Erstellung der <em>GeoDataFrame</em> festlegen. Nachstehend seht ihr, wie ihr dies bei den Zeckenstichen machen könnt, was diese Bestandteile genau bedeuten seht ihr in <a class="reference internal" href="#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a> (<strong>geometry</strong>) und <a class="reference internal" href="#chap-pythongis-crs"><span class="std std-ref">Koordinatensystem</span></a> (<strong>crs</strong>).</p>
+<p>Beide Bestandteile müssen wir bei der Erstellung der <em>GeoDataFrame</em> festlegen. Nachstehend seht ihr, wie ihr dies bei den Zeckenstichen machen könnt, was diese Bestandteile genau bedeuten seht ihr in <a class="reference internal" href="#chap-pythongis-datenstruktur"><span class="std std-ref">Aufbau von GeoDataFrames</span></a> (<strong>geometry</strong>) und <a class="reference internal" href="#chap-pythongis-crs"><span class="std std-ref">Koordinatenbezugssystem</span></a> (<strong>crs</strong>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
@@ -549,8 +546,15 @@
 <span class="n">zeckenstiche_gpd</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">,</span> <span class="c1"># die Basis-DataFrame / die &quot;Attributtabelle&quot;</span>
                                     <span class="c1"># die Geometrie Spalte:</span>
                                     <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">zeckenstiche</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]),</span>
-                                    <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> <span class="c1"># EPSG Code des Koordinatensystem</span>
-<span class="n">zeckenstiche_gpd</span>
+                                    <span class="n">crs</span> <span class="o">=</span> <span class="mi">2056</span><span class="p">)</span> <span class="c1"># EPSG Code des Koordinatenbezugssystem</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nun sehen wir, dass die neue <code class="docutils literal notranslate"><span class="pre">geometry</span></code> Spalte die Punkt-Geometrie enthält.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_gpd</span>
 </pre></div>
 </div>
 </div>
@@ -665,6 +669,19 @@
 </table>
 </div></div></div>
 </div>
+<p>Zudem hat die <em>GeoDataFrame</em> nun ein Attribut <code class="docutils literal notranslate"><span class="pre">crs</span></code>, wo das Koordinatenbezugssystem gespeichert ist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CH1903+ / LV95&#39;
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="aufbau-von-geodataframes">
 <span id="chap-pythongis-datenstruktur"></span><h2>Aufbau von GeoDataFrames<a class="headerlink" href="#aufbau-von-geodataframes" title="Link zu dieser Überschrift">¶</a></h2>
@@ -681,15 +698,16 @@
 <li><p><strong>GeoSeries</strong>: Eine vielzahl an <em>Geometries</em>, typischerweise eine Spalte einer <em>GeoDataFrame</em> namens (<em>geometry</em>)</p></li>
 <li><p><strong>GeoDataFrame</strong>: Eine Tabelle, welche über eine Geometrie-Spalte (<em>GeoSeries</em>) verfügt</p></li>
 </ul>
+<p><img alt="" src="_images/Geopandas_types.jpg" /></p>
 <div class="figure align-default" id="geopandas-types">
 <img alt="_images/Geopandas_types.jpg" src="_images/Geopandas_types.jpg" />
 <p class="caption"><span class="caption-number">Abb. 3 </span><span class="caption-text">Die drei Hierarchien in Geopandas: Eine <em>GeoDataFrame</em> verfügt immer über eine Geometrie-Spalte, welche sich eine <em>GeoSeries</em> nennt. Diese wiederum besteht aus Einzelgeometrien, sogenannten <em>Geometries</em>.</span><a class="headerlink" href="#geopandas-types" title="Link zu diesem Bild">¶</a></p>
 </div>
 </div>
-<div class="section" id="koordinatensystem">
-<span id="chap-pythongis-crs"></span><h2>Koordinatensystem<a class="headerlink" href="#koordinatensystem" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Mit <code class="docutils literal notranslate"><span class="pre">crs</span> <span class="pre">=</span> </code> wird das Koordiantensystem (engl. <strong>C</strong>oordinate <strong>R</strong>eference <strong>S</strong>ystem) unseres Datensatzes festgelegt. Das Koordinatensystem gibt unseren x/y-Zahlenwerten einen konkreten Raumbezug auf dem Planeten und macht aus ihnen Koordiaten <em>in der Schweiz</em>. Wie lautet aber das „Koordinatensystem“ unserer Daten?</p>
-<p>Im Prinzip weiss diese Information nur derjenige, der die Daten erstellt hat. Man man das Koordinatensytem aber auch anhand der Koordinaten erahnen: Es handelt sich in unserem Fall um Werte im Bereich von 2.6 Mio auf der einen und 1.2 Mio auf der anderen Achse. Da wir wissen das die Daten aus der Schweiz stammen kann man mit etwas Erfahrung sagen, dass es sich um Daten im neuen Schweizer Koordinatensystem <a class="reference external" href="https://epsg.io/2056">CH1903+ / LV95</a> handeln muss. Der EPSG Code dieses Koordinatensystems lautet 2056 und diesen Code können wir in der Funktion <code class="docutils literal notranslate"><span class="pre">gpd.GeoDataFrame</span></code> nutzuen, um das Korrekte Koordinatensystem zu zuweisen.</p>
+<div class="section" id="koordinatenbezugssystem">
+<span id="chap-pythongis-crs"></span><h2>Koordinatenbezugssystem<a class="headerlink" href="#koordinatenbezugssystem" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit <code class="docutils literal notranslate"><span class="pre">crs</span> <span class="pre">=</span> </code> wird das Koordinatenbezugssystem (engl. <strong>C</strong>oordinate <strong>R</strong>eference <strong>S</strong>ystem) unseres Datensatzes festgelegt. Das Koordinatenbezugssystem gibt unseren x/y-Zahlenwerten einen konkreten Raumbezug auf dem Planeten und macht aus ihnen Koordiaten <em>in der Schweiz</em>. Wie lautet aber das „Koordinatenbezugssystem“ unserer Daten?</p>
+<p>Im Prinzip weiss diese Information nur derjenige, der die Daten erstellt hat. Man man das Koordinatensytem aber auch anhand der Koordinaten erahnen: Es handelt sich in unserem Fall um Werte im Bereich von 2.6 Mio auf der einen und 1.2 Mio auf der anderen Achse. Da wir wissen das die Daten aus der Schweiz stammen kann man mit etwas Erfahrung sagen, dass es sich um Daten im neuen Schweizer Koordinatenbezugssystem <a class="reference external" href="https://epsg.io/2056">CH1903+ / LV95</a> handeln muss. Der EPSG Code dieses Koordinatenbezugssystems lautet 2056 und diesen Code können wir in der Funktion <code class="docutils literal notranslate"><span class="pre">gpd.GeoDataFrame</span></code> nutzuen, um das Korrekte Koordinatenbezugssystem zu zuweisen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Das Attribut `crs` wurde aufgrund vom EPSG Code richtig erkannt:</span>
@@ -773,15 +791,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">&lt;ipython-input-4-c38d5330a189&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">base</span> <span class="o">=</span> <span class="n">wald</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lightgrey&quot;</span><span class="p">,</span><span class="s2">&quot;Green&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">zeckenstiche_gpd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">base</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;wald&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
+<img alt="_images/03_05_GIS_in_Python_20_1.png" src="_images/03_05_GIS_in_Python_20_1.png" />
 </div>
 </div>
 <p>Nun wird auch klar, dass es sich bei unseren 10 Zeckenstichen um sehr dicht beieinanderliegenden Punkte handelt.</p>
