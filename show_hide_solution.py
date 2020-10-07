@@ -60,6 +60,6 @@ def remove_slidetags(notebooks):
 
 
 
-remove_slidetags(glob("./0*_*.ipynb", recursive=False))
+#remove_slidetags(glob("./0*_*.ipynb", recursive=False))
 
-cell
+
