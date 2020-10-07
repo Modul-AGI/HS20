@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe 11: for loops Advanced &#8212; Coding in GIS</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,7 +25,7 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -343,7 +343,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Vollbildmodus"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+                title="Vollbildmodus"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -427,10 +428,10 @@
 <span id="forloops-3"></span><h1>Aufgabe 11: <em>for loops</em> Advanced<a class="headerlink" href="#aufgabe-11-for-loops-advanced" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>In diesem Kapitel kommen noch zwei Aspekte von <em>for loops</em>, die als „<em>Advanced</em>“ eingestuft werden können aber in der Praxis sehr nützlich sind. Dabei geht es um einerseits um verschachtelte <em>for loops</em> und zum andere um eine verkürzte Schreibweise von <em>for loops</em>.</p>
+<p>In diesem Kapitel kommen noch zwei Aspekte von <em>for loops</em>, die als „<em>Advanced</em>“ eingestuft werden können aber in der Praxis sehr nützlich sind. Dabei geht es einerseits um verschachtelte <em>for loops</em> und zum andere um eine verkürzte Schreibweise von <em>for loops</em>.</p>
 <div class="section" id="verschachtelte-for-loops">
 <h3>Verschachtelte <em>for loops</em><a class="headerlink" href="#verschachtelte-for-loops" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Wir können verschiedene <em>for loops</em> auch ineinander verschachteln (englisch: <em>nested loops</em>). Das ist vor allem dann nützlich, wenn alle Kombinationen aus zwei Datensätzen miteinander verrechnet werden müssen. Angenommen du willst die drei Mitglieder deiner Band (bestehend aus <em>Il Buono</em>, <em>Il Brutto</em>, <em>Il Cattivo</em>) deinen Eltern vorstellen und auch umgekehrt deine Eltern deiner Band vorstellen. Für so was eignen sich zwei verschachtelte vor Loops hervorragend:</p>
+<p>Wir können verschiedene <em>for loops</em> auch ineinander verschachteln (englisch: <em>nested loops</em>). Das ist vor allem dann nützlich, wenn alle Kombinationen aus zwei Datensätzen miteinander verrechnet werden müssen. Angenommen du willst die drei Mitglieder deiner Band (bestehend aus <em>Il Buono</em>, <em>Il Brutto</em>, <em>Il Cattivo</em>) deinen Eltern vorstellen und auch umgekehrt deine Eltern deiner Band vorstellen. Für so was eignen sich zwei verschachtelte <em>for Loops</em> hervorragend:</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
 <p>Als Platzhaltervariabel nutze ich wenn immer möglich das Singulär und für den Iterator das Plural von dem Objekt, über das ich iteriere. <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">bandmitglied</span> <span class="pre">in</span> <span class="pre">band</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">vogel</span> <span class="pre">in</span> <span class="pre">vögel</span></code> usw, dies hilft mir den Überblick im <em>loop</em> zu bewahren.</p>
@@ -487,7 +488,7 @@ Il Cattivo das ist Mama
 </div>
 </div>
 </div>
-<p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#offset-vis"><span class="std std-ref">Übung 7.6</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
+<p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen, um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a class="reference internal" href="02_06_Zufallzahlen.html#offset-vis"><span class="std std-ref">Übung 7.6</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refrain</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&#39;m a &quot;</span><span class="o">+</span> <span class="n">rolle</span> <span class="k">for</span> <span class="n">rolle</span> <span class="ow">in</span> <span class="n">rollen</span><span class="p">]</span>
@@ -503,7 +504,7 @@ Il Cattivo das ist Mama
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="ubung-11-1">
 <h3>Übung 11.1<a class="headerlink" href="#ubung-11-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Erstelle zwei Listen bestehend aus 3 Hundenamen (<code class="docutils literal notranslate"><span class="pre">hunde</span></code>) und 3 Katzenamen (<code class="docutils literal notranslate"><span class="pre">katzen</span></code>). Erstelle einen verschachtelter <em>for loop</em>, wo jeder Hund jede Katze anbellt und jede Katze jeden Hund anfaucht.</p>
+<p>Erstelle zwei Listen bestehend aus 3 Hundenamen (<code class="docutils literal notranslate"><span class="pre">hunde</span></code>) und 3 Katzennamen (<code class="docutils literal notranslate"><span class="pre">katzen</span></code>). Erstelle einen verschachtelten <em>For Loop</em>, wo jeder Hund jede Katze anbellt und jede Katze jeden Hund anfaucht.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Bruno</span> <span class="n">bellt</span> <span class="n">Greta</span> <span class="n">an</span>
 <span class="n">Greta</span> <span class="n">faucht</span> <span class="n">Bruno</span> <span class="n">an</span>
 <span class="n">Berta</span> <span class="n">bellt</span> <span class="n">Greta</span> <span class="n">an</span>
@@ -567,7 +568,7 @@ Il Cattivo das ist Mama
     </div>
 
     
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     

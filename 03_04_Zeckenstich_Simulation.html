@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe 12: Zeckenstich Simulation &#8212; Coding in GIS</title>
     
-  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,7 +25,7 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -343,7 +343,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Vollbildmodus"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+                title="Vollbildmodus"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -437,8 +438,8 @@
 <span id="chap-simulation"></span><h1>Aufgabe 12: Zeckenstich Simulation<a class="headerlink" href="#aufgabe-12-zeckenstich-simulation" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Jetzt wo ihr <em>for loops</em> im Griff habt, nutzen wir dieses Instrument um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Es geht jetzt darum, das zufällige Verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines <em>loops</em> zu wiederholen.</p>
-<p>Um euer Gedächnis etwas aufzufrischen: Letzte Woche hatten wir in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und diese Simulierten Daten in unserer <em>DataFrame</em> abgespeichert. Schau dir diese Übung und die Musterlösung nochmals an wenn du sie nicht mehr ganz im Kopf hast.</p>
+<p>Jetzt wo ihr <em>for loops</em> im Griff habt, nutzen wir dieses Instrument, um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code>. Es geht jetzt darum, das zufällige Verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines <em>loops</em> zu wiederholen.</p>
+<p>Um euer Gedächtnis etwas aufzufrischen: Letzte Woche hatten wir in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und diese Simulierten Daten in unserer <em>DataFrame</em> abgespeichert. Schau dir diese Übung und die Musterlösung nochmals an wenn du sie nicht mehr ganz im Kopf hast.</p>
 <p>Starte mit einem neuen Jupyter Notebook und lade darin die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), erstellt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code> (s.u.).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -459,11 +460,11 @@
 <h2>Übungen<a class="headerlink" href="#ubungen" title="Link zu dieser Überschrift">¶</a></h2>
 <div class="section" id="ubung-12-1">
 <h3>Übung 12.1<a class="headerlink" href="#ubung-12-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Nutze nun dein Wissen über Loops um den Schritt in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> nicht nur einmal, sondern 5 mal durch zu führen. Kümmere dich zu diesem Zeitpunkt noch nicht um das Abspeichern des Outputs, es reicht wenn die Simulation 5x durchgeführt wird.</p>
+<p>Nutze nun dein Wissen über Loops, um den Schritt in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> nicht nur einmal, sondern 5 mal durchzuführen. Kümmere dich zu diesem Zeitpunkt noch nicht um das Abspeichern des Outputs, es reicht wenn die Simulation 5x durchgeführt wird.</p>
 </div>
 <div class="section" id="ubung-12-2">
 <span id="ex-monte-carlo-loop"></span><h3>Übung 12.2<a class="headerlink" href="#ubung-12-2" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Nun wollen wir dafür sorgen, das die simulierten Daten aus der letzten Übung auch irgendwo abgespeichert werden. Sorge dafür, dass der Output in einer Liste mit dem Namen <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> gespeichert wird.</p>
+<p>Nun wollen wir dafür sorgen, dass die simulierten Daten aus der letzten Übung auch irgendwo abgespeichert werden. Sorge dafür, dass der Output in einer Liste mit dem Namen <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> gespeichert wird.</p>
 <div class="dropdown admonition tip">
 <p class="admonition-title">Tipp</p>
 <p>Nutze hier die Anweisungen aus <a class="reference internal" href="03_03_For_Loops.html#forloops-2"><span class="std std-ref">Aufgabe 10: for loop Basics</span></a> respektive <a class="reference internal" href="03_03_For_Loops.html#ex-loopoutput"><span class="std std-ref">Übung 10.2</span></a>.</p>
@@ -487,7 +488,7 @@
 </div>
 <div class="section" id="ubung-12-4">
 <h3>Übung 12.4<a class="headerlink" href="#ubung-12-4" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Scharfen Beobachtern mag aufgefallen sein, dass die simulierten Koordinaten zwischen allen DataFrames identisch ist. Dieses Verhalten hat auch mich sehr verwirrt, siehe dazu <a class="reference external" href="https://stackoverflow.com/q/63800734/4139249">meine Frage auf Stackoverflow</a>. Es geht über den Umfang dieses Kurses hinaus die Gründe für dieses Verhalten zu erläutern.</p>
+<p>Scharfen Beobachtern mag aufgefallen sein, dass die simulierten Koordinaten zwischen allen DataFrames identisch sind. Dieses Verhalten hat auch mich sehr verwirrt, siehe dazu <a class="reference external" href="https://stackoverflow.com/q/63800734/4139249">meine Frage auf Stackoverflow</a>. Es geht über den Umfang dieses Kurses hinaus die Gründe für dieses Verhalten zu erläutern.</p>
 <p>Wichtig ist an dieser Stelle vor allem, dass wir das Problem der identischen Zufallsvariablen lösen, dafür braucht ihr <code class="docutils literal notranslate"><span class="pre">copy</span></code>. Im nachstehenden Code demonstriere ich <code class="docutils literal notranslate"><span class="pre">.copy</span></code> an meiner Implementation des <em>for loops</em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +510,7 @@
 </div>
 <div class="section" id="ubung-12-6">
 <h3>Übung 12.6<a class="headerlink" href="#ubung-12-6" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Wir können die simulierten Daten auch mit einem <em>for loop</em> in einem Plot darstellen. Nutze den folgenden Code um deine Daten zu visualieren.</p>
+<p>Wir können die simulierten Daten auch mit einem <em>For Loop</em> in einem Plot darstellen. Nutze den folgenden Code, um deine Daten zu visualisieren.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -522,7 +523,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3fd1c09650&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff09e7adf10&gt;
 </pre></div>
 </div>
 <img alt="_images/03_04_Zeckenstich_Simulation_14_1.png" src="_images/03_04_Zeckenstich_Simulation_14_1.png" />
@@ -531,7 +532,7 @@
 </div>
 <div class="section" id="ubung-12-7">
 <h3>Übung 12.7<a class="headerlink" href="#ubung-12-7" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Wie erläutert ist <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> eine Liste bestehend aus 5 <em>DataFrames</em> mit jeweils den gleichen Spaltennamen. Um aus diesen 5 <em>DataFrames</em> mit je 10 Zeilen eine einzelne <em>DataFrame</em> mit 50 Zeilen zu machen können wir die Funktion <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> <a class="footnote-reference brackets" href="#merge" id="id1">1</a> nutzen. Wende diese Funktion auf <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> an und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
+<p>Wie erläutert ist <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> eine Liste bestehend aus 5 <em>DataFrames</em> mit jeweils den gleichen Spaltennamen. Um aus diesen 5 <em>DataFrames</em> mit je 10 Zeilen eine einzelne <em>DataFrame</em> mit 50 Zeilen zu machen, können wir die Funktion <code class="docutils literal notranslate"><span class="pre">pd.concat</span></code> <a class="footnote-reference brackets" href="#merge" id="id1">1</a> nutzen. Wende diese Funktion auf <code class="docutils literal notranslate"><span class="pre">monte_carlo</span></code> an und speichere den Output in der Variabel <code class="docutils literal notranslate"><span class="pre">monte_carlo_df</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monte_carlo_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">monte_carlo</span><span class="p">)</span>
@@ -575,8 +576,8 @@
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681124e+06</td>
-      <td>1.250608e+06</td>
+      <td>2.681073e+06</td>
+      <td>1.250737e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -585,8 +586,8 @@
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681029e+06</td>
-      <td>1.250704e+06</td>
+      <td>2.681101e+06</td>
+      <td>1.250610e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -595,8 +596,8 @@
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681117e+06</td>
-      <td>1.250634e+06</td>
+      <td>2.681109e+06</td>
+      <td>1.250660e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -605,8 +606,8 @@
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681158e+06</td>
-      <td>1.250770e+06</td>
+      <td>2.681099e+06</td>
+      <td>1.250599e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -615,8 +616,8 @@
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681037e+06</td>
-      <td>1.250682e+06</td>
+      <td>2.681126e+06</td>
+      <td>1.250636e+06</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -682,7 +683,7 @@
     </div>
 
     
-  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     
