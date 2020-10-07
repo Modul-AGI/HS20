@@ -43,6 +43,20 @@ musterloesung(notebooks_cog1, "hide-cell")
 musterloesung(notebooks_cog2, "hide-cell")
 
 
+def remove_slidetags(notebooks):
+    # for loops works through each ipynb-file
+    for ipath in notebooks:
+        ntbk = nbf.read(ipath, nbf.NO_CONVERT)
+        # for loop works through each cell of a given file
+        for cell in ntbk.cells:
+            slideshow = cell.get('metadata', {}).get('slideshow', [])
+            # If the word "Musterlösung" contained in the cell content
+            # removes all tags starting with "remove-" or "hide-"
+            cell['metadata']['slideshow'] = {}
+
+        nbf.write(ntbk, ipath)
 
 
+
+remove_slidetags(["./03_06_Raeumliche_Operationen.ipynb"])
 
