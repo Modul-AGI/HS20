@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 604, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/util.py", line 85, in ensure_async
-    result = await obj
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jupyter_client/asynchronous/channels.py", line 48, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
     record_timing=False,
   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 1082, in execute
@@ -22,18 +11,20 @@ Traceback (most recent call last):
     return future.result()
   File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 536, in async_execute
     cell, index, execution_count=self.code_cells_executed + 1
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 811, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 628, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 679, in _async_handle_timeout
-    "Cell execution timed out", timeout, cell
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['# Musterlösung', '', '# Benötigten Module laden #####################', 'import pandas as pd', 'import geopandas as gpd']
-...
-['monte_carlo_gpd2 = gpd.GeoDataFrame(monte_carlo_df2,', "                                    geometry=gpd.points_from_xy(monte_carlo_df2['x_sim'], monte_carlo_df2['y_sim']),", '                                    crs = 2056) ', '', 'monte_carlo_join2 = gpd.sjoin(monte_carlo_gpd2, wald)']
--------------------
+  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 827, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/nbclient/client.py", line 735, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+monte_carlo_join2 = gpd.read_file("data/monte_carlo_join2.gpkg")
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-1-f52b193fca6f>[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mmonte_carlo_join2[0m [0;34m=[0m [0mgpd[0m[0;34m.[0m[0mread_file[0m[0;34m([0m[0;34m"data/monte_carlo_join2.gpkg"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;31mNameError[0m: name 'gpd' is not defined
+NameError: name 'gpd' is not defined
 

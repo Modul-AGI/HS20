@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modul „Angewandte Geoinformatik“ &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Anhang &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,7 +59,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="genindex.html" />
     <link rel="search" title="Suche" href="search.html" />
-    <link rel="next" title="Einleitung" href="02_Coding_in_GIS/00_00_Einleitung.html" />
+    <link rel="next" title="Demo: Geodaten visualisieren" href="02_Coding_in_GIS/05_01_GIS_Demo.html" />
+    <link rel="prev" title="Abgabe Leistungsnachweis" href="02_Coding_in_GIS/04_03_Zusatzauftraege.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -76,7 +77,7 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="#">
+<a class="navbar-brand text-wrap" href="index.html">
   
   <img src="_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
   
@@ -94,7 +95,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="index.html">
    Modul „Angewandte Geoinformatik“
   </a>
  </li>
@@ -104,7 +105,7 @@
   Coding in GIS I - III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="02_Coding_in_GIS/00_00_Einleitung.html">
    Einleitung
@@ -130,10 +131,17 @@
    Leistungsnachweis
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Coding_in_GIS_Anhang.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Anhang
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_Coding_in_GIS/05_01_GIS_Demo.html">
+     Demo: Geodaten visualisieren
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -194,7 +202,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/index.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Coding_in_GIS_Anhang.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -220,7 +228,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/index.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/Coding_in_GIS_Anhang.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="_static/images/logo_jupyterhub.svg"
@@ -243,33 +251,8 @@
         
               <div>
                 
-  <div class="section" id="modul-angewandte-geoinformatik">
-<h1>Modul „Angewandte Geoinformatik“<a class="headerlink" href="#modul-angewandte-geoinformatik" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Willkommen im Kurs <em><a class="reference external" href="https://studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik">Angewandte Geoinformatik</a></em> der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW).</p>
-<div class="tip admonition">
-<p class="admonition-title">Dieses Buch auch als PDF-Version verfügbar</p>
-<p>Wir empfehlen, dass ihr im Unterricht die Online Version dieser Übungsunterlagen nutzt. Diese spiegeln immer den neusten Stand, sind responsive (passen sich an Endgeräte wie Tablets usw. an) und können die Musterlösungen interaktiv darstellen (sobald diese freigeschaltet sind).</p>
-<p>Als Doku für euch ist aber auch eine PDF-Version der Unterlagen verfügbar. Speichert euch die erst am Ende vom Kurs ab, damit ihr die neuste Version inkl. allen Musterlösungen habt.</p>
-<ul class="simple">
-<li><p>online (<strong>empfohlen</strong>): <a class="reference external" href="https://ratnanil.github.io/codingingis">https://ratnanil.github.io/codingingis</a></p></li>
-<li><p>PDF (nur für Doku / Notizen): <a class="reference external" href="https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf">https://github.com/ratnanil/codingingis/raw/master/codingingis.pdf</a></p></li>
-</ul>
-</div>
-<p>Noch ein paar Hinweise zur Handhabung dieses Dokumentes:</p>
-<ul>
-<li><p>Die Musterlösungen zu allen Aufgaben stehen bereit. Wir werden diese bald einblenden</p></li>
-<li><p>Wenn sich im Fliesstext Programmiercode befindet, wird er in <code class="docutils literal notranslate"><span class="pre">dieser</span> <span class="pre">Festschriftart</span></code> dargestellt</p></li>
-<li><p>Englische Begriffe, deren Übersetzung eher verwirrend als nützlich wären, werden <em>in dieser Weise</em> hervorgehoben</p></li>
-<li><p>Da viele von euch bereits Erfahrung in R haben, stelle ich immer wieder den Bezug zu dieser Programmiersprache her.</p></li>
-<li><p>Alleinstehende Codezeilen werden folgendermassen dargestellt:</p></li>
-<li><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coding in GIS!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
-<li><p>Der gesamte Quellcode um dieses Buch zu erstellen ist in dem folgenden github-repo verfügbar: <a class="reference external" href="https://github.com/ratnanil/codingingis">ratnanil/codingingis</a>.</p></li>
-</ul>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="anhang">
+<h1>Anhang<a class="headerlink" href="#anhang" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -302,7 +285,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="02_Coding_in_GIS/00_00_Einleitung.html" title="next page">Einleitung</a>
+    <a class='left-prev' id="prev-link" href="02_Coding_in_GIS/04_03_Zusatzauftraege.html" title="previous page">Abgabe Leistungsnachweis</a>
+    <a class='right-next' id="next-link" href="02_Coding_in_GIS/05_01_GIS_Demo.html" title="next page">Demo: Geodaten visualisieren</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
