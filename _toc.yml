@@ -1,44 +1,16 @@
 - file: index
   numbered: false
 
-- part: Coding in GIS I
+- part: Coding in GIS I - III
   chapters:
   - file: 01_01_Coding_in_GIS_1
-  - file: 01_02_Primitive_Datentypen
-  - file: 01_03_Zusammengesetzte_Datentypen
-  - file: 01_04_Listen
-  - file: 01_05_Dictionary
-  - file: 01_06_Tabellarische_Daten
-  
-- part: Coding in GIS II
+    sections: 
+    - file: 01_02_Primitive_Datentypen
+    - file: 01_03_Zusammengesetzte_Datentypen
+    - file: 01_04_Listen
+    - file: 01_05_Dictionary
+    - file: 01_06_Tabellarische_Daten
   chapters:
   - file: 02_01_Coding_in_GIS_2
-  - file: 02_02_Conda_Cheatsheet
-  - file: 02_03_Python_Module
-  - file: 02_04_Functions_I
-  - file: 02_05_Functions_II
-  - file: 02_06_Zufallzahlen
-  - file: 02_07_Funktionen_in_DataFrames
-
-- part: Coding in GIS III
-  chapters:
-  - file: 03_01_Coding_in_GIS_3
-  - file: 03_02_For_Loops
-  - file: 03_03_For_Loops
-  - file: 03_04_For_Loops
-  - file: 03_04_Zeckenstich_Simulation
-  - file: 03_05_GIS_in_Python
-  - file: 03_06_Raeumliche_Operationen
-  - file: 03_06_Spatial_Joins
-  
-- part: Leistungsnachweis
-  chapters:
-  - file: 04_01_Leistungsnachweis
-  - file: 04_02_Vereinigen
-  - file: 04_03_Zusatzauftraege
-
-
-- part: Anhang
-  chapters:
-  - file: 05_01_GIS_Demo
-  - file: 05_02_Jupyter_Shortcuts
+    sections:
+    - file: 02_02_Conda_Cheatsheet
