@@ -38,6 +38,6 @@
 - part: (Geo-) Datenbanken I - III
   chapters:
   - file: 03_Datenbanken/00_00_Einleitung
+  - file: 03_Datenbanken/01_01_Datenbanken_1
     sections:
-    - file: 03_Datenbanken/01_01_Datenbanken_1
-
+    - file: 03_Datenbanken/01_02_Uebung
