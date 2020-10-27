@@ -59,6 +59,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
+    <link rel="prev" title="Aufgabe" href="../03_Datenbanken/01_02_Uebung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -149,6 +150,18 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../03_Datenbanken/01_01_Datenbanken_1.html">
    (Geo-) Datenbanken I
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Netzwerkanalyse I - III
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   NETZWERKANALYSE I
   </a>
  </li>
 </ul>
@@ -246,13 +259,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inhalt">
-   Inhalt
+  <a class="reference internal nav-link" href="#einfuhrung-in-qgis">
+   1. Einführung in QGIS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#einfuhrung-in-qgis">
-   1. Einführung in QGIS
+  <a class="reference internal nav-link" href="#ubung-1-qgis-installieren-und-aufstarten">
+   Übung 1 : QGIS installieren und aufstarten
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -307,73 +320,35 @@ Modul Angewandte Geoinformatik: Herbstsemester 2019</em></p>
 <li><p>Plugins installieren und anwenden können</p></li>
 <li><p>Daten für Übungseinheit Netzwerkanalyse I vorbereiten</p></li>
 </ul>
-</div>
-<div class="section" id="inhalt">
-<h2>Inhalt<a class="headerlink" href="#inhalt" title="Link zu dieser Überschrift">¶</a></h2>
-<ul class="simple">
-<li><ol class="simple">
-<li><p>Einführung in QGIS</p></li>
-</ol>
-</li>
-<li><p>Übung 1: QGIS installieren und aufstarten Übungen</p></li>
-<li><p>Übung 2: Tutorials anschauen</p></li>
-<li><p>Übung 3: Daten importieren</p></li>
-<li><p>Übung 4: Plugin installieren</p></li>
-<li><p>Übung 5: OpenStreetMap Vektordaten herunterladen</p></li>
-<li><p>Übung 6: Temporäre Datei abspeichern</p></li>
-</ul>
 <p><em>Abbildung oben: QGIS Standalone Installer «latest release» auf qgis.org</em></p>
 </div>
 <div class="section" id="einfuhrung-in-qgis">
 <h2>1. Einführung in QGIS<a class="headerlink" href="#einfuhrung-in-qgis" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Wir werden in den kommenden drei Lektionseinheiten mit QGIS verschiedene Aspekte der Netzwerkanalyse
+<p>Wir werden in den kommenden drei Lektionseinheiten mit QGIS verschiedene Aspekte der Netzwerkanalyse
 untersuchen. Dafür lohnt es sich vorgängig eine sinnvolle Ordnerstruktur anzulegen. Wir empfehlen, in
-einem geeigneten Folder (z.B. C:/Users/benutzername/Studium/5_Semester) einen Ordner mit dem
+einem geeigneten Folder <em>(z.B. C:/Users/benutzername/Studium/5_Semester)</em> einen Ordner mit dem
 Modulnamen anlegen (z.B. «Modul_AGI») und darin nachstehende Struktur zu pflegen. Vermeiden Sie bei der
-Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.
-|-- Modul_AGI
-|── 01_Einfuehrung_ArcGISPro
-|── 02_WebGIS
-... _
-|── 09_Netzwerkanalyse1 \
-| |── Geodaten |
-| | |── Waedenswil.gpkg |
-| | |── osm_highway.gpkg |
-| |── QGIS_Projectfiles |
-| | |── Netzwerkanalyse_I_vorbereitung.qgs \ Netzwerk-
-| | |── Netzwerkanalyse_I.qgz / analyse I
-| |── Output |
-| | |── Uebersichtskarte.pdf |
-| |── Unterlagen |
-| | |── AGI_HS19_9_Netzwerkanalyse_I_vorbereitung.pdf |
-| | |── AGI_HS19_9_Netzwerkanalyse_I.pdf _/
-|── 10 _Netzwerkanalyse 2
-| |── Geodaten
-| |── QGIS_Projectfiles
-| |── Karten
-| |── Unterlagen
-</pre></div>
+Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Übung 1 : QGIS installieren und aufstarten
-Auf der QGIS Homepage (www.qgis.org) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac
-und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den Standalone installer des «Latest release» QGIS
-Version herunter (aktuell 3 .1 0 ), der für Ihre Architektur und Ihr Betriebssystem passt.
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Installieren Sie QGIS nach dem Download und starten Sie «QGIS Desktop 3.10.0 with GRASS 7.8.0»
-(C:\Program Files\QGIS 3.10\bin\qgis-bin-g7.exe). Wechseln Sie als erstes die Sprache des Userinterface auf
-Englisch (Einstellungen  Optionen  Allgemein  Benutzeroberflächenübersetzung).
-</pre></div>
-</div>
-<p><em>Abbildung links: Achtet beim Aufstarten darauf, dass QGIS mit GRASS GIS
+<div class="section" id="ubung-1-qgis-installieren-und-aufstarten">
+<h2>Übung 1 : QGIS installieren und aufstarten<a class="headerlink" href="#ubung-1-qgis-installieren-und-aufstarten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Auf der QGIS Homepage (www.qgis.org) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac
+und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den Standalone installer des «Longterm release (most stable)» QGIS
+Version herunter (aktuell 3.10 ), der für Ihre Architektur und Ihr Betriebssystem passt.</p>
+<img src="figures/qgisVersion.jpg" width="40%">
+<p>Installieren Sie QGIS nach dem Download und starten Sie «QGIS Desktop 3.10.0 with GRASS 7.8.0»
+<em>(C:\Program Files\QGIS 3.10\bin\qgis-bin-g7.exe)</em>. Wechseln Sie als erstes die Sprache des Userinterface auf
+Englisch <em>(Einstellungen -&gt; Optionen -&gt; Allgemein -&gt; Benutzeroberflächenübersetzung)</em>.</p>
+<p><em>Abbildung Unten: Achtet beim Aufstarten darauf, dass QGIS mit GRASS GIS
 gestartet wird</em></p>
+<img src="figures/qgisGrass.jpg" width="30%">
 </div>
 <div class="section" id="ubung-2-tutorials-anschauen">
 <h2>Übung 2: Tutorials anschauen<a class="headerlink" href="#ubung-2-tutorials-anschauen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Schauen Sie sich danach zum Einstieg einzelne Videos vom Youtube Nutzer Marshal Mappers an. Erkunden
 Sie die Videos bis Sie die grundlegendsten Arbeitsschritte von QGIS (Daten importieren, Werkzeuge finden,
-Karte zu pdf exportieren) verstanden haben. Erstellen Sie dann ein neues Projekt (Projekt  New) und
-speichern Sie dieses direkt ab (Projekt  Save As..). Beachten Sie dazu die Empfehlungen zur Struktur (s.o.)</p>
+Karte zu pdf exportieren) verstanden haben. Erstellen Sie dann ein neues Projekt (Projekt -&gt; New) und
+speichern Sie dieses direkt ab (Projekt -&gt; Save As..). Beachten Sie dazu die Empfehlungen zur Struktur (s.o.)</p>
 </div>
 <div class="section" id="ubung-3-daten-importieren">
 <h2>Übung 3: Daten importieren<a class="headerlink" href="#ubung-3-daten-importieren" title="Link zu dieser Überschrift">¶</a></h2>
@@ -384,11 +359,12 @@ sind eine alternative Methode, Vektordaten abzuspeichern. Sie beheben einige Def
 sich bringen. Siehe dazu auch die Website «Shapefiles must die» (http://switchfromshapefile.org/).</p>
 <p>PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer &#64;shapefile versus
 &#64;geopackage1 und &#64;sfkeller mitverfolgen.</p>
-<p><em>1. Neues QGIS Projekt starten und Projektdatei speichern (Beachten Sie dazu die Empfehlungen am</em>
-<em>Anfang)
-2. CRS auf EPSG 2056 setzen
-3. Datensatz «Gemeinde_Waedenswil.gpkg» (auf Moodle) in QGIS Importieren
-4. Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz</em></p>
+<ol class="simple">
+<li><p><em>Neues QGIS Projekt starten und Projektdatei speichern (Beachten Sie dazu die Empfehlungen am Anfang)</em></p></li>
+<li><p><em>CRS auf EPSG 2056 setzen</em></p></li>
+<li><p><em>Datensatz «Gemeinde_Waedenswil.gpkg» (auf Moodle) in QGIS Importieren</em></p></li>
+<li><p><em>Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz</em></p></li>
+</ol>
 </div>
 <div class="section" id="ubung-4-plugin-installieren">
 <h2>Übung 4: Plugin installieren<a class="headerlink" href="#ubung-4-plugin-installieren" title="Link zu dieser Überschrift">¶</a></h2>
@@ -396,9 +372,11 @@ sich bringen. Siehe dazu auch die Website «Shapefiles must die» (http://switch
 Modular aufgebaut, und nur ein Teil wird der Standard-Installation mitgeliefert. Für einige Funktionen
 müssen Erweiterungen (sogenannte «Plugins»), zusätzlich installiert werden. Installieren Sie das Plugin
 «QuickOSM» um OpenStreetMap (OSM) Vektordaten rasch und einfach lokal abspeichern zu können.</p>
-<p><em>1. Reiter Plugins</em>  <em>Manage and Install Plugins
-2. Im Suchfenster «QuickOSM» suchen
-3. Plugin anwählen und auf «install» klicken</em></p>
+<ol class="simple">
+<li><p><em>Reiter Plugins</em> -&gt; <em>Manage and Install Plugins</em></p></li>
+<li><p>Im Suchfenster «QuickOSM» suchen</p></li>
+<li><p>Plugin anwählen und auf «install» klicken_</p></li>
+</ol>
 <p>Die wichtigsten Metadaten zu allen Plugins werden auf plugins.qgis.org festgehalten. Dort findet man auch
 Links zur Projektseite, weiteren Dokumentation und ggf. Tutorials: Zu QuickOSM sind die Metadaten hier
 aufrufbar: https://plugins.qgis.org/plugins/QuickOSM/</p>
@@ -407,26 +385,15 @@ aufrufbar: https://plugins.qgis.org/plugins/QuickOSM/</p>
 <h2>Übung 5: OpenStreetMap Vektordaten herunterladen<a class="headerlink" href="#ubung-5-openstreetmap-vektordaten-herunterladen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Mit dem neuen Plugin «QuickOSM» laden Sie nun den Strassendatensatz der Gemeinde Wädenswil
 herunter. Dies geschieht folgendermassen:</p>
-<p><em>1. Rechtsklick auf den Layer «Gemeinde_Waedenswil»</em>  <em>Zoom to layer
-2. Reiter Vektor</em>  <em>Quick OSM</em>  <em>Quick OSM
-3. Wählen Sie bei der Option key «highway» und lassen value leer
-4. Wählen Sie Option «Extent of map canvas»
-5. Klicken Sie anschliessend auf «Run query»</em></p>
+<ol class="simple">
+<li><p><em>Rechtsklick auf den Layer «Gemeinde_Waedenswil»</em> -&gt; <em>Zoom to layer</em></p></li>
+<li><p><em>Reiter Vektor</em> -&gt; <em>Quick OSM</em> -&gt; <em>Quick OSM</em></p></li>
+<li><p><em>Wählen Sie bei der Option key «highway» und lassen value leer</em></p></li>
+<li><p><em>Wählen Sie Option «Extent of map canvas»</em></p></li>
+<li><p><em>Klicken Sie anschliessend auf «Run query»</em></p></li>
+</ol>
 <p>Das Query lädt nebst den Liniendaten auch noch Punkt- und Polygon-Daten herunter. Diese interessieren
-uns nicht und können entfernt werden (Rechtsklick  remove).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Merken Sie sich:
- Es lohnt sich, vor jedem Projekt eine sinnvolle Ordnerstruktur aufzubauen
- Neben shapefile gibt es weitere (bessere?) Wege, wie Vektordaten abgespeichert werden
-können. Eine gute Variante ist Geopackage.
- QGIS ist mittlerweile ein mächtiges Werkzeug, welches für die Bearbeitung vieler klassischer
-GIS Fragestellungen geeignet ist
- QGIS ist modular aufgebaut, wichtige Funktionen sind über Plugins verfügbar. Dadurch kommt
-QGIS nicht aus «einem Guss» daher
- Outputs werden in temporären Dateien abgespeichert, die bei der Schliessung von QGIS
-gelöscht werden. Sollen Geodaten permanent verfügbar sein, müssen sie entsprechend explizit
-abgespeichert werden.
-</pre></div>
-</div>
+uns nicht und können entfernt werden (Rechtsklick -&gt; remove).</p>
 </div>
 <div class="section" id="ubung-6-temporare-datei-abspeichern">
 <h2>Übung 6: Temporäre Datei abspeichern<a class="headerlink" href="#ubung-6-temporare-datei-abspeichern" title="Link zu dieser Überschrift">¶</a></h2>
@@ -435,14 +402,30 @@ Beendigung von QGIS gelöscht. Um die Daten auch zu einem späteren Zeitpunkt ve
 müssen sie an einem geeigneten Ort abgespeichert werden. Führen Sie diesen Schritt mit den eben
 beschafften OSM Strassendaten (nur Linien) aus. Im gleichen Schritt können Sie alle unnötigen Spalten von
 der sehr grossen Attributtabelle loswerden.</p>
-<p><em>1. Rechtsklick auf den temporären Linien-Layer</em>  <em>Export</em>  <em>Save Features As…
-2. Unter «Select fields to export and their export options» «Deselect All» ausführen.
-3. Format: Geopackage
-4. Filename: Geeigneter Speicherort* aufsuchen und Datei abspeichern als «osm_highway.gpkg»</em>
-<em>(Erweiterung muss nochmals angegeben werden)</em></p>
+<ol class="simple">
+<li><p><em>Rechtsklick auf den temporären Linien-Layer</em> -&gt; <em>Export</em> -&gt; <em>Save Features As…</em></p></li>
+<li><p><em>Unter «Select fields to export and their export options» «Deselect All» ausführen.</em></p></li>
+<li><p><em>Format: Geopackage</em></p></li>
+<li><p><em>Filename: Geeigneter Speicherort* aufsuchen und Datei abspeichern als «osm_highway.gpkg»</em>
+<em>(Erweiterung muss nochmals angegeben werden)</em></p></li>
+</ol>
+<p>** Merken Sie sich den Speicherort, Sie werden das File in der kommenden Übung brauchen.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>Merken Sie sich:</p>
 <ul class="simple">
-<li><p>Merken Sie sich den Speicherort, Sie werden das File in der kommenden Übung brauchen.</p></li>
+<li><p>Es lohnt sich, vor jedem Projekt eine sinnvolle Ordnerstruktur aufzubauen</p></li>
+<li><p>Neben shapefile gibt es weitere (bessere?) Wege, wie Vektordaten abgespeichert werden
+können. Eine gute Variante ist Geopackage.</p></li>
+<li><p>QGIS ist mittlerweile ein mächtiges Werkzeug, welches für die Bearbeitung vieler klassischer
+GIS Fragestellungen geeignet ist</p></li>
+<li><p>QGIS ist modular aufgebaut, wichtige Funktionen sind über Plugins verfügbar. Dadurch kommt
+QGIS nicht aus «einem Guss» daher</p></li>
+<li><p>Outputs werden in temporären Dateien abgespeichert, die bei der Schliessung von QGIS
+gelöscht werden. Sollen Geodaten permanent verfügbar sein, müssen sie entsprechend explizit
+abgespeichert werden.</p></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -474,6 +457,7 @@ der sehr grossen Attributtabelle loswerden.</p>
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="../03_Datenbanken/01_02_Uebung.html" title="previous page">Aufgabe</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
