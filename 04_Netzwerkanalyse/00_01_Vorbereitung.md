@@ -84,9 +84,8 @@ Outputs werden in QGIS standardmässig in einem Temp-Folder abgelegt. Diese Date
 [^speicherort]: Merken Sie sich den Speicherort, Sie werden das File in der kommenden Übung brauchen.
 
 
-
-```{note}
-Merken Sie sich:
+```{admonition} Merken Sie sich:
+:class: note
 - Es lohnt sich, vor jedem Projekt eine sinnvolle Ordnerstruktur aufzubauen
 - Neben shapefile gibt es weitere (bessere?) Wege, wie Vektordaten abgespeichert werden
 können. Eine gute Variante ist Geopackage.
