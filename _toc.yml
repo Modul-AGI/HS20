@@ -41,3 +41,6 @@
   - file: 03_Datenbanken/01_01_Datenbanken_1
     sections:
     - file: 03_Datenbanken/01_02_Uebung
+- part: Netzwerkanalyse I - III
+  chapters:
+  - file: 04_Netzwerkanalyse/00_00_Netzwerkanalyse_Vorbereitung
