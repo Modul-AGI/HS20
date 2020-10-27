@@ -41,3 +41,6 @@
   - file: 03_Datenbanken/01_01_Datenbanken_1
     sections:
     - file: 03_Datenbanken/01_02_Uebung
+  - file: 03_Datenbanken/02_01_Datenbanken_2
+    sections:
+    - file: 03_Datenbanken/02_02_Uebung
