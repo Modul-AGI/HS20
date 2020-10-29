@@ -9,9 +9,8 @@ Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.
 
 ```
 |-- Modul_AGI
-    |── 01_Einfuehrung_ArcGISPro
-    |── 02_WebGIS
-    ...                                                            _   
+    |── 01_Datenqualitaet_Unsicherheit
+    |── 02_Coding_in_GIS                                           _
     |── 09_Netzwerkanalyse1                                         \            
     |   |── Geodaten                                                |
     |   |   |── Waedenswil.gpkg                                     |
@@ -29,6 +28,8 @@ Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.
     |   |── QGIS_Projectfiles
     |   |── Karten
     |   |── Unterlagen
+    ...                                                            _   
+
 ```
 
 
