@@ -45,7 +45,7 @@ PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer [@sh
 
 1. _Neues QGIS Projekt starten und Projektdatei speichern (Beachten Sie dazu die Empfehlungen am Anfang)_
 2. _CRS auf EPSG 2056 setzen_
-3. _Datensatz "Gemeinde_Waedenswil.gpkg" (auf Moodle) in QGIS Importieren_
+3. _Datensatz "Gemeinde_Waedenswil.gpkg" (siehe {numref}`table-datensaetze-netzwerkanalyse`) in QGIS Importieren_
 4. _Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz_
 
 ## Übung 4: Plugin installieren
@@ -84,9 +84,8 @@ Outputs werden in QGIS standardmässig in einem Temp-Folder abgelegt. Diese Date
 [^speicherort]: Merken Sie sich den Speicherort, Sie werden das File in der kommenden Übung brauchen.
 
 
-
-```{note}
-Merken Sie sich:
+```{admonition} Merken Sie sich:
+:class: note
 - Es lohnt sich, vor jedem Projekt eine sinnvolle Ordnerstruktur aufzubauen
 - Neben shapefile gibt es weitere (bessere?) Wege, wie Vektordaten abgespeichert werden
 können. Eine gute Variante ist Geopackage.
