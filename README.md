@@ -7,10 +7,6 @@ For others, and for future me, here some notes on how I created this (jupyter-) 
   - a pdf version of the book is also built [using Latex](https://jupyterbook.org/advanced/pdf.html#id5)
   - this pdf version (which has a default location \_build/latex/python.pdf) is renamed, commited and pushed using github actions (read [my question on this](https://github.com/executablebooks/meta/discussions/124))
   
-Useful links:
-- have a look at the [sphinx demo page](https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html) for some nice methods to format the document
-
-
 Nice ressources on the subject (because I don't know where es to put it right now):
 
 - https://geo-python-site.readthedocs.io/en/latest/
