@@ -32,7 +32,7 @@
     sections:
     - file: 02_Coding_in_GIS/04_02_Vereinigen
     - file: 02_Coding_in_GIS/04_03_Zusatzauftraege
-  - file: Coding_in_GIS_Anhang
+  - file: 02_Coding_in_GIS/05_00_Anhang
     sections:
     - file: 02_Coding_in_GIS/05_01_GIS_Demo.ipynb
 #- part: (Geo-) Datenbanken I - III
@@ -48,3 +48,4 @@
   chapters:
   - file: 04_Netzwerkanalyse/00_00_Einleitung
   - file: 04_Netzwerkanalyse/00_01_Vorbereitung
+  - file: 04_Netzwerkanalyse/04_00_Anhang

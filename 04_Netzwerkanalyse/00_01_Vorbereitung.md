@@ -45,7 +45,7 @@ PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer [@sh
 
 1. _Neues QGIS Projekt starten und Projektdatei speichern (Beachten Sie dazu die Empfehlungen am Anfang)_
 2. _CRS auf EPSG 2056 setzen_
-3. _Datensatz "Gemeinde_Waedenswil.gpkg" (auf Moodle) in QGIS Importieren_
+3. _Datensatz "Gemeinde_Waedenswil.gpkg" (siehe {numref}`table-datensaetze-netzwerkanalyse`) in QGIS Importieren_
 4. _Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz_
 
 ## Übung 4: Plugin installieren
