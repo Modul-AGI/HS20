@@ -1,11 +1,7 @@
 (chap-netzwerk-einleitung)=
 # Einleitung
 
-Wir werden in den kommenden drei Lektionseinheiten mit QGIS verschiedene Aspekte der Netzwerkanalyse
-untersuchen. Dafür lohnt es sich vorgängig eine sinnvolle Ordnerstruktur anzulegen. Wir empfehlen, in
-einem geeigneten Folder _(z.B. C:/Users/benutzername/Studium/5_Semester)_ einen Ordner mit dem
-Modulnamen anlegen (z.B. "Modul_AGI") und darin nachstehende Struktur zu pflegen. Vermeiden Sie bei der
-Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.
+Wir werden in den kommenden drei Lektionseinheiten mit QGIS verschiedene Aspekte der Netzwerkanalyse untersuchen. Dafür lohnt es sich vorgängig eine sinnvolle Ordnerstruktur anzulegen. Wir empfehlen, in einem geeigneten Folder _(z.B. C:/Users/benutzername/Studium/5_Semester)_ einen Ordner mit dem Modulnamen anlegen (z.B. "Modul_AGI") und darin nachstehende Struktur zu pflegen. Vermeiden Sie bei der Namensgebung auf jeden Fall Umlaute, Leerschläge und Sonderzeichen.
 
 ```
 |-- Modul_AGI
