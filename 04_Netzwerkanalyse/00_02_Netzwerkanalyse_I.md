@@ -95,7 +95,7 @@ Problem an dieser Stelle:
        «osm_highway_prepared.gpkg»
        ODER
     b. Selektierte Daten (ohne Invertierung) in ein neues File exportieren mittels Rechtsklick auf
-       den Layer  «Save as»  Häkchen bei «Save only selected features»  Speichern als
+       den Layer  «Save as»  Häkchen bei «Save only selected features» -> Speichern als
        «osm_highway_prepared.gpkg»
        
 ```{figure} figures/ueb1_fig2.jpg
