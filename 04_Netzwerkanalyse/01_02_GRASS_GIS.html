@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Aufgabe 2: GRASS GIS Plugin &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,6 +59,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
+    <link rel="next" title="Anhang" href="04_00_Anhang.html" />
+    <link rel="prev" title="Aufgabe 1: Operationen mit QGIS" href="01_01_QGIS.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -140,24 +142,36 @@
   Netzwerkanalyse I - III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/00_00_Einleitung.html">
+  <a class="reference internal" href="00_00_Einleitung.html">
    Einleitung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/00_01_Vorbereitung.html">
+  <a class="reference internal" href="00_01_Vorbereitung.html">
    Vorbereitung
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/01_00_Netzwerkanalyse_I.html">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="01_00_Netzwerkanalyse_I.html">
    Netzwerkanalyse I
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_QGIS.html">
+     Aufgabe 1: Operationen mit QGIS
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Aufgabe 2: GRASS GIS Plugin
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/04_00_Anhang.html">
+  <a class="reference internal" href="04_00_Anhang.html">
    Anhang
   </a>
  </li>
@@ -203,9 +217,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/03_Datenbanken/01_02_Uebung.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/01_02_GRASS_GIS.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -223,23 +237,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_Datenbanken/01_02_Uebung.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -251,36 +248,29 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ausgangslage">
-   Ausgangslage
+  <a class="reference internal nav-link" href="#ubung-2-1-topologie-bereinigen">
+   Übung 2.1: Topologie bereinigen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anforderungen-pflanzendatenbank">
-   Anforderungen Pflanzendatenbank
+  <a class="reference internal nav-link" href="#ubung-2-2-losgeloste-getrennte-elemente-entfernen">
+   Übung 2.2: Losgelöste (getrennte) Elemente entfernen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabenstellung">
-   Aufgabenstellung
+  <a class="reference internal nav-link" href="#ubung-2-3-zentralitatsmasse-berechnen">
+   Übung 2.3: Zentralitätsmasse berechnen
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-1">
-     Schritt 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-2">
-     Schritt 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-3">
-     Schritt 3
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-4-zentralitatsmasse-visualisieren">
+   Übung 2.4: Zentralitätsmasse Visualisieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-5-zentralitatsmasse-vergleichen">
+   Übung 2.5: Zentralitätsmasse vergleichen
+  </a>
  </li>
 </ul>
 
@@ -293,34 +283,83 @@
         
               <div>
                 
-  <div class="section" id="aufgabe">
-<h1>Aufgabe<a class="headerlink" href="#aufgabe" title="Link zu dieser Überschrift">¶</a></h1>
-<div class="section" id="ausgangslage">
-<h2>Ausgangslage<a class="headerlink" href="#ausgangslage" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Die Gärten und Grünanlagen prägen das Bild des Campus Grüental. Eine grosse Vielfalt an verschiedenen einheimischen und exotischen Pflanzenarten lädt zum Verweilen ein. Mitarbeiter und Studierende nutzen den grünen Raum zur Erholung, zum Miteinander und zum Lernen. Nicht nur in den Sommermonaten ist das offene Areal des Campus ein Erlebnis für alle. Für die individuelle Pflege und Wartung der Gärten bedarf es sehr guter Planung. Als Datenbank Spezialist werden Sie beauftragt eine Datenbanklösung zur Verwaltung der Campus Pflanzenwelt zu entwickeln.</p>
+  <div class="section" id="aufgabe-2-grass-gis-plugin">
+<h1>Aufgabe 2: GRASS GIS Plugin<a class="headerlink" href="#aufgabe-2-grass-gis-plugin" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Die mächtigsten (aber nicht die einzigen<a class="footnote-reference brackets" href="#plugins" id="id1">1</a>) Netzwerkanalyse Werkzeuge in QGIS stammen aus dem eigenständigen GIS „GRASS GIS“, welches bei der Installation von QGIS mitinstalliert wird. Diese können innerhalb von QGIS verwendet werden.</p>
+<div class="section" id="ubung-2-1-topologie-bereinigen">
+<h2>Übung 2.1: Topologie bereinigen<a class="headerlink" href="#ubung-2-1-topologie-bereinigen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Das OSM Strassennetz „osm_highway“ ist topologisch nicht perfekt für unsere Zwecke vorbereitet. An Kreuzungen fehlen teilweise Knoten, welche ein „abbiegen“ auf der Kreuzung ermöglich. Um diesen Umstand zu beheben, nutzen wir das Tool „v.clean“ und führen damit die Operation „break“ durch. Dadurch werden Linien an Kreuzungen unterbrochen. Diese Operation löst einige topologische Fehler, führt z.B. bei Brücken und Tunnels aber euch neue Unstimmigkeiten ein, die Sie an dieser Stelle aber getrost ignorieren können.</p>
+<ol class="simple">
+<li><p>Werkzeug „v.clean“ auswählen</p></li>
+<li><p>Parameter:</p>
+<ul class="simple">
+<li><p><em>Layer to clean</em> : Transformierter und geclippter OSM Strassendatensatz</p></li>
+<li><p><em>Cleaning tool</em> : break</p></li>
+<li><p><em>v.out.ogr output type:</em> auto</p></li>
+</ul>
+</li>
+<li><p>Mit „Run“ ausführen</p></li>
+</ol>
 </div>
-<div class="section" id="anforderungen-pflanzendatenbank">
-<h2>Anforderungen Pflanzendatenbank<a class="headerlink" href="#anforderungen-pflanzendatenbank" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Sie sind ein Datenbank-Spezialist und werden vom Garten-Team der ZHAW beauftragt eine Datenbanklösung zur Pflege und Verwaltung der Pflanzenwelt auf dem Areal des Campus Grüental zu entwickeln. Hierbei sollen alle Pflanzen des Campus katalogisiert und für verschiedene Nutzergruppen über differenzierte Zugriffsmöglichkeiten mit verschiedenen Informationen zugänglich gemacht werden.</p>
-<p>Hierbei müssen folgende Anforderungen eingehalten werden:</p>
-<p>Die Pflanzen müssen mit Familie, Gattung, Art und Sorte erfasst werden. Zusätzlich braucht es Informationen darüber, ob es sich um eine einheimische Pflanze handelt oder nicht. Als weitere Information muss es die Möglichkeit geben die Wuchsform, wie z.B. Staude, Strauch oder Baum zu erfassen. Zu einigen Pflanzen sollen Hinweise zur Pflege oder sonstige Bemerkungen eingegeben werden können.
-Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zugeordnet werden können. Hierzu werden einzelne Pflanzen ausgewählt und einem Kurs zugeordnet. Jede Pflanze kann dabei zu verschiedenen Lernparcours gehören und ein Lernparcours kann unterschiedlich viele Pflanzen beinhalten.</p>
-<p>Jede Pflanze auf dem Campus muss verortet werden. Dies bedeutet das jeder Pflanze auf dem Campus eine genaue Lage zugewiesen werden kann. Es reicht in dieser ersten Version aus die jeweilige Pflanze als Punkt darzustellen. Flächenartige Gewächse wie Stauden oder Gräser können als Punkt zusammengefasst werden. Linienartige Pflanzen wie Hecken können vernachlässigt werden und brauchen nicht aufgenommen zu werden. Für jede Pflanze ist zusätzlich zur genauen (Punkt-)Lage wichtig zu wissen auf welcher gärtnerischen Fläche (Beet) sich die Pflanze befindet. Zur besseren Planung müssen die Gärtner später abfragen können, welche Pflanzen auf welchem Beet stehen. Für die Flächen ist es ausreichend einen Namen zu erfassen.</p>
+<div class="section" id="ubung-2-2-losgeloste-getrennte-elemente-entfernen">
+<h2>Übung 2.2: Losgelöste (getrennte) Elemente entfernen<a class="headerlink" href="#ubung-2-2-losgeloste-getrennte-elemente-entfernen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Aufmerksamen Anwendern könnte nun auffallen, dass gewisse Bestandteile des Netzwerks nicht mit dem Hauptnetz verbunden sind. Diese getrennten Elemente können mit dem Werkzeug v.net.components identifiziert werden. Das Werkzeug prüft, welche Bestandteile des Netzwerkes miteinander verbunden sind und gruppiert diese mit Nummern. Im Idealfall sollte unser Netzwerk aus einer Gruppe bestehen; so wäre jeder Knotenpunkt mit jedem andern Knotenpunkt verbunden: Bei uns ist dies jedoch nicht der Fall. Damit wir in den nachstehenden Übungen mit einem sauberen Datensatz arbeiten können, bereinigen wir dieses Problem an dieser Stelle:</p>
+<ol class="simple">
+<li><p>Führen Sie das Werkzeug aus</p>
+<ul class="simple">
+<li><p><em>Type of components</em> : „strong“</p></li>
+<li><p><em>V.out.ogr output type:</em> auto</p></li>
+</ul>
+</li>
+<li><p>Symbolisieren den entstandenen Liniendatensatz nach den vergebenen Kategorien („comp“)</p></li>
+<li><p>Ermitteln Sie die Nummer der Hauptkategorie (z.B. mit dem Werkzeug „Identify Features“</p></li>
+<li><p>Öffnen Sie die Attributtabelle und machen eine „Selektion anhand einer Abfrage“ („Select Features
+using an expression“ [1])</p></li>
+<li><p>Selektieren Sie die Hauptkategorie mittels einer korrekten Abfrage (z.B. comp = 99). QGIS bietet
+ihnen hierfür leider wenig Hilfestellung (im Gegensatz zum Query Builder von ArcGIS)</p></li>
+<li><p>Um sich von den anderen Kategorien zu trennen, haben Sie nun zwei Möglichkeiten:</p>
+<ul class="simple">
+<li><p>Eine Editiersession starten [2], die Selektion invertieren [3] und die selektierten Daten löschen [4]. <strong>ODER</strong></p></li>
+<li><p>Selektierte Daten (ohne Invertierung) in ein neues File exportieren mittels Rechtsklick auf den Layer -&gt; „Save as“ -&gt; Häkchen bei „Save only selected features“</p></li>
+</ul>
+</li>
+<li><p>Speichern Sie den Layer anschliessend mit folgendem Namen ab: „osm_highway_prepared.gpkg“</p></li>
+</ol>
+<div class="figure align-default" id="figure-2">
+<img alt="../_images/ueb1_fig2.jpg" src="../_images/ueb1_fig2.jpg" />
 </div>
-<div class="section" id="aufgabenstellung">
-<h2>Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="schritt-1">
-<h3>Schritt 1<a class="headerlink" href="#schritt-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Lesen Sie die Aufgabenstellung gewissenhaft. Skizzieren Sie ein erstes Textmodell (stichwortartig) bei welchem Sie bereits erste Objekte identifizieren und Attribute und Beziehungen ableiten. Überlegen Sie sich, ob es offene Fragen oder Unklarheiten gibt. Sie haben anschliessend die Gelegenheit den Auftraggeber über eventuell ungeklärte Anforderungen zu befragen, um ihr Textmodell zu vervollständigen.</p>
 </div>
-<div class="section" id="schritt-2">
-<h3>Schritt 2<a class="headerlink" href="#schritt-2" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Sind alle offenen Fragen geklärt und das Textmodell fertig, entwickeln Sie aus ihrem Textmodell ein konzeptuelles Modell. Identifizieren Sie alle notwendigen Objekte mit den zugehörigen Attributen und zeigen Sie die Kardinalitäten der Objekte untereinander auf. Nutzen Sie hierbei die ER-Modellierung, wie in den Vorlesungsfolien aufgezeigt.</p>
+<div class="section" id="ubung-2-3-zentralitatsmasse-berechnen">
+<h2>Übung 2.3: Zentralitätsmasse berechnen<a class="headerlink" href="#ubung-2-3-zentralitatsmasse-berechnen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nun kann mit der eigentlichen Netzwerkanalyse begonnen werden. Wir rechnen für unser bereinigtes Strassennetz verschiedene Zentralitätsmasse.</p>
+<ol class="simple">
+<li><p>v.net.centrality starten</p></li>
+<li><p>Parameter</p>
+<ul class="simple">
+<li><p><em>Input vector line layer</em> : Bereinigter Output aus letzter Übung</p></li>
+<li><p><em>Centers point layer (nodes):</em> Punkt-Output aus letzter Übung</p></li>
+<li><p><em>Name of betweenness centrality column</em> : „betwCt“. Wichtig: dieser Variablenname darf nicht „between“ oder „betweenness“ lauten, sonst gibt es einen Ausführungsfehler.</p></li>
+<li><p><em>v.out.ogr output type</em> : auto</p></li>
+</ul>
+</li>
+<li><p>Mit „run“ ausführen</p></li>
+<li><p>Speichern Sie die Resultierende Datei in ihrem Ordner ab („waedenswil_centrality.gpkg“)</p></li>
+</ol>
 </div>
-<div class="section" id="schritt-3">
-<h3>Schritt 3<a class="headerlink" href="#schritt-3" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Zum Abschluss erstellen Sie auf der Grundlage ihres konzeptuellen Modells das erforderliche logische Modell. Leiten Sie aus den identifizierten Objekten, Attributen und Kardinalitäten die benötigten Tabellen und Schlüsselattribute ab. Achten Sie im Speziellen darauf wo es räumliche Tabellen sind und wo es sich um Sachdatentabellen handelt. Markieren Sie ausserdem auch alle Schlüssel-Attribute (Primärschlüssel und Fremdschlüssel).</p>
+<div class="section" id="ubung-2-4-zentralitatsmasse-visualisieren">
+<h2>Übung 2.4: Zentralitätsmasse Visualisieren<a class="headerlink" href="#ubung-2-4-zentralitatsmasse-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Visualisieren Sie die Ausprägung „Closeness“ der berechneten Zentralitätswerte über die Symbologie (Layer Properties -&gt; Style -&gt; Graduated). Wählen Sie eine geeignete Methode und passen Sie den Stil an, bis er Ihnen gefällt. Spielen Sie dabei mit der Klassifikationsmethode (Mode: Equal interval, Quantile, Natural Breaks..) sowie der Color ramp rum. Achten Sie darauf, dass Sie immer auf „Classify“ klicken müssen, um Änderungen anzuwenden.</p>
 </div>
+<div class="section" id="ubung-2-5-zentralitatsmasse-vergleichen">
+<h2>Übung 2.5: Zentralitätsmasse vergleichen<a class="headerlink" href="#ubung-2-5-zentralitatsmasse-vergleichen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Installieren Sie das Plugin „QuickMapServices“ um eine OSM Hintergrundkarte einzubinden. Um direkt in QGIS die Zentralitätsmasse zu vergleichen, duplizieren sie den entsprechenden Layer noch zweimal (rechtsklick -&gt; Duplicate) – so können Sie jede der Zentralitäten separat symbolisieren und vergleichen. Sie können auch für jedes der Zentralitätsmasse eine Karte exportieren via Project -&gt; Save as Image.</p>
+<p>Vergleichen Sie die drei Zentralitätsmasse und setzen Sie sie in den Kontext der Theorie.</p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="plugins"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Da QGIS wie bereits erwähnt von verschiedenen Personen und Gruppen entwickelt wird, gibt es auch Doppelspurigkeiten, die man so in einer kommerziellen Software wie ArcGIS weniger vorfindet. In dieser Hinsicht ist QGIS sehr ähnlich wie die Programmiersprache R.</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -337,7 +376,7 @@ Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zug
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./03_Datenbanken"
+            path: "./04_Netzwerkanalyse"
         },
         predefinedOutput: true
     }
@@ -352,6 +391,8 @@ Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zug
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="01_01_QGIS.html" title="previous page">Aufgabe 1: Operationen mit QGIS</a>
+    <a class='right-next' id="next-link" href="04_00_Anhang.html" title="next page">Anhang</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

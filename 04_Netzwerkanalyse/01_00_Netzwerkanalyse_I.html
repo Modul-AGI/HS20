@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Netzwerkanalyse I &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,6 +59,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
+    <link rel="next" title="Aufgabe 1: Operationen mit QGIS" href="01_01_QGIS.html" />
+    <link rel="prev" title="Vorbereitung" href="00_01_Vorbereitung.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -140,24 +142,36 @@
   Netzwerkanalyse I - III
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/00_00_Einleitung.html">
+  <a class="reference internal" href="00_00_Einleitung.html">
    Einleitung
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/00_01_Vorbereitung.html">
+  <a class="reference internal" href="00_01_Vorbereitung.html">
    Vorbereitung
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/01_00_Netzwerkanalyse_I.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Netzwerkanalyse I
   </a>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_QGIS.html">
+     Aufgabe 1: Operationen mit QGIS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_GRASS_GIS.html">
+     Aufgabe 2: GRASS GIS Plugin
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../04_Netzwerkanalyse/04_00_Anhang.html">
+  <a class="reference internal" href="04_00_Anhang.html">
    Anhang
   </a>
  </li>
@@ -203,9 +217,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/03_Datenbanken/01_02_Uebung.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/01_00_Netzwerkanalyse_I.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -223,68 +237,10 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://jupyterhub01.zhaw.ch/hub/user-redirect/git-pull?repo=https://github.com/ratnanil/codingingis&urlpath=lab/tree/codingingis/03_Datenbanken/01_02_Uebung.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Starten JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Inhalt
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ausgangslage">
-   Ausgangslage
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#anforderungen-pflanzendatenbank">
-   Anforderungen Pflanzendatenbank
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aufgabenstellung">
-   Aufgabenstellung
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-1">
-     Schritt 1
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-2">
-     Schritt 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#schritt-3">
-     Schritt 3
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-        </nav>
         
     </div>
 </div>
@@ -293,34 +249,20 @@
         
               <div>
                 
-  <div class="section" id="aufgabe">
-<h1>Aufgabe<a class="headerlink" href="#aufgabe" title="Link zu dieser Überschrift">¶</a></h1>
-<div class="section" id="ausgangslage">
-<h2>Ausgangslage<a class="headerlink" href="#ausgangslage" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Die Gärten und Grünanlagen prägen das Bild des Campus Grüental. Eine grosse Vielfalt an verschiedenen einheimischen und exotischen Pflanzenarten lädt zum Verweilen ein. Mitarbeiter und Studierende nutzen den grünen Raum zur Erholung, zum Miteinander und zum Lernen. Nicht nur in den Sommermonaten ist das offene Areal des Campus ein Erlebnis für alle. Für die individuelle Pflege und Wartung der Gärten bedarf es sehr guter Planung. Als Datenbank Spezialist werden Sie beauftragt eine Datenbanklösung zur Verwaltung der Campus Pflanzenwelt zu entwickeln.</p>
+  <div class="section" id="netzwerkanalyse-i">
+<h1>Netzwerkanalyse I<a class="headerlink" href="#netzwerkanalyse-i" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Die Lerneinheit vermittelt die Grundlagen der Verwendung von Netzwerk-Geodaten. Ein erste Überblick über verschieden Anwendungsfelder reicht von der Streckenfindung und Reisezeitberechnungen über Energienetzwerk-System bis hin zu Anwendungen zu Gewässernetzen in der Hydrologie. Die Einheit vermittelt die für die Netzwerkbehandlung in GIS relevanten Grundlagen aus der Graphentheorie und knüpft dabei an an die bekannten Grundlagen der Vektordatenmodellierung (Definitionen, Elemente von Graphen, Eigenschaften von Graphen, Bäume). Einfache Netzwerkmasse, insbesondere Zentralitätsmasse beschliessen den theoretischen Teil. Der praktische Teil basiert auf der Einführung und Verwendung von QGIS als Alternative zu den ESRI-Produkten.</p>
+<div class="attention admonition">
+<p class="admonition-title">Übungsziele</p>
+<ul class="simple">
+<li><p>Einfache GIS-Operationen mit QGIS durchführen können (Clip, Reproject, Abfrage der Attributtabelle,
+Symbolisierung, Export als jpg)</p></li>
+<li><p>Schnittstelle zwischen QGIS und anderer GIS-Software am Beispiel GRASS kennenlernen</p></li>
+<li><p>Erste Netzwerkoperationen mit QGIS/GRASS GIS durchführen</p></li>
+<li><p>Netzwerk-Zentralitätsmasse verstehen und für einfache Netzwerkdaten berechnen</p></li>
+</ul>
 </div>
-<div class="section" id="anforderungen-pflanzendatenbank">
-<h2>Anforderungen Pflanzendatenbank<a class="headerlink" href="#anforderungen-pflanzendatenbank" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Sie sind ein Datenbank-Spezialist und werden vom Garten-Team der ZHAW beauftragt eine Datenbanklösung zur Pflege und Verwaltung der Pflanzenwelt auf dem Areal des Campus Grüental zu entwickeln. Hierbei sollen alle Pflanzen des Campus katalogisiert und für verschiedene Nutzergruppen über differenzierte Zugriffsmöglichkeiten mit verschiedenen Informationen zugänglich gemacht werden.</p>
-<p>Hierbei müssen folgende Anforderungen eingehalten werden:</p>
-<p>Die Pflanzen müssen mit Familie, Gattung, Art und Sorte erfasst werden. Zusätzlich braucht es Informationen darüber, ob es sich um eine einheimische Pflanze handelt oder nicht. Als weitere Information muss es die Möglichkeit geben die Wuchsform, wie z.B. Staude, Strauch oder Baum zu erfassen. Zu einigen Pflanzen sollen Hinweise zur Pflege oder sonstige Bemerkungen eingegeben werden können.
-Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zugeordnet werden können. Hierzu werden einzelne Pflanzen ausgewählt und einem Kurs zugeordnet. Jede Pflanze kann dabei zu verschiedenen Lernparcours gehören und ein Lernparcours kann unterschiedlich viele Pflanzen beinhalten.</p>
-<p>Jede Pflanze auf dem Campus muss verortet werden. Dies bedeutet das jeder Pflanze auf dem Campus eine genaue Lage zugewiesen werden kann. Es reicht in dieser ersten Version aus die jeweilige Pflanze als Punkt darzustellen. Flächenartige Gewächse wie Stauden oder Gräser können als Punkt zusammengefasst werden. Linienartige Pflanzen wie Hecken können vernachlässigt werden und brauchen nicht aufgenommen zu werden. Für jede Pflanze ist zusätzlich zur genauen (Punkt-)Lage wichtig zu wissen auf welcher gärtnerischen Fläche (Beet) sich die Pflanze befindet. Zur besseren Planung müssen die Gärtner später abfragen können, welche Pflanzen auf welchem Beet stehen. Für die Flächen ist es ausreichend einen Namen zu erfassen.</p>
-</div>
-<div class="section" id="aufgabenstellung">
-<h2>Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Link zu dieser Überschrift">¶</a></h2>
-<div class="section" id="schritt-1">
-<h3>Schritt 1<a class="headerlink" href="#schritt-1" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Lesen Sie die Aufgabenstellung gewissenhaft. Skizzieren Sie ein erstes Textmodell (stichwortartig) bei welchem Sie bereits erste Objekte identifizieren und Attribute und Beziehungen ableiten. Überlegen Sie sich, ob es offene Fragen oder Unklarheiten gibt. Sie haben anschliessend die Gelegenheit den Auftraggeber über eventuell ungeklärte Anforderungen zu befragen, um ihr Textmodell zu vervollständigen.</p>
-</div>
-<div class="section" id="schritt-2">
-<h3>Schritt 2<a class="headerlink" href="#schritt-2" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Sind alle offenen Fragen geklärt und das Textmodell fertig, entwickeln Sie aus ihrem Textmodell ein konzeptuelles Modell. Identifizieren Sie alle notwendigen Objekte mit den zugehörigen Attributen und zeigen Sie die Kardinalitäten der Objekte untereinander auf. Nutzen Sie hierbei die ER-Modellierung, wie in den Vorlesungsfolien aufgezeigt.</p>
-</div>
-<div class="section" id="schritt-3">
-<h3>Schritt 3<a class="headerlink" href="#schritt-3" title="Link zu dieser Überschrift">¶</a></h3>
-<p>Zum Abschluss erstellen Sie auf der Grundlage ihres konzeptuellen Modells das erforderliche logische Modell. Leiten Sie aus den identifizierten Objekten, Attributen und Kardinalitäten die benötigten Tabellen und Schlüsselattribute ab. Achten Sie im Speziellen darauf wo es räumliche Tabellen sind und wo es sich um Sachdatentabellen handelt. Markieren Sie ausserdem auch alle Schlüssel-Attribute (Primärschlüssel und Fremdschlüssel).</p>
-</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -337,7 +279,7 @@ Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zug
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./03_Datenbanken"
+            path: "./04_Netzwerkanalyse"
         },
         predefinedOutput: true
     }
@@ -352,6 +294,8 @@ Zu Lernzwecken sollen einzelnen Pflanzen verschiedenen Pflanzen Lernparcours zug
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="00_01_Vorbereitung.html" title="previous page">Vorbereitung</a>
+    <a class='right-next' id="next-link" href="01_01_QGIS.html" title="next page">Aufgabe 1: Operationen mit QGIS</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
