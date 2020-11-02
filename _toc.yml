@@ -48,6 +48,10 @@
   chapters:
   - file: 04_Netzwerkanalyse/00_00_Einleitung
   - file: 04_Netzwerkanalyse/00_01_Vorbereitung
+  - file: 04_Netzwerkanalyse/01_00_Netzwerkanalyse_I.md
+    sections:
+    - file: 04_Netzwerkanalyse/01_01_QGIS
+    - file: 04_Netzwerkanalyse/01_02_GRASS_GIS
   - file: 04_Netzwerkanalyse/04_00_Anhang
-  - file: 04_Netzwerkanalyse/00_02_Netzwerkanalyse_I
+
 
