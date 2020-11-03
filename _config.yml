@@ -1,8 +1,8 @@
 title                       : Angewandte Geoinformatik AGI
-author                      : FG Geoinformatik
+author                      : N. Ratnaweera, N. Bakogiannis
 logo                        : zhaw_lsfm_iunr_blau.jpg
 html:
-  extra_navbar              : Built with ❤ and <a href="https://jupyterbook.org">Jupyter Book</a>
+  extra_navbar              : <a href="https://www.zhaw.ch/de/lsfm/institute-zentren/iunr/ecosystems-and-biodiversity/geoinformatik/">Research Group for Geoinformatics</a>
   favicon                   : favicon.png
 
 repository:
