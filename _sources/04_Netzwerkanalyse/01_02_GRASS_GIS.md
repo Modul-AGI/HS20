@@ -13,6 +13,7 @@ Das OSM Strassennetz "osm_highway" ist topologisch nicht perfekt für unsere Zwe
     - _Layer to clean_ : Transformierter und geclippter OSM Strassendatensatz
     - _Cleaning tool_ : break
     - _v.out.ogr output type:_ auto
+    - _cleaned (output)_: Save to File...
 3. Mit "Run" ausführen
 
 
@@ -23,6 +24,8 @@ Aufmerksamen Anwendern könnte nun auffallen, dass gewisse Bestandteile des Netz
 1. Führen Sie das Werkzeug aus
     - _Type of components_ : "strong"
     - _V.out.ogr output type:_ auto
+    - _Network_Components_Line:_ Save to File...
+    - _Network_Components_Point:_ Save to File...
 2. Symbolisieren den entstandenen Liniendatensatz nach den vergebenen Kategorien ("comp")
 3. Ermitteln Sie die Nummer der Hauptkategorie (z.B. mit dem Werkzeug "Identify Features"
 4. Öffnen Sie die Attributtabelle und machen eine "Selektion anhand einer Abfrage" ("Select Features
@@ -45,9 +48,8 @@ Nun kann mit der eigentlichen Netzwerkanalyse begonnen werden. Wir rechnen für 
 1. v.net.centrality starten
 2. Parameter
     - _Input vector line layer_ : Bereinigter Output aus letzter Übung
-    - _Centers point layer (nodes):_ Punkt-Output aus letzter Übung
-    - _Name of betweenness centrality column_ : "betwCt". Wichtig: dieser Variablenname darf nicht "between" oder "betweenness" lauten, sonst gibt es einen Ausführungsfehler.
     - _v.out.ogr output type_ : auto
+    - _Network Centrality_: Save to File...
 3. Mit "run" ausführen
 4. Speichern Sie die Resultierende Datei in ihrem Ordner ab ("waedenswil_centrality.gpkg")
 
