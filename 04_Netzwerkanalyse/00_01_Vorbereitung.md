@@ -52,9 +52,9 @@ PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer [@sh
 
 QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grund ist die Software Modular aufgebaut, und nur ein Teil wird der Standard-Installation mitgeliefert. Für einige Funktionen müssen Erweiterungen (sogenannte "Plugins"), zusätzlich installiert werden. Installieren Sie das Plugin "QuickOSM" um OpenStreetMap (OSM) Vektordaten rasch und einfach lokal abspeichern zu können.
 
-1. _Reiter Plugins_ -> _Manage and Install Plugins_
+1. Reiter Plugins -> Manage and Install Plugins
 2. Im Suchfenster "QuickOSM" suchen
-3. Plugin anwählen und auf "install" klicken_
+3. Plugin anwählen und auf "install" klicken
 
 Die wichtigsten Metadaten zu allen Plugins werden auf plugins.qgis.org festgehalten. Dort findet man auch Links zur Projektseite, weiteren Dokumentation und ggf. Tutorials: Zu QuickOSM sind die Metadaten hier aufrufbar: [https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/)
 
