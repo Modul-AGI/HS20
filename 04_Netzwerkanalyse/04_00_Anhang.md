@@ -2,9 +2,9 @@
 
 ## Datensätze
 
-Hier befinden sich alle Datensätze, die im Laufe des Blocks "Neztwerkanalyse" benötigt werden:
+Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" benötigt werden:
 
-```{list-table}
+```{list-table} Datensätze für den Block "Netzwerkanalyse"
 :header-rows: 1
 :name: table-datensaetze-netzwerkanalyse
 
