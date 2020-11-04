@@ -353,7 +353,7 @@
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
 <p>In dieser Aufgabe haben wir das Ziel, die in der letzten Aufgabe (<a class="reference internal" href="02_06_Zufallzahlen.html#chap-random-numbers"><span class="std std-ref">Aufgabe 7: Zufallszahlen generieren</span></a>) erstellte Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate()</span></code> auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn <strong>einmal</strong> durch. So erhalten wir einen Datensatz ähnlich wie in <a class="reference internal" href="02_06_Zufallzahlen.html#arcgiszecken"><span class="std std-numref">Abb. 1</span></a> mit dem Unterschied, dass jede Zeckenstichmeldung nicht eine <em>Wolke</em> von simulierten Punkten enthält, sondern nur einen einzelnen Punkt.</p>
-<p>Nutze hier die Datei „zeckenstiche.csv“ von letzter Woche (siehe <code class="xref std std-numref docutils literal notranslate"><span class="pre">table-datensaetze</span></code>). Erstelle ein neues Notebook und nutze nachstehenden Code um die nötigen Module und Functions zu haben:</p>
+<p>Nutze hier die Datei „zeckenstiche.csv“ von letzter Woche (siehe <a class="reference internal" href="00_00_Einleitung.html#table-datensaetze"><span class="std std-numref">Tab. 1</span></a>). Erstelle ein neues Notebook und nutze nachstehenden Code um die nötigen Module und Functions zu haben:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -481,11 +481,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([   5.,   61.,  415., 1445., 2819., 2893., 1728.,  537.,   91.,
-           6.]),
- array([-404.89848115, -325.10789648, -245.31731181, -165.52672713,
-         -85.73614246,   -5.94555779,   73.84502688,  153.63561155,
-         233.42619623,  313.2167809 ,  393.00736557]),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  34.,  224.,  829., 1990., 2875., 2410., 1204.,  360.,   63.,
+          11.]),
+ array([-351.04856463, -276.2755692 , -201.50257376, -126.72957832,
+         -51.95658289,   22.81641255,   97.58940799,  172.36240342,
+         247.13539886,  321.9083943 ,  396.68138973]),
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
@@ -707,16 +707,16 @@ Name: y, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681140e+06
-1    2.681078e+06
-2    2.681097e+06
-3    2.681057e+06
-4    2.681124e+06
-5    2.681188e+06
-6    2.681062e+06
-7    2.681232e+06
-8    2.681185e+06
-9    2.681177e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681131e+06
+1    2.681059e+06
+2    2.681237e+06
+3    2.681259e+06
+4    2.681042e+06
+5    2.681358e+06
+6    2.681009e+06
+7    2.680978e+06
+8    2.681199e+06
+9    2.681219e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -773,8 +773,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681017e+06</td>
-      <td>1.250764e+06</td>
+      <td>2.681024e+06</td>
+      <td>1.250566e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -782,8 +782,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681087e+06</td>
-      <td>1.250742e+06</td>
+      <td>2.681090e+06</td>
+      <td>1.250568e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -791,8 +791,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681020e+06</td>
-      <td>1.250898e+06</td>
+      <td>2.681023e+06</td>
+      <td>1.250705e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -800,8 +800,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681066e+06</td>
-      <td>1.250667e+06</td>
+      <td>2.681043e+06</td>
+      <td>1.250562e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -809,8 +809,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681040e+06</td>
-      <td>1.250674e+06</td>
+      <td>2.681178e+06</td>
+      <td>1.250802e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -818,8 +818,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681187e+06</td>
-      <td>1.250684e+06</td>
+      <td>2.681158e+06</td>
+      <td>1.250835e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -827,8 +827,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681110e+06</td>
-      <td>1.250665e+06</td>
+      <td>2.681162e+06</td>
+      <td>1.250844e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -836,8 +836,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.680956e+06</td>
-      <td>1.250543e+06</td>
+      <td>2.680992e+06</td>
+      <td>1.250564e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -845,8 +845,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681343e+06</td>
-      <td>1.250698e+06</td>
+      <td>2.681148e+06</td>
+      <td>1.250740e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -854,8 +854,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681056e+06</td>
-      <td>1.250719e+06</td>
+      <td>2.681137e+06</td>
+      <td>1.250734e+06</td>
     </tr>
   </tbody>
 </table>
@@ -872,16 +872,16 @@ Name: x, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.681211e+06
-1    2.681012e+06
-2    2.681143e+06
-3    2.681169e+06
-4    2.681363e+06
-5    2.681137e+06
-6    2.681108e+06
-7    2.681477e+06
-8    2.681165e+06
-9    2.681022e+06
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    2.680964e+06
+1    2.680619e+06
+2    2.680920e+06
+3    2.680758e+06
+4    2.680953e+06
+5    2.680774e+06
+6    2.681430e+06
+7    2.681087e+06
+8    2.681387e+06
+9    2.681295e+06
 Name: x, dtype: float64
 </pre></div>
 </div>
@@ -970,8 +970,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681091e+06</td>
-      <td>1.250638e+06</td>
+      <td>2.681120e+06</td>
+      <td>1.250637e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -979,8 +979,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681076e+06</td>
-      <td>1.250673e+06</td>
+      <td>2.681085e+06</td>
+      <td>1.250675e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -988,8 +988,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681114e+06</td>
-      <td>1.250684e+06</td>
+      <td>2.681128e+06</td>
+      <td>1.250694e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -997,7 +997,7 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681116e+06</td>
+      <td>2.681099e+06</td>
       <td>1.250683e+06</td>
     </tr>
     <tr>
@@ -1006,8 +1006,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681114e+06</td>
-      <td>1.250697e+06</td>
+      <td>2.681130e+06</td>
+      <td>1.250694e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1015,8 +1015,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.681173e+06</td>
-      <td>1.250724e+06</td>
+      <td>2.681172e+06</td>
+      <td>1.250718e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1024,8 +1024,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681095e+06</td>
-      <td>1.250714e+06</td>
+      <td>2.681108e+06</td>
+      <td>1.250705e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1033,8 +1033,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681126e+06</td>
-      <td>1.250729e+06</td>
+      <td>2.681132e+06</td>
+      <td>1.250709e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1042,8 +1042,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681138e+06</td>
-      <td>1.250725e+06</td>
+      <td>2.681119e+06</td>
+      <td>1.250722e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1051,8 +1051,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.681150e+06</td>
-      <td>1.250733e+06</td>
+      <td>2.681135e+06</td>
+      <td>1.250736e+06</td>
     </tr>
   </tbody>
 </table>
@@ -1103,8 +1103,8 @@ Name: x, dtype: float64
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.680349e+06</td>
-      <td>1.250905e+06</td>
+      <td>2.680800e+06</td>
+      <td>1.250225e+06</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1112,8 +1112,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681171e+06</td>
-      <td>1.251295e+06</td>
+      <td>2.681268e+06</td>
+      <td>1.250978e+06</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1121,8 +1121,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.680539e+06</td>
-      <td>1.250188e+06</td>
+      <td>2.681457e+06</td>
+      <td>1.250642e+06</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1130,8 +1130,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681182e+06</td>
-      <td>1.250541e+06</td>
+      <td>2.681276e+06</td>
+      <td>1.251632e+06</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1139,8 +1139,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.680368e+06</td>
-      <td>1.250865e+06</td>
+      <td>2.681058e+06</td>
+      <td>1.251443e+06</td>
     </tr>
     <tr>
       <th>5</th>
@@ -1148,8 +1148,8 @@ Name: x, dtype: float64
       <td>301.748529</td>
       <td>2681171</td>
       <td>1250711</td>
-      <td>2.680856e+06</td>
-      <td>1.250584e+06</td>
+      <td>2.681326e+06</td>
+      <td>1.250793e+06</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1157,8 +1157,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681107</td>
       <td>1250712</td>
-      <td>2.681015e+06</td>
-      <td>1.249996e+06</td>
+      <td>2.681060e+06</td>
+      <td>1.250543e+06</td>
     </tr>
     <tr>
       <th>7</th>
@@ -1166,8 +1166,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681124</td>
       <td>1250720</td>
-      <td>2.681085e+06</td>
-      <td>1.250318e+06</td>
+      <td>2.680669e+06</td>
+      <td>1.250844e+06</td>
     </tr>
     <tr>
       <th>8</th>
@@ -1175,8 +1175,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681117</td>
       <td>1250725</td>
-      <td>2.681346e+06</td>
-      <td>1.250973e+06</td>
+      <td>2.680988e+06</td>
+      <td>1.251533e+06</td>
     </tr>
     <tr>
       <th>9</th>
@@ -1184,8 +1184,8 @@ Name: x, dtype: float64
       <td>301.748542</td>
       <td>2681138</td>
       <td>1250725</td>
-      <td>2.680259e+06</td>
-      <td>1.250171e+06</td>
+      <td>2.680420e+06</td>
+      <td>1.250862e+06</td>
     </tr>
   </tbody>
 </table>

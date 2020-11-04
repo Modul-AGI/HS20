@@ -363,7 +363,7 @@
 <span id="chap-simulation"></span><h1>Aufgabe 12: Zeckenstich Simulation<a class="headerlink" href="#aufgabe-12-zeckenstich-simulation" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="theorie">
 <h2>Theorie<a class="headerlink" href="#theorie" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Jetzt wo ihr <em>for loops</em> im Griff habt, nutzen wir dieses Instrument, um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code> (siehe <code class="xref std std-numref docutils literal notranslate"><span class="pre">table-datensaetze</span></code>). Es geht jetzt darum, das zufällige Verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines <em>loops</em> zu wiederholen.</p>
+<p>Jetzt wo ihr <em>for loops</em> im Griff habt, nutzen wir dieses Instrument, um unsere eigenen Zeckenstichdaten zu Simulieren. Das heisst, wir generieren fiktive Zeckenstiche auf der Basis der Zeckenstichmeldungen in <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code> (siehe <a class="reference internal" href="00_00_Einleitung.html#table-datensaetze"><span class="std std-numref">Tab. 1</span></a>). Es geht jetzt darum, das zufällige Verschieben der Zeckenstichpunkte nicht nur einmal durchzuführen wie in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a>, sondern diesen Prozess 5 mal mithilfe eines <em>loops</em> zu wiederholen.</p>
 <p>Um euer Gedächtnis etwas aufzufrischen: Letzte Woche hatten wir in <a class="reference internal" href="02_07_Funktionen_in_DataFrames.html#ex-apply"><span class="std std-ref">Übung 8.3</span></a> mit <code class="docutils literal notranslate"><span class="pre">apply()</span></code> sowie unserer Funktion <code class="docutils literal notranslate"><span class="pre">offset_coordinate</span></code> alle Koordinaten einer <em>DataFrame</em> verschoben und diese Simulierten Daten in unserer <em>DataFrame</em> abgespeichert. Schau dir diese Übung und die Musterlösung nochmals an wenn du sie nicht mehr ganz im Kopf hast.</p>
 <p>Starte mit einem neuen Jupyter Notebook und lade darin die nötigen Module (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> und <code class="docutils literal notranslate"><span class="pre">random</span></code>), erstellt euch die Funktion <code class="docutils literal notranslate"><span class="pre">offset_point()</span></code> und importiert den Datensatz <code class="docutils literal notranslate"><span class="pre">zeckenstiche.csv</span></code> (s.u.).</p>
 <div class="cell docutils container">
@@ -448,7 +448,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f3e157e7550&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f712e28dc90&gt;
 </pre></div>
 </div>
 <img alt="../_images/03_04_Zeckenstich_Simulation_14_1.png" src="../_images/03_04_Zeckenstich_Simulation_14_1.png" />
@@ -501,8 +501,8 @@
       <td>439.128951</td>
       <td>2681116</td>
       <td>1250648</td>
-      <td>2.681319e+06</td>
-      <td>1.250525e+06</td>
+      <td>2.681102e+06</td>
+      <td>1.250565e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -511,8 +511,8 @@
       <td>301.748542</td>
       <td>2681092</td>
       <td>1250672</td>
-      <td>2.681040e+06</td>
-      <td>1.250595e+06</td>
+      <td>2.681108e+06</td>
+      <td>1.250625e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -521,8 +521,8 @@
       <td>301.748542</td>
       <td>2681128</td>
       <td>1250683</td>
-      <td>2.681107e+06</td>
-      <td>1.250808e+06</td>
+      <td>2.681098e+06</td>
+      <td>1.250819e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -531,8 +531,8 @@
       <td>301.748542</td>
       <td>2681111</td>
       <td>1250683</td>
-      <td>2.681044e+06</td>
-      <td>1.250783e+06</td>
+      <td>2.680936e+06</td>
+      <td>1.250743e+06</td>
       <td>0</td>
     </tr>
     <tr>
@@ -541,8 +541,8 @@
       <td>301.748529</td>
       <td>2681131</td>
       <td>1250692</td>
-      <td>2.681110e+06</td>
-      <td>1.250779e+06</td>
+      <td>2.681199e+06</td>
+      <td>1.250813e+06</td>
       <td>0</td>
     </tr>
   </tbody>
