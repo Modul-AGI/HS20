@@ -11,7 +11,7 @@ Damit wir im ersten Teil von Netzwerkanalyse direkt loslegen können solltet ihr
 - Daten für Übungseinheit Netzwerkanalyse I vorbereiten
 ```
 
-## Übung 1 : QGIS installieren und aufstarten
+## Übung 1: QGIS installieren
 Auf der QGIS Homepage [qgis.org](https://www.qgis.org/) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den Standalone installer des "Longterm release (most stable)" QGIS Version herunter (aktuell 3.10), der für Ihre Architektur und Ihr Betriebssystem passt. Installieren Sie QGIS nach dem Download.
 
 
@@ -20,7 +20,8 @@ Auf der QGIS Homepage [qgis.org](https://www.qgis.org/) finden Sie die aktuellen
 
 QGIS Standalone Installer "Longterm release (most stable)" auf qgis.org
 ```
-
+(chap-vorbereitung-aufstarten)=
+## Übung 2: QGIS aufstarten
 Nach der Installation starten Sie "QGIS Desktop 3.10.0 **with GRASS 7.8.0**". Der Zusatz "with GRASS" ist sehr wichtig, vor allem für die zukünftigen Aufgaben in Netzwerkanalyse I - III. Sollte den Link im Startmenü nicht verfügbar sein, können Sie die entsprechende exe-Datei auch an folgendem Ort finden: *C:\Program Files\QGIS 3.10\bin\qgis-bin-g7.exe*. Mit Rechtslick > an Startmenü anheften können Sie eine Verknüpfung mit der korrekten QGIS Version erstellen.
 
 Wechseln Sie als erstes die Sprache des Userinterface auf Englisch _(Einstellungen -> Optionen -> Allgemein -> Benutzeroberflächenübersetzung)_.
@@ -33,11 +34,11 @@ Wechseln Sie als erstes die Sprache des Userinterface auf Englisch _(Einstellung
 Achtet beim Aufstarten unbedingt darauf, dass QGIS **mit GRASS** GIS gestartet wird
 ```
 
-## Übung 2: Tutorials anschauen
+## Übung 3: Tutorials anschauen
 
 Schauen Sie sich danach zum Einstieg einzelne Videos vom Youtube Nutzer [Marshal Mappers](https://www.youtube.com/channel/UCKwC9hcJr-4mgsNUeJzMAvA/videos) an. Erkunden Sie die Videos bis Sie die grundlegendsten Arbeitsschritte von QGIS (Daten importieren, Werkzeuge finden, Karte zu pdf exportieren) verstanden haben. Erstellen Sie dann ein neues Projekt (Projekt -> New) und speichern Sie dieses direkt ab (Projekt -> Save As..). Beachten Sie dazu die Empfehlungen zur Struktur (siehe {ref}`chap-netzwerk-einleitung`).
 
-## Übung 3: Daten importieren
+## Übung 4: Daten importieren
 
 Während Shapefiles im GIS-Unterricht bisher oft verwendet wurden zur Speicherung von Vectordaten, werden in QGIS vor allem Geopackage Dateien verwendet (.gpkg). QGIS kann Shapefiles durchaus lesen und schreiben, wir werden in den Übungen aber gleichwohl v.a. mit Geopackage Daten arbeiten. Geopackages sind eine alternative Methode, Vektordaten abzuspeichern. Sie beheben einige Defizite, die Shapefiles mit sich bringen. Siehe dazu auch die Website ["Shapefiles must die"](http://switchfromshapefile.org/). 
 
@@ -48,7 +49,7 @@ PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer [@sh
 3. _Datensatz "Gemeinde_Waedenswil.gpkg" (siehe {numref}`table-datensaetze-netzwerkanalyse`) in QGIS Importieren_
 4. _Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz_
 
-## Übung 4: Plugin installieren
+## Übung 5: Plugin installieren
 
 QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grund ist die Software Modular aufgebaut, und nur ein Teil wird der Standard-Installation mitgeliefert. Für einige Funktionen müssen Erweiterungen (sogenannte "Plugins"), zusätzlich installiert werden. Installieren Sie das Plugin "QuickOSM" um OpenStreetMap (OSM) Vektordaten rasch und einfach lokal abspeichern zu können.
 
@@ -58,7 +59,7 @@ QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grun
 
 Die wichtigsten Metadaten zu allen Plugins werden auf plugins.qgis.org festgehalten. Dort findet man auch Links zur Projektseite, weiteren Dokumentation und ggf. Tutorials: Zu QuickOSM sind die Metadaten hier aufrufbar: [https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/)
 
-## Übung 5: OpenStreetMap Vektordaten herunterladen
+## Übung 6: OpenStreetMap Vektordaten herunterladen
 
 Mit dem neuen Plugin "QuickOSM" laden Sie nun den Strassendatensatz der Gemeinde Wädenswil herunter. Dies geschieht folgendermassen:
 
@@ -71,7 +72,7 @@ Mit dem neuen Plugin "QuickOSM" laden Sie nun den Strassendatensatz der Gemeinde
 Das Query lädt nebst den Liniendaten auch noch Punkt- und Polygon-Daten herunter. Diese interessieren uns nicht und können entfernt werden (Rechtsklick -> remove).
 
 
-## Übung 6: Temporäre Datei abspeichern
+## Übung 7: Temporäre Datei abspeichern
 
 Outputs werden in QGIS standardmässig in einem Temp-Folder abgelegt. Diese Dateien werden nach Beendigung von QGIS gelöscht. Um die Daten auch zu einem späteren Zeitpunkt verwenden zu können, müssen sie an einem geeigneten Ort abgespeichert werden. Führen Sie diesen Schritt mit den eben beschafften OSM Strassendaten (nur Linien) aus. Im gleichen Schritt können Sie alle unnötigen Spalten von der sehr grossen Attributtabelle loswerden.
 
