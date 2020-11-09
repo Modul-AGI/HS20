@@ -46,7 +46,7 @@ Führen Sie das Tool nach der Installation via Web -> ORS Tools -> ORS Tools aus
 Über diesen Schlüssel wird sichergestellt, dass die Anzahl Abfragen pro Minute und Tag ein gewisses
 Maximum nicht überschreiten.
 
-Geben Sie Start und Endpunkt mit der Maus ein (klick auf das ⊕) und orientieren sich dabei an dem Layer
+Geben Sie Start und Endpunkt mit der Maus ein (klick auf das +) und orientieren sich dabei an dem Layer
 «Shortest_Path» (aus der vorherigen Übung). Allenfalls verschwindet das «ORS Tools» Fenster, sie können es
 aber über die Toolbar wieder aufrufen.
 
