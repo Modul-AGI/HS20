@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 2: Zentralitätsmasse berechnen &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,8 +59,8 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="Netzwerkanalyse II" href="02_00_Netzwerkanalyse_II.html" />
-    <link rel="prev" title="Aufgabe 1: Operationen mit QGIS" href="01_01_QGIS.html" />
+    <link rel="next" title="Anhang" href="04_00_Anhang.html" />
+    <link rel="prev" title="Netzwerkanalyse II" href="02_00_Netzwerkanalyse_II.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -298,18 +298,18 @@
    Vorbereitung
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="01_00_Netzwerkanalyse_I.html">
    Netzwerkanalyse I
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="01_01_QGIS.html">
      Aufgabe 1: Operationen mit QGIS
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_GRASS_GIS.html">
      Aufgabe 2: Zentralitätsmasse berechnen
     </a>
    </li>
@@ -317,13 +317,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="02_00_Netzwerkanalyse_II.html">
    Netzwerkanalyse II
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_01_Kuerzeste_Pfad_Analysen.html">
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen
     </a>
    </li>
@@ -376,7 +376,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/01_02_GRASS_GIS.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/02_01_Kuerzeste_Pfad_Analysen.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,28 +407,33 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-1-topologie-bereinigen">
-   Übung 2.1: Topologie bereinigen
+  <a class="reference internal nav-link" href="#ubung-1-projekt-vorbereiten">
+   Übung 1: Projekt vorbereiten
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-2-losgeloste-getrennte-elemente-entfernen">
-   Übung 2.2: Losgelöste (getrennte) Elemente entfernen
+  <a class="reference internal nav-link" href="#ubung-2-kurzester-pfad-berechnen">
+   Übung 2: Kürzester Pfad berechnen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-3-zentralitatsmasse-berechnen">
-   Übung 2.3: Zentralitätsmasse berechnen
+  <a class="reference internal nav-link" href="#ubung-3-mit-ors-routing-vergleichen">
+   Übung 3: Mit ORS Routing vergleichen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-4-zentralitatsmasse-visualisieren">
-   Übung 2.4: Zentralitätsmasse Visualisieren
+  <a class="reference internal nav-link" href="#ubung-4-traveling-salesman-fur-campus-standorte">
+   Übung 4: Traveling Salesman für Campus Standorte
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-5-zentralitatsmasse-vergleichen">
-   Übung 2.5: Zentralitätsmasse vergleichen
+  <a class="reference internal nav-link" href="#ubung-5-traveling-salesman-fur-mehr-standorte">
+   Übung 5: Traveling Salesman für mehr Standorte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
+   Übung 6 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte
   </a>
  </li>
 </ul>
@@ -442,87 +447,104 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-2-zentralitatsmasse-berechnen">
-<h1>Aufgabe 2: Zentralitätsmasse berechnen<a class="headerlink" href="#aufgabe-2-zentralitatsmasse-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Die mächtigsten (aber nicht die einzigen<a class="footnote-reference brackets" href="#plugins" id="id1">1</a>) Netzwerkanalyse Werkzeuge in QGIS stammen aus dem eigenständigen GIS „GRASS GIS“, welches bei der Installation von QGIS mitinstalliert wird. Diese können innerhalb von QGIS verwendet werden. Achsen Sie dabei, dass Sie die richtige QGIS Version öffnen (<em>mit GRASS</em>, siehe <a class="reference internal" href="00_01_Vorbereitung.html#chap-vorbereitung-aufstarten"><span class="std std-ref">Übung 2: QGIS aufstarten</span></a>).</p>
-<div class="section" id="ubung-2-1-topologie-bereinigen">
-<h2>Übung 2.1: Topologie bereinigen<a class="headerlink" href="#ubung-2-1-topologie-bereinigen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Das OSM Strassennetz „osm_highway“ ist topologisch nicht perfekt für unsere Zwecke vorbereitet. An Kreuzungen fehlen teilweise Knoten, welche ein „abbiegen“ auf der Kreuzung ermöglich. Um diesen Umstand zu beheben, nutzen wir das Tool „v.clean“ und führen damit die Operation „break“ durch. Dadurch werden Linien an Kreuzungen unterbrochen. Diese Operation löst einige topologische Fehler, führt z.B. bei Brücken und Tunnels aber euch neue Unstimmigkeiten ein, die Sie an dieser Stelle aber getrost ignorieren können.</p>
+  <div class="section" id="aufgabe-1-kurzeste-pfade-auf-netzwerk-berechnen">
+<h1>Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen<a class="headerlink" href="#aufgabe-1-kurzeste-pfade-auf-netzwerk-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
+<p><strong>Hinweis (Wiederholung)</strong>: Standartmässig werden Dateien als Temporäre Files abgespeichert, die nach dem Schliessen von QGIS gelöscht werden. Um einen Output an einem festgelegten Ort abzuspeichern muss der Output definieret werden. Dazu klickt man neben [Save to temporary file] auf die drei Punkte und wählt «Save to File» aus.</p>
+<div class="figure align-default" id="savetotempfile">
+<img alt="../_images/saveToTemp.jpg" src="../_images/saveToTemp.jpg" />
+</div>
+<div class="section" id="ubung-1-projekt-vorbereiten">
+<h2>Übung 1: Projekt vorbereiten<a class="headerlink" href="#ubung-1-projekt-vorbereiten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Starten Sie «QGIS Desktop 3.10.0 with GRASS 7.8.0» und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Laden Sie den Datensatz «osm_highway_prepared.gpkg» von letzter Woche. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei auf Sektion „Anhang“. Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick -&gt; Properties -&gt; Reiter Source -&gt; Set source coordinate reference system -&gt; Hier sollte EPSG 2056 stehen).</p>
+<p>Wir brauchen zudem eine Hintergrundkarte zur Orientierung. Blenden Sie diese mit dem Plugin
+«QuickMapServices» die Openstreetmap Hintergrundkarte ein (Web -&gt; QuickMapServices -&gt; OSM -&gt; OSM
+Standard) ein. Falls Sie diese Option nicht finden, müssen Sie das enstprechede Plugin «QuickMapServices»
+installieren (siehe dazu Netzwerkanalyse I).</p>
+<p>Die Hintergrundkarte dient lediglich zur Orientierung, die Farbe lenkt uns jedoch vom Netzwerk ab. Wechseln
+Sie deshalb den Darstellungsmodus auf Graustufen mittels Rechtklick auf den Layer «OSM Standard» -&gt; Properties -&gt; Symbology -&gt;
+Grayscale Auswahl: «By lightness».</p>
+</div>
+<div class="section" id="ubung-2-kurzester-pfad-berechnen">
+<h2>Übung 2: Kürzester Pfad berechnen<a class="headerlink" href="#ubung-2-kurzester-pfad-berechnen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nun können wir mittels «Shortest path» (aus dem Toolset «Network analyses» den kürzesten Pfad zwischen
+zwei Knotenpunkten auf dem Netzwerk berechnen. Starten sie das Tool und wählen sie als Input Datensatz
+(«Vector Layer representing network») <em>osm_highway_prepared</em> aus.</p>
+<p>Die Start- und Endpunkte können Sie interaktiv in der Karte setzen. Klicken Sie dazu auf das Symbol neben den
+entsprechenden Feldern («Start point» bzw. «End point») und klicken Sie in der Karte an den gewünschten
+Stellen. Führen Sie das Tool mit «Run» aus.</p>
+<p>Visualisieren Sie nun den neuen Layer «Shortest Path» so, dass er gut ersichtlich ist.</p>
+<p><strong>Hinweis:</strong> Auch GRASS GIS bietet einen Shortest Path Algorithmus an (v.net.path). Dieser ist darauf ausgelegt,
+viele Kürzeste Pfade für viele Punkte zu berechnen, und nimmt als Input deshalb ein Textfile.</p>
+</div>
+<div class="section" id="ubung-3-mit-ors-routing-vergleichen">
+<h2>Übung 3: Mit ORS Routing vergleichen<a class="headerlink" href="#ubung-3-mit-ors-routing-vergleichen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nun wollen wir diese Route mit derjenigen eines professionellen Routing Services vergleichen.
+https://maps.openrouteservice.org/ bietet ihre Dienste bis zu einem bestimmten Kontingent kostenlos an.
+Installieren Sie das Plug-In «ORS Tools» um diesen Service zu nutzen.</p>
+<p>Führen Sie das Tool nach der Installation via Web -&gt; ORS Tools -&gt; ORS Tools aus. Fügen Sie bei Settings ( ) -&gt;
+«API Key» folgenden Schlüssel ein: 5b3ce3597851110001cf624843314e7742a7494fb0f7bc672cb9d6a</p>
+<p>Über diesen Schlüssel wird sichergestellt, dass die Anzahl Abfragen pro Minute und Tag ein gewisses
+Maximum nicht überschreiten.</p>
+<p>Geben Sie Start und Endpunkt mit der Maus ein (klick auf das +) und orientieren sich dabei an dem Layer
+«Shortest_Path» (aus der vorherigen Übung). Allenfalls verschwindet das «ORS Tools» Fenster, sie können es
+aber über die Toolbar wieder aufrufen.</p>
+<div class="figure align-default" id="orsrouting">
+<img alt="../_images/osm.jpg" src="../_images/osm.jpg" />
+</div>
+<p>Führen Sie die Berechnung mit «OK» aus und vergleichen den resultierenden Pfad mit «Shortest Path». Führen
+Sie die gleiche Berechnung mit verschiedenen Einstellungen durch (kürzeste Route, schnellste Route, Fahrrad,
+zu Fuss). Vergleichen Sie die unterschiedlichen Routen mit unserer eigenen Berechnung und visualisieren Sie
+diese in einer Karte.</p>
+<p>Berechnen Sie nun mit OSM Routing den kürzesten Pfad zwischen Campus Grüental und Campus Reidbach,
+auch wieder je einmal mit der Verkehrsmodalität Auto, Fahrrad und Fussweg. Vergleichen Sie die drei
+Resultate.</p>
+</div>
+<div class="section" id="ubung-4-traveling-salesman-fur-campus-standorte">
+<h2>Übung 4: Traveling Salesman für Campus Standorte<a class="headerlink" href="#ubung-4-traveling-salesman-fur-campus-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Angenommen Sie sind ein Kurrierdienst und müssen ausgehend von der Halbinsel Au aus alle Campus
+Standorte der ZHAW Wädenswil besuchen. Sie wollen die Route so optimieren, dass Sie die kürzeste Route
+Sie das gleichnamige Tool (v.net.salesmen) um genau dieses Problem zu lösen.</p>
 <ol class="simple">
-<li><p>Werkzeug „v.clean“ auswählen</p></li>
-<li><p>Parameter:</p>
+<li><p>Erstellen Sie dazu als erstes eine neue Geopackage Datei (Layer -&gt; Create Layer -&gt; New Geopackage Layer) um die Campus Standorte zu erfassen</p>
 <ul class="simple">
-<li><p><em>Layer to clean</em> : Transformierter und geclippter OSM Strassendatensatz</p></li>
-<li><p><em>Cleaning tool</em> : break</p></li>
-<li><p><em>v.out.ogr output type:</em> auto</p></li>
-<li><p><em>cleaned (output)</em>: Save to File…</p></li>
+<li><p>Mit dem Feld «Database» ist der Pfad inkl. Dateiname der zu erstellenden Datei gemeint. Wählen Sie hier an einem geeigneten Speicherort den Dateiname «campus_waedenswil.gpkg»</p></li>
+<li><p>«Table name» ist der Name des Layers innerhalb der Geopackage Datei (im Gegensatz zu einem Shapefile können innerhalb eines Geopackage mehrere Layers von unterschiedlichen Datentypen Coexistieren)</p></li>
+<li><p>Wählen Sie bei «Geometry Type» «Point» aus und bei CRS EPSG 2056</p></li>
+<li><p>Fügen Sie eine Spalte in der Attributtabelle hinzu indem Sie unter «New field» -&gt; «Name» den Wert «Standort_name» eingeben (Hier wollen wir «Grüental», «Reidbach».. erfassen) Wählen Sie einen geeigneten Datentyp sowie eine geeignete Maximallänge</p></li>
+<li><p>Bestätigen Sie mittels «Add field to list»</p></li>
+<li><p>Erstellen Sie das Geopackage mit «OK»</p></li>
 </ul>
 </li>
-<li><p>Mit „Run“ ausführen</p></li>
+<li><p>Starten Sie mit einem Klick auf <strong>den Stift</strong> die Editiersession und fügen Sie Features hinzu mit dem «Add Feature» Werkzeug. Digitalisieren Sie so die Campus Standorte (Grüental, Reidbach, Seifenstreuli, Schloss) sowie den Ausgangspunkt (Halbinsel Au). Wählen Sie pro Standort einen für Sie geeigneten Punkt, möglichst auf dem OSM Strassennetz.</p></li>
+<li><p>Speichern Sie die erfassten Punkte mit einem Klick auf «Save Edits».</p></li>
+<li><p>Starten Sie nun das Tool v.net.salesman (über die Processing Toolbox) und wählen als Input Layer den OSM Strassendatensatz und als «Center Point Layer» die eben digitalisierten Standorte.</p></li>
+<li><p>v.out.ogr output type: auto.</p></li>
+<li><p>Betrachen Sie die Output daten.</p></li>
 </ol>
 </div>
-<div class="section" id="ubung-2-2-losgeloste-getrennte-elemente-entfernen">
-<h2>Übung 2.2: Losgelöste (getrennte) Elemente entfernen<a class="headerlink" href="#ubung-2-2-losgeloste-getrennte-elemente-entfernen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Aufmerksamen Anwendern könnte nun auffallen, dass gewisse Bestandteile des Netzwerks nicht mit dem Hauptnetz verbunden sind. Diese getrennten Elemente können mit dem Werkzeug <code class="docutils literal notranslate"><span class="pre">v.net.components</span></code> identifiziert werden. Das Werkzeug prüft, welche Bestandteile des Netzwerkes miteinander verbunden sind und gruppiert diese mit Nummern. Diese Nummern werden in der Spalte „comp“ abgespeichert.</p>
-<p>Im Idealfall sollte unser Netzwerk aus einer Gruppe bestehen; so wäre jeder Knotenpunkt mit jedem andern Knotenpunkt verbunden: Bei uns ist dies jedoch nicht der Fall. Damit wir in den nachstehenden Übungen mit einem sauberen Datensatz arbeiten können, bereinigen wir dieses Problem an dieser Stelle:</p>
+<div class="section" id="ubung-5-traveling-salesman-fur-mehr-standorte">
+<h2>Übung 5: Traveling Salesman für mehr Standorte<a class="headerlink" href="#ubung-5-traveling-salesman-fur-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial und könnte «von Hand» gerechnet werden. Anspruchsvoller wird es jedoch, wenn sich die Anzahl der Standorte erhöht. Nehmen wir an, Sie wollen eine Einkaufstour durch alle Läden in Wädenswil machen: Nutzen Sie die OSM Daten und v.net.salesman und eine sinnvolle Route zu berechnen.</p>
 <ol class="simple">
-<li><p>Führen Sie das Werkzeug <code class="docutils literal notranslate"><span class="pre">v.net.components</span></code> aus</p>
-<ul class="simple">
-<li><p><em>Type of components</em> : „strong“</p></li>
-<li><p><em>V.out.ogr output type:</em> auto</p></li>
-<li><p><em>Network_Components_Line:</em> Save to File…</p></li>
-<li><p><em>Network_Components_Point:</em> Save to File…</p></li>
-</ul>
-</li>
-<li><p>Der neue Linien Datensatz verfügt (wie oben beschrieben) über eine Spalte „comp“. Überprüfen Sie dies indem Sie die Attributtabelle anschauen.</p></li>
-<li><p>Färben Sie die Linien nach der Spalte („comp“) ein. So, dass jede Gruppe eine Farbe erhält.</p></li>
-<li><p>Ermitteln Sie die Nummer der Hauptkategorie (z.B. mit dem Werkzeug „Identify Features“</p></li>
-<li><p>Öffnen Sie die Attributtabelle und machen eine „Selektion anhand einer Abfrage“ („Select Features
-using an expression“ [1])</p></li>
-<li><p>Selektieren Sie die Hauptkategorie mittels einer korrekten Abfrage (z.B. comp = 99). QGIS bietet
-ihnen hierfür leider wenig Hilfestellung (im Gegensatz zum Query Builder von ArcGIS)</p></li>
-<li><p>Um sich von den anderen Kategorien zu trennen, haben Sie nun zwei Möglichkeiten:</p>
-<ul class="simple">
-<li><p>Eine Editiersession starten [2], die Selektion invertieren [3] und die selektierten Daten löschen [4]. <strong>ODER</strong></p></li>
-<li><p>Selektierte Daten (ohne Invertierung) in ein neues File exportieren mittels Rechtsklick auf den Layer -&gt; „Save as“ -&gt; Häkchen bei „Save only selected features“</p></li>
-</ul>
-</li>
-<li><p>Speichern Sie den Layer anschliessend mit folgendem Namen ab: „osm_highway_prepared.gpkg“</p></li>
-</ol>
-<div class="figure align-default" id="figure-2">
-<img alt="../_images/ueb1_fig2.jpg" src="../_images/ueb1_fig2.jpg" />
-</div>
-</div>
-<div class="section" id="ubung-2-3-zentralitatsmasse-berechnen">
-<h2>Übung 2.3: Zentralitätsmasse berechnen<a class="headerlink" href="#ubung-2-3-zentralitatsmasse-berechnen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Nun kann mit der eigentlichen Netzwerkanalyse begonnen werden. Wir rechnen für unser bereinigtes Strassennetz verschiedene Zentralitätsmasse.</p>
-<ol class="simple">
-<li><p>v.net.centrality starten</p></li>
-<li><p>Parameter</p>
-<ul class="simple">
-<li><p><em>Input vector line layer</em> : Bereinigter Output aus letzter Übung</p></li>
-<li><p><em>v.out.ogr output type</em> : auto</p></li>
-<li><p><em>Network Centrality</em>: Save to File…</p></li>
-</ul>
-</li>
-<li><p>Mit „run“ ausführen</p></li>
-<li><p>Speichern Sie die Resultierende Datei in ihrem Ordner ab („waedenswil_centrality.gpkg“)</p></li>
+<li><p>OSM Daten der Läden laden: Vector -&gt; QuickOSM -&gt; QuickOSM</p></li>
+<li><p>key «shop» -&gt; Run query sowie Gebiet wählen (siehe dazu Netzwerkanalyse I)</p></li>
+<li><p>Punkt-Daten der Shops in CRS 2056 konvertieren (reproject). Clippen ist fakultativ (nicht erreichbare Knotenpunkte werden schlicht ignoriert)</p></li>
+<li><p>v.net.salesman mit diesen Standorten durchführen</p></li>
 </ol>
 </div>
-<div class="section" id="ubung-2-4-zentralitatsmasse-visualisieren">
-<h2>Übung 2.4: Zentralitätsmasse Visualisieren<a class="headerlink" href="#ubung-2-4-zentralitatsmasse-visualisieren" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Visualisieren Sie die Ausprägung „Closeness“ der berechneten Zentralitätswerte über die Symbologie (Layer Properties -&gt; Style -&gt; Graduated). Wählen Sie eine geeignete Methode und passen Sie den Stil an, bis er Ihnen gefällt. Spielen Sie dabei mit der Klassifikationsmethode (Mode: Equal interval, Quantile, Natural Breaks..) sowie der Color ramp rum. Achten Sie darauf, dass Sie immer auf „Classify“ klicken müssen, um Änderungen anzuwenden.</p>
+<div class="section" id="ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
+<h2>Übung 6 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte<a class="headerlink" href="#ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um «building» herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool «Polygon Centroids»). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -&gt; Panels -&gt; Statistic). <strong>Wer zuerst die korrekte Distanz ausruft, wird mit Ruhm, Ehre und einem Guezli belohnt!</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p><strong>Merken Sie sich:</strong></p>
+<ul class="simple">
+<li><p>Für viele klassische Fragestellungen (z.B. shortest path, traveling salesmen) bietet QGIS / GRASS
+einen passenden Algorithmus</p></li>
+<li><p>Die Tools werden teilweise sehr unterschiedlich angesprochen (shortest path braucht Textfiles,
+Traveling salesmen braucht Punkt-Features) und liefern unterschiedliche Outputs</p></li>
+</ul>
 </div>
-<div class="section" id="ubung-2-5-zentralitatsmasse-vergleichen">
-<h2>Übung 2.5: Zentralitätsmasse vergleichen<a class="headerlink" href="#ubung-2-5-zentralitatsmasse-vergleichen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Installieren Sie das Plugin „QuickMapServices“ um eine OSM Hintergrundkarte einzubinden. Um direkt in QGIS die Zentralitätsmasse zu vergleichen, duplizieren sie den entsprechenden Layer noch zweimal (rechtsklick &gt; Duplicate) – so können Sie jede der Zentralitäten separat symbolisieren und vergleichen. Sie können auch für jedes der Zentralitätsmasse eine Karte exportieren via <em>Project &gt; Import / Export Export Map to Image</em>.</p>
-<p>Vergleichen Sie die drei Zentralitätsmasse und setzen Sie sie in den Kontext der Theorie.</p>
-<hr class="docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="plugins"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Da QGIS wie bereits erwähnt von verschiedenen Personen und Gruppen entwickelt wird, gibt es auch Doppelspurigkeiten, die man so in einer kommerziellen Software wie ArcGIS weniger vorfindet. In dieser Hinsicht ist QGIS sehr ähnlich wie die Programmiersprachen R und Python.</p>
-</dd>
-</dl>
 </div>
 </div>
 
@@ -554,8 +576,8 @@ ihnen hierfür leider wenig Hilfestellung (im Gegensatz zum Query Builder von Ar
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="01_01_QGIS.html" title="previous page">Aufgabe 1: Operationen mit QGIS</a>
-    <a class='right-next' id="next-link" href="02_00_Netzwerkanalyse_II.html" title="next page">Netzwerkanalyse II</a>
+    <a class='left-prev' id="prev-link" href="02_00_Netzwerkanalyse_II.html" title="previous page">Netzwerkanalyse II</a>
+    <a class='right-next' id="next-link" href="04_00_Anhang.html" title="next page">Anhang</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
