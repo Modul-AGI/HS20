@@ -52,6 +52,9 @@
     sections:
     - file: 04_Netzwerkanalyse/01_01_QGIS
     - file: 04_Netzwerkanalyse/01_02_GRASS_GIS
+  - file: 04_Netzwerkanalyse/02_00_Netzwerkanalyse_II.md
+    sections:
+    - file: 04_Netzwerkanalyse/02_01_Kürzeste_Pfad_Analysen
   - file: 04_Netzwerkanalyse/04_00_Anhang
 
 
