@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="Anhang" href="04_00_Anhang.html" />
+    <link rel="next" title="Aufgabe 4: Traveling Salesman für Campus Standorte" href="02_02_Travelling_Salesman.html" />
     <link rel="prev" title="Netzwerkanalyse II" href="02_00_Netzwerkanalyse_II.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -324,7 +324,12 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen
+     Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_Travelling_Salesman.html">
+     Aufgabe 4: Traveling Salesman für Campus Standorte
     </a>
    </li>
   </ul>
@@ -376,7 +381,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/02_01_Kuerzeste_Pfad_Analysen.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/02_01_Shortest_Path.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,33 +412,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-1-projekt-vorbereiten">
-   Übung 1: Projekt vorbereiten
+  <a class="reference internal nav-link" href="#ubung-3-1-projekt-vorbereiten">
+   Übung 3.1: Projekt vorbereiten
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-2-kurzester-pfad-berechnen">
-   Übung 2: Kürzester Pfad berechnen
+  <a class="reference internal nav-link" href="#ubung-3-2-kurzester-pfad-berechnen">
+   Übung 3.2: Kürzester Pfad berechnen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-3-mit-ors-routing-vergleichen">
-   Übung 3: Mit ORS Routing vergleichen
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-traveling-salesman-fur-campus-standorte">
-   Übung 4: Traveling Salesman für Campus Standorte
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-5-traveling-salesman-fur-mehr-standorte">
-   Übung 5: Traveling Salesman für mehr Standorte
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
-   Übung 6 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte
+  <a class="reference internal nav-link" href="#ubung-3-3-mit-ors-routing-vergleichen">
+   Übung 3.3: Mit ORS Routing vergleichen
   </a>
  </li>
 </ul>
@@ -447,14 +437,14 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-1-kurzeste-pfade-auf-netzwerk-berechnen">
-<h1>Aufgabe 1: Kürzeste Pfade auf Netzwerk berechnen<a class="headerlink" href="#aufgabe-1-kurzeste-pfade-auf-netzwerk-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
+  <div class="section" id="aufgabe-3-kurzeste-pfade-auf-netzwerk-berechnen">
+<h1>Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen<a class="headerlink" href="#aufgabe-3-kurzeste-pfade-auf-netzwerk-berechnen" title="Link zu dieser Überschrift">¶</a></h1>
 <p><strong>Hinweis (Wiederholung)</strong>: Standartmässig werden Dateien als Temporäre Files abgespeichert, die nach dem Schliessen von QGIS gelöscht werden. Um einen Output an einem festgelegten Ort abzuspeichern muss der Output definieret werden. Dazu klickt man neben [Save to temporary file] auf die drei Punkte und wählt «Save to File» aus.</p>
 <div class="figure align-default" id="savetotempfile">
 <img alt="../_images/saveToTemp.jpg" src="../_images/saveToTemp.jpg" />
 </div>
-<div class="section" id="ubung-1-projekt-vorbereiten">
-<h2>Übung 1: Projekt vorbereiten<a class="headerlink" href="#ubung-1-projekt-vorbereiten" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-3-1-projekt-vorbereiten">
+<h2>Übung 3.1: Projekt vorbereiten<a class="headerlink" href="#ubung-3-1-projekt-vorbereiten" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Starten Sie «QGIS Desktop 3.10.0 with GRASS 7.8.0» und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Laden Sie den Datensatz «osm_highway_prepared.gpkg» von letzter Woche. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei auf Sektion „Anhang“. Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick -&gt; Properties -&gt; Reiter Source -&gt; Set source coordinate reference system -&gt; Hier sollte EPSG 2056 stehen).</p>
 <p>Wir brauchen zudem eine Hintergrundkarte zur Orientierung. Blenden Sie diese mit dem Plugin
 «QuickMapServices» die Openstreetmap Hintergrundkarte ein (Web -&gt; QuickMapServices -&gt; OSM -&gt; OSM
@@ -464,8 +454,8 @@ installieren (siehe dazu Netzwerkanalyse I).</p>
 Sie deshalb den Darstellungsmodus auf Graustufen mittels Rechtklick auf den Layer «OSM Standard» -&gt; Properties -&gt; Symbology -&gt;
 Grayscale Auswahl: «By lightness».</p>
 </div>
-<div class="section" id="ubung-2-kurzester-pfad-berechnen">
-<h2>Übung 2: Kürzester Pfad berechnen<a class="headerlink" href="#ubung-2-kurzester-pfad-berechnen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-3-2-kurzester-pfad-berechnen">
+<h2>Übung 3.2: Kürzester Pfad berechnen<a class="headerlink" href="#ubung-3-2-kurzester-pfad-berechnen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nun können wir mittels «Shortest path» (aus dem Toolset «Network analyses» den kürzesten Pfad zwischen
 zwei Knotenpunkten auf dem Netzwerk berechnen. Starten sie das Tool und wählen sie als Input Datensatz
 («Vector Layer representing network») <em>osm_highway_prepared</em> aus.</p>
@@ -476,8 +466,8 @@ Stellen. Führen Sie das Tool mit «Run» aus.</p>
 <p><strong>Hinweis:</strong> Auch GRASS GIS bietet einen Shortest Path Algorithmus an (v.net.path). Dieser ist darauf ausgelegt,
 viele Kürzeste Pfade für viele Punkte zu berechnen, und nimmt als Input deshalb ein Textfile.</p>
 </div>
-<div class="section" id="ubung-3-mit-ors-routing-vergleichen">
-<h2>Übung 3: Mit ORS Routing vergleichen<a class="headerlink" href="#ubung-3-mit-ors-routing-vergleichen" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="section" id="ubung-3-3-mit-ors-routing-vergleichen">
+<h2>Übung 3.3: Mit ORS Routing vergleichen<a class="headerlink" href="#ubung-3-3-mit-ors-routing-vergleichen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Nun wollen wir diese Route mit derjenigen eines professionellen Routing Services vergleichen.
 https://maps.openrouteservice.org/ bietet ihre Dienste bis zu einem bestimmten Kontingent kostenlos an.
 Installieren Sie das Plug-In «ORS Tools» um diesen Service zu nutzen.</p>
@@ -498,53 +488,6 @@ diese in einer Karte.</p>
 <p>Berechnen Sie nun mit OSM Routing den kürzesten Pfad zwischen Campus Grüental und Campus Reidbach,
 auch wieder je einmal mit der Verkehrsmodalität Auto, Fahrrad und Fussweg. Vergleichen Sie die drei
 Resultate.</p>
-</div>
-<div class="section" id="ubung-4-traveling-salesman-fur-campus-standorte">
-<h2>Übung 4: Traveling Salesman für Campus Standorte<a class="headerlink" href="#ubung-4-traveling-salesman-fur-campus-standorte" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Angenommen Sie sind ein Kurrierdienst und müssen ausgehend von der Halbinsel Au aus alle Campus
-Standorte der ZHAW Wädenswil besuchen. Sie wollen die Route so optimieren, dass Sie die kürzeste Route
-Sie das gleichnamige Tool (v.net.salesmen) um genau dieses Problem zu lösen.</p>
-<ol class="simple">
-<li><p>Erstellen Sie dazu als erstes eine neue Geopackage Datei (Layer -&gt; Create Layer -&gt; New Geopackage Layer) um die Campus Standorte zu erfassen</p>
-<ul class="simple">
-<li><p>Mit dem Feld «Database» ist der Pfad inkl. Dateiname der zu erstellenden Datei gemeint. Wählen Sie hier an einem geeigneten Speicherort den Dateiname «campus_waedenswil.gpkg»</p></li>
-<li><p>«Table name» ist der Name des Layers innerhalb der Geopackage Datei (im Gegensatz zu einem Shapefile können innerhalb eines Geopackage mehrere Layers von unterschiedlichen Datentypen Coexistieren)</p></li>
-<li><p>Wählen Sie bei «Geometry Type» «Point» aus und bei CRS EPSG 2056</p></li>
-<li><p>Fügen Sie eine Spalte in der Attributtabelle hinzu indem Sie unter «New field» -&gt; «Name» den Wert «Standort_name» eingeben (Hier wollen wir «Grüental», «Reidbach».. erfassen) Wählen Sie einen geeigneten Datentyp sowie eine geeignete Maximallänge</p></li>
-<li><p>Bestätigen Sie mittels «Add field to list»</p></li>
-<li><p>Erstellen Sie das Geopackage mit «OK»</p></li>
-</ul>
-</li>
-<li><p>Starten Sie mit einem Klick auf <strong>den Stift</strong> die Editiersession und fügen Sie Features hinzu mit dem «Add Feature» Werkzeug. Digitalisieren Sie so die Campus Standorte (Grüental, Reidbach, Seifenstreuli, Schloss) sowie den Ausgangspunkt (Halbinsel Au). Wählen Sie pro Standort einen für Sie geeigneten Punkt, möglichst auf dem OSM Strassennetz.</p></li>
-<li><p>Speichern Sie die erfassten Punkte mit einem Klick auf «Save Edits».</p></li>
-<li><p>Starten Sie nun das Tool v.net.salesman (über die Processing Toolbox) und wählen als Input Layer den OSM Strassendatensatz und als «Center Point Layer» die eben digitalisierten Standorte.</p></li>
-<li><p>v.out.ogr output type: auto.</p></li>
-<li><p>Betrachen Sie die Output daten.</p></li>
-</ol>
-</div>
-<div class="section" id="ubung-5-traveling-salesman-fur-mehr-standorte">
-<h2>Übung 5: Traveling Salesman für mehr Standorte<a class="headerlink" href="#ubung-5-traveling-salesman-fur-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial und könnte «von Hand» gerechnet werden. Anspruchsvoller wird es jedoch, wenn sich die Anzahl der Standorte erhöht. Nehmen wir an, Sie wollen eine Einkaufstour durch alle Läden in Wädenswil machen: Nutzen Sie die OSM Daten und v.net.salesman und eine sinnvolle Route zu berechnen.</p>
-<ol class="simple">
-<li><p>OSM Daten der Läden laden: Vector -&gt; QuickOSM -&gt; QuickOSM</p></li>
-<li><p>key «shop» -&gt; Run query sowie Gebiet wählen (siehe dazu Netzwerkanalyse I)</p></li>
-<li><p>Punkt-Daten der Shops in CRS 2056 konvertieren (reproject). Clippen ist fakultativ (nicht erreichbare Knotenpunkte werden schlicht ignoriert)</p></li>
-<li><p>v.net.salesman mit diesen Standorten durchführen</p></li>
-</ol>
-</div>
-<div class="section" id="ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
-<h2>Übung 6 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte<a class="headerlink" href="#ubung-6-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um «building» herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool «Polygon Centroids»). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -&gt; Panels -&gt; Statistic). <strong>Wer zuerst die korrekte Distanz ausruft, wird mit Ruhm, Ehre und einem Guezli belohnt!</strong></p>
-<div class="admonition warning">
-<p class="admonition-title">Warnung</p>
-<p><strong>Merken Sie sich:</strong></p>
-<ul class="simple">
-<li><p>Für viele klassische Fragestellungen (z.B. shortest path, traveling salesmen) bietet QGIS / GRASS
-einen passenden Algorithmus</p></li>
-<li><p>Die Tools werden teilweise sehr unterschiedlich angesprochen (shortest path braucht Textfiles,
-Traveling salesmen braucht Punkt-Features) und liefern unterschiedliche Outputs</p></li>
-</ul>
-</div>
 </div>
 </div>
 
@@ -577,7 +520,7 @@ Traveling salesmen braucht Punkt-Features) und liefern unterschiedliche Outputs<
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02_00_Netzwerkanalyse_II.html" title="previous page">Netzwerkanalyse II</a>
-    <a class='right-next' id="next-link" href="04_00_Anhang.html" title="next page">Anhang</a>
+    <a class='right-next' id="next-link" href="02_02_Travelling_Salesman.html" title="next page">Aufgabe 4: Traveling Salesman für Campus Standorte</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
