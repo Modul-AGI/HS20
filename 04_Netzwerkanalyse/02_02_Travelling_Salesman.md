@@ -30,9 +30,8 @@ Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial u
 
 Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um «building» herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool «Polygon Centroids»). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -> Panels -> Statistic). **Wer zuerst die korrekte Distanz ausruft, wird mit Ruhm, Ehre und einem Guezli belohnt!**
 
-```{warning}
-**Merken Sie sich:** 
- - Für viele klassische Fragestellungen (z.B. shortest path, traveling salesmen) bietet QGIS / GRASS 
+```{note}
+- Für viele klassische Fragestellungen (z.B. shortest path, traveling salesmen) bietet QGIS / GRASS 
  einen passenden Algorithmus
  - Die Tools werden teilweise sehr unterschiedlich angesprochen (shortest path braucht Textfiles,
  Traveling salesmen braucht Punkt-Features) und liefern unterschiedliche Outputs
