@@ -41,7 +41,7 @@ https://maps.openrouteservice.org/ bietet ihre Dienste bis zu einem bestimmten K
 Installieren Sie das Plug-In «ORS Tools» um diesen Service zu nutzen.
 
 Führen Sie das Tool nach der Installation via Web -> ORS Tools -> ORS Tools aus. Fügen Sie bei Settings ( ) -> 
-«API Key» folgenden Schlüssel ein: 5b3ce3597851110001cf624843314e7742a7494fb0f7bc672cb9d6a
+«API Key» folgenden Schlüssel ein: 5b3ce3597851110001cf6248f9c611a9ae8e412680da785e49ae34af
 
 Über diesen Schlüssel wird sichergestellt, dass die Anzahl Abfragen pro Minute und Tag ein gewisses
 Maximum nicht überschreiten.
