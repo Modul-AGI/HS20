@@ -54,7 +54,10 @@
     - file: 04_Netzwerkanalyse/01_02_GRASS_GIS
   - file: 04_Netzwerkanalyse/02_00_Netzwerkanalyse_II.md
     sections:
-    - file: 04_Netzwerkanalyse/02_01_Kuerzeste_Pfad_Analysen
-  - file: 04_Netzwerkanalyse/04_00_Anhang
+    - file: 04_Netzwerkanalyse/02_01_Shortest_Path
+    - file: 04_Netzwerkanalyse/02_02_Travelling_Salesman
+  - file: 04_Netzwerkanalyse/04_00_Anhang.md
+  
+  
 
 
