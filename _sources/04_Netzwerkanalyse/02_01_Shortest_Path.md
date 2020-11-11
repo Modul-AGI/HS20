@@ -8,12 +8,13 @@
 
 ## Übung 3.1: Projekt vorbereiten
 
-Starten Sie "QGIS Desktop 3.10.0 with GRASS 7.8.0" und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Laden Sie den Datensatz "osm_highway_prepared.gpkg" von letzter Woche. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei auf Sektion "Anhang" (siehe {numref}`table-datensaetze-netzwerkanalyse`). Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick -> Properties -> Reiter Source -> Set source coordinate reference system -> Hier sollte EPSG 2056 stehen).
+Starten Sie "QGIS Desktop 3.10.0 with GRASS 7.8.0" und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Laden Sie den Datensatz "osm_highway_prepared.gpkg" von letzter Woche. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei in {numref}`table-datensaetze-netzwerkanalyse`. Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick -> Properties -> Reiter Source -> Set source coordinate reference system -> Hier sollte EPSG 2056 stehen).
 
 Wir brauchen zudem eine Hintergrundkarte zur Orientierung. Blenden Sie diese mit dem Plugin "QuickMapServices" die Openstreetmap Hintergrundkarte ein (Web -> QuickMapServices -> OSM -> OSM Standard) ein. Falls Sie diese Option nicht finden, müssen Sie das enstprechede Plugin "QuickMapServices" installieren (siehe dazu {ref}`ex-network-plugins`).
 
 Die Hintergrundkarte dient lediglich zur Orientierung, die Farbe lenkt uns jedoch vom Netzwerk ab. Wechseln Sie deshalb den Darstellungsmodus auf Graustufen mittels Rechtklick auf den Layer "OSM Standard" -> Properties -> Symbology -> Grayscale Auswahl: "By lightness".
 
+(ex-shortestpath)=
 ## Übung 3.2: Kürzester Pfad berechnen
 
 Nun können wir mittels "*Shortest path (point to point)*" (aus dem Toolset "Network analyses" den kürzesten Pfad zwischen zwei Knotenpunkten auf dem Netzwerk berechnen. Starten sie das Tool und wählen sie als Input Datensatz ("Vector Layer representing network") _osm_highway_prepared_ aus.
@@ -32,7 +33,7 @@ Führen Sie das Tool nach der Installation via Web -> ORS Tools -> ORS Tools aus
 
 Über diesen Schlüssel wird sichergestellt, dass die Anzahl Abfragen pro Minute und Tag ein gewisses Maximum nicht überschreiten.
 
-Geben Sie Start und Endpunkt mit der Maus ein (klick auf das +) und orientieren sich dabei an dem Layer "Shortest_Path" (aus der vorherigen Übung). Allenfalls verschwindet das "ORS Tools" Fenster, sie können es aber über die Toolbar (siehe {ref}`ORSrouting`) wieder aufrufen.
+Geben Sie Start und Endpunkt mit der Maus ein (klick auf das +) und orientieren sich dabei an dem Layer "Shortest_Path" (aus der vorherigen Übung). Allenfalls verschwindet das "ORS Tools" Fenster, sie können es aber über die Toolbar (siehe {numref}`ORSrouting`) wieder aufrufen.
 
 ```{figure} figures/osm.jpg
 :name: ORSrouting
@@ -40,6 +41,6 @@ Geben Sie Start und Endpunkt mit der Maus ein (klick auf das +) und orientieren 
 Mit klick auf dieses Symbol erscheint ORS Routing wieder
 ```
 
-Führen Sie die Berechnung mit "OK" (bzw. "Apply") aus und vergleichen den resultierenden Pfad mit "Shortest Path". Führen Sie die gleiche Berechnung mit verschiedenen Einstellungen durch (kürzeste Route, schnellste Route, Fahrrad, zu Fuss). Vergleichen Sie die unterschiedlichen Routen mit unserer eigenen Berechnung und visualisieren Sie diese in einer Karte.
+Führen Sie die Berechnung mit "Apply" aus und vergleichen den resultierenden Pfad mit "Shortest Path" aus {ref}`ex-shortestpath`. Führen Sie die gleiche Berechnung mit verschiedenen Einstellungen durch (kürzeste Route, schnellste Route, Fahrrad, zu Fuss). Vergleichen Sie die unterschiedlichen Routen mit unserer eigenen Berechnung und visualisieren Sie diese in einer Karte.
 
 Berechnen Sie nun mit OSM Routing den kürzesten Pfad zwischen Campus Grüental und Campus Reidbach, auch wieder je einmal mit der Verkehrsmodalität Auto, Fahrrad und Fussweg. Vergleichen Sie die drei Resultate.
