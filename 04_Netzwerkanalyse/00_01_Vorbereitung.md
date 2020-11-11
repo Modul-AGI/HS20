@@ -1,3 +1,4 @@
+
 # Vorbereitung
 
 Damit wir im ersten Teil von Netzwerkanalyse direkt loslegen können solltet ihr euch vorgängig mit QGIS vertraut machen. Dafür haben wir ein paar Übungen zusammengesetellt, die ihr als Vorbereitung auf Netzwerkanalyse I erledigen solltet.
@@ -49,6 +50,8 @@ PS: Twitternutzer können auch einen spannenden Schlagabtausch der Benutzer [@sh
 3. _Datensatz "Gemeinde_Waedenswil.gpkg" (siehe {numref}`table-datensaetze-netzwerkanalyse`) in QGIS Importieren_
 4. _Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz_
 
+
+(ex-network-plugins)=
 ## Übung 5: Plugin installieren
 
 QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grund ist die Software Modular aufgebaut, und nur ein Teil wird der Standard-Installation mitgeliefert. Für einige Funktionen müssen Erweiterungen (sogenannte "Plugins"), zusätzlich installiert werden. Installieren Sie das Plugin "QuickOSM" um OpenStreetMap (OSM) Vektordaten rasch und einfach lokal abspeichern zu können.
@@ -59,6 +62,7 @@ QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grun
 
 Die wichtigsten Metadaten zu allen Plugins werden auf plugins.qgis.org festgehalten. Dort findet man auch Links zur Projektseite, weiteren Dokumentation und ggf. Tutorials: Zu QuickOSM sind die Metadaten hier aufrufbar: [https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/)
 
+(ex-network-osmdownload)=
 ## Übung 6: OpenStreetMap Vektordaten herunterladen
 
 Mit dem neuen Plugin "QuickOSM" laden Sie nun den Strassendatensatz der Gemeinde Wädenswil herunter. Dies geschieht folgendermassen:
