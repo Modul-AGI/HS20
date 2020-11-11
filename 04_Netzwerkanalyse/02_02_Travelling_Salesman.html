@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aufgabe 4: Traveling Salesman für Campus Standorte &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Aufgabe 4: Traveling Salesman &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -60,7 +60,7 @@
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
     <link rel="next" title="Anhang" href="04_00_Anhang.html" />
-    <link rel="prev" title="Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen" href="02_01_Shortest_Path.html" />
+    <link rel="prev" title="Aufgabe 3: Kürzeste Pfade (shortest path)" href="02_01_Shortest_Path.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -324,12 +324,12 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02_01_Shortest_Path.html">
-     Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen
+     Aufgabe 3: Kürzeste Pfade (shortest path)
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Aufgabe 4: Traveling Salesman für Campus Standorte
+     Aufgabe 4: Traveling Salesman
     </a>
    </li>
   </ul>
@@ -412,13 +412,18 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-1-traveling-salesman-fur-mehr-standorte">
-   Übung 4.1: Traveling Salesman für mehr Standorte
+  <a class="reference internal nav-link" href="#ubung-4-1-traveling-salesman-fur-campus-standorte">
+   Übung 4.1: Traveling Salesman für Campus Standorte
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ubung-4-2-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
-   Übung 4.2 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte
+  <a class="reference internal nav-link" href="#ubung-4-2-traveling-salesman-fur-mehr-standorte">
+   Übung 4.2: Traveling Salesman für mehr Standorte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-4-3-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
+   Übung 4.3 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte
   </a>
  </li>
 </ul>
@@ -432,41 +437,43 @@
         
               <div>
                 
-  <div class="section" id="aufgabe-4-traveling-salesman-fur-campus-standorte">
-<h1>Aufgabe 4: Traveling Salesman für Campus Standorte<a class="headerlink" href="#aufgabe-4-traveling-salesman-fur-campus-standorte" title="Link zu dieser Überschrift">¶</a></h1>
-<p>Angenommen Sie sind ein Kurrierdienst und müssen ausgehend von der Halbinsel Au aus alle Campus
-Standorte der ZHAW Wädenswil besuchen. Sie wollen die Route so optimieren, dass Sie die kürzeste Route
-Sie das gleichnamige Tool (v.net.salesmen) um genau dieses Problem zu lösen.</p>
+  <div class="section" id="aufgabe-4-traveling-salesman">
+<h1>Aufgabe 4: Traveling Salesman<a class="headerlink" href="#aufgabe-4-traveling-salesman" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Das Problem des Handlungsreisenden (engl. Traveling Salesman Problem) ist ein kombinatorisches Optimierungsproblem, in dem die Aufgabe darin besteht, eine Reihenfolge für den Besuch mehrerer Orte so zu wählen, dass keine Station außer der ersten mehr als einmal besucht wird, die gesamte Reisestrecke des Handlungsreisenden möglichst kurz und die erste Station gleich der letzten Station ist.</p>
+<div class="section" id="ubung-4-1-traveling-salesman-fur-campus-standorte">
+<h2>Übung 4.1: Traveling Salesman für Campus Standorte<a class="headerlink" href="#ubung-4-1-traveling-salesman-fur-campus-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Angenommen Sie sind ein Kurrierdienst und müssen ausgehend von der Halbinsel Au aus alle Campus Standorte der ZHAW Wädenswil besuchen. Sie wollen die Route so optimieren, dass Sie die kürzeste Route Sie das gleichnamige Tool (v.net.salesmen) um genau dieses Problem zu lösen.</p>
 <ol class="simple">
 <li><p>Erstellen Sie dazu als erstes eine neue Geopackage Datei (Layer -&gt; Create Layer -&gt; New Geopackage Layer) um die Campus Standorte zu erfassen</p>
 <ul class="simple">
-<li><p>Mit dem Feld «Database» ist der Pfad inkl. Dateiname der zu erstellenden Datei gemeint. Wählen Sie hier an einem geeigneten Speicherort den Dateiname «campus_waedenswil.gpkg»</p></li>
-<li><p>«Table name» ist der Name des Layers innerhalb der Geopackage Datei (im Gegensatz zu einem Shapefile können innerhalb eines Geopackage mehrere Layers von unterschiedlichen Datentypen Coexistieren)</p></li>
-<li><p>Wählen Sie bei «Geometry Type» «Point» aus und bei CRS EPSG 2056</p></li>
-<li><p>Fügen Sie eine Spalte in der Attributtabelle hinzu indem Sie unter «New field» -&gt; «Name» den Wert «Standort_name» eingeben (Hier wollen wir «Grüental», «Reidbach».. erfassen) Wählen Sie einen geeigneten Datentyp sowie eine geeignete Maximallänge</p></li>
-<li><p>Bestätigen Sie mittels «Add field to list»</p></li>
-<li><p>Erstellen Sie das Geopackage mit «OK»</p></li>
+<li><p>Mit dem Feld „Database“ ist der Pfad inkl. Dateiname der zu erstellenden Datei gemeint. Wählen Sie hier an einem geeigneten Speicherort den Dateiname „campus_waedenswil.gpkg“</p></li>
+<li><p>„Table name“ ist der Name des Layers innerhalb der Geopackage Datei (im Gegensatz zu einem Shapefile können innerhalb eines Geopackage mehrere Layers von unterschiedlichen Datentypen Coexistieren)</p></li>
+<li><p>Wählen Sie bei „Geometry Type“ „Point“ aus und bei CRS EPSG 2056</p></li>
+<li><p>Fügen Sie eine Spalte in der Attributtabelle hinzu indem Sie unter „New field“ -&gt; „Name“ den Wert „Standort_name“ eingeben (Hier wollen wir „Grüental“, „Reidbach“.. erfassen) Wählen Sie einen geeigneten Datentyp sowie eine geeignete Maximallänge</p></li>
+<li><p>Bestätigen Sie mittels „Add field to list“</p></li>
+<li><p>Erstellen Sie das Geopackage mit „OK“</p></li>
 </ul>
 </li>
-<li><p>Starten Sie mit einem Klick auf <strong>den Stift</strong> die Editiersession und fügen Sie Features hinzu mit dem «Add Feature» Werkzeug. Digitalisieren Sie so die Campus Standorte (Grüental, Reidbach, Seifenstreuli, Schloss) sowie den Ausgangspunkt (Halbinsel Au). Wählen Sie pro Standort einen für Sie geeigneten Punkt, möglichst auf dem OSM Strassennetz.</p></li>
-<li><p>Speichern Sie die erfassten Punkte mit einem Klick auf «Save Edits».</p></li>
-<li><p>Starten Sie nun das Tool v.net.salesman (über die Processing Toolbox) und wählen als Input Layer den OSM Strassendatensatz und als «Center Point Layer» die eben digitalisierten Standorte.</p></li>
+<li><p>Starten Sie mit einem Klick auf <strong>den Stift</strong> die Editiersession und fügen Sie Features hinzu mit dem „Add Feature“ Werkzeug. Digitalisieren Sie so die Campus Standorte (Grüental, Reidbach, Seifenstreuli, Schloss) sowie den Ausgangspunkt (Halbinsel Au). Wählen Sie pro Standort einen für Sie geeigneten Punkt, möglichst auf dem OSM Strassennetz.</p></li>
+<li><p>Speichern Sie die erfassten Punkte mit einem Klick auf „Save Edits“.</p></li>
+<li><p>Starten Sie nun das Tool v.net.salesman (über die Processing Toolbox) und wählen als Input Layer den OSM Strassendatensatz und als „Center Point Layer“ die eben digitalisierten Standorte.</p></li>
 <li><p>v.out.ogr output type: auto.</p></li>
 <li><p>Betrachen Sie die Output daten.</p></li>
 </ol>
-<div class="section" id="ubung-4-1-traveling-salesman-fur-mehr-standorte">
-<h2>Übung 4.1: Traveling Salesman für mehr Standorte<a class="headerlink" href="#ubung-4-1-traveling-salesman-fur-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial und könnte «von Hand» gerechnet werden. Anspruchsvoller wird es jedoch, wenn sich die Anzahl der Standorte erhöht. Nehmen wir an, Sie wollen eine Einkaufstour durch alle Läden in Wädenswil machen: Nutzen Sie die OSM Daten und v.net.salesman und eine sinnvolle Route zu berechnen.</p>
+</div>
+<div class="section" id="ubung-4-2-traveling-salesman-fur-mehr-standorte">
+<h2>Übung 4.2: Traveling Salesman für mehr Standorte<a class="headerlink" href="#ubung-4-2-traveling-salesman-fur-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial und könnte „von Hand“ gerechnet werden. Anspruchsvoller wird es jedoch, wenn sich die Anzahl der Standorte erhöht. Nehmen wir an, Sie wollen eine Einkaufstour durch alle Läden in Wädenswil machen: Nutzen Sie die OSM Daten und v.net.salesman und eine sinnvolle Route zu berechnen.</p>
 <ol class="simple">
 <li><p>OSM Daten der Läden laden: Vector -&gt; QuickOSM -&gt; QuickOSM</p></li>
-<li><p>key «shop» -&gt; Run query sowie Gebiet wählen (siehe dazu Netzwerkanalyse I)</p></li>
-<li><p>Punkt-Daten der Shops in CRS 2056 konvertieren (reproject). Clippen ist fakultativ (nicht erreichbare Knotenpunkte werden schlicht ignoriert)</p></li>
+<li><p>key „shop“ -&gt; Run query sowie Gebiet wählen (siehe dazu <a class="reference internal" href="00_01_Vorbereitung.html#ex-network-osmdownload"><span class="std std-ref">Übung 6: OpenStreetMap Vektordaten herunterladen</span></a>)</p></li>
+<li><p>Punkt-Daten der Shops in CRS 2056 konvertieren (reproject, siehe <a class="reference internal" href="01_01_QGIS.html#ex-network-transfrom"><span class="std std-ref">Übung 1.1: Daten Transformieren</span></a>). Clippen ist fakultativ (nicht erreichbare Knotenpunkte werden schlicht ignoriert)</p></li>
 <li><p>v.net.salesman mit diesen Standorten durchführen</p></li>
 </ol>
 </div>
-<div class="section" id="ubung-4-2-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
-<h2>Übung 4.2 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte<a class="headerlink" href="#ubung-4-2-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um «building» herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool «Polygon Centroids»). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -&gt; Panels -&gt; Statistic). <strong>Wer zuerst die korrekte Distanz in den Chat schreibt, wird mit Ruhm und Ehre belohnt und zur/zum „AGI Studentin/Student des Tages“ erkürt!</strong></p>
+<div class="section" id="ubung-4-3-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte">
+<h2>Übung 4.3 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte<a class="headerlink" href="#ubung-4-3-fakultativ-guezli-challenge-traveling-salesman-fur-noch-mehr-standorte" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um „building“ herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool „Polygon Centroids“). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -&gt; Panels -&gt; Statistic). <strong>Wer zuerst die korrekte Distanz in den Chat schreibt, wird mit Ruhm und Ehre belohnt und zur/zum „AGI Studentin/Student des Tages“ erkürt!</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Bemerkung</p>
 <ul class="simple">
@@ -507,7 +514,7 @@ Traveling salesmen braucht Punkt-Features) und liefern unterschiedliche Outputs<
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="02_01_Shortest_Path.html" title="previous page">Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen</a>
+    <a class='left-prev' id="prev-link" href="02_01_Shortest_Path.html" title="previous page">Aufgabe 3: Kürzeste Pfade (shortest path)</a>
     <a class='right-next' id="next-link" href="04_00_Anhang.html" title="next page">Anhang</a>
 
     </div>

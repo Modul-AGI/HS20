@@ -324,12 +324,12 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02_01_Shortest_Path.html">
-     Aufgabe 3: Kürzeste Pfade auf Netzwerk berechnen
+     Aufgabe 3: Kürzeste Pfade (shortest path)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_02_Travelling_Salesman.html">
-     Aufgabe 4: Traveling Salesman für Campus Standorte
+     Aufgabe 4: Traveling Salesman
     </a>
    </li>
   </ul>
@@ -436,7 +436,7 @@
 <h1>Aufgabe 1: Operationen mit QGIS<a class="headerlink" href="#aufgabe-1-operationen-mit-qgis" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Starten Sie „QGIS 3. 10 .0 with GRASS GIS 7. 8 .1“, beginnen Sie ein neues QGIS Projekt und speichern dies an einem geeigneten Ort (siehe Vorbereitungsübungen) ab. Weisen Sie dem Projekt das Koordinatensystem EPSG 2056 zu und importieren die Gemeindegrenze sowie die OSM Strassendaten aus der Vorbereitungsübung (siehe <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>).</p>
 <div class="section" id="ubung-1-1-daten-transformieren">
-<h2>Übung 1.1: Daten Transformieren<a class="headerlink" href="#ubung-1-1-daten-transformieren" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="ex-network-transfrom"></span><h2>Übung 1.1: Daten Transformieren<a class="headerlink" href="#ubung-1-1-daten-transformieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die OSM Daten sind aktuell noch im Koordinatensystem WGS84 (EPSG 4326). Die Gemeindegrenze hingegen ist mit den neuen Schweizer Landeskoordinaten CH1903+ LV95 (EPSG 2056) abgespeichert. Wir wollen in unserer Analyse mit CH1903+ LV95 (EPSG 2056) arbeiten. Transformieren Sie dazu den Strassendatensatz in das Koordinatensystem CH1903+ LV95 (EPSG 2056). Nutzen Sie dazu das Tool „Reproject Layer“. <strong>Wichtig</strong>: Speichern Sie den Transformierten Strassendatensatz <em>in einer neuen Datei</em> (siehe <a class="reference internal" href="#savetofile"><span class="std std-numref">Abb. 9</span></a>)</p>
 <div class="figure align-default" id="qgistools">
 <img alt="../_images/ueb1_fig1.jpg" src="../_images/ueb1_fig1.jpg" />
@@ -448,7 +448,7 @@
 </div>
 </div>
 <div class="section" id="ubung-1-2-daten-clippen">
-<h2>Übung 1.2: Daten Clippen<a class="headerlink" href="#ubung-1-2-daten-clippen" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="ex-clip"></span><h2>Übung 1.2: Daten Clippen<a class="headerlink" href="#ubung-1-2-daten-clippen" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Zoomen sie auf die Gemeindegrenze (Layers Panel -&gt; Rechtsklick auf Datensatz -&gt; Zoom to layer“). Es ist ersichtlich, dass die Strassendaten über die Gemeindegrenze hinaus verlaufen. Wir möchten für die kommenden Übungen nur die Strassen, die <em>innerhalb</em> der Gemeinde Wädenswil liegen. Dazu müssen wir das Strassennetz mit der Gemeindegrenze verschneiden („clip“). Führen Sie das gleichnamige Werkzeug mit dem Input Layer „OSM_highway“ und dem Clip Layer „Stadt_ Waedenswil.gpkg“ aus. Speichern Sie die Ausgabe in einer neuen Datei.</p>
 <p>Es gibt eine ganze Reihe Werkzeuge zum Begriff „clip“. Entscheiden Sie selbst, welches für diese Fragestellung geeignet ist.</p>
 </div>
