@@ -8,17 +8,17 @@ Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" b
 :header-rows: 1
 :name: table-datensaetze-netzwerkanalyse
 
-* - Datensatz (inkl. Link)
+* - Datensatz (inkl. Link und CRS / EPSG)
   - Beschreibung
-* - [Gemeinde_Waedenswil.gpkg](https://raw.githubusercontent.com/modul-agi/hs20/master/04_Netzwerkanalyse/data/Gemeinde_Waedenswil.gpkg)
+* - [Gemeinde_Waedenswil.gpkg](https://raw.githubusercontent.com/modul-agi/hs20/master/04_Netzwerkanalyse/data/Gemeinde_Waedenswil.gpkg) (EPSG 2056)
   - Die Gemeindegrenze von Wädenswil. Dieser Datensatz basiert auf swissBOUNDARIES3D von Swisstopo.
-* - [osm_highway.gpkg](https://raw.githubusercontent.com/modul-agi/hs20/master/04_Netzwerkanalyse/data/osm_highway.gpkg)
+* - [osm_highway.gpkg](https://raw.githubusercontent.com/modul-agi/hs20/master/04_Netzwerkanalyse/data/osm_highway.gpkg) (EPSG 4326)
   - Alle "Highway" Linien aus dem OpenStreetmaps (Stand *nach* {ref}`ex-network-osmdownload`)
-* - [osm_highway_prepared.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/osm_highway_prepared.gpkg)
+* - [osm_highway_prepared.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/osm_highway_prepared.gpkg) (EPSG 2056)
   - Alle "Highway" Linien transformiert und neu projiziert (Output aus {ref}`ex-clip`)
-* - [shops_waedenswil.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/shops_waedenswil.gpkg)
-  - Alle Läden in Wädenswil (EPSG 2056)
-* - [buildings_waedenswil_polygons.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/buildings_waedenswil_polygons.gpkg)
-  - Alle Gebäudestandorte (Polygon Daten) in Wädenswil (EPSG 2056)
+* - [shops_waedenswil.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/shops_waedenswil.gpkg) (EPSG 2056)
+  - Alle Läden in Wädenswil, für {ref}`ex-network-traveling-shops`
+* - [buildings_waedenswil_polygons.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/buildings_waedenswil_polygons.gpkg) (EPSG 2056)
+  - Alle Gebäudestandorte (Polygon Daten) in Wädenswil, für {ref}`ex-network-traveling-buildings`
 ```
 

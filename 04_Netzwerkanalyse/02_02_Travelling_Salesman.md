@@ -19,6 +19,7 @@ Angenommen Sie sind ein Kurrierdienst und müssen ausgehend von der Halbinsel Au
 5. v.out.ogr output type: auto.
 6. Betrachen Sie die Output daten.
 
+(ex-network-traveling-shops)=
 ## Übung 4.2: Traveling Salesman für mehr Standorte
 
 Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial und könnte "von Hand" gerechnet werden. Anspruchsvoller wird es jedoch, wenn sich die Anzahl der Standorte erhöht. Nehmen wir an, Sie wollen eine Einkaufstour durch alle Läden in Wädenswil machen: Nutzen Sie die OSM Daten und v.net.salesman und eine sinnvolle Route zu berechnen.  
@@ -28,6 +29,7 @@ Der Traveling-Salesman-Pfad für fünf Punkte zu berechnen ist relativ trivial u
 3. Punkt-Daten der Shops in CRS 2056 konvertieren (reproject, siehe {ref}`ex-network-transfrom`). Clippen ist fakultativ (nicht erreichbare Knotenpunkte werden schlicht ignoriert)
 4. v.net.salesman mit diesen Standorten durchführen
 
+(ex-network-traveling-buildings)=
 ## Übung 4.3 (fakultativ, Guezli-Challenge): Traveling Salesman für noch mehr Standorte
 
 Um unsere Rechenmaschine richtig herauszufordern, können wir den Traveling Salesmen Pfad für alle Gebäudestandorte in Wädenswil berechnen. Nutzen Sie hierzu QuickOSM um "building" herrunterzuladen. Reprojizieren Sie die Polygon-Daten in CRS 2056 und konvertieren Sie diese in Punkte, indem Sie das Centroid pro Polygon berechnen (Tool "Polygon Centroids"). Berechnen Sie anschliessend den Traveling Salesman. Ermitteln Sie die Gesamtdistanz dieses Pfades, indem Sie mit dem Field Calculator die Länge pro Segment rechnen (length) und anschliessend die Summe aller Längen ermitteln (View -> Panels -> Statistic). **Wer zuerst die korrekte Distanz in den Chat schreibt, wird mit Ruhm und Ehre belohnt und zur/zum "AGI Studentin/Student des Tages" erkürt!**
