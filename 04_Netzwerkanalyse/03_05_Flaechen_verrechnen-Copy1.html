@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aufgabe 9: Flächen verrechnen &#8212; Angewandte Geoinformatik AGI</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/zhaw_lsfm_iunr_blau.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Angewandte Geoinformatik AGI</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Dieses Buch durchsuchen ..." aria-label="Dieses Buch durchsuchen ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Einleitung
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Coding in GIS I - III
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_Coding_in_GIS/00_00_Einleitung.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_Coding_in_GIS/01_01_Coding_in_GIS_1.html">
+   Coding in GIS I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/01_02_Primitive_Datentypen.html">
+     Aufgabe 1: Primitive Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/01_03_Zusammengesetzte_Datentypen.html">
+     Komplexe Datentypen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/01_04_Listen.html">
+     Aufgabe 2: Listen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/01_05_Dictionary.html">
+     Aufgabe 3: Dictionaries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/01_06_Tabellarische_Daten.html">
+     Aufgabe 4: Tabellarische Daten
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_Coding_in_GIS/02_01_Coding_in_GIS_2.html">
+   Coding in GIS II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_02_Conda_Cheatsheet.html">
+     Conda cheat sheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_03_Python_Module.html">
+     Python Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_04_Functions_I.html">
+     Aufgabe 5:
+     <em>
+      Function
+     </em>
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_05_Functions_II.html">
+     Aufgabe 6:
+     <em>
+      Function
+     </em>
+     Advanced
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_06_Zufallzahlen.html">
+     Aufgabe 7: Zufallszahlen generieren
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/02_07_Funktionen_in_DataFrames.html">
+     Aufgabe 8: Funktionen in
+     <em>
+      DataFrames
+     </em>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_Coding_in_GIS/03_01_Coding_in_GIS_3.html">
+   Coding in GIS III
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_02_For_Loops.html">
+     Aufgabe 9:
+     <em>
+      for loop
+     </em>
+     Einführung
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_03_For_Loops.html">
+     Aufgabe 10:
+     <em>
+      for loop
+     </em>
+     Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_04_For_Loops.html">
+     Aufgabe 11:
+     <em>
+      for loops
+     </em>
+     Advanced
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_04_Zeckenstich_Simulation.html">
+     Aufgabe 12: Zeckenstich Simulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_05_GIS_in_Python.html">
+     GIS in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_06_Raeumliche_Operationen.html">
+     Aufgabe 13: Räumliche Operationen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/03_06_Spatial_Joins.html">
+     Aufgabe 14: Spatial Join
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_Coding_in_GIS/04_01_Leistungsnachweis.html">
+   Leistungsnachweis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/04_02_Vereinigen.html">
+     Aufgabe 15: Grand Finale
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/04_03_Zusatzauftraege.html">
+     Abgabe Leistungsnachweis
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../02_Coding_in_GIS/05_00_Anhang.html">
+   Anhang
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_Coding_in_GIS/05_01_GIS_Demo.html">
+     Demo: Geodaten visualisieren
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Netzwerkanalyse I - III
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_00_Einleitung.html">
+   Einleitung
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00_01_Vorbereitung.html">
+   Vorbereitung
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="01_00_Netzwerkanalyse_I.html">
+   Netzwerkanalyse I
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_01_QGIS.html">
+     Aufgabe 1: Operationen mit QGIS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_02_GRASS_GIS.html">
+     Aufgabe 2: Zentralitätsmasse berechnen
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="02_00_Netzwerkanalyse_II.html">
+   Netzwerkanalyse II
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_01_Shortest_Path.html">
+     Aufgabe 3: Kürzeste Pfade (shortest path)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_02_Travelling_Salesman.html">
+     Aufgabe 4: Traveling Salesman
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="03_00_Netzwerkanalyse_III.html">
+   Netzwerkanalyse III
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_01_Parameter_Berechnen.html">
+     Aufgabe 5: Parameter berechnen und Kategorien bilden
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_02_Entsorgungsstelle.html">
+     Aufgabe 6: Entsorgungsstelle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_03_OEV-Gueteklassen.html">
+     Aufgabe 7: ÖV-Güteklassen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_04_Zentralitaetsmasse.html">
+     Aufgabe 8: Zentralitätsmasse
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_06_Leistungsnachweis.html">
+     Leistungsnachweis
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_00_Anhang.html">
+   Anhang
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="https://www.zhaw.ch/de/lsfm/institute-zentren/iunr/ecosystems-and-biodiversity/geoinformatik/">Research Group for Geoinformatics</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Navigation umschalten" aria-controls="site-navigation"
+            title="Navigation umschalten" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Laden Sie diese Seite herunter"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/04_Netzwerkanalyse/03_05_Flaechen_verrechnen-Copy1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Quelldatei herunterladen" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="In PDF drucken"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Vollbildmodus"
+                title="Vollbildmodus"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Inhalt
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-1-rasterdatensatze-skalieren">
+   Übung 1: Rasterdatensätze skalieren
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ubung-2-zusammenfuhren-mit-raster-calculator">
+   Übung 2: Zusammenführen mit Raster Calculator
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="aufgabe-9-flachen-verrechnen">
+<h1>Aufgabe 9: Flächen verrechnen<a class="headerlink" href="#aufgabe-9-flachen-verrechnen" title="Link zu dieser Überschrift">¶</a></h1>
+<p>In dieser Übung verschneiden wir die Informationen aus Entsorgungsstellen (abfall_raster.tif), ÖV-Güteklassen (oev_raster.tif), und Zentralitätsmass (centrality_raster.tif), die wir in den vorherigen Übungen berechnet und in Raster überführt haben. Durch die Verschneidung können wir den Optimalen Wohnort eruieren. Diese Methode ist auch als Multikriterienevaluation bekannt und kennt ihr bereits vom GIS «Basic» Modul.
+In einem ersten Schritt müssen wir alle drei Rasterdatensätze auf eine einheitliche Skala (z.B. 0 – 100) bringen um sie anschliessend miteinander verrechnen zu können. Dafür brauchen wir die Minimum- und Maximumwerte der drei Raster Datensätzen Güteklassen oev_raster.tif, centrality_raster.tif, abfall_raster.tif. Gehen Sie dafür in die Properties -&gt; Information von jedem Layer und notieren Sie sich die minimalen und maximalen Zellenwerte.</p>
+<div class="section" id="ubung-1-rasterdatensatze-skalieren">
+<h2>Übung 1: Rasterdatensätze skalieren<a class="headerlink" href="#ubung-1-rasterdatensatze-skalieren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Öffnen Sie anschliessend den Raster Calculator (Raster -&gt; Raster Calculator) und Skalieren sie jeden der drei Rasterdatensätze einzeln mit folgender Formel:</p>
+<p><span class="math notranslate nohighlight">\(X_{new}\)</span> = <span class="math notranslate nohighlight">\(\frac{x_{i} - x_{min}}{x_{max} - x_{min}} * 100\)</span></p>
+<p>Der Output dieser Übung sind drei Rasterdatensätze mit einer Skala von 0 bis 100</p>
+<div class="figure align-default">
+<img alt="../_images/rastCalc.jpg" src="../_images/rastCalc.jpg" />
+</div>
+<p>In Worten: Ziehen Sie vom Rasterwert (xi) den Minimumwert (xmin) ab und dividieren sie diesen durch die Spannweite der Zahlen (<strong><span class="math notranslate nohighlight">\(x_{max}\)</span>-<span class="math notranslate nohighlight">\(x_{min}\)</span></strong>)</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_{i}\)</span> ist der jeweilige Rasterdatensatz, xmin und xmax sind jeweils die Zahlenwerte, die sich eben notiert hatten.</p></li>
+<li><p>Achten sie darauf, dass Sie die richtigen Klammen setzen.</p></li>
+<li><p>Speichern Sie diese unter folgenden Namen ab: oev_scaled.tif, abfall_scaled.tif, centrality_scaled.tif.</p></li>
+</ul>
+</div>
+<div class="section" id="ubung-2-zusammenfuhren-mit-raster-calculator">
+<h2>Übung 2: Zusammenführen mit Raster Calculator<a class="headerlink" href="#ubung-2-zusammenfuhren-mit-raster-calculator" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Nutzen Sie erneut den Raster Calculator um die drei Rasterdatensätze miteinander zu verrechnen. Die einfachste Variante ist den Mittelwert der drei Rasterdatensätze zu berechnen. Dafür muss man alle drei summieren und mit drei dividieren:</p>
+<p><span class="math notranslate nohighlight">\(raster_{neu}\)</span> = <span class="math notranslate nohighlight">\(\frac{oevScaled+abfallScaled+centralityScaled}{3}\)</span></p>
+<p>Optional kann man auch die drei Rasterdatensätze unterschiedlich gewichten, wie beispielweise nachstehend. Beachten Sie, dass in diesem Fall nicht mehr durch 3, sondern durch die Summe der Gewichte dividiert wird. Visualisieren und interpretieren Sie anschliessend das Resultat.</p>
+<p><span class="math notranslate nohighlight">\(raster_{neu}\)</span> = <span class="math notranslate nohighlight">\(\frac{oev*1+abfall*10+centrality*5}{16}\)</span></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./04_Netzwerkanalyse"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By N. Ratnaweera, N. Bakogiannis<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
