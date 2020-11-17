@@ -58,12 +58,11 @@
     - file: 04_Netzwerkanalyse/02_02_Travelling_Salesman
   - file: 04_Netzwerkanalyse/03_00_Netzwerkanalyse_III.md
     sections:
-    - file: 04_Netzwerkanalyse/03_01_Parameter_Berechnen
     - file: 04_Netzwerkanalyse/03_02_Entsorgungsstelle
     - file: 04_Netzwerkanalyse/03_03_OEV-Gueteklassen
     - file: 04_Netzwerkanalyse/03_04_Zentralitaetsmasse
     - file: 04_Netzwerkanalyse/03_05_Flaechen_verrechnen
-    - file: 04_Netzwerkanalyse/03_06_Leistungsnachweis
+  - file: 04_Netzwerkanalyse/03_06_Leistungsnachweis
   - file: 04_Netzwerkanalyse/04_00_Anhang.md
   
   
