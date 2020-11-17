@@ -342,38 +342,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_Parameter_Berechnen.html">
-     Aufgabe 5: Parameter berechnen und Kategorien bilden
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="03_02_Entsorgungsstelle.html">
-     Aufgabe 6: Entsorgungsstelle
+     Aufgabe 5: Entsorgungsstelle
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_03_OEV-Gueteklassen.html">
-     Aufgabe 7: ÖV-Güteklassen
+     Aufgabe 6: ÖV-Güteklassen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_04_Zentralitaetsmasse.html">
-     Aufgabe 8: Zentralitätsmasse
+     Aufgabe 7: Zentralitätsmasse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_05_Flaechen_verrechnen.html">
-     Aufgabe 9: Flächen verrechnen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_Leistungsnachweis.html">
-     Leistungsnachweis
+     Aufgabe 8: Flächen verrechnen
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Leistungsnachweis.html">
+   Leistungsnachweis
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_00_Anhang.html">
@@ -478,12 +473,18 @@
                 
   <div class="section" id="aufgabe-3-kurzeste-pfade-shortest-path">
 <h1>Aufgabe 3: Kürzeste Pfade (shortest path)<a class="headerlink" href="#aufgabe-3-kurzeste-pfade-shortest-path" title="Link zu dieser Überschrift">¶</a></h1>
-<p><strong>Hinweis (Wiederholung)</strong>: Standartmässig werden Dateien als Temporäre Files abgespeichert, die nach dem Schliessen von QGIS gelöscht werden. Um einen Output an einem festgelegten Ort abzuspeichern muss der Output definieret werden. Dazu klickt man neben [Save to temporary file] auf die drei Punkte und wählt „Save to File“ aus.</p>
+<div class="tip admonition">
+<p class="admonition-title">Achtung!</p>
+<ul class="simple">
+<li><p>Achten Sie darauf, dass Sie „QGIS Desktop 3.10.0 <strong>with GRASS 7.8.0</strong>“ starten, ansonsten stehen ihnen die GRASS Erweiterungen nicht zur Verfügung  (siehe <a class="reference internal" href="00_01_Vorbereitung.html#chap-vorbereitung-aufstarten"><span class="std std-ref">Übung 2: QGIS aufstarten</span></a>).</p></li>
+<li><p>Standartmässig werden Dateien als Temporäre Files abgespeichert, die nach dem Schliessen von QGIS gelöscht werden. Um einen Output an einem festgelegten Ort abzuspeichern muss der Output definieret werden. Dazu klickt man neben [Save to temporary file] auf die drei Punkte und wählt „Save to File“ aus.</p></li>
+</ul>
+</div>
 <div class="figure align-default" id="savetotempfile">
 <img alt="../_images/saveToTemp.jpg" src="../_images/saveToTemp.jpg" />
 </div>
 <div class="section" id="ubung-3-1-projekt-vorbereiten">
-<h2>Übung 3.1: Projekt vorbereiten<a class="headerlink" href="#ubung-3-1-projekt-vorbereiten" title="Link zu dieser Überschrift">¶</a></h2>
+<span id="ex-osm-background"></span><h2>Übung 3.1: Projekt vorbereiten<a class="headerlink" href="#ubung-3-1-projekt-vorbereiten" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Starten Sie „QGIS Desktop 3.10.0 with GRASS 7.8.0“ und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Laden Sie den Datensatz „osm_highway_prepared.gpkg“ von letzter Woche. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei in <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>. Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick -&gt; Properties -&gt; Reiter Source -&gt; Set source coordinate reference system -&gt; Hier sollte EPSG 2056 stehen).</p>
 <p>Wir brauchen zudem eine Hintergrundkarte zur Orientierung. Blenden Sie diese mit dem Plugin „QuickMapServices“ die Openstreetmap Hintergrundkarte ein (Web -&gt; QuickMapServices -&gt; OSM -&gt; OSM Standard) ein. Falls Sie diese Option nicht finden, müssen Sie das enstprechede Plugin „QuickMapServices“ installieren (siehe dazu <a class="reference internal" href="00_01_Vorbereitung.html#ex-network-plugins"><span class="std std-ref">Übung 5: Plugin installieren</span></a>).</p>
 <p>Die Hintergrundkarte dient lediglich zur Orientierung, die Farbe lenkt uns jedoch vom Netzwerk ab. Wechseln Sie deshalb den Darstellungsmodus auf Graustufen mittels Rechtklick auf den Layer „OSM Standard“ -&gt; Properties -&gt; Symbology -&gt; Grayscale Auswahl: „By lightness“.</p>
@@ -546,7 +547,7 @@
     <div class="container">
       <p>
         
-          By N. Ratnaweera, N. Bakogiannis<br/>
+          By N. Ratnaweera, N. Bakogiannis, P. Laube<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

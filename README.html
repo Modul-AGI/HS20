@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Angewandte Geoinformatik AGI</title>
+    <title>Technical stuff &#8212; Angewandte Geoinformatik AGI</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -340,38 +340,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="04_Netzwerkanalyse/03_01_Parameter_Berechnen.html">
-     Aufgabe 5: Parameter berechnen und Kategorien bilden
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="04_Netzwerkanalyse/03_02_Entsorgungsstelle.html">
-     Aufgabe 6: Entsorgungsstelle
+     Aufgabe 5: Entsorgungsstelle
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_Netzwerkanalyse/03_03_OEV-Gueteklassen.html">
-     Aufgabe 7: ÖV-Güteklassen
+     Aufgabe 6: ÖV-Güteklassen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_Netzwerkanalyse/03_04_Zentralitaetsmasse.html">
-     Aufgabe 8: Zentralitätsmasse
+     Aufgabe 7: Zentralitätsmasse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_Netzwerkanalyse/03_05_Flaechen_verrechnen.html">
-     Aufgabe 9: Flächen verrechnen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_Netzwerkanalyse/03_06_Leistungsnachweis.html">
-     Leistungsnachweis
+     Aufgabe 8: Flächen verrechnen
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_Netzwerkanalyse/03_06_Leistungsnachweis.html">
+   Leistungsnachweis
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_Netzwerkanalyse/04_00_Anhang.html">
@@ -447,7 +442,39 @@
             <i class="fas fa-list"></i> Inhalt
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Technical stuff
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#similar-reccources">
+   Similar reccources
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conventions">
+   Conventions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tables">
+     Tables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#figures">
+     Figures
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ubugnsziele">
+     Übugnsziele
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -459,7 +486,9 @@
         
               <div>
                 
-  <p>For others, and for future me, here some notes on how I created this (jupyter-) book</p>
+  <div class="section" id="technical-stuff">
+<h1>Technical stuff<a class="headerlink" href="#technical-stuff" title="Link zu dieser Überschrift">¶</a></h1>
+<p>For others, and for future me, here some notes on how I created this (jupyter-) book</p>
 <ul class="simple">
 <li><p>90 % can be found in the jupyter-book documentation on <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a></p></li>
 <li><p>to build the book, I implemented the approach „<a class="reference external" href="https://jupyterbook.org/publish/gh-pages.html#automatically-host-your-book-with-github-actions">Automatically host your book with GitHub Actions</a>“ which means that I dont need a local installation of jupyter books</p></li>
@@ -471,11 +500,55 @@
 </ul>
 </li>
 </ul>
+</div>
+<div class="section" id="similar-reccources">
+<h1>Similar reccources<a class="headerlink" href="#similar-reccources" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Nice ressources on the subject (because I don’t know where es to put it right now):</p>
 <ul class="simple">
 <li><p>https://geo-python-site.readthedocs.io/en/latest/</p></li>
 <li><p>https://pythongis.org/</p></li>
 </ul>
+</div>
+<div class="section" id="conventions">
+<h1>Conventions<a class="headerlink" href="#conventions" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Here is how we can create tables. We reference the tables like so: {numref}`tablereference`. What we get is something along the lines of <span class="xref myst">Tab. 3</span> (depending on the language specified in _config.yml)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{list-table} We can place descriptions here
+:header-rows: 1
+:name: tablereference
+
+* - First row of col 1(inkl. Link)
+  - First row of col 2
+* - Second row of col 1(inkl. Link)
+  - Second row of col 2
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Here is how we create figures. We reference the figures like so: {ref}`imagereferece` (<em>not</em> numref_). What we get is something along the lines of <span class="xref myst">Abb. 9</span> (depending on the language specified in _config.yml)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{figure} folder/image.jpg
+:name: imagereferece
+
+Image description
+```
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubugnsziele">
+<h2>Übugnsziele<a class="headerlink" href="#ubugnsziele" title="Link zu dieser Überschrift">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```{admonition} Übungsziele
+:class: attention
+- Ziel 1
+- Ziel 2
+- Ziel 3
+```
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -511,7 +584,7 @@
     <div class="container">
       <p>
         
-          By N. Ratnaweera, N. Bakogiannis<br/>
+          By N. Ratnaweera, N. Bakogiannis, P. Laube<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

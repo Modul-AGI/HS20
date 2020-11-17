@@ -342,38 +342,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_Parameter_Berechnen.html">
-     Aufgabe 5: Parameter berechnen und Kategorien bilden
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="03_02_Entsorgungsstelle.html">
-     Aufgabe 6: Entsorgungsstelle
+     Aufgabe 5: Entsorgungsstelle
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_03_OEV-Gueteklassen.html">
-     Aufgabe 7: ÖV-Güteklassen
+     Aufgabe 6: ÖV-Güteklassen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_04_Zentralitaetsmasse.html">
-     Aufgabe 8: Zentralitätsmasse
+     Aufgabe 7: Zentralitätsmasse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_05_Flaechen_verrechnen.html">
-     Aufgabe 9: Flächen verrechnen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_Leistungsnachweis.html">
-     Leistungsnachweis
+     Aufgabe 8: Flächen verrechnen
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Leistungsnachweis.html">
+   Leistungsnachweis
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_00_Anhang.html">
@@ -474,6 +469,10 @@
   <div class="section" id="aufgabe-1-operationen-mit-qgis">
 <h1>Aufgabe 1: Operationen mit QGIS<a class="headerlink" href="#aufgabe-1-operationen-mit-qgis" title="Link zu dieser Überschrift">¶</a></h1>
 <p>Starten Sie „QGIS 3. 10 .0 with GRASS GIS 7. 8 .1“, beginnen Sie ein neues QGIS Projekt und speichern dies an einem geeigneten Ort (siehe Vorbereitungsübungen) ab. Weisen Sie dem Projekt das Koordinatensystem EPSG 2056 zu und importieren die Gemeindegrenze sowie die OSM Strassendaten aus der Vorbereitungsübung (siehe <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Achtung!</p>
+<p>Achten Sie darauf, dass Sie „QGIS Desktop 3.10.0 <strong>with GRASS 7.8.0</strong>“ starten, ansonsten stehen ihnen die GRASS Erweiterungen nicht zur Verfügung (siehe <a class="reference internal" href="00_01_Vorbereitung.html#chap-vorbereitung-aufstarten"><span class="std std-ref">Übung 2: QGIS aufstarten</span></a>).</p>
+</div>
 <div class="section" id="ubung-1-1-daten-transformieren">
 <span id="ex-network-transfrom"></span><h2>Übung 1.1: Daten Transformieren<a class="headerlink" href="#ubung-1-1-daten-transformieren" title="Link zu dieser Überschrift">¶</a></h2>
 <p>Die OSM Daten sind aktuell noch im Koordinatensystem WGS84 (EPSG 4326). Die Gemeindegrenze hingegen ist mit den neuen Schweizer Landeskoordinaten CH1903+ LV95 (EPSG 2056) abgespeichert. Wir wollen in unserer Analyse mit CH1903+ LV95 (EPSG 2056) arbeiten. Transformieren Sie dazu den Strassendatensatz in das Koordinatensystem CH1903+ LV95 (EPSG 2056). Nutzen Sie dazu das Tool „Reproject Layer“. <strong>Wichtig</strong>: Speichern Sie den Transformierten Strassendatensatz <em>in einer neuen Datei</em> (siehe <a class="reference internal" href="#savetofile"><span class="std std-numref">Abb. 9</span></a>)</p>
@@ -529,7 +528,7 @@
     <div class="container">
       <p>
         
-          By N. Ratnaweera, N. Bakogiannis<br/>
+          By N. Ratnaweera, N. Bakogiannis, P. Laube<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

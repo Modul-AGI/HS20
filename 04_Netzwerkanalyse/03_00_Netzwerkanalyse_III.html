@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
     <link rel="search" title="Suche" href="../search.html" />
-    <link rel="next" title="Aufgabe 5: Parameter berechnen und Kategorien bilden" href="03_01_Parameter_Berechnen.html" />
+    <link rel="next" title="Aufgabe 5: Entsorgungsstelle" href="03_02_Entsorgungsstelle.html" />
     <link rel="prev" title="Aufgabe 4: Traveling Salesman" href="02_02_Travelling_Salesman.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -342,38 +342,33 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="03_01_Parameter_Berechnen.html">
-     Aufgabe 5: Parameter berechnen und Kategorien bilden
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="03_02_Entsorgungsstelle.html">
-     Aufgabe 6: Entsorgungsstelle
+     Aufgabe 5: Entsorgungsstelle
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_03_OEV-Gueteklassen.html">
-     Aufgabe 7: ÖV-Güteklassen
+     Aufgabe 6: ÖV-Güteklassen
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_04_Zentralitaetsmasse.html">
-     Aufgabe 8: Zentralitätsmasse
+     Aufgabe 7: Zentralitätsmasse
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_05_Flaechen_verrechnen.html">
-     Aufgabe 9: Flächen verrechnen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_06_Leistungsnachweis.html">
-     Leistungsnachweis
+     Aufgabe 8: Flächen verrechnen
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_06_Leistungsnachweis.html">
+   Leistungsnachweis
+  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_00_Anhang.html">
@@ -453,7 +448,21 @@
               <div>
                 
   <div class="section" id="netzwerkanalyse-iii">
-<h1>Netzwerkanalyse III<a class="headerlink" href="#netzwerkanalyse-iii" title="Link zu dieser Überschrift">¶</a></h1>
+<span id="chap-netzwerk-iii"></span><h1>Netzwerkanalyse III<a class="headerlink" href="#netzwerkanalyse-iii" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Angenommen Sie sind auf Wohnungssuche in Wädenswil. Dabei gilt es nebst dem Budget viele wichtige raumgebundene Variablen zu berücksichtigen, dazu verwenden Sie natürlich QGIS. Sie wollen drei Kriterien untersuchen:</p>
+<ol class="simple">
+<li><p>Laufdistanz zur nächsten Entsorgungsstelle</p></li>
+<li><p>Erschliessung an die öffentlichen Verkehrsmittel (unter Berücksichtigung des Fahrplans)</p></li>
+<li><p>Distanz zur Durchfahrtsstrasse</p></li>
+</ol>
+<p>Wir werden für jeden dieser drei Kriterien einen Rasterdatensatz kreieren, den wir zum Schluss miteinander verrechnen können. So finden wir den Optimalen Standort unter der Berücksichtigung aller drei Kriterien. Starten Sie dazu QGIS und laden Sie folgende Daten in das Projekt:</p>
+<ol class="simple">
+<li><p>Strassennetz Wädenswil („osm_highway_prepared.gpkg“) aus <a class="reference internal" href="01_01_QGIS.html#ex-clip"><span class="std std-ref">Übung 1.2: Daten Clippen</span></a> (siehe <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>)</p></li>
+<li><p>Entsorgungsstellen Wädenswil (siehe <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>)</p></li>
+<li><p>Gemeindegrenze Wädenswil (siehe <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>)</p></li>
+<li><p>Optional: OSM Hintergrundkarte grau eingefärbt (siehe <a class="reference internal" href="02_01_Shortest_Path.html#ex-osm-background"><span class="std std-ref">Übung 3.1: Projekt vorbereiten</span></a>)</p></li>
+</ol>
+<p><strong>Achtung!:</strong> Achten Sie darauf, dass Sie „QGIS Desktop 3.10.0 <strong>with GRASS 7.8.0</strong>“ starten, ansonsten stehen ihnen die GRASS Erweiterungen nicht zur Verfügung  (siehe <a class="reference internal" href="00_01_Vorbereitung.html#chap-vorbereitung-aufstarten"><span class="std std-ref">Übung 2: QGIS aufstarten</span></a>).</p>
 <div class="attention admonition">
 <p class="admonition-title">Übungsziele</p>
 <ul class="simple">
@@ -496,14 +505,14 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="02_02_Travelling_Salesman.html" title="previous page">Aufgabe 4: Traveling Salesman</a>
-    <a class='right-next' id="next-link" href="03_01_Parameter_Berechnen.html" title="next page">Aufgabe 5: Parameter berechnen und Kategorien bilden</a>
+    <a class='right-next' id="next-link" href="03_02_Entsorgungsstelle.html" title="next page">Aufgabe 5: Entsorgungsstelle</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By N. Ratnaweera, N. Bakogiannis<br/>
+          By N. Ratnaweera, N. Bakogiannis, P. Laube<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
