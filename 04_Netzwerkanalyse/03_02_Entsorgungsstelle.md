@@ -11,15 +11,14 @@ Da sie gerne hopfenhaltige Getränke in Dosen und Glasflaschen konsumieren, ist 
 - Wählen Sie wie immer die v.out.ogr output type: "auto"
 - Führen Sie das Werkzeug anschliessend mit "Run" aus.
 
-
 Visualisieren Sie das Resultat in dem Sie die Symbolisierung des neu entstanden Linienlayers entsprechend anpassen (Spalte "cat" einfärben). Sind das nun bereits Isolinien?
 
-
-## Übung 5.2: Linien in Fläche Umwandeln
+## Übung 5.2: Linien in Punkte Umwandeln
 
 Um aus den Linien eine Oberfläche zu erhalten müssen wir die Kategorien aus dem Output von v.net.iso interpolieren. Dies funktioniert besser mit Punkten als Linien. In einem ersten Schritt müssen wir also den Output aus v.net.iso in Punkte umwandeln. Verwenden Sie hierfür das Werkzeug "Convert Lines to Points" (SAGA). Belassen sie das Häkchen bei "Insert additional Points" und setzten Sie die Distanz ("Insert Distance") auf 100 Meter. Führen Sie das Werkzeug mit "run" aus.
 
 
+(ex-interpolate-points)=
 ## Übung 5.3: Punkte interpolieren
 Nun haben wir Punkte, die mit einer Interpolation in eine Oberfläche überführt werden können. Verwenden Sie dazu das Tool "Inverse Distance weighted Interpolation" (SAGA). Überlegen sie, was Sie interpolieren möchten und legen sie das entsprechende Feld in der Option "Attribute" fest. Zusätzlich können Sie folgende Parameter wählen:
 
@@ -38,8 +37,9 @@ Um den Datensatz zu visualisieren können sie im Reiter "Symbology" der Layereig
 Gruppieren Sie alle Layers im Zusammenhang mit den Entsorungsstellen mittels *Selektion > Rechtsklick > Group selected* um den Überblick zu behalten.
 
 ````
+
 ## Übung 5.4: Isolinien berechnen
-Dieser nächste Schritt dient nur zu Illustrationszwecken: Wir möchten aus der generierten Oberfläche Isolinien berechnen (**Raster -> Extraktion -> Contour...**). Spielen sie mit verschiedenen Intervallen (Interval between..) rum bis Ihnen eine Darstellung gefällt. Überlagern Sie den Interpolierten Raster, die Isolinien sowie die Entsorgungsstellen und freuen sie sich ab diesem Ergebnis!
+Dieser nächste Schritt dient nur zu Illustrationszwecken: Wir möchten aus der generierten Oberfläche Isolinien berechnen. Nutzen sie hierfür das Tool *Raster -> Extraktion -> Contour...*. Spielen sie mit verschiedenen Intervallen (Interval between..) rum bis Ihnen eine Darstellung gefällt. Überlagern Sie den Interpolierten Raster, die Isolinien sowie die Entsorgungsstellen und freuen sie sich ab diesem Ergebnis!
 
 ```{figure} figures/isolinien.jpg
 :name: Isolinien berechen
