@@ -37,7 +37,7 @@ Gruppieren Sie alle Layers im Zusammenhang mit den Entsorungsstellen mittels *Se
 
 ````
 ## Übung 5.4: Isolinien berechnen
-Dieser nächste Schritt dient nur zu Illustrationszwecken: Wir möchten aus der generierten Oberfläche Isolinien berechnen. Spielen sie mit verschiedenen Intervallen (Interval between..) rum bis Ihnen eine Darstellung gefällt. Überlagern Sie den Interpolierten Raster, die Isolinien sowie die Entsorgungsstellen und freuen sie sich ab diesem Ergebnis!
+Dieser nächste Schritt dient nur zu Illustrationszwecken: Wir möchten aus der generierten Oberfläche Isolinien berechnen (**Raster -> Extraktion -> Contour...**). Spielen sie mit verschiedenen Intervallen (Interval between..) rum bis Ihnen eine Darstellung gefällt. Überlagern Sie den Interpolierten Raster, die Isolinien sowie die Entsorgungsstellen und freuen sie sich ab diesem Ergebnis!
 
 ```{figure} figures/isolinien.jpg
 :name: Isolinien berechen

@@ -20,7 +20,9 @@ Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" b
   - Alle Läden in Wädenswil, für {ref}`ex-network-traveling-shops`
 * - [buildings_waedenswil_polygons.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/buildings_waedenswil_polygons.gpkg) (EPSG 2056)
   - Alle Gebäudestandorte (Polygon Daten) in Wädenswil, für {ref}`ex-network-traveling-buildings`
-* - [abfallentsorgung_waedenswil.gpkg](https://github.com/Modul-AGI/HS20/blob/master/04_Netzwerkanalyse/data/abfallentsorgung_waedenswil.gpkg) (EPSG 2056)
+* - [abfallentsorgung_waedenswil.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/abfallentsorgung_waedenswil.gpkg) (EPSG 2056)
   - Entsorgungsstellen Wädenswil
+  
+  
 ```
 
