@@ -3,7 +3,17 @@
 ## Übung 6.1: Datensatz Clippen und betrachten
 
 Als weiteres Kriterium wollen Sie eine gute Erschliessung mit dem öffentlichen Verkehr. Dabei geht um den ÖV-Anschluss unter Berücksichtigung des elektronischen Fahrplans. Dafür hat das ARE einen Datensatz herausgeben, den Sie hier auffinden können: [https://s.geo.admin.ch/7e80a8bd28](https://s.geo.admin.ch/7e80a8bd28)
-Laden Sie den Datensatz "ÖV-Güteklassen ARE" herunter und importieren Sie ihn in Ihr Projekt. Clippen Sie den Datensatz mit der Gemeindegrenze von Wädenswil. Symbolisieren Sie den Datensatz anhand des Feldes "KLASSE" und betrachten Sie anschliessend die Attributtabelle.
+Laden Sie den Datensatz "ÖV-Güteklassen ARE" herunter und importieren Sie ihn in Ihr Projekt. 
+```{admonition} Tipp zum Herunterladen!
+:class: dropdown
+![ÖV-Güteklassen](figures/openData.jpg)
+
+Der Link zum Datensatz befindet sich in der **readme.txt** Datei
+```
+
+Clippen Sie den Datensatz mit der Gemeindegrenze von Wädenswil. Symbolisieren Sie den Datensatz anhand des Feldes "KLASSE" und betrachten Sie anschliessend die Attributtabelle.
+
+
 
 ## Übung 6.2: Buchstaben in nummerische Kategorien überführen
 
