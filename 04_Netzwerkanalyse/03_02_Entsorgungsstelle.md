@@ -7,11 +7,12 @@ Da sie gerne hopfenhaltige Getränke in Dosen und Glasflaschen konsumieren, ist 
 - Starten Sie das Tool v.net.iso um die Isochronen-Linien auf dem Strassennetz zu berechnen.
 - Wählen als Input Vector Line das Strassennetz
 - Als "Center Points layer" wählen Sie die Entsorgungsstellen
-- Im Feld "Cost for Isolines" können Sie die Schwellenwerte festlegen, bei denen die Isochronenlinien gezogen werden sollen. Die Einheit entspricht den "Map units" (Meter) und werden kommagetrennt eingegeben. Um den vollen Effekt des Tools auszukosten verwenden wir eine grosse Anzahl von Schwellenwerten: von alle 200m von 0 bis 3 km. Geben sie die Werte nach folgendem Schema ins Feld ein: **200,400,600 … 2600,2800,3000**
+- Im Feld "Cost for Isolines" können Sie die Schwellenwerte festlegen, bei denen die Isochronenlinien gezogen werden sollen. Die Einheit entspricht den "Map units" (Meter) und werden kommagetrennt eingegeben. Um den vollen Effekt des Tools auszukosten verwenden wir eine grosse Anzahl von Schwellenwerten: alle 200m von 0 bis 3 km (*200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000*)
 - Wählen Sie wie immer die v.out.ogr output type: "auto"
 - Führen Sie das Werkzeug anschliessend mit "Run" aus.
 
-Visualisieren Sie das Resultat in dem Sie die Symbolisierung des neu entstanden Linienlayers entsprechend anpassen. Sind das nun bereits Isolinien?
+
+Visualisieren Sie das Resultat in dem Sie die Symbolisierung des neu entstanden Linienlayers entsprechend anpassen (Spalte "cat" einfärben). Sind das nun bereits Isolinien?
 
 
 ## Übung 5.2: Linien in Fläche Umwandeln
@@ -27,7 +28,8 @@ Nun haben wir Punkte, die mit einer Interpolation in eine Oberfläche überführ
 - Target Grid System: [0] user defined
 - Fit: [0] nodes
 
-Clippen sie den Output anschliessen mit dem Werkzeug "Clip Raster by mask layer". Speichern Sie den geclippten Layer mit dem Namen abfall_raster.tif in ihrem Projektordner.
+Clippen sie den Output anschliessen auf die Gemeindegrenze mit dem Werkzeug "Clip Raster by mask layer". Speichern Sie den geclippten Layer mit dem Namen abfall_raster.tif in ihrem Projektordner. 
+
 Um den Datensatz zu visualisieren können sie im Reiter "Symbology" der Layereigenschaften den Rendertype "Singleband Pseudocolor" auswählen. Wählen Sie einen geeigneten Farbverlauf und klicken sie auf "classify" und anschliessend auf "ok".
 
 ````{admonition} Tipp
