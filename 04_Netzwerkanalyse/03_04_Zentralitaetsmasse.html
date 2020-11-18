@@ -470,12 +470,12 @@
 <h1>Aufgabe 7: Zentralitätsmasse<a class="headerlink" href="#aufgabe-7-zentralitatsmasse" title="Link zu dieser Überschrift">¶</a></h1>
 <div class="section" id="ubung-7-1-zentralitatsmasse-betrachten-und-auswahlen">
 <h2>Übung 7.1: Zentralitätsmasse betrachten und auswählen<a class="headerlink" href="#ubung-7-1-zentralitatsmasse-betrachten-und-auswahlen" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Da Sie aber auf keinen Fall an einer Durchfahrtsstrasse wohnen möchten, müssen Sie dies in der Wohnungssuche ebenfalls berücksichtigen. Laden Sie deshalb den Datensatz „waedenswil_centrality.gpkg“ aus der ersten Woche. Falls Sie diesen nicht mehr haben, können Sie die Zentralitätsmasse neu berechnen (v.net sowie v.net.centrality) oder Sie verwenden den Datensatz auf Moodle. Prüfen Sie anhand der Symbolisierung, welches Mass „Durchfahrtsstrassen“ am besten abbildet.</p>
+<p>Da Sie aber auf keinen Fall an einer Durchfahrtsstrasse wohnen möchten, müssen Sie dies in der Wohnungssuche ebenfalls berücksichtigen. Laden Sie deshalb den Datensatz „waedenswil_centrality.gpkg“ aus <a class="reference internal" href="01_02_GRASS_GIS.html#ex-centrality-calculate"><span class="std std-ref">Übung 2.3: Zentralitätsmasse berechnen</span></a>. Falls Sie diesen nicht mehr haben, können Sie die Zentralitätsmasse neu berechnen (v.net sowie v.net.centrality) oder Sie verwenden den Datensatz „waedenswil_centrality.gpkg“ in <a class="reference internal" href="04_00_Anhang.html#table-datensaetze-netzwerkanalyse"><span class="std std-numref">Tab. 3</span></a>. Prüfen Sie anhand der Symbolisierung, welches Mass „Durchfahrtsstrassen“ am besten abbildet.</p>
 </div>
 <div class="section" id="ubung-7-2-zentralitatsmasse-in-flache-uberfuhren">
 <h2>Übung 7.2: Zentralitätsmasse in Fläche überführen<a class="headerlink" href="#ubung-7-2-zentralitatsmasse-in-flache-uberfuhren" title="Link zu dieser Überschrift">¶</a></h2>
-<p>Das gewählte Zentralitätsmass können wir nun ebenfalls mit dem Tool „Inverse distance weighted interpolation“ (SAGA) in eine Oberfläche überführen. Führen sie das Tool analog Übung 6.3, mit dem gewählten Zenralitätsmass aus. Sie können die Parameter des Tools nach eigenem Gutdünken auch anpassen.
-Clippen sie anschliessend den Output anschliessen mit dem Werkezeug „Clip raster by Mask Layer“ (GDAL). Speichern Sie den Output unter centrality_raster.tif in ihrem Projektordner und gruppieren Sie alle Layers im Zusammenhang mit den Zentralitätsmassen.</p>
+<p>Das gewählte Zentralitätsmass können wir nun ebenfalls mit dem Tool „Inverse distance weighted interpolation“ (SAGA) in eine Oberfläche überführen. Führen sie das Tool analog <a class="reference internal" href="03_02_Entsorgungsstelle.html#ex-interpolate-points"><span class="std std-ref">Übung 5.3: Punkte interpolieren</span></a>, mit dem gewählten Zenralitätsmass aus. Sie können die Parameter des Tools nach eigenem Gutdünken auch anpassen (wir empfehlen auf jedenfall die gleiche Output Cellsize von 25m zu verwenden um im Anschluss die Flächen miteinander verrechnen zu können).</p>
+<p>Clippen sie anschliessend den Output anschliessen mit dem Werkezeug „Clip raster by Mask Layer“ (GDAL). Speichern Sie den Output unter centrality_raster.tif in ihrem Projektordner und gruppieren Sie alle Layers im Zusammenhang mit den Zentralitätsmassen.</p>
 </div>
 </div>
 
@@ -517,7 +517,12 @@ Clippen sie anschliessend den Output anschliessen mit dem Werkezeug „Clip rast
         
           By N. Ratnaweera, N. Bakogiannis, P. Laube<br/>
         
-            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            <p>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Dieses Werk ist lizenziert unter einer <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Namensnennung 4.0 International Lizenz</a>.
+</p>
+
+          </div>
       </p>
     </div>
   </footer>

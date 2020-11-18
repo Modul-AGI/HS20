@@ -22,7 +22,7 @@ Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" b
   - Alle Gebäudestandorte (Polygon Daten) in Wädenswil, für {ref}`ex-network-traveling-buildings`
 * - [abfallentsorgung_waedenswil.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/abfallentsorgung_waedenswil.gpkg) (EPSG 2056)
   - Entsorgungsstellen Wädenswil
-  
-  
+* - [waedenswil_centrality.gpkg](https://github.com/Modul-AGI/HS20/raw/master/04_Netzwerkanalyse/data/waedenswil_centrality.gpkg) (EPSG 2056)
+  - Zentralitätsmasse für Wädenswil (aus {ref}`ex-centrality-calculate`)
 ```
 

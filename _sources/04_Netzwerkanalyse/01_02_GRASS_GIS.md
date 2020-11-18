@@ -44,6 +44,7 @@ Im Idealfall sollte unser Netzwerk aus einer Gruppe bestehen; so wäre jeder Kno
 :name: figure 2
 ```
 
+(ex-centrality-calculate)=
 ## Übung 2.3: Zentralitätsmasse berechnen
 
 Nun kann mit der eigentlichen Netzwerkanalyse begonnen werden. Wir rechnen für unser bereinigtes Strassennetz verschiedene Zentralitätsmasse.
