@@ -7,7 +7,10 @@ Da sie gerne hopfenhaltige Getränke in Dosen und Glasflaschen konsumieren, ist 
 - Starten Sie das Tool v.net.iso um die Isochronen-Linien auf dem Strassennetz zu berechnen.
 - Wählen als Input Vector Line das Strassennetz
 - Als "Center Points layer" wählen Sie die Entsorgungsstellen
-- Im Feld "Cost for Isolines" können Sie die Schwellenwerte festlegen, bei denen die Isochronenlinien gezogen werden sollen. Die Einheit entspricht den "Map units" (Meter) und werden kommagetrennt eingegeben. Um den vollen Effekt des Tools auszukosten verwenden wir eine grosse Anzahl von Schwellenwerten: alle 200m von 0 bis 3 km (*200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000*)
+- Im Feld "Cost for Isolines" können Sie die Schwellenwerte festlegen, bei denen die Isochronenlinien gezogen werden sollen. Die Einheit entspricht den "Map units" (Meter) und werden kommagetrennt eingegeben. Um den vollen Effekt des Tools auszukosten verwenden wir eine grosse Anzahl von Schwellenwerten (z.B. alle 200m von 0 bis 3 km):
+- ```
+  200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000
+  ``` 
 - Wählen Sie wie immer die v.out.ogr output type: "auto"
 - Führen Sie das Werkzeug anschliessend mit "Run" aus.
 
@@ -22,10 +25,10 @@ Um aus den Linien eine Oberfläche zu erhalten müssen wir die Kategorien aus de
 ## Übung 5.3: Punkte interpolieren
 Nun haben wir Punkte, die mit einer Interpolation in eine Oberfläche überführt werden können. Verwenden Sie dazu das Tool "Inverse Distance weighted Interpolation" (SAGA). Überlegen sie, was Sie interpolieren möchten und legen sie das entsprechende Feld in der Option "Attribute" fest. Zusätzlich können Sie folgende Parameter wählen:
 
-- Distance Weighting: [1] Inverse Distance to a power
-- Cellsize: 25
-- Target Grid System: [0] user defined
-- Fit: [0] nodes
+- Distance Weighting: `[1] Inverse Distance to a power`
+- Cellsize: `25`
+- Target Grid System: `[0] user defined`
+- Fit: `[0] nodes`
 
 Clippen sie den Output anschliessen auf die Gemeindegrenze mit dem Werkzeug "Clip Raster by mask layer". Speichern Sie den geclippten Layer mit dem Namen abfall_raster.tif in ihrem Projektordner. 
 

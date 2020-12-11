@@ -277,6 +277,11 @@
      Demo: Geodaten visualisieren
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_02_ArcPy_in_Jupyter.html">
+     Verwendung von ArcPy in Jupyter
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -586,11 +591,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hallo Du!&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="attention admonition">
 <p class="admonition-title">Wichtig</p>
@@ -609,11 +609,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Wenn wir die Reihenfolge missachten, ist der Output unserer Funktion fehlerhaft:</p>
 <div class="cell docutils container">
@@ -622,21 +617,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, van Rossum Herr&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Aber wenn die Parameter der Argumente spezifiziert werden, können wir sie in jeder beliebigen Reihenfolge auflisten:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gruezi2</span><span class="p">(</span><span class="n">anrede</span> <span class="o">=</span> <span class="s2">&quot;Herr&quot;</span><span class="p">,</span> <span class="n">nachname</span> <span class="o">=</span> <span class="s2">&quot;van Rossum&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Guten Tag, Herr van Rossum&#39;
 </pre></div>
 </div>
 </div>
@@ -674,18 +659,6 @@
 <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht die Fehlermeldung,</span>
 <span class="c1"># dass &quot;vorname&quot; fehlt (obwohl wir vorname ja schon definiert haben)</span>
 <span class="n">sag_hallo</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">bd26d99d0230</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Wenn wir jetzt aber die Function ausführen wollen, entsteht die Fehlermeldung,</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="c1"># dass &quot;vorname&quot; fehlt (obwohl wir vorname ja schon definiert haben)</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">sag_hallo</span><span class="p">()</span>
-
-<span class="ne">TypeError</span>: sag_hallo() missing 1 required positional argument: &#39;vorname&#39;
 </pre></div>
 </div>
 </div>
@@ -742,11 +715,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="ubung-6-2">
@@ -766,11 +734,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">times</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -807,11 +770,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.160493827160494
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="ubung-6-4">
@@ -838,11 +796,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>425.0
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="ubung-6-5">
@@ -862,11 +815,6 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celsius_in_farenheit</span><span class="p">(</span><span class="n">celsius</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>77.0
 </pre></div>
 </div>
 </div>
