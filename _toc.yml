@@ -34,7 +34,8 @@
     - file: 02_Coding_in_GIS/04_03_Zusatzauftraege
   - file: 02_Coding_in_GIS/05_00_Anhang
     sections:
-    - file: 02_Coding_in_GIS/05_01_GIS_Demo.ipynb
+    - file: 02_Coding_in_GIS/05_01_GIS_Demo
+    - file: 02_Coding_in_GIS/05_02_ArcPy_in_Jupyter
 #- part: (Geo-) Datenbanken I - III
 #  chapters:
 #  - file: 03_Datenbanken/00_00_Einleitung

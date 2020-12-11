@@ -49,7 +49,7 @@ Image description
 ```
 ````
 
-### Übugnsziele
+### Übungsziele
 
 ````
 ```{admonition} Übungsziele
@@ -59,3 +59,15 @@ Image description
 - Ziel 3
 ```
 ````
+
+
+### Chapter reference
+
+We can create a label for a chapter using the following syntax
+
+``` 
+(chapter-label)=
+## Chapter Title
+```
+
+To reference this chapter, you can use {ref}\`chapter-label\`
